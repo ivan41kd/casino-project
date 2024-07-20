@@ -1,0 +1,77 @@
+@import '../mixins/mixin';
+.main {
+  padding-top: 38px;
+  padding-bottom: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  &__banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+    background: linear-gradient(95deg, #000d08 1.23%, #26382f 64.66%);
+    padding: 28px 36px 58px 29px;
+    overflow: hidden;
+  }
+  &__banner:after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: url('../../../img/bg/spark-left.png');
+  }
+  &__banner:before {
+    transform: scale(1);
+    top: 20px;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    content: url('../../../img/bg/spark-right.png');
+  }
+  &__banner-text-wrapper {
+    z-index: 2;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+  &__banner-title {
+    text-transform: uppercase;
+    @include banner-font(28px);
+  }
+  &__banner-subtitle {
+    text-transform: uppercase;
+    @include banner-font(76px);
+  }
+  &__banner-button {
+    text-transform: uppercase;
+    border-radius: 80px;
+    color: black;
+    padding: 21px 32px 21px 32px;
+  }
+  &__banner-img {
+    z-index: 3;
+    right: 25%;
+    top: 75px;
+    position: absolute;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: url('/img/bg/girl-left.png');
+  }
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: url('/img/bg/girl-right.png');
+  }
+}

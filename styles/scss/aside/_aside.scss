@@ -1,0 +1,53 @@
+.aside {
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  position: fixed;
+  left: 5%;
+  transition: 0.3s;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__top-wrapper {
+    padding-bottom: 52px;
+    margin-bottom: 52px;
+    border-bottom: 1px solid;
+  }
+  &__img {
+    transform: scale(1.1);
+    margin-bottom: 51px;
+  }
+  &__title {
+    text-transform: uppercase;
+    @include banner-font(28px);
+  }
+  &__subtitle {
+    @include banner-font(76px);
+  }
+  &__button {
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 16.52px;
+    display: flex;
+    background: none;
+    @include gold-color;
+    padding: 18.39px 28.02px 18.39px 28.02px;
+    border: 2px solid;
+    border-radius: 70px;
+    transition: 0.3s;
+  }
+  &__button:hover {
+    transition: 0.3s;
+    color: rgba(238, 222, 186, 1);
+    box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
+  }
+  &__item {
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+  }
+}
+.aside.fixed {
+  transition: 0.3s;
+  position: absolute;
+  bottom: 5%;
+}

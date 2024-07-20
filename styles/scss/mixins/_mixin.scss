@@ -1,0 +1,8 @@
+@mixin gold-color {
+  color: rgba(196, 167, 103, 1);
+}
+@mixin banner-font($fs) {
+  font-family: 'Forum', sans-serif;
+  font-weight: 400;
+  font-size: $fs;
+}

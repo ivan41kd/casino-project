@@ -1,0 +1,14 @@
+.introduction {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 134px;
+  &__attention {
+    padding: 20px;
+    background: rgba(135, 38, 53, 0.1);
+    align-items: flex-start;
+    display: flex;
+  }
+  &__attention-logo {
+    margin-right: 21px;
+  }
+}

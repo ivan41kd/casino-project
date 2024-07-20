@@ -1,0 +1,70 @@
+@import '../mixins/mixin';
+.header {
+  transition: 0.3s;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__wrapper {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav {
+    display: flex;
+  }
+  &__menu {
+    column-gap: 72px;
+    display: flex;
+  }
+  &__item {
+    line-height: 17.7px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  &__user-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__user-logo {
+    margin-right: 8px;
+  }
+  &__user-name {
+    margin-right: 24px;
+  }
+  &__balance {
+    margin-right: 9px;
+    @include gold-color;
+  }
+  &__currency {
+    margin-right: 24px;
+    color: rgb(216, 216, 212);
+  }
+  &__logout {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 16.52px;
+    display: flex;
+    background: none;
+    @include gold-color;
+    padding: 18.39px 28.02px 18.39px 28.02px;
+    border: 2px solid;
+    border-radius: 70px;
+    transition: 0.3s;
+  }
+  &__logout:hover {
+    transition: 0.3s;
+    color: rgba(238, 222, 186, 1);
+    box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
+  }
+}
+.header.fixed {
+  transition: 0.1s;
+  background: rgba(22, 22, 22, 0.8);
+}

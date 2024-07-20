@@ -1,0 +1,55 @@
+.games {
+  padding-top: 100px;
+  position: relative;
+  z-index: 4;
+  &__categories-list {
+    display: flex;
+    column-gap: 15px;
+  }
+  &__categories-item {
+    padding: 15px 25px 15px 25px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 70px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    color: rgba(216, 216, 212, 0.8);
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  &__categories-item.selected {
+    transition: 0.3s;
+    color: rgba(135, 38, 53, 1);
+  }
+  &__wrapper {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 25px;
+    column-gap: 18px;
+  }
+  &__game {
+    max-width: 243px;
+    width: 100%;
+  }
+  &__game-name {
+    font-size: 18px;
+    background: radial-gradient(
+      67.37% 75.21% at 0% 0.79%,
+      #ffffff 0%,
+      #eedeba 43.5%,
+      #c4a767 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__game-text-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__game-status {
+    font-size: 15px;
+    color: rgba(149, 29, 36, 1);
+  }
+}

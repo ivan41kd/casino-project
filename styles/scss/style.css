@@ -1,0 +1,519 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "TT Norms";
+  min-height: 100vh;
+  line-height: 1.5;
+  background: rgb(35, 35, 35);
+  color: rgb(216, 216, 212);
+}
+body::before {
+  content: url("../../../img/bg/weed1.png");
+  right: 0;
+  position: fixed;
+}
+body::after {
+  position: fixed;
+  top: 0;
+  content: url("../../../img/bg/weed3.png");
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textarea without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+ul {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.container.aside-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  transition: 0.3s;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header__wrapper {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav {
+  display: flex;
+}
+.header__menu {
+  -moz-column-gap: 72px;
+       column-gap: 72px;
+  display: flex;
+}
+.header__item {
+  line-height: 17.7px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.header__item:hover {
+  transition: 0.3s;
+  color: rgb(255, 255, 255);
+}
+.header__user-wrapper {
+  display: flex;
+  align-items: center;
+}
+.header__user-logo {
+  margin-right: 8px;
+}
+.header__user-name {
+  margin-right: 24px;
+}
+.header__balance {
+  margin-right: 9px;
+  color: rgb(196, 167, 103);
+}
+.header__currency {
+  margin-right: 24px;
+  color: rgb(216, 216, 212);
+}
+.header__logout {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 16.52px;
+  display: flex;
+  background: none;
+  color: rgb(196, 167, 103);
+  padding: 18.39px 28.02px 18.39px 28.02px;
+  border: 2px solid;
+  border-radius: 70px;
+  transition: 0.3s;
+}
+.header__logout:hover {
+  transition: 0.3s;
+  color: rgb(238, 222, 186);
+  box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+}
+
+.header.fixed {
+  transition: 0.1s;
+  background: rgba(22, 22, 22, 0.8);
+}
+
+.main {
+  padding-top: 38px;
+  padding-bottom: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.main__banner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+  position: relative;
+  background: linear-gradient(95deg, #000d08 1.23%, #26382f 64.66%);
+  padding: 28px 36px 58px 29px;
+  overflow: hidden;
+}
+.main__banner:after {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: url("../../../img/bg/spark-left.png");
+}
+.main__banner:before {
+  transform: scale(1);
+  top: 20px;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  content: url("../../../img/bg/spark-right.png");
+}
+.main__banner-text-wrapper {
+  z-index: 2;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.main__banner-title {
+  text-transform: uppercase;
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+}
+.main__banner-subtitle {
+  text-transform: uppercase;
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 76px;
+}
+.main__banner-button {
+  text-transform: uppercase;
+  border-radius: 80px;
+  color: black;
+  padding: 21px 32px 21px 32px;
+}
+.main__banner-img {
+  z-index: 3;
+  right: 25%;
+  top: 75px;
+  position: absolute;
+}
+.main:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url("/img/bg/girl-left.png");
+}
+.main:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: url("/img/bg/girl-right.png");
+}
+
+.aside {
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  position: fixed;
+  left: 5%;
+  transition: 0.3s;
+}
+.aside__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.aside__top-wrapper {
+  padding-bottom: 52px;
+  margin-bottom: 52px;
+  border-bottom: 1px solid;
+}
+.aside__img {
+  transform: scale(1.1);
+  margin-bottom: 51px;
+}
+.aside__title {
+  text-transform: uppercase;
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+}
+.aside__subtitle {
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 76px;
+}
+.aside__button {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 16.52px;
+  display: flex;
+  background: none;
+  color: rgb(196, 167, 103);
+  padding: 18.39px 28.02px 18.39px 28.02px;
+  border: 2px solid;
+  border-radius: 70px;
+  transition: 0.3s;
+}
+.aside__button:hover {
+  transition: 0.3s;
+  color: rgb(238, 222, 186);
+  box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+}
+.aside__item {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.aside.fixed {
+  transition: 0.3s;
+  position: absolute;
+  bottom: 5%;
+}
+
+.games {
+  padding-top: 100px;
+  position: relative;
+  z-index: 4;
+}
+.games__categories-list {
+  display: flex;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.games__categories-item {
+  padding: 15px 25px 15px 25px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 70px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  color: rgba(216, 216, 212, 0.8);
+}
+.games__categories-item:hover {
+  color: rgb(255, 255, 255);
+}
+.games__categories-item.selected {
+  transition: 0.3s;
+  color: rgb(135, 38, 53);
+}
+.games__wrapper {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 25px;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
+}
+.games__game {
+  max-width: 243px;
+  width: 100%;
+}
+.games__game-name {
+  font-size: 18px;
+  background: radial-gradient(67.37% 75.21% at 0% 0.79%, #ffffff 0%, #eedeba 43.5%, #c4a767 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.games__game-text-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.games__game-status {
+  font-size: 15px;
+  color: rgb(149, 29, 36);
+}
+
+.introduction {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 134px;
+}
+.introduction__attention {
+  padding: 20px;
+  background: rgba(135, 38, 53, 0.1);
+  align-items: flex-start;
+  display: flex;
+}
+.introduction__attention-logo {
+  margin-right: 21px;
+}
+
+.footer {
+  background: linear-gradient(180deg, #101010 0%, rgba(16, 16, 16, 0) 45.37%);
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 46px;
+}
+.footer__top {
+  margin-bottom: 122px;
+}
+.footer__top-wrapper {
+  padding-top: 80px;
+  border-top: 1px rgba(196, 167, 103, 0.4) solid;
+}
+.footer__categories-name {
+  margin-bottom: 38px;
+  color: rgb(203, 61, 69);
+  text-transform: uppercase;
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+.footer__middle-title {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: rgb(203, 61, 69);
+}
+.footer__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__middle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px;
+}
+.footer__top-categories-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+}
+.footer__multiple-categories-wrapper {
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  display: flex;
+}
+.footer__category {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.footer::after {
+  top: 0;
+  position: absolute;
+  content: url("../../../img/footer/weed1.png");
+}
+.footer::before {
+  top: 0;
+  right: 0;
+  position: absolute;
+  content: url("../../../img/footer/weed2.png");
+}
+.footer__middle {
+  margin-bottom: 107px;
+}
+.footer__middle-list-wrapper {
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+  display: flex;
+}
+.footer__middle-item {
+  list-style-type: disc;
+}
+.footer__bottom-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+}
+.footer__bottom-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer__payment-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.footer__payment {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__bottom-payment-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 22px;
+}
+.footer__icons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}/*# sourceMappingURL=style.css.map */
