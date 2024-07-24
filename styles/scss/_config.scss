@@ -36,6 +36,15 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
   font-size: 16px;
   font-weight: 500;
   font-family: 'TT Norms';
@@ -43,16 +52,41 @@ body {
   line-height: 1.5;
   background: rgb(35, 35, 35);
   color: rgba(216, 216, 212, 1);
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   &::before {
-    content: url('../../../img/bg/weed1.png');
-    right: 0;
     position: fixed;
-  }
-  &::after {
-    position: fixed;
+    content: '';
+    background: url('../../img/bg/bg-pic.png');
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
     top: 0;
-    content: url('../../../img/bg/weed3.png');
+    background-repeat: no-repeat;
   }
+}
+.scroll-disabled {
+  overflow: hidden;
+}
+@media (min-width: 1410px) {
+  .bg-girls {
+    position: fixed;
+    display: flex !important;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .bg-girls.fixed {
+    position: absolute;
+    bottom: 44%;
+  }
+
+  .content {
+    position: relative;
+  }
+}
+.bg-girls {
+  display: none;
 }
 
 /* Set shorter line heights on headings and interactive elements */

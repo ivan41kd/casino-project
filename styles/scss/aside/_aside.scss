@@ -1,12 +1,22 @@
 .aside {
   background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
-  position: fixed;
-  left: 5%;
+  z-index: 6;
+  margin-right: 17px;
   transition: 0.3s;
+  height: fit-content;
   &__wrapper {
     display: flex;
     flex-direction: column;
+  }
+  &__item-wrapper {
+    column-gap: 12px;
+    display: flex;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
   &__top-wrapper {
     padding-bottom: 52px;
@@ -42,12 +52,93 @@
     box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
   }
   &__item {
+    column-gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
+  }
+  &__item-list {
+    flex-direction: column;
+    display: flex;
+    padding: 32px;
+    align-items: flex-start;
+  }
+  &__item-list-wrapper {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+  }
+  &__list-item {
+    color: rgba(196, 167, 103, 1);
+  }
+  @media only screen and (max-width: 1410px) {
+    left: 2%;
+    &__img {
+      display: none;
+    }
+    &__top-wrapper {
+      padding-top: 25px;
+    }
+  }
+  @media only screen and (max-width: 872px) {
+    display: none;
+    height: fit-content;
+    position: static;
+    &__list {
+      display: none;
+    }
+    &__top-wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    &__title {
+      font-size: 26px;
+    }
+    &__subtitle {
+      font-size: 60px;
+    }
+  }
+  @media only screen and (max-width: 510px) {
+    &__top-wrapper {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    &__button {
+      align-items: center;
+      height: fit-content;
+    }
+    &__title {
+      font-size: 16px;
+    }
+    &__subtitle {
+      font-size: 32px;
+    }
+    &__button {
+      font-size: 14px;
+    }
   }
 }
 .aside.fixed {
   transition: 0.3s;
   position: absolute;
-  bottom: 5%;
+}
+.aside.mobile {
+  display: none;
+  @media (max-width: 872px) {
+    margin-right: 13px;
+    padding-bottom: 47px;
+    padding-top: 22px;
+    display: block;
+  }
+  @media only screen and (max-width: 510px) {
+    margin-right: 0;
+    padding-top: 13px;
+    padding-bottom: 9px;
+    width: 95%;
+  }
 }

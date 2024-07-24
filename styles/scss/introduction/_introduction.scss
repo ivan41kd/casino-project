@@ -1,7 +1,11 @@
 .introduction {
   display: flex;
   align-items: flex-end;
-  padding-bottom: 134px;
+  padding-top: 100px;
+  padding-bottom: 154px;
+  position: relative;
+  overflow: hidden;
+  width: 65%;
   &__attention {
     padding: 20px;
     background: rgba(135, 38, 53, 0.1);
@@ -10,5 +14,28 @@
   }
   &__attention-logo {
     margin-right: 21px;
+  }
+  &__inner {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__wrapper {
+    margin-right: 40px;
+  }
+  @media (max-width: 1410px) {
+    width: 80%;
+  }
+
+  @media (max-width: 872px) {
+    padding-bottom: 77px;
+    width: 100%;
+    &__subtitle {
+      font-size: 16px;
+    }
+    &__inner {
+      flex-direction: column;
+    }
   }
 }
