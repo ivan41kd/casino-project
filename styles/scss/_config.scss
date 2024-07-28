@@ -2,16 +2,16 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 
 /* Prevent font size inflation */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+ -moz-text-size-adjust: none;
+ -webkit-text-size-adjust: none;
+ text-size-adjust: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -25,68 +25,90 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+ margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
-  list-style: none;
+ list-style: none;
 }
 
 /* Set core body defaults */
 body {
-  @keyframes fadeInAnimation {
-    0% {
-      opacity: 0;
-    }
+ @keyframes fadeInAnimation {
+  0% {
+   opacity: 0;
+  }
 
-    100% {
-      opacity: 1;
-    }
+  100% {
+   opacity: 1;
   }
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'TT Norms';
-  min-height: 100vh;
-  line-height: 1.5;
-  background: rgb(35, 35, 35);
-  color: rgba(216, 216, 212, 1);
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  &::before {
-    position: fixed;
-    content: '';
-    background: url('../../img/bg/bg-pic.png');
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
-    top: 0;
-    background-repeat: no-repeat;
-  }
+ }
+ font-size: 16px;
+ font-weight: 500;
+ font-family: 'TT Norms';
+ min-height: 100vh;
+ line-height: 1.5;
+ background: rgb(35, 35, 35);
+ color: rgba(216, 216, 212, 1);
+ animation: fadeInAnimation ease 3s;
+ animation-iteration-count: 1;
+ animation-fill-mode: forwards;
+ &::before {
+  position: fixed;
+  content: '';
+  background: url('../../img/bg/bg-pic.png');
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  opacity: 0.1;
+  top: 0;
+  background-repeat: no-repeat;
+ }
 }
 .scroll-disabled {
-  overflow: hidden;
+ overflow: hidden;
 }
-@media (min-width: 1410px) {
-  .bg-girls {
-    position: fixed;
-    display: flex !important;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .bg-girls.fixed {
-    position: absolute;
-    bottom: 44%;
-  }
+.girl-left,
+.girl-right {
+ display: none;
+}
+.content__wrapper {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
 
-  .content {
-    position: relative;
+@media (min-width: 1410px) {
+ .girl-left,
+ .girl-right {
+  display: block;
+  position: sticky;
+  top: calc(30% - 100px);
+
+  bottom: 0;
+ }
+ .girl-left {
+  top: calc(50% - 100px);
+ }
+ @media (min-height: 1080px) {
+  .girl-left,
+  .girl-right {
+   display: block;
+   position: sticky;
+   top: calc(55% - 100px);
+
+   bottom: 0;
   }
-}
-.bg-girls {
-  display: none;
+  .girl-left {
+   top: calc(60% - 100px);
+  }
+ }
+
+ .content {
+  position: relative;
+ }
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -97,7 +119,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+ line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
@@ -105,20 +127,20 @@ h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+ text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
+ text-decoration-skip-ink: auto;
+ color: currentColor;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+ max-width: 100%;
+ display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -126,27 +148,27 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+ font: inherit;
 }
 
 /* Make sure textarea without a rows attribute are not tiny */
 textarea:not([rows]) {
-  min-height: 10em;
+ min-height: 10em;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5ex;
+ scroll-margin-block: 5ex;
 }
 li {
-  list-style-type: none;
-  cursor: pointer;
+ list-style-type: none;
+ cursor: pointer;
 }
 ul {
-  height: fit-content;
+ height: fit-content;
 }
 button {
-  outline: none;
-  border: none;
-  cursor: pointer;
+ outline: none;
+ border: none;
+ cursor: pointer;
 }

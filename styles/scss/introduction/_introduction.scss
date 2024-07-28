@@ -1,41 +1,107 @@
 .introduction {
+ display: flex;
+ align-items: flex-end;
+ padding-top: 100px;
+ position: relative;
+ justify-content: center;
+ &::after {
+  content: '';
+  bottom: -43%;
+  width: 150vw;
+  height: 790px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0) 0%, #101010 87.87%);
+ }
+ &__attention {
+  padding: 20px;
+  background: rgba(135, 38, 53, 0.1);
+  align-items: flex-start;
+  display: flex;
+ }
+ &__attention-logo {
+  margin-right: 21px;
+ }
+ &__inner {
+  position: relative;
+  z-index: 5;
   display: flex;
   align-items: flex-end;
-  padding-top: 100px;
-  padding-bottom: 154px;
-  position: relative;
-  overflow: hidden;
-  width: 65%;
-  &__attention {
-    padding: 20px;
-    background: rgba(135, 38, 53, 0.1);
-    align-items: flex-start;
-    display: flex;
+ }
+ &__wrapper {
+  max-width: 734px;
+  width: 100%;
+  margin-right: 40px;
+ }
+ &__subtitle {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+ }
+ &__attention {
+  max-width: 506px;
+  width: 100%;
+  border-radius: 10px;
+ }
+ &__attention-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+ }
+ @media (max-width: 1410px) {
+  padding-right: 20px;
+  padding-left: 20px;
+  &__wrapper {
+   max-width: 447px;
+   margin-right: 35px;
   }
-  &__attention-logo {
-    margin-right: 21px;
+  &__subtitle {
+   font-size: 16px;
+   line-height: 25.6px;
+  }
+  &__attention {
+   padding: 20px;
+   max-width: 462px;
+  }
+  &__attention-subtitle {
+   font-size: 16px;
+   line-height: 25.6px;
+  }
+ }
+ @media (max-width: 872px) {
+  padding-bottom: 77px;
+  padding-top: 82px;
+  width: 100%;
+  &::after {
+   bottom: 0;
+  }
+  &__subtitle {
+   font-size: 16px;
   }
   &__inner {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: flex-end;
+   row-gap: 35px;
+   flex-direction: column;
+   align-items: flex-start;
   }
   &__wrapper {
-    margin-right: 40px;
+   max-width: 728px;
   }
-  @media (max-width: 1410px) {
-    width: 80%;
+  &__attention {
+   max-width: 100%;
   }
-
-  @media (max-width: 872px) {
-    padding-bottom: 77px;
-    width: 100%;
-    &__subtitle {
-      font-size: 16px;
-    }
-    &__inner {
-      flex-direction: column;
-    }
+ }
+ @media (max-width: 510px) {
+  &__attention {
+   flex-direction: column;
+   row-gap: 14px;
   }
+  &__subtitle {
+   font-size: 14px;
+   line-height: 22.4px;
+  }
+  &__attention-subtitle {
+   font-size: 14px;
+   line-height: 22.4px;
+  }
+ }
 }

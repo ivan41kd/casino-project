@@ -1,12 +1,8 @@
-const weedBackground = document.querySelector('.weed-background');
-
-function scrollWeed() {
-  if (main.classList.contains('fixed')) {
-    weedBackground.classList.add('fixed');
-  } else {
-    weedBackground.classList.remove('fixed');
-  }
-}
 window.addEventListener('scroll', () => {
-  scrollWeed();
+ const weed = document.querySelector('.weed-background');
+ if (header.classList.contains('fixed')) {
+  weed.classList.add('fixed');
+ } else {
+  weed.classList.remove('fixed');
+ }
 });

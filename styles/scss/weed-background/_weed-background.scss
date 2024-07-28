@@ -1,24 +1,38 @@
 .weed-background {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
+ position: sticky;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ width: 100%;
+ right: 0;
+ top: 0;
+ height: 0;
+ transform: translateY(-140px);
+ &__weed-second {
   right: 0;
-  &__weed-second {
-    right: 0;
-    top: 0;
-    position: absolute;
-  }
-  &__weed-third,
-  &__weed-fourth {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-.weed-background.fixed {
-  position: absolute;
-  bottom: 0;
   top: 0;
+  position: absolute;
+ }
+ &__weed-third,
+ &__weed-fourth {
+  position: absolute;
+  top: 0;
+  left: 0;
+ }
+}
+@media screen and (max-width: 1410px) {
+ .weed-background.fixed {
+  transform: translateY(60px);
+ }
+}
+@media screen and (max-width: 510px) {
+ .weed-background.fixed {
+  transform: translateY(30px);
+ }
+ .weed-background {
+  &__weed-first,
+  &__weed-second {
+   display: none;
+  }
+ }
 }

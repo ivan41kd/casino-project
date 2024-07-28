@@ -10,8 +10,12 @@
     padding-right: 20px;
   }
 }
+.container .main__top-wrapper.mobile {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 .container.aside-container {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
