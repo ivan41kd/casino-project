@@ -75,7 +75,6 @@
  &__game-button {
   display: flex;
   align-items: center;
-  border: 2px solid;
   color: rgba(196, 167, 103, 1);
   background: none;
   border-radius: 70px;
@@ -86,21 +85,19 @@
   text-transform: uppercase;
   position: relative;
   &::before {
-   opacity: 0;
-   position: absolute;
-   top: -2px;
-   bottom: -2px;
-   left: -2px;
-   right: -2px;
-   background: radial-gradient(
-    80.12% 95.28% at 16.15% 4.72%,
-    #eedeba 0%,
-    #c4a767 100%
-   );
    content: '';
-   z-index: -1;
-   transition: 0.3s;
-   border-radius: 70.06px;
+   position: absolute;
+   inset: 0;
+   border-radius: 70px;
+   border: 2px solid transparent;
+   background: linear-gradient(
+     140deg,
+     rgba(238, 222, 186, 1),
+     rgba(196, 167, 103, 1)
+    )
+    border-box;
+   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   mask-composite: exclude;
   }
   &:hover {
    transition: 0.3s;
