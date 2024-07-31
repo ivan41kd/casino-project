@@ -15,11 +15,15 @@
   align-items: flex-start;
  }
  &__content-wrapper {
+  width: 106%;
   display: flex;
  }
  &__wrapper.games {
   padding-top: 0;
   flex-direction: column;
+ }
+ &__right-content {
+  max-width: 1024px;
  }
  &__banner {
   width: 100%;
@@ -41,7 +45,7 @@
  }
  &__banner:before {
   transform: scale(1);
-  top: 20px;
+  top: -12px;
   right: 0;
   position: absolute;
   bottom: 0;
@@ -236,32 +240,40 @@
    flex: 1;
   }
   &__content {
-   padding-left: 20px;
-   padding-right: 20px;
+   padding-left: 0;
+   padding-right: 0;
+  }
+  &__content-wrapper {
+   width: 100%;
+   padding-left: 40px;
+   padding-right: 40px;
   }
   &__wrapper {
-   justify-content: center;
+   display: block;
   }
  }
- @media (max-width: 1410px) {
-  justify-content: space-evenly;
- }
- @media (max-width: 872px) {
+
+ @media (max-width: 767px) {
   padding-bottom: 0;
   &__wrapper {
    width: 100%;
    flex-direction: row;
    justify-content: normal;
    flex-wrap: wrap;
+   display: block;
    padding-left: 0;
    padding-right: 0;
   }
   &__banner-wrapper {
    display: none;
   }
+  &__content-wrapper {
+   padding-right: 20px;
+   padding-left: 20px;
+  }
   &__top-wrapper.mobile {
    display: flex;
-   flex: 1;
+   max-height: 228px;
   }
   &__banner-loader.prev {
    display: none;
@@ -269,13 +281,20 @@
   &__banner-loader.prev.mobile {
    display: block;
   }
+  &__banner-title {
+   margin-bottom: 16px;
+   font-size: 25px;
+   line-height: 35px;
+  }
   &__banner-subtitle {
    font-size: 60px;
+   line-height: 66.24px;
+   margin-bottom: 14px;
   }
   &__banner-img {
-   top: 75px;
+   top: 70px;
    right: 0;
-   width: 300px;
+   width: 306px;
   }
   &__banner {
    height: 100%;
@@ -294,30 +313,55 @@
    }
   }
  }
- @media only screen and (max-width: 510px) {
+ @media only screen and (max-width: 540px) {
   padding-right: 0;
   padding-left: 0;
-  &__top-wrapper {
+  &__top-wrapper.mobile {
+   max-height: 100%;
    flex-direction: column-reverse;
   }
   &__banner-img {
+   top: 35%;
    width: 232px;
+  }
+  &__banner-title {
+   font-size: 20px;
+   line-height: 28px;
+   margin-bottom: 8px;
+  }
+  &__banner {
+   padding: 20px;
+   max-height: 190px;
+   border-radius: 0;
   }
   &__banner-subtitle {
    font-size: 48px;
+   line-height: 52.99px;
+   margin-bottom: 16px;
   }
   &__top-wrapper.mobile {
    row-gap: 28px;
+  }
+  &__banner-button {
+   padding: 18.39px 28.02px 18.39px 28.02px;
+   font-size: 14px;
+   line-height: 16.52px;
+   max-width: 167px;
+   max-height: 46px;
   }
   &__content {
    padding-right: 0;
    padding-left: 0;
   }
+  &__content-wrapper {
+   padding-left: 0;
+   padding-right: 0;
+  }
  }
 }
 
 .main__banner-wrapper.mobile {
- @media (max-width: 872px) {
+ @media (max-width: 768px) {
   display: block;
   flex: 1;
   position: relative;

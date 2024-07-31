@@ -1,21 +1,33 @@
 .container {
-  padding-left: 70px;
-  padding-right: 70px;
-  @media (max-width: 1410px) {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  @media (max-width: 872px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+ padding-left: 70px;
+ padding-right: 70px;
+ @media (max-width: 1410px) {
+  padding-left: 40px;
+  padding-right: 40px;
+ }
+ @media (max-width: 767px) {
+  padding-left: 20px;
+  padding-right: 20px;
+ }
 }
 .container .main__top-wrapper.mobile {
-  padding-left: 0;
-  padding-right: 0;
+ padding-left: 0;
+ padding-right: 0;
 }
 
 .container.aside-container {
-  padding-left: 10px;
-  padding-right: 10px;
+ padding-left: 20px;
+ padding-right: 20px;
+}
+@media (max-width: 767px) {
+ .container.aside-container {
+  padding-left: 17px;
+  padding-right: 17px;
+ }
+}
+@media only screen and (max-width: 540px) {
+ .container.aside-container {
+  padding-right: 0;
+  padding-left: 0;
+ }
 }

@@ -81,9 +81,11 @@
  &__middle {
   margin-bottom: 107px;
  }
- &__middle-list-wrapper {
+ &__middle-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 70px;
-  display: flex;
+  width: fit-content;
  }
  &__middle-item {
   pointer-events: none;
@@ -153,12 +155,21 @@
   &__payment-wrapper {
    transform: translateY(0);
   }
+  &__top {
+   padding-right: 0;
+   margin-bottom: 99px;
+  }
   &__top-wrapper {
+   row-gap: 62px;
    flex-wrap: wrap;
+  }
+  &__middle {
+   margin-bottom: 74px;
   }
   &__middle-wrapper {
    display: flex;
    flex-wrap: wrap;
+   row-gap: 47px;
   }
   &__bottom-wrapper {
    display: flex;
@@ -185,6 +196,7 @@
    display: grid;
    grid-template-columns: 1fr 1fr;
    margin-bottom: 37px;
+   column-gap: 24px;
   }
   &__top-categories-wrapper {
    &:nth-last-child(1) {
@@ -192,10 +204,20 @@
    }
   }
   &__top-categories-list {
-   max-height: 100px;
+   display: flex;
+   flex-wrap: wrap;
+   max-height: fit-content;
+  }
+  &__top-categories-wrapper:nth-last-child(1) > &__top-categories-list {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(auto, 1fr));
+  }
+  &__middle-list {
+   grid-template-columns: repeat(3, minmax(auto, 1fr));
+   column-gap: 80px;
   }
  }
- @media screen and (max-width: 872px) {
+ @media screen and (max-width: 767px) {
   &::after {
    right: 0;
    top: 10%;
@@ -221,6 +243,17 @@
   }
   &__top {
    padding-right: 0;
+   margin-bottom: 78px;
+  }
+  &__top-wrapper {
+   row-gap: 43px;
+  }
+  &__middle {
+   margin-bottom: 55px;
+  }
+  &__middle-list {
+   grid-template-columns: repeat(2, minmax(auto, 1fr));
+   column-gap: 80px;
   }
   &__top-categories-list {
    max-height: 172px;
@@ -229,8 +262,11 @@
    display: flex;
    flex-direction: column;
   }
+  &__top-categories-wrapper:nth-last-child(1) > &__top-categories-list {
+   display: flex;
+  }
  }
- @media screen and (max-width: 510px) {
+ @media screen and (max-width: 540px) {
   &::after {
    top: 40%;
    content: url('../../../img/footer/weed2-510.svg');
@@ -246,11 +282,31 @@
   &__enterprise-icons {
    flex-wrap: wrap;
   }
+  &__top {
+   margin-bottom: 68px;
+  }
+  &__middle-wrapper {
+   row-gap: 35px;
+  }
+  &__middle {
+   margin-bottom: 43px;
+  }
+  &__middle-list {
+   display: flex;
+   flex-direction: column;
+  }
+  &__bottom-text-wrapper {
+   row-gap: 17px;
+   margin-bottom: 48px;
+  }
   &__top-categories-list {
    max-height: 100%;
   }
   &__middle-list-wrapper {
    flex-direction: column;
+  }
+  &__bottom-logo {
+   max-width: 243px;
   }
  }
 }

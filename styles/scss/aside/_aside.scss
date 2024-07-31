@@ -136,7 +136,7 @@
    padding-top: 25px;
   }
  }
- @media only screen and (max-width: 872px) {
+ @media only screen and (max-width: 767px) {
   display: none;
   height: fit-content;
   position: static;
@@ -144,20 +144,29 @@
    display: none;
   }
   &__top-wrapper {
-   padding-top: 0;
+   padding-top: 22px;
    padding-bottom: 0;
    border-bottom: none;
    margin-bottom: 0;
   }
+  &__wrapper {
+   padding-bottom: 47px;
+  }
   &__title {
-   font-size: 26px;
+   line-height: 35px;
+   font-size: 25px;
+   margin-bottom: 16px;
+   width: max-content;
   }
   &__subtitle {
+   line-height: 66.24px;
    font-size: 60px;
+   margin-bottom: 14px;
   }
  }
- @media only screen and (max-width: 510px) {
+ @media only screen and (max-width: 540px) {
   &__top-wrapper {
+   padding-top: 0;
    justify-content: space-between;
    display: flex;
    align-items: center;
@@ -168,13 +177,23 @@
    height: fit-content;
   }
   &__title {
+   line-height: 22.4px;
    font-size: 16px;
+   margin-bottom: 8px;
   }
   &__subtitle {
+   line-height: 35.33px;
    font-size: 32px;
+   margin-bottom: 0;
   }
   &__button {
    font-size: 14px;
+  }
+  &__wrapper {
+   padding-left: 20px;
+   padding-right: 16px;
+   padding-top: 13px;
+   padding-bottom: 9px;
   }
  }
 }
@@ -185,17 +204,22 @@
 }
 .aside.mobile {
  display: none;
- @media (max-width: 872px) {
+ @media (max-width: 767px) {
+  max-width: 215px;
+  max-height: 228px;
   margin-right: 13px;
-  padding-bottom: 47px;
-  padding-top: 22px;
   display: block;
+  &__top-wrapper {
+   padding-bottom: 47px;
+   padding-top: 22px;
+  }
  }
- @media only screen and (max-width: 510px) {
+ @media only screen and (max-width: 540px) {
   max-width: 340px;
   margin-right: 0;
-  padding-top: 13px;
-  padding-bottom: 9px;
+  padding-top: 0;
+  padding-bottom: 0;
+
   width: 100%;
   position: relative;
   &::before {

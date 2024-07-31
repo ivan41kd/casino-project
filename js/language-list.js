@@ -1,5 +1,5 @@
 const languageWrapper = document.querySelectorAll('.header__language-wrapper');
-if (window.innerWidth <= 872) {
+if (window.innerWidth < 1410) {
  languageWrapper.forEach((language) => {
   const languageList = language.querySelector('.header__language-list');
   const languageItem = languageList.querySelectorAll('.header__language-item');
@@ -10,7 +10,13 @@ if (window.innerWidth <= 872) {
     languageItem.forEach((item) => {
      item.addEventListener('click', () => {
       const currentLanguage = language.querySelector('.header__language');
-      currentLanguage.textContent = item.textContent;
+      const currentLanguage2 = language.querySelector('.header__item.language');
+      if (currentLanguage2) {
+       currentLanguage2.textContent = item.textContent;
+      }
+      if (currentLanguage) {
+       currentLanguage.textContent = item.textContent;
+      }
      });
     });
    } else languageList.classList.remove('active');
