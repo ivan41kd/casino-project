@@ -743,6 +743,12 @@ button {
   .header__language-wrapper.alt {
     display: none;
   }
+  .header__language-list.active {
+    top: 0;
+    right: 0;
+    position: static;
+    z-index: 10;
+  }
   .header__item-list-wrapper.burger {
     display: flex;
     flex-direction: column;
@@ -775,6 +781,7 @@ button {
     display: flex;
     flex-direction: column;
     height: 100%;
+    z-index: 2;
   }
   .header__language-wrapper {
     display: flex;
@@ -1571,6 +1578,7 @@ button {
     max-height: 228px;
     margin-right: 13px;
     display: block;
+    z-index: 5;
   }
   .aside.mobile__top-wrapper {
     padding-bottom: 47px;

@@ -532,6 +532,12 @@
   &__language-wrapper.alt {
    display: none;
   }
+  &__language-list.active {
+   top: 0;
+   right: 0;
+   position: static;
+   z-index: 10;
+  }
   &__item-list-wrapper.burger {
    display: flex;
    flex-direction: column;
@@ -564,6 +570,7 @@
    display: flex;
    flex-direction: column;
    height: 100%;
+   z-index: 2;
   }
   &__language-wrapper {
    display: flex;
