@@ -1340,7 +1340,7 @@ button {
 .main__banner-wrapper.mobile {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .main__banner-wrapper.mobile {
     display: block;
     flex: 1;
