@@ -1,6 +1,6 @@
 .main {
  transition: 0.3s;
- padding-top: 38px;
+ padding-top: rem(38px);
  padding-bottom: 134px;
  position: relative;
  display: flex;
@@ -23,33 +23,39 @@
   flex-direction: column;
  }
  &__right-content {
-  max-width: 1024px;
+  width: rem(1024px);
  }
  &__banner {
   width: 100%;
-  height: 100%;
+  height: rem(296px);
   display: flex;
   justify-content: space-between;
   object-fit: cover;
   position: relative;
   background: linear-gradient(95deg, #000d08 1.23%, #26382f 64.66%);
-  padding: 28px 36px 58px 29px;
+  padding: rem(46px) rem(36px) rem(58px) rem(29px);
   overflow: hidden;
   border-radius: 10px;
  }
  &__banner:after {
-  top: 0;
   left: 0;
+  width: rem(790px);
+  height: rem(296px);
+  top: 0;
   position: absolute;
-  content: url('../../../img/bg/spark-left.png');
+  background: url('../../../img/bg/spark-left.png') no-repeat;
+  background-size: cover;
+  content: '';
  }
  &__banner:before {
-  transform: scale(1);
-  top: -12px;
   right: 0;
   position: absolute;
   bottom: 0;
-  content: url('../../../img/bg/spark-right.png');
+  width: rem(308px);
+  height: rem(296px);
+  background: url('../../../img/bg/spark-right.png') no-repeat;
+  background-size: cover;
+  content: '';
  }
  &__bonus {
   padding: 46px 20px 50px 22px;
@@ -74,23 +80,27 @@
  &__banner-title {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
-  @include banner-font(28px);
+  @include banner-font(rem(28px));
  }
  &__banner-subtitle {
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
-  @include banner-font(76px);
+  @include banner-font(rem(76px));
  }
  &__banner-button {
   text-transform: uppercase;
   border-radius: 80px;
   color: black;
   position: relative;
-  padding: 21px 32px 21px 32px;
+  padding: rem(21px) rem(32px) rem(21px) rem(32px);
   background: url('../../../img/bg/button-bg.png');
-  max-height: 53px;
+  max-height: rem(53px);
+  font-size: rem(16px);
+  line-height: rem(18.88px);
   display: flex;
   align-items: center;
+  background-size: 100%;
+  justify-content: center;
   &::after {
    position: absolute;
    top: -2px;
@@ -139,8 +149,9 @@
  }
  &__banner-img {
   z-index: 3;
-  top: 20px;
-  right: 15%;
+  top: rem(30px);
+  right: 12%;
+  width: rem(462px);
   position: absolute;
  }
  &__banner-wrapper {
@@ -148,9 +159,9 @@
   position: relative;
  }
  &__pages-wrapper {
-  column-gap: 14px;
+  column-gap: rem(14px);
   text-transform: uppercase;
-  @include banner-font(28px);
+  @include banner-font(rem(28px));
   display: flex;
  }
  &__pages-prev {
@@ -194,6 +205,8 @@
  }
  &__banner-loader {
   transform: rotate(180deg);
+  width: rem(47px);
+  height: rem(47px);
  }
  &__banner-loader-opacity {
   transition: 0.3s;
@@ -227,14 +240,14 @@
   opacity: 1;
  }
 
- @media (max-width: 1410px) {
+ @media (max-width: 1440px) {
   &__gradient {
    display: none;
   }
   &__banner-img {
    right: 5%;
-   top: 85px;
-   width: 355px;
+   top: rem(85px);
+   width: rem(355px);
   }
   &__right-content {
    flex: 1;
@@ -245,15 +258,15 @@
   }
   &__content-wrapper {
    width: 100%;
-   padding-left: 40px;
-   padding-right: 40px;
+   padding-left: rem(40px);
+   padding-right: rem(40px);
   }
   &__wrapper {
    display: block;
   }
  }
 
- @media (max-width: 767px) {
+ @media (max-width: 1023px) {
   padding-bottom: 0;
   &__wrapper {
    width: 100%;
@@ -268,12 +281,12 @@
    display: none;
   }
   &__content-wrapper {
-   padding-right: 20px;
-   padding-left: 20px;
+   padding-right: rem(20px);
+   padding-left: rem(20px);
   }
   &__top-wrapper.mobile {
    display: flex;
-   max-height: 228px;
+   max-height: rem(228px);
   }
   &__banner-loader.prev {
    display: none;
@@ -282,19 +295,19 @@
    display: block;
   }
   &__banner-title {
-   margin-bottom: 16px;
-   font-size: 25px;
-   line-height: 35px;
+   margin-bottom: rem(16px);
+   font-size: rem(25px);
+   line-height: rem(35px);
   }
   &__banner-subtitle {
-   font-size: 60px;
-   line-height: 66.24px;
-   margin-bottom: 14px;
+   font-size: rem(60px);
+   line-height: rem(66.24px);
+   margin-bottom: rem(14px);
   }
   &__banner-img {
-   top: 70px;
+   top: rem(70px);
    right: 0;
-   width: 306px;
+   width: rem(306px);
   }
   &__banner {
    height: 100%;
@@ -306,6 +319,8 @@
   &__banner-loader.next.mobile,
   &__banner-loader.prev.mobile {
    transition: 0.3s;
+   width: rem(27px);
+   height: rem(27px);
    &:hover {
     transition: 0.3s;
     border: 2px rgba(196, 167, 103, 1) solid;
@@ -313,7 +328,7 @@
    }
   }
  }
- @media only screen and (max-width: 540px) {
+ @include onlymobile {
   padding-right: 0;
   padding-left: 0;
   &__top-wrapper.mobile {
@@ -322,32 +337,32 @@
   }
   &__banner-img {
    top: 35%;
-   width: 232px;
+   width: rem(232px);
   }
   &__banner-title {
-   font-size: 20px;
-   line-height: 28px;
+   font-size: rem(20px);
+   line-height: rem(28px);
    margin-bottom: 8px;
   }
   &__banner {
-   padding: 20px;
-   max-height: 190px;
+   padding: rem(20px);
+   height: rem(190px);
    border-radius: 0;
   }
   &__banner-subtitle {
-   font-size: 48px;
-   line-height: 52.99px;
-   margin-bottom: 16px;
+   font-size: rem(48px);
+   line-height: rem(52.99px);
+   margin-bottom: rem(16px);
   }
   &__top-wrapper.mobile {
-   row-gap: 28px;
+   row-gap: rem(28px);
   }
   &__banner-button {
-   padding: 18.39px 28.02px 18.39px 28.02px;
-   font-size: 14px;
-   line-height: 16.52px;
-   max-width: 167px;
-   max-height: 46px;
+   padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
+   font-size: rem(14px);
+   line-height: rem(16.52px);
+   width: rem(167px);
+   height: rem(46px);
   }
   &__content {
    padding-right: 0;
@@ -361,7 +376,7 @@
 }
 
 .main__banner-wrapper.mobile {
- @media (max-width: 767px) {
+ @media (max-width: 1023px) {
   display: block;
   flex: 1;
   position: relative;
@@ -371,5 +386,5 @@
 .main.games {
  width: 100%;
  flex-direction: row;
- padding-top: 37px;
+ padding-top: rem(37px);
 }

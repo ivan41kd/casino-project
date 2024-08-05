@@ -1,4 +1,8 @@
 /* Box sizing rules */
+@import './functions';
+@import './varibles';
+@import './mixins/mixin';
+
 *,
 *::before,
 *::after {
@@ -12,6 +16,18 @@ html {
  -moz-text-size-adjust: none;
  -webkit-text-size-adjust: none;
  text-size-adjust: none;
+ @media only screen and (min-width: 0px) {
+  font-size: ($base-font-size / $design-mobile-width) * 100vw;
+ }
+ @include iftablet {
+  font-size: ($base-font-size / $design-tablet-width) * 100vw;
+ }
+ @include iflaptop {
+  font-size: ($base-font-size / $design-laptop-width) * 100vw;
+ }
+ @include ifdesktop {
+  font-size: ($base-font-size / $design-desktop-width) * 100vw;
+ }
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -45,9 +61,7 @@ body {
    opacity: 1;
   }
  }
- font-size: 16px;
  font-weight: 500;
- font-family: 'TT Norms';
  min-height: 100vh;
  line-height: 1.5;
  background: rgb(35, 35, 35);
@@ -70,7 +84,28 @@ body {
 .scroll-disabled {
  overflow: hidden;
 }
-@media screen and (max-width: 1410px) {
+html,
+body {
+ max-width: 100vw;
+ font-family: $font-main;
+}
+.girl-left,
+.girl-right {
+ display: block;
+ position: sticky;
+ top: calc(30% - 100px);
+
+ bottom: 0;
+}
+.girl-left {
+ width: rem(318px);
+ top: calc(50% - 100px);
+}
+.girl-right {
+ width: rem(376px);
+ right: 0;
+}
+@media screen and (max-width: 1440px) {
  .girl-left,
  .girl-right {
   display: none;
@@ -82,36 +117,7 @@ body {
  width: 100%;
 }
 
-@media (min-width: 1411px) {
- .girl-left,
- .girl-right {
-  display: block;
-  position: sticky;
-  top: calc(30% - 100px);
-
-  bottom: 0;
- }
- .girl-left {
-  top: calc(50% - 100px);
-  width: 15%;
- }
- .girl-right {
-  width: 20%;
- }
- @media (min-height: 1080px) {
-  .girl-left,
-  .girl-right {
-   display: block;
-   position: sticky;
-   top: calc(55% - 100px);
-
-   bottom: 0;
-  }
-  .girl-left {
-   top: calc(60% - 100px);
-  }
- }
-
+@media (min-width: 1440px) {
  .content {
   position: relative;
  }

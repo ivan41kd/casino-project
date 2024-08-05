@@ -1,11 +1,11 @@
 .games {
- padding-top: 100px;
+ padding-top: rem(59px);
  position: relative;
  z-index: 4;
  &__categories-list {
   align-items: center;
   display: flex;
-  column-gap: 15px;
+  column-gap: rem(15px);
  }
  &__categories-list-inactive {
   display: none;
@@ -14,9 +14,9 @@
   display: none;
  }
  &__categories-item {
-  font-size: 15px;
-  line-height: 17.7px;
-  padding: 15px 25px 15px 25px;
+  font-size: rem(15px);
+  line-height: rem(17.7px);
+  padding: rem(15px) rem(25px) rem(15px) rem(25px);
   background: rgba(0, 0, 0, 0.7);
   border-radius: 70px;
   text-transform: uppercase;
@@ -35,17 +35,16 @@
   color: rgba(135, 38, 53, 1);
  }
  &__wrapper {
-  padding-top: 20px;
+  padding-top: rem(20px);
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
-  row-gap: 25px;
-  column-gap: 18px;
+  grid-template-columns: repeat(4, minmax(rem(150px), 1fr));
+  row-gap: rem(25px);
+  column-gap: rem(18px);
  }
  &__game {
   cursor: pointer;
 
-  max-width: 243px;
-  width: 100%;
+  width: rem(243px);
  }
  &__game-img-wrapper {
   position: relative;
@@ -77,10 +76,10 @@
   align-items: center;
   color: rgba(196, 167, 103, 1);
   background: none;
-  border-radius: 70px;
-  max-height: 46px;
-  padding: 18.39px 28.02px 18.39px 28.02px;
-  margin-bottom: 18px;
+  border-radius: rem(70px);
+  max-height: rem(46px);
+  padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
+  margin-bottom: rem(18px);
   transition: 0.3s;
   text-transform: uppercase;
   position: relative;
@@ -88,8 +87,8 @@
    content: '';
    position: absolute;
    inset: 0;
-   border-radius: 70px;
-   border: 2px solid transparent;
+   border-radius: rem(70px);
+   border: rem(2px) solid transparent;
    background: linear-gradient(
      140deg,
      rgba(238, 222, 186, 1),
@@ -104,9 +103,12 @@
    color: rgba(238, 222, 186, 1);
   }
  }
+ &__game-img {
+  width: rem(243px);
+ }
  &__game-demo {
-  font-size: 12px;
-  line-height: 14.16px;
+  font-size: rem(12px);
+  line-height: rem(14.16px);
   font-weight: 500;
   color: rgba(196, 167, 103, 1);
   text-transform: uppercase;
@@ -117,7 +119,7 @@
   }
  }
  &__game-name {
-  font-size: 18px;
+  font-size: rem(18px);
   background: radial-gradient(
    67.37% 75.21% at 0% 0.79%,
    #ffffff 0%,
@@ -126,7 +128,7 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 28.8px;
+  line-height: rem(28.8px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -137,8 +139,8 @@
   justify-content: space-between;
  }
  &__game-status {
-  font-size: 15px;
-  line-height: 17.8px;
+  font-size: rem(15px);
+  line-height: rem(17.8px);
   color: rgba(149, 29, 36, 1);
  }
  &__game-img-wrapper {
@@ -146,24 +148,24 @@
  }
  &__search {
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 70.06px;
-  padding: 15px;
-  width: 50px;
-  height: 50px;
+  border-radius: rem(70.06px);
+  padding: rem(15px);
+  width: rem(50px);
+  height: rem(50px);
   transition: 0.3s;
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
-  justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
  }
  &__search-icon {
-  min-width: 21px;
-  max-width: 21px;
+  min-width: rem(20px);
+  min-height: rem(20px);
  }
  &__search.active {
-  width: 325px;
+  width: rem(325px);
   transition: 0.3s;
  }
  &__search:hover &__search-icon-stroke {
@@ -172,11 +174,14 @@
  }
  &__search-input {
   color: rgba(216, 216, 212, 0.6);
-  width: 100%;
+  width: 0%;
   height: 100%;
   background: none;
   outline: none;
   border: none;
+ }
+ &__search.active &__search-input {
+  width: 100%;
  }
  &__filter-item {
   padding: 15px 25px 15px 25px;
@@ -185,19 +190,19 @@
   color: rgba(216, 216, 212, 0.6);
  }
  &__categories-list.filter {
-  row-gap: 15px;
+  row-gap: rem(15px);
   flex-wrap: wrap;
-  max-width: 1284px;
+  max-width: rem(1284px);
  }
  &__show-more {
   align-self: center;
-  font-size: 14px;
+  font-size: rem(14px);
   text-transform: uppercase;
-  line-height: 16.52px;
+  line-height: rem(16.52px);
   display: flex;
   background: none;
   @include gold-color;
-  padding: 18.39px 28.02px 18.39px 28.02px;
+  padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
   border: 2px solid;
   border-radius: 70px;
   transition: 0.5s;
@@ -211,10 +216,11 @@
   display: none;
  }
 
- @media (max-width: 1410px) {
-  padding-top: 35px;
+ @media (max-width: 1440px) {
+  padding-top: rem(35px);
   &__game {
    cursor: none;
+   width: rem(223px);
   }
   &__categories-list {
    flex-wrap: wrap;
@@ -223,11 +229,12 @@
   &__wrapper {
    justify-items: center;
    display: grid;
-   grid-template-columns: repeat(3, minmax(150px, 1fr));
+   grid-template-columns: repeat(3, minmax(rem(150px), 1fr));
+   row-gap: rem(24.77px);
   }
   &__categories {
    flex-direction: column;
-   row-gap: 15px;
+   row-gap: rem(15px);
   }
   &__game-img-wrapper {
    position: relative;
@@ -255,22 +262,25 @@
    opacity: 0;
   }
  }
- @media only screen and (max-width: 767px) {
-  padding-top: 50px;
+ @media only screen and (max-width: 1023px) {
+  padding-top: rem(50px);
  }
- @media only screen and (max-width: 540px) {
-  padding-left: 20px;
-  padding-right: 20px;
+ @include onlymobile {
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  &__game {
+   width: rem(161px);
+  }
   &__wrapper {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   grid-template-columns: repeat(auto-fill, minmax(rem(150px), 1fr));
   }
   &__search.active {
    width: 150%;
   }
   &__game-name {
-   font-size: 16px;
-   line-height: 18.88px;
+   font-size: rem(16px);
+   line-height: rem(18.88px);
   }
   &__categories {
    flex-direction: row;
@@ -297,7 +307,7 @@
   &__categories-item.mobile.active {
    display: flex !important;
    align-items: center;
-   margin-bottom: 15px;
+   margin-bottom: rem(15px);
   }
 
   &__categories-list-wrapper.mobile &__categories-item.mobile {
@@ -324,7 +334,7 @@
    display: flex;
    border-radius: 0;
    background: rgba(16, 16, 16, 1);
-   border-radius: 70px;
+   border-radius: rem(70px);
 
    &::after {
     transition: 0.3s;
@@ -332,10 +342,10 @@
    }
   }
   &__categories-list-wrapper.mobile.opened {
-   border-radius: 15px;
+   border-radius: rem(15px);
   }
   &__categories-list-inactive {
-   border-radius: 15px;
+   border-radius: rem(15px);
    background: rgba(16, 16, 16, 1);
    display: block;
    max-height: 0;

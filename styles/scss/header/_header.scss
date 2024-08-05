@@ -14,8 +14,6 @@
   align-items: center;
  }
  &__nav {
-  max-width: 811px;
-  width: 100%;
   display: flex;
  }
  @keyframes fadeInAnimation {
@@ -34,15 +32,14 @@
   justify-content: space-between;
   display: none;
   grid-template-columns: 1fr 1fr;
-  max-width: 1083px;
+  width: rem(1083px);
   top: 80%;
   min-width: fit-content;
-  width: 100%;
-  padding: 24px;
+  padding: rem(24px);
   left: 50%;
   transform: translateX(-50%);
-  gap: 15px;
-  border-radius: 10px;
+  gap: rem(15px);
+  border-radius: rem(10px);
   position: absolute;
   background: rgba(27, 27, 27, 1);
   opacity: 0;
@@ -51,14 +48,13 @@
   box-shadow: 4px 4px 21.8px 0px rgba(0, 0, 0, 0.4);
  }
  &__language-list {
-  width: 100%;
-  max-width: 85px;
+  width: rem(85px);
   flex-direction: column;
-  row-gap: 6px;
+  row-gap: rem(6px);
   background: rgba(27, 27, 27, 1);
   box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
-  padding: 4px 0px 4px 0px;
-  border-radius: 10px;
+  padding: rem(4px) 0px rem(4px) 0px;
+  border-radius: rem(10px);
   opacity: 0;
   position: absolute;
   display: none;
@@ -67,8 +63,8 @@
  &__language-item {
   position: relative;
   font-weight: 400;
-  line-height: 25.6px;
-  font-size: 16px;
+  line-height: rem(25.6px);
+  font-size: rem(16px);
   padding: 6px 16px 6px 16px;
   z-index: 3;
   &:active {
@@ -76,13 +72,13 @@
   }
  }
  &__item-list-name-wrapper {
-  gap: 14px;
+  gap: rem(14px);
   color: rgba(255, 255, 255, 1);
   display: flex;
-  margin-bottom: 13px;
+  margin-bottom: rem(13px);
  }
  &__item-list-wrapper {
-  padding: 15px;
+  padding: rem(15px);
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -91,16 +87,15 @@
   background: rgba(196, 167, 103, 0.07);
  }
  &__menu {
-  max-width: 811px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: rem(64px);
  }
  &__item {
   display: flex;
   align-items: center;
-  line-height: 17.7px;
+  line-height: rem(17.7px);
   text-transform: uppercase;
   transition: 0.3s;
   font-weight: 400;
@@ -123,37 +118,41 @@
  }
 
  &__item-list-description {
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 400;
-  line-height: 25.6px;
+  line-height: rem(25.6px);
   color: rgba(216, 216, 212, 1);
   text-transform: none;
  }
  &__item-name {
   opacity: 0;
   @include banner-font(28px);
-  margin-right: 135px;
+  margin-right: rem(135px);
  }
- @media (min-width: 1410px) {
-  &__item:hover &__item-list {
-   transition: all 0.5s ease;
-   display: grid;
-   opacity: 1;
-   visibility: visible;
-  }
-  &__item:hover {
-   padding: 30px 0;
-  }
-  &__item.language:hover {
-   padding: 0;
-   cursor: pointer;
-  }
+ &__logo {
+  width: rem(298px);
+ }
+ &__item:hover &__item-list {
+  transition: all 0.5s ease;
+  display: grid;
+  opacity: 1;
+  visibility: visible;
+ }
+ &__item:hover {
+  padding: rem(30px) 0;
+ }
+ &__item.language:hover {
+  padding: 0;
+  cursor: pointer;
+ }
+ @include ifdesktop {
   &__language-wrapper:hover &__language-list {
    display: flex;
    opacity: 1;
    flex-direction: column;
   }
  }
+
  &__item:hover &__item-name {
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -169,7 +168,7 @@
   align-items: center;
  }
  &__user-logo {
-  margin-right: 8px;
+  margin-right: rem(8px);
  }
  &__user-name {
   margin-right: 24px;
@@ -186,8 +185,8 @@
   position: relative;
   z-index: 1;
 
-  border-radius: 70px;
-  margin-right: 27px;
+  border-radius: rem(70px);
+  margin-right: rem(27px);
   color: rgba(196, 167, 103, 1);
 
   &:hover {
@@ -199,8 +198,8 @@
    content: '';
    position: absolute;
    inset: 0;
-   border-radius: 70px;
-   border: 2px solid transparent;
+   border-radius: rem(70px);
+   border: rem(2px) solid transparent;
    background: linear-gradient(
      140deg,
      rgba(238, 222, 186, 1),
@@ -220,16 +219,16 @@
  &__signup {
   width: max-content;
   align-items: center;
-  font-size: 14px;
+  font-size: rem(14px);
   text-transform: uppercase;
-  line-height: 16.52px;
+  line-height: rem(16.52px);
   display: flex;
   background: none;
   @include gold-color;
-  padding: 18.39px 28.02px 18.39px 28.02px;
-  border-radius: 70px;
+  padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
+  border-radius: rem(70px);
   transition: 0.5s;
-  max-height: 46px;
+  height: rem(46px);
 
   &:hover {
    transition: 0.5s;
@@ -238,12 +237,12 @@
  }
  &__signup {
   position: relative;
-  border: 2px solid transparent;
-  border-radius: 70.06px;
+  border: rem(2px) solid transparent;
+  border-radius: rem(70.06px);
   background: url('../../../img/bg/button-bg.png');
   color: black;
   background-clip: padding-box;
-  padding: 18.39px 28.02px 18.39px 28.02px;
+  padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
   display: flex;
   align-items: center;
   background-size: 100%;
@@ -272,10 +271,10 @@
     position: absolute;
     content: '';
     background: rgba(0, 0, 0, 0.2);
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
+    top: rem(-2px);
+    bottom: rem(-2px);
+    left: rem(-2px);
+    right: rem(-2px);
    }
   }
  }
@@ -298,7 +297,7 @@
  &__language-wrapper.alt {
   display: none;
  }
- @media screen and (max-width: 1410px) {
+ @media screen and (max-width: 1440px) {
   &__user-wrapper {
    display: none;
   }
@@ -306,7 +305,7 @@
    display: flex;
    justify-content: end;
    width: 100%;
-   margin-right: 26px;
+   margin-right: rem(26px);
    position: relative;
   }
   &__language-list.active {
@@ -315,6 +314,8 @@
    z-index: 1;
   }
   &__burger-icon {
+   width: rem(46px);
+   height: rem(46px);
    display: block;
    position: relative;
   }
@@ -351,7 +352,7 @@
    background: rgba(35, 35, 35, 1);
    position: absolute;
    z-index: 2;
-   padding: 75px;
+   padding: rem(75px);
    height: 100vh;
    justify-items: center;
    transform: translateX(-100%);
@@ -369,8 +370,8 @@
   &__item-list-wrapper.burger {
    padding: 0;
    display: grid;
-   grid-gap: 10px;
-   column-gap: 108px;
+   grid-gap: rem(10px);
+   column-gap: rem(108px);
    opacity: 1;
    z-index: 3;
    grid-auto-columns: 1fr 1fr;
@@ -394,20 +395,20 @@
   }
   &__item {
    cursor: pointer;
-   font-size: 14px;
+   font-size: rem(14px);
    width: max-content;
   }
   &__menu-item-list {
    display: flex;
    flex-direction: column;
-   row-gap: 22px;
+   row-gap: rem(22px);
   }
   &__item-name {
    opacity: 1;
    text-transform: uppercase;
-   @include banner-font(25px);
+   @include banner-font(rem(25px));
    color: rgba(203, 61, 69, 1);
-   margin-bottom: 38px;
+   margin-bottom: rem(38px);
    margin-right: 0;
   }
   &__item {
@@ -433,15 +434,13 @@
   }
   &__login {
    justify-content: center;
-   max-width: 185px;
-   width: 100%;
+   width: rem(185px);
    margin-right: 0;
   }
   &__signup {
    justify-content: center;
-   max-width: 185px;
-   width: 100%;
-   margin-bottom: 17px;
+   width: rem(185px);
+   margin-bottom: rem(17px);
   }
   &__button-wrapper {
    align-items: center;
@@ -452,7 +451,7 @@
   }
   &__item-list-left,
   &__item-list-right {
-   row-gap: 50px;
+   row-gap: rem(50px);
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -475,8 +474,8 @@
   }
   &__burger-wrapper {
    display: grid;
-   grid-gap: 10px;
-   column-gap: 108px;
+   grid-gap: rem(10px);
+   column-gap: rem(108px);
    opacity: 1;
    z-index: 3;
    grid-template-columns: 1fr 1fr;
@@ -508,15 +507,18 @@
    max-width: 100%;
   }
  }
- @media screen and (max-width: 767px) {
+ @media screen and (max-width: 1023px) {
   &__menu.burger.active {
    overflow-y: scroll;
+   width: 100vw;
+   padding-right: 0;
   }
   &__burger-wrapper {
    column-gap: 0;
    &::after {
     content: none;
    }
+
    &::before {
     left: 0;
     top: 0;
@@ -528,6 +530,8 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
    }
+  }
+  &__burger-icon {
   }
   &__language-wrapper.alt {
    display: none;
@@ -541,7 +545,7 @@
   &__item-list-wrapper.burger {
    display: flex;
    flex-direction: column;
-   padding-right: 135px;
+   padding-right: 0;
    row-gap: 48px;
    &::after {
     display: none;
@@ -549,9 +553,10 @@
    border-right: 1px rgba(196, 167, 103, 0.4) solid;
   }
   &__menu.burger {
-   padding: 50px;
+   padding-left: rem(50px);
   }
   &__button-wrapper {
+   padding: 0px rem(91px) 0px rem(91px);
    flex: 1;
    justify-content: center;
    position: relative;
@@ -619,10 +624,14 @@
     background: rgba(255, 255, 255, 0.05);
    }
   }
+  &__signup,
+  &__login {
+   width: rem(250px);
+  }
  }
- @media screen and (max-width: 540px) {
+ @include onlymobile {
   &__logo {
-   width: 200px;
+   width: rem(200px);
   }
   &__language-wrapper.mobile {
    display: flex;
@@ -630,13 +639,19 @@
   &__language-wrapper {
    display: none;
   }
+  &__menu.burger.active {
+   padding-left: rem(20px);
+   padding-right: rem(20px);
+   padding-bottom: rem(90px);
+   padding-top: rem(90px);
+  }
   &__burger-wrapper {
    overflow: hidden !important;
    justify-content: center;
    display: flex;
    flex-direction: column;
    width: 100%;
-   row-gap: 110px;
+   row-gap: rem(110px);
    &::after {
     top: 20%;
     right: 0;
@@ -660,18 +675,18 @@
    align-items: center;
    padding-right: 0;
    border-right: none;
-   row-gap: 37px;
+   row-gap: rem(37px);
   }
   &__menu-item-list {
    display: none;
   }
   &__item-list-left,
   &__item-list-right {
-   row-gap: 37px;
+   row-gap: rem(37px);
    align-items: center;
   }
   &__item-list-left {
-   margin-bottom: 33px;
+   margin-bottom: rem(33px);
   }
   &__item-name {
    display: flex;
@@ -679,7 +694,7 @@
    font-family: 'TT Norms', sans-serif;
    color: rgba(216, 216, 212, 1);
    font-weight: 400;
-   font-size: 16px;
+   font-size: rem(16px);
    margin-bottom: 0;
    &:hover {
     transition: 0.3s;
@@ -713,10 +728,9 @@
   }
   &__menu-item-list.active {
    transition: 0.3s;
-   border-radius: 15px;
-   padding: 6px 16px 6px;
-   max-width: 320px;
-   width: 100%;
+   border-radius: rem(15px);
+   padding: rem(6px) rem(16px) rem(6px);
+   width: rem(320px);
    background: rgba(16, 16, 16, 1);
    display: flex;
    flex-direction: column;
@@ -727,15 +741,14 @@
    align-items: center;
   }
   &__menu.burger.active {
-   row-gap: 112px;
+   row-gap: rem(112px);
   }
   &__item:active {
    background: rgba(255, 255, 255, 0.05);
   }
   &__login,
   &__signup {
-   max-width: 320px;
-   width: 100%;
+   width: rem(320px);
   }
   &__button-wrapper {
    &::after {
@@ -767,7 +780,7 @@
   );
  }
 }
-@media screen and (max-width: 510px) {
+@include onlymobile {
  .header.fixed > .weed-background {
   transform: translateY(-36px);
  }

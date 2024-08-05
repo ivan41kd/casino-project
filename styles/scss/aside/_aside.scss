@@ -1,12 +1,11 @@
 .aside {
  background: rgba(0, 0, 0, 0.4);
  z-index: 6;
- margin-right: 17px;
+ margin-right: rem(17px);
  transition: 0.3s;
  height: fit-content;
  position: sticky;
- max-width: 243px;
- width: 100%;
+ width: rem(243px);
  border-radius: 10px;
  top: 0;
  &__wrapper {
@@ -14,7 +13,7 @@
   flex-direction: column;
  }
  &__item-wrapper {
-  column-gap: 12px;
+  column-gap: rem(12px);
   display: flex;
   align-items: center;
   transition: 0.3s;
@@ -25,44 +24,49 @@
   }
  }
  &__list {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  padding-bottom: rem(20px);
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: rem(20px);
  }
  &__top-wrapper {
-  padding-bottom: 52px;
-  margin-bottom: 52px;
-  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+  padding-bottom: rem(52px);
+  margin-bottom: rem(52px);
+  border-bottom: rem(1px) rgba(255, 255, 255, 0.2) solid;
  }
  &__img {
   transform: scale(1.1);
-  margin-bottom: 51px;
+  margin-bottom: rem(51px);
+  width: rem(270.71px);
  }
  &__title {
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
-  @include banner-font(28px);
+  @include banner-font(rem(28px));
+  line-height: rem(30.91px);
  }
  &__subtitle {
   color: rgba(255, 255, 255, 1);
-  @include banner-font(76px);
+  line-height: rem(83.9px);
+  @include banner-font(rem(76px));
+  margin-bottom: 15px;
  }
  &__item-wrapper {
-  font-size: 14px;
-  line-height: 16.52px;
+  font-size: rem(14px);
+  line-height: rem(16.52px);
   font-weight: 500;
  }
  &__button {
-  font-size: 16px;
+  font-size: rem(16px);
   text-transform: uppercase;
-  line-height: 16.52px;
+  line-height: rem(16.52px);
   display: flex;
   background: none;
   @include gold-color;
-  padding: 18.39px 28.02px 18.39px 28.02px;
-  border-radius: 70px;
+  padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
+  border-radius: rem(70px);
   transition: 0.3s;
   position: relative;
   &:hover {
@@ -74,7 +78,7 @@
    content: '';
    position: absolute;
    inset: 0;
-   border-radius: 70px;
+   border-radius: rem(70px);
    border: 2px solid transparent;
    background: linear-gradient(
      140deg,
@@ -93,7 +97,7 @@
 
  &__item {
   column-gap: 12px;
-  padding-left: 10px;
+  padding-left: rem(10px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -102,24 +106,24 @@
   cursor: default;
  }
  &__item.selected {
-  padding-top: 10px;
+  padding-top: rem(10px);
   background: rgba(0, 0, 0, 0.4);
  }
  &__item-list {
-  row-gap: 19px;
+  row-gap: rem(19px);
   flex-direction: column;
   display: flex;
-  padding: 32px;
+  padding: rem(32px);
   align-items: flex-start;
  }
  &__item-list-wrapper {
   display: flex;
-  column-gap: 8px;
+  column-gap: rem(8px);
   align-items: center;
  }
  &__list-item {
-  font-size: 12px;
-  line-height: 14.16px;
+  font-size: rem(12px);
+  line-height: rem(14.16px);
   color: rgba(196, 167, 103, 1);
   transition: 0.3s;
   cursor: pointer;
@@ -128,7 +132,7 @@
    color: rgba(255, 255, 255, 1);
   }
  }
- @media only screen and (max-width: 1410px) {
+ @media (max-width: 1440px) {
   &__img {
    display: none;
   }
@@ -136,7 +140,7 @@
    padding-top: 25px;
   }
  }
- @media only screen and (max-width: 767px) {
+ @media (max-width: 1023px) {
   display: none;
   height: fit-content;
   position: static;
@@ -144,27 +148,27 @@
    display: none;
   }
   &__top-wrapper {
-   padding-top: 22px;
+   padding-top: rem(22px);
    padding-bottom: 0;
    border-bottom: none;
    margin-bottom: 0;
   }
   &__wrapper {
-   padding-bottom: 47px;
+   padding-bottom: rem(47px);
   }
   &__title {
-   line-height: 35px;
-   font-size: 25px;
-   margin-bottom: 16px;
+   line-height: rem(35px);
+   font-size: rem(25px);
+   margin-bottom: rem(16px);
    width: max-content;
   }
   &__subtitle {
-   line-height: 66.24px;
-   font-size: 60px;
-   margin-bottom: 14px;
+   line-height: rem(66.24px);
+   font-size: rem(60px);
+   margin-bottom: rem(14px);
   }
  }
- @media only screen and (max-width: 540px) {
+ @include onlymobile {
   &__top-wrapper {
    padding-top: 0;
    justify-content: space-between;
@@ -172,28 +176,28 @@
    align-items: center;
   }
   &__button {
-   max-height: 46px;
+   height: rem(46px);
    align-items: center;
    height: fit-content;
   }
   &__title {
-   line-height: 22.4px;
-   font-size: 16px;
-   margin-bottom: 8px;
+   line-height: rem(22.4px);
+   font-size: rem(16px);
+   margin-bottom: rem(8px);
   }
   &__subtitle {
-   line-height: 35.33px;
-   font-size: 32px;
+   line-height: rem(35.33px);
+   font-size: rem(32px);
    margin-bottom: 0;
   }
   &__button {
-   font-size: 14px;
+   font-size: rem(14px);
   }
   &__wrapper {
-   padding-left: 20px;
-   padding-right: 16px;
-   padding-top: 13px;
-   padding-bottom: 9px;
+   padding-left: rem(20px);
+   padding-right: rem(16px);
+   padding-top: rem(13px);
+   padding-bottom: rem(9px);
   }
  }
 }
@@ -204,24 +208,24 @@
 }
 .aside.mobile {
  display: none;
- @media (max-width: 767px) {
-  max-width: 215px;
-  max-height: 228px;
-  margin-right: 13px;
+ @media (max-width: 1023px) {
+  width: rem(215px);
+  height: rem(228px);
+  margin-right: rem(13px);
   display: block;
   z-index: 5;
   &__top-wrapper {
-   padding-bottom: 47px;
-   padding-top: 22px;
+   padding-bottom: rem(47px);
+   padding-top: rem(22px);
   }
  }
- @media only screen and (max-width: 540px) {
-  max-width: 340px;
+ @include onlymobile {
+  width: rem(340px);
+  height: 100%;
   margin-right: 0;
   padding-top: 0;
   padding-bottom: 0;
 
-  width: 100%;
   position: relative;
   &::before {
    position: absolute;

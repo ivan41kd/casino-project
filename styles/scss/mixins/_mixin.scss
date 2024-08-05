@@ -1,8 +1,30 @@
 @mixin gold-color {
-  color: rgba(196, 167, 103, 1);
+ color: rgba(196, 167, 103, 1);
 }
 @mixin banner-font($fs) {
-  font-family: 'Forum', sans-serif;
-  font-weight: 400;
-  font-size: $fs;
+ font-family: 'Forum', sans-serif;
+ font-weight: 400;
+ font-size: $fs;
+}
+@import '../varibles.scss';
+
+@mixin ifdesktop {
+ @media (min-width: 1441px) {
+  @content;
+ }
+}
+@mixin iflaptop {
+ @media (min-width: $laptop-w) {
+  @content;
+ }
+}
+@mixin iftablet {
+ @media (min-width: $tablet-w) {
+  @content;
+ }
+}
+@mixin onlymobile {
+ @media (min-width: 0px) and (max-width: calc($tablet-w - 1px)) {
+  @content;
+ }
 }

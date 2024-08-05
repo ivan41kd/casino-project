@@ -1,13 +1,13 @@
 .container {
- padding-left: 70px;
- padding-right: 70px;
- @media (max-width: 1410px) {
-  padding-left: 40px;
-  padding-right: 40px;
+ padding-left: rem(70px);
+ padding-right: rem(70px);
+ @media (max-width: 1023px) {
+  padding-left: rem(40px);
+  padding-right: rem(40px);
  }
- @media (max-width: 767px) {
-  padding-left: 20px;
-  padding-right: 20px;
+ @media (max-width: 768px) {
+  padding-left: rem(20px);
+  padding-right: rem(20px);
  }
 }
 .container .main__top-wrapper.mobile {
@@ -16,16 +16,16 @@
 }
 
 .container.aside-container {
- padding-left: 20px;
- padding-right: 20px;
+ padding-left: rem(20px);
+ padding-right: rem(20px);
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
  .container.aside-container {
   padding-left: 17px;
   padding-right: 17px;
  }
 }
-@media only screen and (max-width: 540px) {
+@include onlymobile {
  .container.aside-container {
   padding-right: 0;
   padding-left: 0;
