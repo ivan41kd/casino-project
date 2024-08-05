@@ -1903,7 +1903,7 @@ button {
     opacity: 0;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .games {
     padding-top: 3.5714285714rem;
   }
@@ -2372,7 +2372,7 @@ button {
          column-gap: 5.7142857143rem;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .footer::after {
     right: 0;
     top: 10%;
