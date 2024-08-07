@@ -72,12 +72,18 @@ body {
  &::before {
   position: fixed;
   content: '';
-  background: url('../../img/bg/bg-pic.png');
+  background: radial-gradient(
+    40.73% 75.46% at 50% 47.59%,
+    #000000 3.53%,
+    rgb(0 0 0) 72.69%
+   ),
+   url(../../img/bg/bg-pic.png);
   width: 100%;
   height: 100%;
   background-size: 100%;
-  opacity: 0.11;
+  opacity: 10%;
   top: 0;
+  background-blend-mode: overlay;
   background-repeat: no-repeat;
  }
 }
@@ -104,6 +110,9 @@ body {
 .girl-right {
  width: rem(376px);
  right: 0;
+}
+.content {
+ position: relative;
 }
 @media screen and (max-width: 1440px) {
  .girl-left,

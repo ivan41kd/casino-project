@@ -1,7 +1,7 @@
 .main {
  transition: 0.3s;
  padding-top: rem(38px);
- padding-bottom: 134px;
+ padding-bottom: rem(154px);
  position: relative;
  display: flex;
  flex-direction: column;
@@ -14,8 +14,9 @@
   justify-content: space-between;
   align-items: flex-start;
  }
+
  &__content-wrapper {
-  width: 106%;
+  width: 100%;
   display: flex;
  }
  &__wrapper.games {
@@ -81,11 +82,13 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
   @include banner-font(rem(28px));
+  line-height: rem(30.91px);
  }
  &__banner-subtitle {
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
   @include banner-font(rem(76px));
+  line-height: rem(83.9px);
  }
  &__banner-button {
   text-transform: uppercase;
@@ -202,6 +205,7 @@
   align-items: flex-start;
   height: fit-content;
   z-index: 1;
+  transform: translate(15%, -30%);
  }
  &__banner-loader {
   transform: rotate(180deg);
@@ -213,7 +217,7 @@
   opacity: 0.3;
  }
  &__banner-loader.next {
-  transform: scale(1, -1);
+  transform: scale(1, -1) translate(-5px, 0);
  }
  &__banner-loader.prev.mobile {
   display: none;
@@ -280,6 +284,10 @@
   &__banner-wrapper {
    display: none;
   }
+  &__banner-button {
+   width: rem(147px);
+   font-size: rem(14px);
+  }
   &__content-wrapper {
    padding-right: rem(20px);
    padding-left: rem(20px);
@@ -287,6 +295,9 @@
   &__top-wrapper.mobile {
    display: flex;
    max-height: rem(228px);
+  }
+  &__banner-loader-wrapper {
+   transform: translate(0, 0);
   }
   &__banner-loader.prev {
    display: none;
@@ -327,6 +338,9 @@
     border-radius: 30px;
    }
   }
+  &__banner-loader.next {
+   transform: translate(0, 0);
+  }
  }
  @include onlymobile {
   padding-right: 0;
@@ -361,7 +375,7 @@
    padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
    font-size: rem(14px);
    line-height: rem(16.52px);
-   width: rem(167px);
+   width: rem(147px);
    height: rem(46px);
   }
   &__content {

@@ -138,8 +138,10 @@
   opacity: 1;
   visibility: visible;
  }
- &__item:hover {
-  padding: rem(30px) 0;
+ @include ifdesktop {
+  &__item:hover {
+   padding: rem(30px) 0;
+  }
  }
  &__item.language:hover {
   padding: 0;
@@ -564,9 +566,8 @@
     position: absolute;
     right: auto;
     content: url('../../../img/bg/weed-burger-1024.svg');
-    top: 0;
-    transform: translateY(160%);
-    position: fixed;
+    bottom: -10%;
+    position: absolute;
    }
   }
   &__burger-right {
@@ -576,6 +577,14 @@
    flex-direction: column;
    height: 100%;
    z-index: 2;
+  }
+  &__item-name {
+   font-size: rem(20px);
+   line-height: rem(28px);
+  }
+  &__item {
+   font-size: rem(14px);
+   line-height: rem(16.52px);
   }
   &__language-wrapper {
    display: flex;
@@ -605,20 +614,20 @@
   &__language-list {
    display: none;
    flex-direction: column;
-   row-gap: 6px;
+   row-gap: rem(6px);
    background: rgba(27, 27, 27, 1);
    box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
-   padding: 4px 0px 4px 0px;
-   border-radius: 10px;
+   padding: rem(4px) 0px rem(4px) 0px;
+   border-radius: rem(10px);
    opacity: 0;
   }
 
   &__language-item {
    position: relative;
    font-weight: 400;
-   line-height: 25.6px;
-   font-size: 16px;
-   padding: 6px 16px 6px 16px;
+   line-height: rem(25.6px);
+   font-size: rem(16px);
+   padding: rem(6px) rem(16px) rem(6px) rem(16px);
    z-index: 3;
    &:active {
     background: rgba(255, 255, 255, 0.05);
@@ -759,6 +768,9 @@
     transform: translateY(160%);
     position: fixed;
    }
+  }
+  &__language {
+   justify-content: center;
   }
  }
 }

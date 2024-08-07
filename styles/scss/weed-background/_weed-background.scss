@@ -20,12 +20,12 @@
   left: 0;
  }
 }
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1440px) {
  .weed-background.fixed {
   transform: translateY(60px);
  }
 }
-@media screen and (max-width: 540px) {
+@include onlymobile {
  .weed-background.fixed {
   transform: translateY(30px);
  }

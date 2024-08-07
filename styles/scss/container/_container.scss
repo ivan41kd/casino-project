@@ -1,6 +1,10 @@
 .container {
  padding-left: rem(70px);
  padding-right: rem(70px);
+ @media (max-width: 1440px) {
+  padding-left: rem(40px);
+  padding-right: rem(40px);
+ }
  @media (max-width: 1023px) {
   padding-left: rem(40px);
   padding-right: rem(40px);
