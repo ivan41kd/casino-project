@@ -7,6 +7,7 @@
  right: 0;
  top: 0;
  height: 0;
+ z-index: -1;
  transform: translateY(-140px);
  &__weed-second {
   right: 0;
@@ -19,6 +20,9 @@
   top: 0;
   left: 0;
  }
+}
+.weed-background.green {
+ transform: translateY(-185px);
 }
 @media screen and (max-width: 1440px) {
  .weed-background.fixed {

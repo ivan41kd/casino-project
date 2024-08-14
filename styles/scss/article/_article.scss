@@ -1,0 +1,42 @@
+.partners-form {
+ padding-top: rem(117px);
+ padding-bottom: rem(187px);
+ position: relative;
+ &::before {
+  z-index: 2;
+  position: absolute;
+  content: '';
+  background: radial-gradient(
+   50% 50% at 50% 50%,
+   rgba(196, 167, 103, 0.3) 0%,
+   rgba(196, 167, 103, 0) 100%
+  );
+
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 918px;
+  height: 742px;
+  transform: translate(20%, -30%);
+ }
+ @media (max-width: 1440px) {
+  padding-left: rem(40px);
+  padding-right: rem(40px);
+  padding-bottom: 0;
+  &::before {
+   transform: translate(0%, -30%);
+  }
+ }
+ @media (max-width: 1023px) {
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  padding-bottom: 0;
+  &::before {
+   width: rem(449px);
+   height: rem(627px);
+   transform: translate(-14%, -15%);
+  }
+ }
+ @include onlymobile {
+  padding-top: rem(76px);
+ }
+}

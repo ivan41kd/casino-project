@@ -11,6 +11,7 @@
   height: rem(790px);
   position: absolute;
   background: linear-gradient(180deg, rgba(16, 16, 16, 0) 0%, #101010 87.87%);
+  z-index: -1;
  }
  &__attention {
   padding: rem(20px);
@@ -115,5 +116,16 @@
    font-size: rem(14px);
    line-height: rem(22.4px);
   }
+ }
+}
+.introduction.page {
+ &::after {
+  content: '';
+  bottom: -11rem;
+  width: 150vw;
+  height: rem(1000px);
+  position: absolute;
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0) 0%, #101010 87.87%);
+  z-index: -1;
  }
 }

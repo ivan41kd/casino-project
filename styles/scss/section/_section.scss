@@ -1,0 +1,8 @@
+.nuances {
+ padding-top: rem(62px);
+ padding-bottom: rem(110px);
+
+ @media (max-width: 1440px) {
+  padding-bottom: rem(41px);
+ }
+}

@@ -1,0 +1,211 @@
+.faq {
+ @keyframes animFade {
+  0% {
+   max-height: 0;
+  }
+
+  100% {
+   max-height: 100%;
+  }
+ }
+ &__wrapper {
+  display: flex;
+  flex-direction: column;
+ }
+ &__wrapper-names.mobile {
+  display: none;
+ }
+ &__wrapper-names {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px rgba(216, 216, 212, 0.2) solid;
+ }
+ &__name {
+  font-size: rem(15px);
+  line-height: rem(17.7px);
+  color: rgba(216, 216, 212, 0.6);
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s;
+  padding: rem(15px) rem(25px) rem(15px) rem(25px);
+  cursor: pointer;
+  &:hover {
+   transition: 0.5s;
+   color: rgba(216, 216, 212, 1);
+  }
+ }
+ &__name.active {
+  position: relative;
+  color: rgba(255, 255, 255, 1);
+  &::after {
+   position: absolute;
+   content: '';
+   width: 100%;
+   height: 1.5px;
+   right: 0;
+   bottom: -2%;
+   background: rgba(203, 61, 69, 1);
+  }
+ }
+ &__questions-wrapper {
+  padding-top: rem(53px);
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(17px);
+ }
+ &__item-title {
+  @include banner-font(rem(25px));
+  line-height: rem(35px);
+  color: rgba(203, 61, 69, 1);
+  text-transform: uppercase;
+ }
+ &__item-text-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ }
+ &__item-title-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+ }
+ &__item-description-wrapper {
+  width: rem(1160px);
+  overflow: hidden;
+ }
+ &__item-description {
+  font-size: rem(18px);
+  line-height: rem(28.8px);
+  font-weight: 300;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  color: rgba(255, 255, 255, 0.8);
+ }
+
+ &__item-wrapper {
+  padding: rem(25px) rem(20px) rem(25px) rem(20px);
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  border-radius: rem(10px);
+  cursor: pointer;
+ }
+ &__item-wrapper.active &__item-description {
+  max-height: rem(1000px);
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+ }
+ @media (max-width: 1440px) {
+  &__name {
+   font-size: rem(13px);
+   line-height: rem(17.7px);
+   padding: rem(15px) rem(25px) rem(15px) rem(25px);
+  }
+  &__item-description-wrapper {
+   width: rem(852px);
+  }
+ }
+ @media (max-width: 1023px) {
+  &__name {
+   font-size: rem(12px);
+   line-height: rem(14.16px);
+   padding: rem(15px) rem(7px) rem(15px) rem(7px);
+  }
+  &__item-title {
+   font-size: rem(20px);
+  }
+  &__item-description-wrapper {
+   width: rem(624px);
+  }
+  &__item-wrapper {
+   padding: rem(27.5px) rem(20px) rem(27.5px) rem(20px);
+  }
+  &__item-description {
+   font-size: rem(16px);
+  }
+ }
+ @include onlymobile {
+  &__wrapper-names {
+   display: none;
+  }
+  &__questions-wrapper {
+   padding-top: rem(24px);
+  }
+  &__wrapper-names.mobile {
+   border-bottom: none;
+   display: flex;
+   flex-direction: column;
+   row-gap: rem(5px);
+  }
+  &__name.current,
+  &__name.mobile {
+   padding: 0;
+  }
+  &__item-title {
+   font-size: rem(16px);
+   line-height: rem(22.4px);
+  }
+  &__item-description-wrapper {
+   width: rem(235px);
+  }
+  &__item-description {
+   font-size: rem(16px);
+   line-height: rem(25.6px);
+  }
+  &__name.current {
+   padding: rem(16px) rem(25px) rem(16px) rem(25px);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-transform: capitalize;
+   font-weight: 400;
+   background: rgba(0, 0, 0, 0.5);
+   border-radius: rem(70.06px);
+
+   &::after {
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    content: url('../../../img/icons/dropdown-icon.svg');
+   }
+  }
+  &__names-list {
+   display: flex;
+   flex-direction: column;
+   background: rgba(16, 16, 16, 1);
+   box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
+   width: rem(264px);
+   border-radius: rem(15px);
+   align-self: center;
+   overflow: hidden;
+   max-height: 0;
+   transition: 0.5s;
+  }
+
+  &__names-list.active {
+   max-height: rem(1000px);
+   transition: 0.5s;
+  }
+
+  &__name.mobile {
+   display: flex;
+   align-items: center;
+   padding: rem(6px) rem(16px) rem(6px) rem(16px);
+   color: rgba(255, 255, 255, 1);
+   font-weight: 400;
+   text-transform: capitalize;
+   &:nth-child(1) {
+    padding-top: rem(10px);
+   }
+   &:nth-last-child(1) {
+    padding-bottom: rem(10px);
+   }
+   &:active {
+    background: rgba(255, 255, 255, 0.05);
+   }
+  }
+ }
+}

@@ -213,6 +213,7 @@
    padding-right: rem(16px);
    padding-top: rem(13px);
    padding-bottom: rem(9px);
+   width: 100%;
   }
  }
 }
@@ -235,6 +236,27 @@
   }
  }
  @include onlymobile {
+  width: rem(340px);
+  height: 100%;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  position: relative;
+  &::before {
+   position: absolute;
+   content: '';
+   background: rgba(196, 167, 103, 1);
+   height: 100%;
+   width: 1%;
+   top: 0;
+  }
+ }
+}
+.aside.mobile.all-games {
+ display: none;
+ @include onlymobile {
+  display: flex;
   width: rem(340px);
   height: 100%;
   margin-right: 0;

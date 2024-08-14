@@ -1,0 +1,22 @@
+.for-partners {
+ &__title {
+  @include banner-font(rem(25px));
+  line-height: rem(35px);
+  margin-bottom: rem(30px);
+  text-transform: uppercase;
+ }
+ &__wrapper {
+  display: flex;
+  column-gap: rem(57px);
+ }
+ &__text-wrapper {
+  display: inline-block;
+ }
+
+ &__text {
+  display: inline-block;
+  font-size: rem(18px);
+  line-height: rem(28.8px);
+  font-weight: 300;
+ }
+}

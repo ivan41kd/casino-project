@@ -6,6 +6,11 @@
  font-weight: 400;
  font-size: $fs;
 }
+@mixin gothic-font($fs) {
+ font-family: 'Gamgote', sans-serif;
+ font-weight: 400;
+ font-size: $fs;
+}
 @import '../varibles.scss';
 
 @mixin ifdesktop {
