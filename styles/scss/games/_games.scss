@@ -29,6 +29,10 @@
   display: flex;
   column-gap: rem(15px);
  }
+ &__dropdown-icon {
+  width: rem(20px);
+  height: rem(20px);
+ }
  &__categories-list-inactive {
   display: none;
  }
@@ -443,7 +447,11 @@
     display: flex;
     justify-content: center;
     transition: 0.3s;
-    content: url('../../../img/icons/dropdown-icon.svg');
+    background: url('../../../img/icons/dropdown-icon.svg') no-repeat;
+    background-size: 100%;
+    content: '';
+    width: rem(20px);
+    height: rem(20px);
    }
   }
   @keyframes fadeInAnimation {
