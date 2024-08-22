@@ -16,14 +16,6 @@ if (window.innerWidth >= 767) {
   });
  });
 } else {
- // categoriesWrapper.addEventListener('click', () => {
- //   categoriesWrapper.classList.toggle('opened');
- //   categoriesItems.forEach((item, index) => {
- //     item.addEventListener('click', () => {
- //       categoriesWrapper.className = 'games__categories-list-wrapper';
- //     });
- //   });
- // });
  categoriesItems.forEach((item) => {
   item.addEventListener('click', () => {
    categoriesWrapper.classList.toggle('opened');

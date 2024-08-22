@@ -47,9 +47,12 @@
   display: flex;
   flex-direction: column;
   row-gap: rem(22px);
-  max-height: rem(173px);
-  column-gap: rem(33px);
+  column-gap: rem(66px);
   flex-wrap: wrap;
+ }
+ &__top-categories-wrapper:nth-last-child(1) &__top-categories-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
  }
  &__multiple-categories-wrapper {
   column-gap: rem(50px);

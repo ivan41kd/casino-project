@@ -2,8 +2,10 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payments Acceptance</title>
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0, minimum-scale=1"
+  />
   <link rel="stylesheet" href="./styles/fonts/stylesheet.css" />
   <link rel="stylesheet" href="./styles/scss/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,11 +15,96 @@
    rel="stylesheet"
   />
   <link rel="icon" type="image/x-icon" href="./img/icons/icon.png" />
+  <script src="./js/mask.js"></script>
+  <script src="./js/mask-list.js"></script>
+  <title>Register</title>
  </head>
  <div class="loader">
   <img src="./img/loader/leaves casino.svg" alt="" class="loader-img" />
  </div>
- <body class="body-page">
+ <body>
+  <div class="main__verification-modal mobile">
+   <div class="main__verification-modal-wrapper">
+    <svg
+     width="24"
+     height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     class="main__verification-modal-close phone"
+    >
+     <path
+      d="M6 18L18 6M6 6L18 18"
+      stroke="#D8D8D4"
+      stroke-opacity="0.2"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+     />
+    </svg>
+    <h1 class="main__verification-title">Phone verification</h1>
+    <p class="main__verification-subtitle">
+     Please enter the code we sent at your phone.
+    </p>
+    <form class="main__verification-form mobile">
+     <div class="main__verification-input-wrapper">
+      <input type="number" class="main__verificion-input mobile" />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+     </div>
+     <div class="main__verification-resend-wrapper">
+      <p class="main__verification-resend-timer mobile">
+       <span class="main__timer mobile"></span> Didn’t get the code?
+      </p>
+      <p class="main__verification-resend mobile">Resend</p>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="main__verification-modal email">
+   <div class="main__verification-modal-wrapper">
+    <svg
+     width="24"
+     height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     class="main__verification-modal-close email"
+    >
+     <path
+      d="M6 18L18 6M6 6L18 18"
+      stroke="#D8D8D4"
+      stroke-opacity="0.2"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+     />
+    </svg>
+    <h1 class="main__verification-title">Email verification</h1>
+    <p class="main__verification-subtitle">
+     Please enter the code we sent at your email.
+    </p>
+    <form class="main__verification-form mobile">
+     <div class="main__verification-input-wrapper">
+      <input type="number" class="main__verificion-input email" />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+     </div>
+     <div class="main__verification-resend-wrapper">
+      <p class="main__verification-resend-timer email">
+       <span class="main__timer email"></span> Didn’t get the code?
+      </p>
+      <p class="main__verification-resend email">Resend</p>
+     </div>
+    </form>
+   </div>
+  </div>
   <header class="header">
    <div class="container">
     <div class="header__wrapper">
@@ -582,14 +669,14 @@
     </div>
    </div>
   </header>
-  <main class="main">
+  <main class="main register-main">
    <div class="content__wrapper">
-    <div class="weed-background green">
+    <div class="weed-background">
      <picture>
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-first"
-       srcset="./img/bg/weed1-1410-green.svg"
+       srcset="./img/bg/weed1-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -597,7 +684,7 @@
        srcset="./img/bg/weed1-872.svg"
       />
       <img
-       src="./img/bg/weed1-green.svg"
+       src="./img/bg/weed1.png"
        alt=""
        class="weed-background__weed-first"
       />
@@ -606,7 +693,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-second"
-       srcset="./img/bg/weed2-1410-green.svg"
+       srcset="./img/bg/weed2-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -614,7 +701,7 @@
        srcset="./img/bg/weed2-872.svg"
       />
       <img
-       src="./img/bg/weed2-green.svg"
+       src="./img/bg/weed2.png"
        alt=""
        class="weed-background__weed-second"
       />
@@ -623,7 +710,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-third"
-       srcset="./img/bg/weed3-1410-green.svg"
+       srcset="./img/bg/weed3-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -631,7 +718,7 @@
        srcset="./img/bg/weed3-872.svg"
       />
       <img
-       src="./img/bg/weed3-green.svg"
+       src="./img/bg/weed3.png"
        alt=""
        class="weed-background__weed-third"
       />
@@ -641,7 +728,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-fourth"
-       srcset="./img/bg/weed4-1410-green.svg"
+       srcset="./img/bg/weed4-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -649,287 +736,232 @@
        srcset="./img/bg/weed4-872.svg"
       />
       <img
-       src="./img/bg/weed4-green.svg"
+       src="./img/bg/weed4.png"
        alt=""
        class="weed-background__weed-fourth"
       />
      </picture>
     </div>
-    <div class="main__wrapper page">
-     <div class="main__content">
-      <div class="main__page-wrapper">
-       <h1 class="main__page-title">Payments Acceptance</h1>
-       <div class="main__page-description-wrapper">
-        <p class="main__page-description">
-         Payments are provided by Cardaq Limited, the Authorized Electronic
-         Money Institution based in the United Kingdom under the supervision of
-         the Financial Conduct Authority. Cardaq Limited, registration number
-         07805564, office address 55 Baker Street, London, United Kingdom, W1U
-         7EU. FRN 900088, Authorized Electronic Money Institution under the
-         Financial Conduct Authority of the United Kingdom.
-        </p>
-        <div class="main__payments-wrapper">
-         <p class="main__payments-text">
-          Accepting Visa, MasterCard, Union Pay.
-         </p>
-         <div class="main__payments">
-          <img src="./img/logo/visa.svg" alt="" class="main__payments-icon" />
-          <img
-           src="./img/logo/mastercard.svg"
-           alt=""
-           class="main__payments-icon"
-          />
-          <img
-           src="./img/logo/unionpay.svg"
-           alt=""
-           class="main__payments-icon"
-          />
+    <div class="main__wrapper">
+     <img src="./img/bg/girl-left.png" class="girl-left" alt="" />
+     <section class="register">
+      <div class="register__pages-wrapper">
+       <p class="main__pages-prev">Main</p>
+       <p class="main__pages-current">Create account</p>
+      </div>
+      <div class="register__wrapper">
+       <div class="main__form-wrapper register-form">
+        <h1 class="main__form-title">150% for 1st deposit!</h1>
+        <form class="main__form">
+         <div class="main__form-input-wrapper regiser-input-wrapper">
+          <div class="main__form-input-label-wrapper">
+           <input
+            type="text"
+            class="main__form-input name register-input"
+            placeholder="Enter"
+           />
+           <label class="main__form-label label-name register-label">
+            First name
+           </label>
+          </div>
+          <div class="main__form-input-label-wrapper">
+           <input
+            type="text"
+            class="main__form-input name register-input"
+            placeholder="Enter"
+           />
+           <label class="main__form-label label-name register-label">
+            Last name
+           </label>
+          </div>
+          <div class="main__form-input-label-wrapper">
+           <input
+            type="text"
+            class="main__form-input calendar register-input"
+           />
+           <label class="main__form-label label-calendar register-label">
+            Date of birth
+           </label>
+           <img
+            src="./img/icons/calendar.svg"
+            alt=""
+            class="main__form-calendar-icon"
+           />
+           <div class="main__datepicker">
+            <div class="main__datepicker-header">
+             <img
+              src="./img/icons/last-date-icon.svg"
+              alt=""
+              class="main__datepicker-last-date"
+             />
+             <img
+              src="./img/icons/prev-date-icon.svg"
+              alt=""
+              class="main__datepicker-prev-date"
+             />
+             <div class="main__datepicker-month-year-wrapper">
+              <p class="main__datepicker-month">March</p>
+              <p class="main__datepicker-year">2023</p>
+             </div>
+             <img
+              src="./img/icons/next-date-icon.svg"
+              alt=""
+              class="main__datepicker-next-date"
+             />
+             <img
+              src="./img/icons/current-date-icon.svg"
+              alt=""
+              class="main__datepicker-current-date"
+             />
+            </div>
+            <div class="main__datepicker-days">
+             <p class="main__datepicker-day">Mon</p>
+             <p class="main__datepicker-day">Tue</p>
+             <p class="main__datepicker-day">Wed</p>
+             <p class="main__datepicker-day">Thu</p>
+             <p class="main__datepicker-day">Fri</p>
+             <p class="main__datepicker-day">Sat</p>
+             <p class="main__datepicker-day">Sun</p>
+            </div>
+            <div class="main__datepicker-dates"></div>
+           </div>
+          </div>
+          <div class="main__form-select-wrapper">
+           <div class="main__form-select">
+            <label class="main__form-label label-select register-label">
+             Country of id or passport
+            </label>
+            <p class="main__form-select-current"></p>
+            <img
+             src="./img/icons/dropdown-icon.svg"
+             alt=""
+             class="main__form-dropdown-icon"
+            />
+           </div>
+           <div class="main__form-select-list-wrapper">
+            <div class="main__form-select-input-wrapper">
+             <img
+              src="./img/icons/search-icon.svg"
+              alt=""
+              class="main__form-select-input-icon"
+             />
+             <input type="text" class="main__form-select-input" />
+            </div>
+            <ul class="main__form-select-list"></ul>
+           </div>
+          </div>
+          <div class="main__form-phone">
+           <div class="main__form-input-label-wrapper verify phone">
+            <div class="main__form-phone-wrapper">
+             <img
+              src="./img/icons/dropdown-icon.svg"
+              alt=""
+              class="main__form-dropdown-icon"
+             />
+            </div>
+            <input type="text" class="main__form-input phone register-input" />
+           </div>
+           <div class="main__form-phone-list-wrapper">
+            <div class="main__form-phone-input-wrapper">
+             <img
+              src="./img/icons/search-icon.svg"
+              alt=""
+              class="main__form-select-input-icon"
+             />
+             <input type="text" class="main__form-select-input" />
+            </div>
+            <ul class="main__form-select-list phone"></ul>
+           </div>
+          </div>
+          <div class="main__verify-wrapper">
+           <div class="main__verify">
+            <img
+             src="./img/icons/verify-inactive.svg"
+             alt=""
+             class="main__form-verify-icon"
+            />
+            <p class="main__form-verify-text phone disabled">Verify</p>
+            <img
+             src="./img/icons/verify-icon.svg"
+             alt=""
+             class="main__form-notverified-icon"
+            />
+           </div>
+           <p class="main__form-verify-code-text">
+            You will need to enter 6 numbers, which we will send to your phone.
+           </p>
+          </div>
+          <div class="main__form-input-label-wrapper email verify">
+           <input
+            type="text"
+            class="main__form-input email register-input"
+            placeholder="Enter"
+           />
+           <label class="main__form-label label-email register-label">
+            Email
+           </label>
+          </div>
+          <div class="main__verify-wrapper">
+           <div class="main__verify">
+            <img
+             src="./img/icons/verify-inactive.svg"
+             alt=""
+             class="main__form-verify-icon"
+            />
+            <p class="main__form-verify-text email disabled">Verify</p>
+            <img
+             src="./img/icons/verify-icon.svg"
+             alt=""
+             class="main__form-notverified-icon"
+            />
+           </div>
+           <p class="main__form-verify-code-text">
+            You will need to enter 6 numbers, which we will send to your email.
+           </p>
+          </div>
          </div>
-        </div>
-       </div>
-       <div class="main__table-wrapper">
-        <table class="main__table">
-         <thead class="main__column-header">
-          <th class="main__column-head">Scheme</th>
-          <th class="main__column-head">Fee</th>
-          <th class="main__column-head">Currency</th>
-          <th class="main__column-head">Enrollment time</th>
-          <th class="main__column-head">Limit per transaction</th>
-         </thead>
-         <tbody class="main__table-body">
-          <tr class="main__column-wrapper">
-           <td class="main__column">VISA</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-          <tr class="main__column-wrapper">
-           <td class="main__column">MasterCard</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-          <tr class="main__column-wrapper">
-           <td class="main__column">Union Pay</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-         </tbody>
-        </table>
+         <div class="main__form-chks-wrapper">
+          <div class="main__form-chk-wrapper">
+           <label>
+            <input type="checkbox" class="main__form-chk" />
+            <span></span>
+           </label>
+           <p class="main__form-chk-text">
+            I confirm that I am 18 years old and I have read the
+            <span>Terms of Service</span>
+           </p>
+          </div>
+          <div class="main__form-chk-wrapper">
+           <label>
+            <input type="checkbox" class="main__form-chk" />
+            <span></span>
+           </label>
+           <p class="main__form-chk-text">Receive email promotions</p>
+          </div>
+         </div>
+
+         <div class="main__form-button-wrapper">
+          <button class="main__form-register-button">Create account</button>
+          <p class="main__form-register-login">
+           Are you already signed up? <span>Log In</span>
+          </p>
+         </div>
+        </form>
        </div>
       </div>
-      <article class="introduction page">
-       <div class="introduction__inner">
-        <div class="introduction__wrapper">
-         <img src="./img/logo.png" alt="" class="introduction__logo" />
-         <p class="introduction__subtitle">
-          Welcome to Williams & Coast Casino Processing company founded in 2024
-          in Costa Rica with the representative office in London. We are
-          facilitating online payments for online casinos worldwide and
-          providing the fascinating software for online payment and online
-          gambling.
-         </p>
-        </div>
-        <div class="introduction__attention">
-         <img
-          src="./img/bg/18+.png"
-          alt=""
-          class="introduction__attention-logo"
-         />
-         <p class="introduction__attention-subtitle">
-          Attention! This is a gambling site. Gambling does not solve financial
-          problems. Please read the Terms and Conditions and play responsibly.
-          Persons below the age of 18 are not allowed to participate in gambling
-          activities and must leave this site immediately.
-         </p>
-        </div>
-       </div>
-      </article>
-     </div>
+     </section>
+     <img src="./img/bg/girl-right.png" class="girl-right" alt="" />
     </div>
    </div>
   </main>
-  <footer class="footer">
-   <div class="container">
-    <div class="footer__top">
-     <div class="footer__top-wrapper">
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Promotion</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">First Deposit</li>
-        <li class="footer__category">Welcome Package</li>
-        <li class="footer__category">VIP Casino Cashback</li>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Games</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Popular</li>
-        <li class="footer__category">Casino Jack</li>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Information</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Customer Support</li>
-        <li class="footer__category">Contacts</li>
-        <a href="./payments-acceptance.html">
-         <li class="footer__category">Payments Acceptance</li>
-        </a>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Partners</h2>
-       <ul class="footer__top-categories-list">
-        <a href="./partners.html">
-         <li class="footer__category">For Partners</li>
-        </a>
-        <li class="footer__category">Tournaments</li>
-        <a href="./vip.html">
-         <li class="footer__category">VIP</li>
-        </a>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Legal</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Terms & Conditions</li>
-        <li class="footer__category">Privacy Policy</li>
-        <li class="footer__category">Cookie Policy</li>
-        <li class="footer__category">Complaints Handling</li>
-        <li class="footer__category">Games Rules</li>
-        <li class="footer__category">Sportbook Rules</li>
-        <li class="footer__category">Chargeback Processing</li>
-        <li class="footer__category">Rules and Certification</li>
-        <li class="footer__category">Refunds</li>
-        <li class="footer__category">Responsible Gaming</li>
-       </ul>
-      </div>
-     </div>
-    </div>
-    <div class="footer__middle">
-     <div class="footer__middle-wrapper">
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">Pin-Up Online Casino</h2>
-       <p class="footer__middle-subtitle">
-        Do you value not only an interesting pastime, but also something
-        pleasing to the eye? Then you will be the one who will appreciate all
-        the charm of the Pin-Up online casino! A new, brain-stimulating and
-        exciting adventure to your fingertips is waiting for you to become the
-        next millionaire.
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">
-        Entertainment for every taste at Pin-Up online casino
-       </h2>
-       <p class="footer__middle-subtitle">
-        New slot machines with an alluring plot, now the slot heroes are
-        seductive girls in the Pin-Up style. Yes, those same ones: in lace
-        stockings and with red lips they stand in attractive poses. The design
-        of the portal with its entire appearance invites you to relax and spend
-        time with pleasure. A unique and thoughtful system of privileges! Play
-        new slot machines, complete tasks and improve your title! Go ahead with
-        discoveries and turn from an ordinary “Newbie” into a “Lord of
-        Excitement”!
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">
-        Online casino data processing companies’ advantage in every detail
-       </h2>
-       <p class="footer__middle-subtitle">
-        Hungry for a big win? Take small steps towards a big victory. Complete
-        simple missions and get the opportunity to exchange for bonuses and very
-        interesting prizes. Don't be afraid that you will get bored with gifts,
-        this won't happen. The list of original tasks and prizes is growing very
-        quickly, so we always have something to please you with. The list of
-        slot machines is updated every day, and most importantly there are
-        always fresh slots. At the same time, you will not only participate, but
-        also receive a bonus for each action. We will add a great bonus funds to
-        your first deposit. Williams & Coast online casino data processing
-        company is a multilingual platform that supports the most popular
-        languages from all over the world. Play, win, and enjoy. We have
-        prepared an exclusive format for you, so try it.
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">Advantages</h2>
-       <div class="footer__middle-list-wrapper">
-        <ul class="footer__middle-list">
-         <li class="footer__middle-item">Payout of all winnings</li>
-
-         <li class="footer__middle-item">Wide range of gambling games</li>
-         <li class="footer__middle-item">Software from leading developers</li>
-         <li class="footer__middle-item">Quality service</li>
-         <li class="footer__middle-item">Prompt customer support</li>
-
-         <li class="footer__middle-item">Nice bonuses and promotions</li>
-         <li class="footer__middle-item">Regular rewards for active players</li>
-        </ul>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="footer__bottom">
-     <div class="footer__bottom-wrapper">
-      <img
-       src="./img/footer/footer-logo.png"
-       alt="logo фото"
-       class="footer__bottom-logo"
-      />
-      <p class="footer__bottom-text">
-       Williams & Coast Limited, registration number 3-102-892241, Boulevard
-       Dent Adriatico Building, Piso 3, San José, San Pedro, 11501, CRI, Costa
-       Rica. Williams & Coast UK Limited, registration number 15470709, 55 Baker
-       Street, London, United Kingdom, W1U 7EU. The company is operating under
-       the laws of Costa Rica and under its permissions and allowance. Copyright
-       © 2024 – 2025.
-      </p>
-      <div class="footer__payment-wrapper">
-       <p class="footer__bottom-payment-text">
-        Payments are provided by Cardaq Limited, registration number 07805564,
-        office address 55 Baker Street, London, United Kingdom, W1U 7EU. FRN
-        900088, Authorized Electronic Money Institution under the Financial
-        Conduct Authority of the United Kingdom.
-       </p>
-       <p class="footer__payment">Accepting Visa, MasterCard, Union Pay</p>
-      </div>
-      <div class="footer__icons-wrapper">
-       <div class="footer__payment-icons">
-        <img src="./img/logo/visa.svg" alt="visa" class="footer__icon" />
-        <img
-         src="./img/logo/mastercard.svg"
-         alt="mastercard"
-         class="footer__icon"
-        />
-        <img
-         src="./img/logo/unionpay.svg"
-         alt="unionpay"
-         class="footer__icon"
-        />
-       </div>
-       <div class="footer__enterprise-icons">
-        <img src="./img/logo/pci.svg" alt="pci" class="footer__icon" />
-        <img src="./img/logo/sumsub.svg" alt="sumsub" class="footer__icon" />
-        <img
-         src="./img/logo/google-cloud.svg"
-         alt="google-cloud"
-         class="footer__icon"
-        />
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </footer>
  </body>
  <script src="./js/header.js"></script>
  <script src="./js/language-list.js"></script>
  <script src="./js/weed.js"></script>
  <script src="./js/loader.js"></script>
+ <script src="./js/form.js" type="module"></script>
+ <script src="./js/calendar.js"></script>
+ <script src="./js/phone.js" type="module"></script>
+ <script src="./js/verification.js"></script>
+ <script src="./js/select.js" type="module"></script>
 </html>

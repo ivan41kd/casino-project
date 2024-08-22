@@ -23,7 +23,6 @@ if (window.innerWidth < 1410) {
   });
  });
 } else if (window.innerWidth > 1410) {
- const languageWrapper = document.querySelector('.header__language-wrapper');
  const languageList = document.querySelector('.header__language-list');
  const languageItem = languageList.querySelectorAll('.header__language-item');
  languageItem.forEach((item) => {

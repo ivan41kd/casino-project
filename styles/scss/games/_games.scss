@@ -388,6 +388,7 @@
    display: flex;
    width: 100%;
   }
+
   &__categories-list.opened ~ &__filter-list.mobile {
    align-items: normal;
   }

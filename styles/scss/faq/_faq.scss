@@ -26,18 +26,29 @@
   line-height: rem(17.7px);
   color: rgba(216, 216, 212, 0.6);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.5s;
   padding: rem(15px) rem(25px) rem(15px) rem(25px);
+  position: relative;
   cursor: pointer;
   &:hover {
    transition: 0.5s;
    color: rgba(216, 216, 212, 1);
   }
+  &::after {
+   position: absolute;
+   content: '';
+   width: 0;
+   height: 1.5px;
+   right: 0;
+   bottom: -2%;
+   background: rgba(203, 61, 69, 1);
+  }
  }
  &__name.active {
   position: relative;
   color: rgba(255, 255, 255, 1);
+  transition: 0.3s;
   &::after {
    position: absolute;
    content: '';
@@ -45,6 +56,7 @@
    height: 1.5px;
    right: 0;
    bottom: -2%;
+   transition: 0.3s;
    background: rgba(203, 61, 69, 1);
   }
  }
@@ -81,7 +93,7 @@
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s;
   color: rgba(255, 255, 255, 0.8);
  }
 
@@ -95,8 +107,41 @@
  }
  &__item-wrapper.active &__item-description {
   max-height: rem(1000px);
-  transition: 0.5s ease-in-out;
+  transition: 0.5s;
   opacity: 1;
+ }
+ &__item-icon-wrapper {
+  position: relative;
+  width: rem(30px);
+  height: rem(18px);
+ }
+ &__item-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+ }
+ &__item-icon.active {
+  transform: rotateX(180deg);
+  transition: 0.5s;
+ }
+ &__item-icon-inactive,
+ &__item-icon-active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+ }
+ &__item-icon-inactive {
+  backface-visibility: hidden;
+  transition: 0.5s;
+ }
+ &__item-icon-active {
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: 0.5s;
  }
  @media (max-width: 1440px) {
   &__name {
@@ -164,24 +209,35 @@
    font-weight: 400;
    background: rgba(0, 0, 0, 0.5);
    border-radius: rem(70.06px);
+   position: relative;
 
    &::after {
-    display: flex;
-    justify-content: center;
+    position: static;
+    width: rem(20px);
+    height: rem(20px);
+    background-repeat: no-repeat;
     transition: 0.3s;
-    content: url('../../../img/icons/dropdown-icon.svg');
+    content: '';
+    background: url('../../../img/icons/dropdown-icon.svg') no-repeat;
+    background-size: 100%;
    }
   }
+  &__wrapper-names.mobile.opened &__name.current {
+   &::after {
+    transform: rotateX(180deg);
+   }
+  }
+
   &__names-list {
    display: flex;
    flex-direction: column;
    background: rgba(16, 16, 16, 1);
    box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
-   width: rem(264px);
    border-radius: rem(15px);
    align-self: center;
    overflow: hidden;
    max-height: 0;
+   width: 100%;
    transition: 0.5s;
   }
 

@@ -2,8 +2,10 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payments Acceptance</title>
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0, minimum-scale=1"
+  />
   <link rel="stylesheet" href="./styles/fonts/stylesheet.css" />
   <link rel="stylesheet" href="./styles/scss/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,11 +15,96 @@
    rel="stylesheet"
   />
   <link rel="icon" type="image/x-icon" href="./img/icons/icon.png" />
+  <script src="./js/mask.js"></script>
+  <script src="./js/mask-list.js"></script>
+  <title>Login</title>
  </head>
  <div class="loader">
   <img src="./img/loader/leaves casino.svg" alt="" class="loader-img" />
  </div>
- <body class="body-page">
+ <body>
+  <div class="main__verification-modal mobile">
+   <div class="main__verification-modal-wrapper">
+    <svg
+     width="24"
+     height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     class="main__verification-modal-close phone"
+    >
+     <path
+      d="M6 18L18 6M6 6L18 18"
+      stroke="#D8D8D4"
+      stroke-opacity="0.2"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+     />
+    </svg>
+    <h1 class="main__verification-title">Phone verification</h1>
+    <p class="main__verification-subtitle">
+     Please enter the code we sent at your phone.
+    </p>
+    <form class="main__verification-form mobile">
+     <div class="main__verification-input-wrapper">
+      <input type="number" class="main__verificion-input mobile" />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+      <input type="number" class="main__verificion-input mobile" disabled />
+     </div>
+     <div class="main__verification-resend-wrapper">
+      <p class="main__verification-resend-timer mobile">
+       <span class="main__timer mobile"></span> Didn’t get the code?
+      </p>
+      <p class="main__verification-resend mobile">Resend</p>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="main__verification-modal email">
+   <div class="main__verification-modal-wrapper">
+    <svg
+     width="24"
+     height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     class="main__verification-modal-close email"
+    >
+     <path
+      d="M6 18L18 6M6 6L18 18"
+      stroke="#D8D8D4"
+      stroke-opacity="0.2"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+     />
+    </svg>
+    <h1 class="main__verification-title">Email verification</h1>
+    <p class="main__verification-subtitle">
+     Please enter the code we sent at your email.
+    </p>
+    <form class="main__verification-form mobile">
+     <div class="main__verification-input-wrapper">
+      <input type="number" class="main__verificion-input email" />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+      <input type="number" class="main__verificion-input email" disabled />
+     </div>
+     <div class="main__verification-resend-wrapper">
+      <p class="main__verification-resend-timer email">
+       <span class="main__timer email"></span> Didn’t get the code?
+      </p>
+      <p class="main__verification-resend email">Resend</p>
+     </div>
+    </form>
+   </div>
+  </div>
   <header class="header">
    <div class="container">
     <div class="header__wrapper">
@@ -529,9 +616,7 @@
         </div>
         <div class="header__burger-right">
          <div class="header__button-wrapper">
-          <a href="./register.html">
-           <button class="header__signup">Sign Up</button>
-          </a>
+          <button class="header__signup">Sign Up</button>
           <button class="header__login">Log In</button>
          </div>
          <div class="header__language-wrapper">
@@ -558,11 +643,8 @@
              <p class="header__balance">
                36209.75 <span class="header__currency">USD</span>
              </p> -->
-
       <button class="header__login">Log In</button>
-      <a href="./register.html">
-       <button class="header__signup">Sign Up</button>
-      </a>
+      <button class="header__signup">Sign Up</button>
      </div>
      <div class="header__language-wrapper alt">
       <p class="header__item language">EN</p>
@@ -582,14 +664,14 @@
     </div>
    </div>
   </header>
-  <main class="main">
+  <main class="main login-main">
    <div class="content__wrapper">
-    <div class="weed-background green">
+    <div class="weed-background">
      <picture>
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-first"
-       srcset="./img/bg/weed1-1410-green.svg"
+       srcset="./img/bg/weed1-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -597,7 +679,7 @@
        srcset="./img/bg/weed1-872.svg"
       />
       <img
-       src="./img/bg/weed1-green.svg"
+       src="./img/bg/weed1.png"
        alt=""
        class="weed-background__weed-first"
       />
@@ -606,7 +688,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-second"
-       srcset="./img/bg/weed2-1410-green.svg"
+       srcset="./img/bg/weed2-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -614,7 +696,7 @@
        srcset="./img/bg/weed2-872.svg"
       />
       <img
-       src="./img/bg/weed2-green.svg"
+       src="./img/bg/weed2.png"
        alt=""
        class="weed-background__weed-second"
       />
@@ -623,7 +705,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-third"
-       srcset="./img/bg/weed3-1410-green.svg"
+       srcset="./img/bg/weed3-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -631,7 +713,7 @@
        srcset="./img/bg/weed3-872.svg"
       />
       <img
-       src="./img/bg/weed3-green.svg"
+       src="./img/bg/weed3.png"
        alt=""
        class="weed-background__weed-third"
       />
@@ -641,7 +723,7 @@
       <source
        media="(max-width: 1440px)"
        class="weed-background__weed-fourth"
-       srcset="./img/bg/weed4-1410-green.svg"
+       srcset="./img/bg/weed4-1410.svg"
       />
       <source
        media="(max-width: 768px)"
@@ -649,287 +731,165 @@
        srcset="./img/bg/weed4-872.svg"
       />
       <img
-       src="./img/bg/weed4-green.svg"
+       src="./img/bg/weed4.png"
        alt=""
        class="weed-background__weed-fourth"
       />
      </picture>
     </div>
-    <div class="main__wrapper page">
-     <div class="main__content">
-      <div class="main__page-wrapper">
-       <h1 class="main__page-title">Payments Acceptance</h1>
-       <div class="main__page-description-wrapper">
-        <p class="main__page-description">
-         Payments are provided by Cardaq Limited, the Authorized Electronic
-         Money Institution based in the United Kingdom under the supervision of
-         the Financial Conduct Authority. Cardaq Limited, registration number
-         07805564, office address 55 Baker Street, London, United Kingdom, W1U
-         7EU. FRN 900088, Authorized Electronic Money Institution under the
-         Financial Conduct Authority of the United Kingdom.
-        </p>
-        <div class="main__payments-wrapper">
-         <p class="main__payments-text">
-          Accepting Visa, MasterCard, Union Pay.
-         </p>
-         <div class="main__payments">
-          <img src="./img/logo/visa.svg" alt="" class="main__payments-icon" />
-          <img
-           src="./img/logo/mastercard.svg"
-           alt=""
-           class="main__payments-icon"
-          />
-          <img
-           src="./img/logo/unionpay.svg"
-           alt=""
-           class="main__payments-icon"
-          />
+    <div class="main__wrapper">
+     <img src="./img/bg/girl-left.png" class="girl-left" alt="" />
+     <section class="login">
+      <div class="login__pages-wrapper">
+       <p class="main__pages-prev">Main</p>
+       <p class="main__pages-current">Log In</p>
+      </div>
+      <div class="login__wrapper">
+       <div class="main__form-wrapper login-form">
+        <form class="main__form login-form">
+         <div class="main__form-input-wrapper">
+          <div class="main__form-input-label-wrapper">
+           <input
+            type="text"
+            class="main__form-input name login-input"
+            placeholder="Enter"
+           />
+           <label class="main__form-label label-name register-label">
+            First name
+           </label>
+          </div>
+          <div class="main__form-input-label-wrapper password">
+           <div class="main__password-require-wrapper">
+            <div class="main__password-requirement">
+             <svg
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="main__password-requirement-icon"
+             >
+              <path
+               fill-rule="evenodd"
+               clip-rule="evenodd"
+               d="M9.02425 0.175736C9.25857 0.41005 9.25857 0.789949 9.02425 1.02426L4.22425 5.82426C3.98994 6.05858 3.61004 6.05858 3.37572 5.82426L0.975724 3.42426C0.741409 3.18995 0.741409 2.81005 0.975724 2.57574C1.21004 2.34142 1.58994 2.34142 1.82425 2.57574L3.79999 4.55147L8.17572 0.175736C8.41004 -0.0585787 8.78994 -0.0585787 9.02425 0.175736Z"
+               fill="#D8D8D4"
+               fill-opacity="0.5"
+              />
+             </svg>
+             <p class="main__password-requirement-text length">8+ symbols</p>
+            </div>
+            <div class="main__password-requirement">
+             <svg
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="main__password-requirement-icon"
+             >
+              <path
+               fill-rule="evenodd"
+               clip-rule="evenodd"
+               d="M9.02425 0.175736C9.25857 0.41005 9.25857 0.789949 9.02425 1.02426L4.22425 5.82426C3.98994 6.05858 3.61004 6.05858 3.37572 5.82426L0.975724 3.42426C0.741409 3.18995 0.741409 2.81005 0.975724 2.57574C1.21004 2.34142 1.58994 2.34142 1.82425 2.57574L3.79999 4.55147L8.17572 0.175736C8.41004 -0.0585787 8.78994 -0.0585787 9.02425 0.175736Z"
+               fill="#D8D8D4"
+               fill-opacity="0.5"
+              />
+             </svg>
+             <p class="main__password-requirement-text letters">Letters</p>
+            </div>
+            <div class="main__password-requirement">
+             <svg
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="main__password-requirement-icon"
+             >
+              <path
+               fill-rule="evenodd"
+               clip-rule="evenodd"
+               d="M9.02425 0.175736C9.25857 0.41005 9.25857 0.789949 9.02425 1.02426L4.22425 5.82426C3.98994 6.05858 3.61004 6.05858 3.37572 5.82426L0.975724 3.42426C0.741409 3.18995 0.741409 2.81005 0.975724 2.57574C1.21004 2.34142 1.58994 2.34142 1.82425 2.57574L3.79999 4.55147L8.17572 0.175736C8.41004 -0.0585787 8.78994 -0.0585787 9.02425 0.175736Z"
+               fill="#D8D8D4"
+               fill-opacity="0.5"
+              />
+             </svg>
+             <p class="main__password-requirement-text numbers">Numbers</p>
+            </div>
+           </div>
+           <input
+            type="password"
+            class="main__form-input password login-input"
+            placeholder="Enter"
+           />
+           <label class="main__form-label label-name register-label">
+            Password
+           </label>
+           <div class="main__password-icon-wrapper">
+            <div class="main__password-icon">
+             <svg
+              width="21"
+              height="14"
+              viewBox="0 0 21 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="main__password-hide"
+             >
+              <path
+               d="M20.5916 10.9498C20.5286 10.9866 20.4568 11.0056 20.3838 11.0049C20.3107 11.005 20.2389 10.9858 20.1756 10.9494C20.1123 10.9129 20.0598 10.8604 20.0232 10.7971L17.8256 6.95255C16.5193 7.90488 15.0403 8.5941 13.4709 8.98184L14.1494 13.0144C14.1674 13.1232 14.1416 13.2346 14.0774 13.3242C14.0133 13.4138 13.9163 13.4743 13.8076 13.4924C13.7846 13.4964 13.7613 13.4985 13.7379 13.4986C13.6397 13.4985 13.5447 13.4636 13.4697 13.4001C13.3948 13.3365 13.3448 13.2485 13.3286 13.1516L12.6625 9.15121C11.1743 9.40607 9.65365 9.40607 8.16546 9.15121L7.49942 13.1516C7.48304 13.2496 7.43212 13.3384 7.35588 13.4021C7.27963 13.4657 7.18311 13.5 7.0838 13.4986C7.06046 13.4985 7.03717 13.4964 7.01418 13.4924C6.90548 13.4743 6.8084 13.4138 6.7443 13.3242C6.68019 13.2346 6.6543 13.1232 6.67233 13.0144L7.34564 8.97976C5.77676 8.59253 4.29812 7.90402 2.99197 6.95255L0.79435 10.7971C0.757819 10.8604 0.705255 10.9129 0.641955 10.9494C0.578655 10.9858 0.506856 11.005 0.433795 11.0049C0.360829 11.0056 0.289032 10.9866 0.225982 10.9498C0.178582 10.9226 0.137021 10.8863 0.10368 10.8429C0.0703394 10.7996 0.0458742 10.7501 0.0316856 10.6973C0.0174971 10.6445 0.0138641 10.5895 0.0209947 10.5353C0.0281253 10.4811 0.0458795 10.4288 0.0732402 10.3815L2.32593 6.43925C1.51285 5.77021 0.77054 5.01955 0.110646 4.19903C0.0719052 4.15719 0.0421889 4.10782 0.0233462 4.054C0.00450348 4.00018 -0.00306245 3.94306 0.00111891 3.88619C0.00530027 3.82932 0.0211394 3.77392 0.0476513 3.72343C0.0741631 3.67294 0.11078 3.62845 0.155225 3.59273C0.199669 3.557 0.25099 3.5308 0.305994 3.51576C0.360999 3.50072 0.41851 3.49716 0.47495 3.5053C0.53139 3.51343 0.585551 3.5331 0.634064 3.56307C0.682577 3.59304 0.724405 3.63267 0.756943 3.6795C2.5379 5.88335 5.65924 8.51114 10.4088 8.51114C15.1583 8.51114 18.2797 5.88335 20.0606 3.67846C20.0932 3.63163 20.135 3.592 20.1835 3.56203C20.232 3.53206 20.2862 3.5124 20.3426 3.50426C20.3991 3.49612 20.4566 3.49968 20.5116 3.51472C20.5666 3.52976 20.6179 3.55596 20.6624 3.59169C20.7068 3.62741 20.7434 3.6719 20.7699 3.72239C20.7964 3.77288 20.8123 3.82828 20.8165 3.88515C20.8207 3.94202 20.8131 3.99914 20.7942 4.05296C20.7754 4.10678 20.7457 4.15615 20.7069 4.19799C20.047 5.01851 19.3047 5.76918 18.4917 6.43821L20.7443 10.3815C20.7717 10.4288 20.7895 10.4811 20.7966 10.5353C20.8037 10.5895 20.8001 10.6445 20.7859 10.6973C20.7717 10.7501 20.7472 10.7996 20.7139 10.8429C20.6806 10.8863 20.639 10.9226 20.5916 10.9498Z"
+               fill="#747474"
+               class="main__password-hide-path"
+              />
+             </svg>
+             <svg
+              width="21"
+              height="14"
+              viewBox="0 0 21 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="main__password-show"
+             >
+              <path
+               d="M20.5916 3.05018C20.5286 3.01345 20.4568 2.99442 20.3838 2.99511C20.3107 2.995 20.2389 3.01415 20.1756 3.05064C20.1123 3.08712 20.0598 3.13965 20.0232 3.20292L17.8256 7.04745C16.5193 6.09512 15.0403 5.4059 13.4709 5.01816L14.1494 0.98556C14.1674 0.876849 14.1416 0.765431 14.0774 0.675802C14.0133 0.586172 13.9163 0.525667 13.8076 0.507591C13.7846 0.503563 13.7613 0.501477 13.7379 0.501357C13.6397 0.501484 13.5447 0.536413 13.4697 0.599944C13.3948 0.663476 13.3448 0.751501 13.3286 0.848404L12.6625 4.84879C11.1743 4.59393 9.65365 4.59393 8.16546 4.84879L7.49942 0.848404C7.48304 0.750437 7.43212 0.661576 7.35587 0.597914C7.27963 0.534251 7.18311 0.499997 7.08379 0.501357C7.06045 0.501477 7.03717 0.503563 7.01418 0.507591C6.90547 0.525667 6.8084 0.586172 6.74429 0.675802C6.68019 0.765431 6.6543 0.876849 6.67233 0.98556L7.34564 5.02024C5.77676 5.40747 4.29811 6.09598 2.99197 7.04745L0.794349 3.20292C0.757819 3.13965 0.705255 3.08712 0.641955 3.05064C0.578655 3.01415 0.506856 2.995 0.433795 2.99511C0.360829 2.99442 0.289032 3.01345 0.225982 3.05018C0.178582 3.07742 0.137021 3.11374 0.10368 3.15707C0.0703394 3.20039 0.0458742 3.24987 0.0316856 3.30267C0.0174971 3.35547 0.0138641 3.41054 0.0209947 3.46475C0.0281253 3.51895 0.0458795 3.57121 0.0732402 3.61855L2.32593 7.56075C1.51285 8.22979 0.77054 8.98045 0.110646 9.80097C0.0719052 9.84281 0.0421889 9.89218 0.0233462 9.946C0.00450348 9.99982 -0.00306245 10.0569 0.00111891 10.1138C0.00530027 10.1707 0.0211394 10.2261 0.0476513 10.2766C0.0741631 10.3271 0.11078 10.3715 0.155225 10.4073C0.199669 10.443 0.25099 10.4692 0.305994 10.4842C0.360999 10.4993 0.41851 10.5028 0.474949 10.4947C0.531389 10.4866 0.585551 10.4669 0.634064 10.4369C0.682577 10.407 0.724404 10.3673 0.756943 10.3205C2.5379 8.11665 5.65924 5.48886 10.4088 5.48886C15.1583 5.48886 18.2797 8.11665 20.0606 10.3215C20.0932 10.3684 20.135 10.408 20.1835 10.438C20.232 10.4679 20.2862 10.4876 20.3426 10.4957C20.3991 10.5039 20.4566 10.5003 20.5116 10.4853C20.5666 10.4702 20.6179 10.444 20.6624 10.4083C20.7068 10.3726 20.7434 10.3281 20.7699 10.2776C20.7964 10.2271 20.8123 10.1717 20.8165 10.1149C20.8206 10.058 20.8131 10.0009 20.7942 9.94704C20.7754 9.89322 20.7457 9.84385 20.7069 9.80201C20.047 8.98149 19.3047 8.23082 18.4917 7.56179L20.7443 3.61855C20.7717 3.57121 20.7895 3.51895 20.7966 3.46475C20.8037 3.41054 20.8001 3.35547 20.7859 3.30267C20.7717 3.24987 20.7472 3.20039 20.7139 3.15707C20.6806 3.11374 20.639 3.07742 20.5916 3.05018Z"
+               fill="#747474"
+               class="main__password-show-path"
+              />
+              <path
+               d="M13.5 10.5C13.5 12.1569 12.1569 13.5 10.5 13.5C8.84315 13.5 7.5 12.1569 7.5 10.5C7.5 8.84315 8.84315 7.5 10.5 7.5C12.1569 7.5 13.5 8.84315 13.5 10.5Z"
+               stroke="#747474"
+               class="main__password-show-stroke"
+              />
+             </svg>
+            </div>
+           </div>
+          </div>
          </div>
-        </div>
-       </div>
-       <div class="main__table-wrapper">
-        <table class="main__table">
-         <thead class="main__column-header">
-          <th class="main__column-head">Scheme</th>
-          <th class="main__column-head">Fee</th>
-          <th class="main__column-head">Currency</th>
-          <th class="main__column-head">Enrollment time</th>
-          <th class="main__column-head">Limit per transaction</th>
-         </thead>
-         <tbody class="main__table-body">
-          <tr class="main__column-wrapper">
-           <td class="main__column">VISA</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-          <tr class="main__column-wrapper">
-           <td class="main__column">MasterCard</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-          <tr class="main__column-wrapper">
-           <td class="main__column">Union Pay</td>
-           <td class="main__column">4.5%</td>
-           <td class="main__column">USD</td>
-           <td class="main__column">Instantly</td>
-           <td class="main__column">$5.00 - $150.00</td>
-          </tr>
-         </tbody>
-        </table>
+         <p class="main__password-forgot">Forgot your password?</p>
+         <div class="main__password-button-wrapper">
+          <button class="main__form-password-button">Log In</button>
+          <div class="main__password-register-wrapper">
+           <p class="main__password-register">Don’t you have an account?</p>
+           <span>Register</span>
+          </div>
+         </div>
+        </form>
+        <p class="main__password-confirm">
+         I confirm that I am 18 years old and I have read the
+         <span>Terms of Service</span>
+        </p>
        </div>
       </div>
-      <article class="introduction page">
-       <div class="introduction__inner">
-        <div class="introduction__wrapper">
-         <img src="./img/logo.png" alt="" class="introduction__logo" />
-         <p class="introduction__subtitle">
-          Welcome to Williams & Coast Casino Processing company founded in 2024
-          in Costa Rica with the representative office in London. We are
-          facilitating online payments for online casinos worldwide and
-          providing the fascinating software for online payment and online
-          gambling.
-         </p>
-        </div>
-        <div class="introduction__attention">
-         <img
-          src="./img/bg/18+.png"
-          alt=""
-          class="introduction__attention-logo"
-         />
-         <p class="introduction__attention-subtitle">
-          Attention! This is a gambling site. Gambling does not solve financial
-          problems. Please read the Terms and Conditions and play responsibly.
-          Persons below the age of 18 are not allowed to participate in gambling
-          activities and must leave this site immediately.
-         </p>
-        </div>
-       </div>
-      </article>
-     </div>
+     </section>
+     <img src="./img/bg/girl-right.png" class="girl-right" alt="" />
     </div>
    </div>
   </main>
-  <footer class="footer">
-   <div class="container">
-    <div class="footer__top">
-     <div class="footer__top-wrapper">
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Promotion</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">First Deposit</li>
-        <li class="footer__category">Welcome Package</li>
-        <li class="footer__category">VIP Casino Cashback</li>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Games</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Popular</li>
-        <li class="footer__category">Casino Jack</li>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Information</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Customer Support</li>
-        <li class="footer__category">Contacts</li>
-        <a href="./payments-acceptance.html">
-         <li class="footer__category">Payments Acceptance</li>
-        </a>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Partners</h2>
-       <ul class="footer__top-categories-list">
-        <a href="./partners.html">
-         <li class="footer__category">For Partners</li>
-        </a>
-        <li class="footer__category">Tournaments</li>
-        <a href="./vip.html">
-         <li class="footer__category">VIP</li>
-        </a>
-       </ul>
-      </div>
-      <div class="footer__top-categories-wrapper">
-       <h2 class="footer__categories-name">Legal</h2>
-       <ul class="footer__top-categories-list">
-        <li class="footer__category">Terms & Conditions</li>
-        <li class="footer__category">Privacy Policy</li>
-        <li class="footer__category">Cookie Policy</li>
-        <li class="footer__category">Complaints Handling</li>
-        <li class="footer__category">Games Rules</li>
-        <li class="footer__category">Sportbook Rules</li>
-        <li class="footer__category">Chargeback Processing</li>
-        <li class="footer__category">Rules and Certification</li>
-        <li class="footer__category">Refunds</li>
-        <li class="footer__category">Responsible Gaming</li>
-       </ul>
-      </div>
-     </div>
-    </div>
-    <div class="footer__middle">
-     <div class="footer__middle-wrapper">
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">Pin-Up Online Casino</h2>
-       <p class="footer__middle-subtitle">
-        Do you value not only an interesting pastime, but also something
-        pleasing to the eye? Then you will be the one who will appreciate all
-        the charm of the Pin-Up online casino! A new, brain-stimulating and
-        exciting adventure to your fingertips is waiting for you to become the
-        next millionaire.
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">
-        Entertainment for every taste at Pin-Up online casino
-       </h2>
-       <p class="footer__middle-subtitle">
-        New slot machines with an alluring plot, now the slot heroes are
-        seductive girls in the Pin-Up style. Yes, those same ones: in lace
-        stockings and with red lips they stand in attractive poses. The design
-        of the portal with its entire appearance invites you to relax and spend
-        time with pleasure. A unique and thoughtful system of privileges! Play
-        new slot machines, complete tasks and improve your title! Go ahead with
-        discoveries and turn from an ordinary “Newbie” into a “Lord of
-        Excitement”!
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">
-        Online casino data processing companies’ advantage in every detail
-       </h2>
-       <p class="footer__middle-subtitle">
-        Hungry for a big win? Take small steps towards a big victory. Complete
-        simple missions and get the opportunity to exchange for bonuses and very
-        interesting prizes. Don't be afraid that you will get bored with gifts,
-        this won't happen. The list of original tasks and prizes is growing very
-        quickly, so we always have something to please you with. The list of
-        slot machines is updated every day, and most importantly there are
-        always fresh slots. At the same time, you will not only participate, but
-        also receive a bonus for each action. We will add a great bonus funds to
-        your first deposit. Williams & Coast online casino data processing
-        company is a multilingual platform that supports the most popular
-        languages from all over the world. Play, win, and enjoy. We have
-        prepared an exclusive format for you, so try it.
-       </p>
-      </div>
-      <div class="footer__middle-text-wrapper">
-       <h2 class="footer__middle-title">Advantages</h2>
-       <div class="footer__middle-list-wrapper">
-        <ul class="footer__middle-list">
-         <li class="footer__middle-item">Payout of all winnings</li>
-
-         <li class="footer__middle-item">Wide range of gambling games</li>
-         <li class="footer__middle-item">Software from leading developers</li>
-         <li class="footer__middle-item">Quality service</li>
-         <li class="footer__middle-item">Prompt customer support</li>
-
-         <li class="footer__middle-item">Nice bonuses and promotions</li>
-         <li class="footer__middle-item">Regular rewards for active players</li>
-        </ul>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="footer__bottom">
-     <div class="footer__bottom-wrapper">
-      <img
-       src="./img/footer/footer-logo.png"
-       alt="logo фото"
-       class="footer__bottom-logo"
-      />
-      <p class="footer__bottom-text">
-       Williams & Coast Limited, registration number 3-102-892241, Boulevard
-       Dent Adriatico Building, Piso 3, San José, San Pedro, 11501, CRI, Costa
-       Rica. Williams & Coast UK Limited, registration number 15470709, 55 Baker
-       Street, London, United Kingdom, W1U 7EU. The company is operating under
-       the laws of Costa Rica and under its permissions and allowance. Copyright
-       © 2024 – 2025.
-      </p>
-      <div class="footer__payment-wrapper">
-       <p class="footer__bottom-payment-text">
-        Payments are provided by Cardaq Limited, registration number 07805564,
-        office address 55 Baker Street, London, United Kingdom, W1U 7EU. FRN
-        900088, Authorized Electronic Money Institution under the Financial
-        Conduct Authority of the United Kingdom.
-       </p>
-       <p class="footer__payment">Accepting Visa, MasterCard, Union Pay</p>
-      </div>
-      <div class="footer__icons-wrapper">
-       <div class="footer__payment-icons">
-        <img src="./img/logo/visa.svg" alt="visa" class="footer__icon" />
-        <img
-         src="./img/logo/mastercard.svg"
-         alt="mastercard"
-         class="footer__icon"
-        />
-        <img
-         src="./img/logo/unionpay.svg"
-         alt="unionpay"
-         class="footer__icon"
-        />
-       </div>
-       <div class="footer__enterprise-icons">
-        <img src="./img/logo/pci.svg" alt="pci" class="footer__icon" />
-        <img src="./img/logo/sumsub.svg" alt="sumsub" class="footer__icon" />
-        <img
-         src="./img/logo/google-cloud.svg"
-         alt="google-cloud"
-         class="footer__icon"
-        />
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </footer>
  </body>
  <script src="./js/header.js"></script>
  <script src="./js/language-list.js"></script>
  <script src="./js/weed.js"></script>
  <script src="./js/loader.js"></script>
+ <script src="./js/form.js" type="module"></script>
+ <script src="./js/password.js"></script>
 </html>

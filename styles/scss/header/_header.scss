@@ -47,17 +47,24 @@
   visibility: hidden;
   box-shadow: 4px 4px 21.8px 0px rgba(0, 0, 0, 0.4);
  }
+
+ &__language-list-wrapper {
+  position: absolute;
+  overflow: hidden;
+  top: 70%;
+  transform: translateX(-20%);
+  max-height: 0;
+  transition: 0.5s;
+  z-index: 6;
+ }
  &__language-list {
   width: rem(85px);
   flex-direction: column;
   row-gap: rem(6px);
-  background: rgba(27, 27, 27, 1);
+  background: rgb(37, 35, 35);
   box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
-  padding: rem(4px) 0px rem(4px) 0px;
   border-radius: rem(10px);
-  opacity: 0;
-  position: absolute;
-  display: none;
+  display: flex;
   z-index: 11;
  }
  &__language-item {
@@ -105,12 +112,19 @@
    color: rgba(255, 255, 255, 1);
    &::after {
     transition: 0.3s;
-    content: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14.8447L13.5 10.3447L18 14.8447" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    content: '';
+    transform: rotateX(180deg);
    }
   }
   &::after {
    transition: 0.3s;
-   content: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.3447L13.5 16.8447L9 12.3447" stroke="%23D8D8D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+   content: '';
+   width: rem(27px);
+   height: rem(30px);
+   background-size: 100% !important;
+   background-position: center;
+   background: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.3447L13.5 16.8447L9 12.3447" stroke="%23D8D8D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    no-repeat;
   }
  }
  &__item.language {
@@ -144,14 +158,18 @@
   }
  }
  &__item.language:hover {
-  padding: 0;
   cursor: pointer;
  }
  @include ifdesktop {
   &__language-wrapper:hover &__language-list {
    display: flex;
-   opacity: 1;
+   transition: 0.5s;
+   max-height: fit-content;
    flex-direction: column;
+  }
+  &__language-wrapper:hover &__language-list-wrapper {
+   transition: 0.5s;
+   max-height: fit-content;
   }
  }
 
@@ -311,8 +329,11 @@
    position: relative;
   }
   &__language-list.active {
-   top: 190%;
-   right: -2%;
+   display: block;
+   opacity: 1;
+   visibility: visible;
+   top: 120%;
+   right: -3%;
    z-index: 1;
   }
   &__burger-icon {
@@ -344,7 +365,7 @@
    display: none;
   }
   &__menu.burger {
-   overflow: hidden;
+   overflow: auto;
    display: grid;
    grid-template-columns: 1fr;
    align-items: center;
@@ -354,7 +375,6 @@
    background: rgba(35, 35, 35, 1);
    position: absolute;
    z-index: 2;
-   padding: rem(75px);
    height: 100vh;
    justify-items: center;
    transform: translateX(-100%);
@@ -363,7 +383,6 @@
   &__menu.burger.active {
    transition: 0.3s;
    transform: translateX(0%);
-   overflow: hidden;
   }
   &__menu.burger.active &__burger-close {
    display: block;
@@ -419,20 +438,38 @@
    }
   }
   &__item.language {
+   display: flex;
    &:hover {
     transition: 0.3s;
     color: rgba(255, 255, 255, 1);
     &::after {
-     display: block;
      transition: 0.3s;
-     content: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 14.8447L13.5 10.3447L18 14.8447" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+     content: '';
+     transform: rotateX(180deg);
     }
    }
    &::after {
     display: block;
     transition: 0.3s;
-    content: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.3447L13.5 16.8447L9 12.3447" stroke="%23D8D8D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    content: '';
+    width: rem(27px);
+    height: rem(30px);
+    background-size: 100% !important;
+    background-position: center;
+    background: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.3447L13.5 16.8447L9 12.3447" stroke="%23D8D8D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+     no-repeat;
    }
+  }
+  &__language-list {
+   opacity: 0;
+   visibility: hidden;
+   display: none;
+  }
+  &__language-list-wrapper {
+   max-height: 0;
+  }
+  &__item.language:hover &__language-list-wrapper {
+   max-height: 100%;
   }
   &__login {
    justify-content: center;
@@ -474,33 +511,45 @@
     grid-column: 1;
    }
   }
+  &__burger-menu {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('../../../img/bg/weed-burger-1024.svg') no-repeat;
+    right: 0;
+    bottom: 0;
+    background-position: right bottom;
+    background-size: 55%;
+    z-index: -1;
+   }
+   &::before {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    content: '';
+    background-image: url('../../../img/bg/burger-bg.png');
+    opacity: 0.05;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+   }
+  }
   &__burger-wrapper {
+   padding: rem(47.5px) rem(67px) rem(47.5px) rem(50px);
    display: grid;
    grid-gap: rem(10px);
    column-gap: rem(108px);
    opacity: 1;
    z-index: 3;
    grid-template-columns: 1fr 1fr;
-   position: relative;
    align-items: center;
-   &::after {
-    position: fixed;
-    content: url('../../../img/bg/weed-burger-1024.svg');
-    right: 0;
-    bottom: 0;
-   }
-   &::before {
-    left: 0;
-    top: 0;
-    position: fixed;
-    z-index: 1;
-    content: '';
-    background: url('../../../img/bg/burger-bg.png');
-    opacity: 0.05;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-   }
   }
   &__language {
    display: none;
@@ -520,21 +569,30 @@
    &::after {
     content: none;
    }
-
+  }
+  &__burger-menu {
    &::before {
     left: 0;
     top: 0;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     content: '';
     background: url('../../../img/bg/burger-bg-768.png');
     opacity: 0.1;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    z-index: -1;
+   }
+   &::after {
+    position: absolute;
+    right: auto;
+    content: url('../../../img/bg/weed-burger-768.svg');
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
    }
   }
-  &__burger-icon {
-  }
+
   &__language-wrapper.alt {
    display: none;
   }
@@ -554,21 +612,12 @@
    }
    border-right: 1px rgba(196, 167, 103, 0.4) solid;
   }
-  &__menu.burger {
-   padding-left: rem(50px);
-  }
+
   &__button-wrapper {
-   padding: 0px rem(91px) 0px rem(91px);
+   //  padding: 0px rem(91px) 0px rem(91px);
    flex: 1;
    justify-content: center;
    position: relative;
-   &::after {
-    position: absolute;
-    right: auto;
-    content: url('../../../img/bg/weed-burger-1024.svg');
-    bottom: -10%;
-    position: absolute;
-   }
   }
   &__burger-right {
    width: 100%;
@@ -589,6 +638,7 @@
   &__language-wrapper {
    display: flex;
    flex-direction: column;
+   align-items: center;
   }
   &__language {
    position: relative;
@@ -596,19 +646,22 @@
    display: flex;
    z-index: 3;
    align-items: center;
-   justify-content: flex-end;
 
    &:hover {
     transition: 0.3s;
     color: rgba(255, 255, 255, 1);
     &::after {
      transition: 0.3s;
-     content: url('data:image/svg+xml,<svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 11.75L13.5 16.25L9 11.75" stroke="%23D8D8D4" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+
+     transform: rotateX(180deg);
     }
    }
    &::after {
     transition: 0.3s;
-    content: url('data:image/svg+xml,<svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 11.75L13.5 16.25L9 11.75" stroke="%23D8D8D4" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    content: '';
+    width: rem(27px);
+    height: rem(26px);
+    background: url('data:image/svg+xml,<svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 11.75L13.5 16.25L9 11.75" stroke="%23D8D8D4" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
    }
   }
   &__language-list {
@@ -676,35 +729,45 @@
    display: none;
   }
   &__menu.burger.active {
-   padding-left: rem(20px);
-   padding-right: rem(20px);
-   padding-bottom: rem(90px);
-   padding-top: rem(90px);
+   padding: 0;
   }
-  &__burger-wrapper {
-   overflow: hidden !important;
-   justify-content: center;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   row-gap: rem(110px);
+  &__burger-menu {
    &::after {
-    top: 20%;
+    content: '';
+    top: -8%;
     right: 0;
-    position: fixed;
-    content: url('../../../img/bg/weed-burger-510.svg');
+    position: absolute;
+    background: url('../../../img/bg/weed-burger-510.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+    z-index: -1;
    }
    &::before {
     left: 0;
     top: 0;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     content: '';
     background: url('../../../img/bg/bg-burger-510.png');
     opacity: 0.1;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
    }
+  }
+  &__burger-wrapper {
+   overflow: auto;
+   justify-content: space-between;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   row-gap: rem(20px);
+   padding-left: rem(20px);
+   padding-right: rem(20px);
+   padding-bottom: rem(90px);
+   padding-top: rem(90px);
   }
 
   &__item-list-wrapper.burger {
@@ -712,6 +775,12 @@
    padding-right: 0;
    border-right: none;
    row-gap: rem(37px);
+   height: 100%;
+   justify-content: center;
+   flex: 1 0 min-content;
+  }
+  &__burger-right {
+   height: fit-content;
   }
   &__menu-item-list {
    display: none;
@@ -791,6 +860,7 @@
    align-items: center;
   }
   &__menu.burger.active {
+   display: block;
    row-gap: rem(112px);
   }
   &__item:active {

@@ -11,7 +11,7 @@ const validateEmail = (email, label) => {
 form.addEventListener('submit', (e) => {
  e.preventDefault();
 });
-document;
+
 inputs.forEach((item) => {
  const labelInput = item.querySelector('.main__form-label');
  if (labelInput) {
@@ -23,6 +23,14 @@ inputs.forEach((item) => {
     : labelInput.classList.remove('top');
    input.addEventListener('focusout', () => {
     input.classList.contains('email') ? validateEmail(input, labelInput) : null;
+    if (
+     labelInput.classList.contains('top') &&
+     !input.classList.contains('invalid')
+    ) {
+     labelInput.parentElement.classList.add('verified');
+    } else {
+     labelInput.parentElement.classList.remove('verified');
+    }
    });
   });
  }

@@ -11,6 +11,10 @@
  font-weight: 400;
  font-size: $fs;
 }
+@mixin proxima($fs) {
+ font-family: 'proxima_nova_rgregular', sans-serif;
+ font-size: $fs;
+}
 @import '../varibles.scss';
 
 @mixin ifdesktop {

@@ -35,7 +35,7 @@
   margin-right: rem(40px);
  }
  &__subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   font-weight: 300;
   font-size: rem(18px);
   line-height: rem(28.8px);
@@ -47,7 +47,7 @@
  &__attention-subtitle {
   font-size: rem(18px);
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
  }
  &__logo {
   width: rem(315px);
@@ -119,6 +119,7 @@
  }
 }
 .introduction.page {
+ padding-top: rem(187px);
  &::after {
   content: '';
   bottom: -11rem;

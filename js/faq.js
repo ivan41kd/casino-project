@@ -4,6 +4,8 @@ const faqList = document.querySelector('.faq__names-list');
 
 const faqNames = document.querySelectorAll('.faq__name');
 
+const currentItem = document.querySelector('.faq__name.current');
+
 faqNames.forEach((name) => {
  if (
   !name.classList.contains('mobile') &&
@@ -19,7 +21,6 @@ faqNames.forEach((name) => {
 });
 
 const setCurrent = (list) => {
- const currentItem = document.querySelector('.faq__name.current');
  const items = list.querySelectorAll('.faq__name.mobile');
  items.forEach((item) => {
   item.addEventListener('click', () => {
@@ -29,6 +30,7 @@ const setCurrent = (list) => {
 };
 
 faqWrapper.addEventListener('click', () => {
+ faqWrapper.classList.toggle('opened');
  faqList.classList.toggle('active');
  setCurrent(faqList);
 });
