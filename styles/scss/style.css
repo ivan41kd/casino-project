@@ -5059,7 +5059,7 @@ button {
   .footer__payment-icons {
     grid-row: 1;
     grid-column: 2;
-    flex: 1 1 180%;
+    flex: 1 1 226%;
     -moz-column-gap: 1.3571428571rem;
          column-gap: 1.3571428571rem;
     justify-content: center;
