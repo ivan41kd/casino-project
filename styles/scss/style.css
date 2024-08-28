@@ -6846,7 +6846,7 @@ button {
   }
   .footer__top-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 12.5714285714rem 10.2857142857rem 15.8571428571rem 8rem;
     -moz-column-gap: 0.7142857143rem;
          column-gap: 0.7142857143rem;
     row-gap: 3.0714285714rem;

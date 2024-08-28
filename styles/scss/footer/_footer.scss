@@ -362,7 +362,7 @@
   }
   &__top-wrapper {
    display: grid;
-   grid-template-columns: 2fr 1fr;
+   grid-template-columns: rem(176px) rem(144px) rem(222px) rem(112px);
    column-gap: rem(10px);
    row-gap: rem(43px);
   }
