@@ -9,6 +9,25 @@ const resendEmail = document.querySelector('.main__verification-resend.email');
 const mobModal = document.querySelector('.main__verification-modal.mobile');
 const emailModal = document.querySelector('.main__verification-modal.email');
 
+const mobModalWrapper = mobModal.querySelector(
+ '.main__verification-modal-wrapper'
+);
+const emailModalWrapper = emailModal.querySelector(
+ '.main__verification-modal-wrapper'
+);
+
+const successMobModal = mobModal.querySelector('.main__success-modal-wrapper');
+const successEmailModal = emailModal.querySelector(
+ '.main__success-modal-wrapper'
+);
+
+const closeSuccessMob = successMobModal.querySelector(
+ '.main__success-modal-close'
+);
+const closeSuccessEmail = successEmailModal.querySelector(
+ '.main__success-modal-close'
+);
+
 const verifyTextMob = document.querySelector('.main__form-verify-text.phone');
 const verifyTextEmail = document.querySelector('.main__form-verify-text.email');
 
@@ -29,16 +48,17 @@ const emailClose = document.querySelector(
  '.main__verification-modal-close.email'
 );
 
-const formatTime = (minutes, seconds) => {
- return `${minutes.toString().padStart(2, '0')}:${seconds
-  .toString()
-  .padStart(2, '0')}`;
-};
-
 const startTimer = (element, durationInSeconds) => {
+ if (
+  element.parentElement.nextElementSibling.classList.contains('disabled-resend')
+ ) {
+  return;
+ }
+
  let timeRemaining = durationInSeconds;
 
  element.parentElement.nextElementSibling.classList.add('disabled-resend');
+
  const interval = setInterval(() => {
   const minutes = Math.floor(timeRemaining / 60);
   const seconds = timeRemaining % 60;
@@ -54,24 +74,38 @@ const startTimer = (element, durationInSeconds) => {
  }, 1000);
 };
 
+const formatTime = (minutes, seconds) => {
+ return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+  2,
+  '0'
+ )}`;
+};
+
 verifyTextMob.addEventListener('click', () => {
- if (mainInputMob.classList.contains('verified')) {
+ if (
+  mainInputMob.classList.contains('valid') &&
+  !verifyTextMob.classList.contains('disabled') &&
+  !verifyTextMob.classList.contains('valid')
+ ) {
   mobModal.classList.toggle('active');
  } else {
-  console.log('Verification is not allowed, class "verified" is missing.');
+  return;
  }
 });
 
 verifyTextEmail.addEventListener('click', () => {
- if (mainInputEmail.classList.contains('verified')) {
+ if (
+  !verifyTextEmail.classList.contains('disabled') &&
+  !verifyTextEmail.classList.contains('valid')
+ ) {
   emailModal.classList.toggle('active');
  } else {
-  console.log('Verification is not allowed, class "verified" is missing.');
+  return;
  }
 });
 
 const mobObserver = new MutationObserver(() => {
- if (!mainInputMob.classList.contains('verified')) {
+ if (!mainInputMob.classList.contains('valid')) {
   mobModal.classList.remove('active');
  }
 });
@@ -82,7 +116,7 @@ mobObserver.observe(mainInputMob, {
 });
 
 const emailObserver = new MutationObserver(() => {
- if (!mainInputEmail.classList.contains('verified')) {
+ if (!mainInputEmail.classList.contains('valid')) {
   emailModal.classList.remove('active');
  }
 });
@@ -128,15 +162,16 @@ inputsMob.forEach((input, index) => {
   if ([...inputsMob].every((input) => input.value !== '')) {
    const enteredCode = [...inputsMob].map((input) => input.value).join('');
    if (enteredCode === code) {
-    mobModal.classList.remove('active');
+    mobModalWrapper.classList.add('inactive');
+    successMobModal.classList.remove('inactive');
+    successMobModal.classList.add('active');
     const icon = verifyTextMob.previousElementSibling;
     const icon2 = verifyTextMob.nextElementSibling;
     icon.src = './img/icons/verify-active.svg';
     icon2.remove();
-    verifyTextMob.classList.toggle('verified');
+    verifyTextMob.classList.toggle('valid');
    } else {
     inputsMob.forEach((input) => {
-     console.log(input.parentElement);
      input.parentElement.classList.add('error');
      input.classList.add('error');
     });
@@ -175,12 +210,15 @@ inputsEmail.forEach((input, index) => {
   if ([...inputsEmail].every((input) => input.value !== '')) {
    const enteredCode = [...inputsEmail].map((input) => input.value).join('');
    if (enteredCode === code) {
-    emailModal.classList.remove('active');
+    emailModalWrapper.classList.add('inactive');
+    successEmailModal.classList.remove('inactive');
+    successEmailModal.classList.add('active');
+
     const icon = verifyTextEmail.previousElementSibling;
     const icon2 = verifyTextEmail.nextElementSibling;
     icon.src = './img/icons/verify-active.svg';
     icon2.remove();
-    verifyTextEmail.classList.toggle('verified');
+    verifyTextEmail.classList.toggle('valid');
    } else {
     inputsEmail.forEach((input) => {
      input.classList.toggle('error');
@@ -197,5 +235,18 @@ inputsEmail.forEach((input, index) => {
     inputsEmail[index - 1].focus();
    }
   }
+ });
+
+ closeSuccessMob.addEventListener('click', () => {
+  mobModal.classList.remove('active');
+  mobModal.classList.add('inactive');
+  successMobModal.classList.remove('active');
+  successMobModal.classList.add('inactive');
+ });
+ closeSuccessEmail.addEventListener('click', () => {
+  emailModal.classList.remove('active');
+  emailModal.classList.add('inactive');
+  successEmailModal.classList.remove('active');
+  successEmailModal.classList.add('inactive');
  });
 });

@@ -28,7 +28,7 @@
  }
  &__middle-subtitle {
   font-size: rem(16px);
-  font-weight: 400;
+  font-weight: 300;
   line-height: rem(25.6px);
  }
  &__top-wrapper {
@@ -61,7 +61,7 @@
  &__category {
   color: rgba(216, 216, 212, 1);
   line-height: rem(16.52px);
-  font-weight: 500;
+  font-weight: 400;
   font-size: rem(14px);
   text-transform: uppercase;
   transition: 0.3s;
@@ -93,7 +93,7 @@
  &__middle-item {
   pointer-events: none;
   line-height: rem(25.6px);
-  font-weight: 400;
+  font-weight: 300;
   list-style-type: disc;
   margin-left: rem(20px);
   font-size: rem(16px);
@@ -361,6 +361,9 @@
    margin-bottom: rem(78px);
   }
   &__top-wrapper {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   column-gap: rem(10px);
    row-gap: rem(43px);
   }
   &__middle {

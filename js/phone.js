@@ -2,18 +2,23 @@ import { data } from './countries.js';
 
 mask('.main__form-input.phone');
 
-const selectListWrapper = document.querySelector('.main__form-phone');
-const selectList = selectListWrapper.querySelector(
- '.main__form-select-list.phone'
+const selectListWrappers = document.querySelectorAll('.main__form-phone');
+const selectLists = document.querySelectorAll('.main__form-select-list.phone');
+const formPhoneWrappers = document.querySelectorAll(
+ '.main__form-phone-wrapper'
 );
-const formPhoneWrapper = document.querySelector('.main__form-phone-wrapper');
-const input = document.querySelector('.main__form-input.phone');
+const inputs = document.querySelectorAll('.main__form-input.phone');
+const phoneLists = document.querySelectorAll('.main__form-phone-list-wrapper');
+const searchInputs = document.querySelectorAll(
+ '.main__form-select-input.phone-input '
+);
 
-const phoneList = document.querySelector('.main__form-phone-list-wrapper');
-
-const searchInput = phoneList.querySelector('.main__form-select-input');
-
-const createItems = ({ country, code, flag }) => {
+const createItems = (
+ { country, code, flag },
+ selectList,
+ formPhoneWrapper,
+ input
+) => {
  const listItemWrapper = document.createElement('div');
  const listItem = document.createElement('li');
  const listFlag = document.createElement('img');
@@ -29,13 +34,12 @@ const createItems = ({ country, code, flag }) => {
  if (country === 'Russia') {
   listItemWrapper.classList.add('default');
  }
-
  listItemWrapper.append(listItem);
  selectList.append(listItemWrapper);
 
  listItem.addEventListener('click', () => {
   input.parentElement.classList.remove('verified');
-  const value = listItem.textContent.replace(new RegExp(/[^\d]/, 'ig'), '');
+  const value = listItem.textContent.replace(/[^\d]/g, '');
   input.value = '+' + value;
 
   const existingFlag = formPhoneWrapper.querySelector('.main__form-phone-flag');
@@ -50,7 +54,7 @@ const createItems = ({ country, code, flag }) => {
  });
 };
 
-const searchItem = (letter) => {
+const searchItem = (letter, selectList, formPhoneWrapper, input) => {
  selectList.innerHTML = '';
 
  data.forEach((item) => {
@@ -58,7 +62,8 @@ const searchItem = (letter) => {
   const arg = letter.toLowerCase();
 
   if (country.includes(arg)) {
-   createItems(item);
+   console.log(arg);
+   createItems(item, selectList, formPhoneWrapper, input);
   }
  });
 
@@ -70,7 +75,7 @@ const searchItem = (letter) => {
  }
 };
 
-const setDefaultCountryFlag = () => {
+const setDefaultCountryFlag = (formPhoneWrapper, input) => {
  const russia = data.find((country) => country.country === 'Russia');
  if (russia) {
   const existingFlag = formPhoneWrapper.querySelector('.main__form-phone-flag');
@@ -88,63 +93,84 @@ const setDefaultCountryFlag = () => {
  }
 };
 
-formPhoneWrapper.addEventListener('click', () => {
- document.querySelector('.main__form-dropdown-icon').classList.toggle('active');
- phoneList.classList.toggle('active');
-});
+formPhoneWrappers.forEach((formPhoneWrapper, index) => {
+ const phoneList = phoneLists[index];
+ const selectList = selectLists[index];
+ const input = inputs[index];
+ const searchInput = searchInputs[index];
 
-data.forEach((item) => {
- createItems(item);
-});
+ formPhoneWrapper.addEventListener('click', () => {
+  document
+   .querySelector('.main__form-dropdown-icon')
+   .classList.toggle('active');
+  phoneList.classList.toggle('active');
+ });
 
-setDefaultCountryFlag();
+ data.forEach((item) => {
+  createItems(item, selectList, formPhoneWrapper, input);
+ });
 
-searchInput.addEventListener('input', () => {
- if (searchInput.value != '') {
-  searchItem(searchInput.value);
- } else {
-  selectList.innerHTML = '';
-  data.forEach((item) => {
-   createItems(item);
+ setDefaultCountryFlag(formPhoneWrapper, input);
+ if (searchInput != undefined) {
+  searchInput.addEventListener('input', () => {
+   if (searchInput.value !== '') {
+    searchItem(searchInput.value, selectList, formPhoneWrapper, input);
+   } else {
+    selectList.innerHTML = '';
+    data.forEach((item) => {
+     createItems(item, selectList, formPhoneWrapper, input);
+    });
+   }
   });
  }
-});
 
-input.addEventListener('input', () => {
- const inputValue = input.value.replace(/[^\d+]/g, '');
- const imgUrl = document.querySelector('.main__form-phone-flag');
- const filteredList = data.filter((country) => {
-  return country.flag == imgUrl.getAttribute('src');
- });
- const filteredMask = maskList.filter((mask) => {
-  return mask.code.startsWith(filteredList[0].code);
- });
- filteredMask.forEach((item) => {
-  item.code.length == input.value.length
-   ? input.parentElement.classList.add('verified')
-   : input.parentElement.classList.remove('verified');
- });
+ input.addEventListener('input', () => {
+  const inputValue = input.value.replace(/[^\d+]/g, '');
+  const imgUrl = formPhoneWrapper
+   .querySelector('.main__form-phone-flag')
+   .getAttribute('src');
+  const filteredList = data.filter((country) => country.flag === imgUrl);
 
- if (inputValue === '') {
-  setDefaultCountryFlag();
- } else {
-  const matchedCountry = data.find((country) =>
-   inputValue.startsWith(country.code)
-  );
-
-  if (matchedCountry) {
-   const existingFlag = formPhoneWrapper.querySelector(
-    '.main__form-phone-flag'
+  if (filteredList.length) {
+   const matchedCountry = filteredList[0];
+   const filteredMask = maskList.filter((mask) =>
+    mask.code.startsWith(matchedCountry.code)
    );
 
-   if (!existingFlag) {
-    const newFlag = document.createElement('img');
-    newFlag.src = matchedCountry.flag;
-    newFlag.className = 'main__form-phone-flag';
-    formPhoneWrapper.prepend(newFlag);
-   } else {
-    existingFlag.src = matchedCountry.flag;
+   filteredMask.forEach((item) => {
+    if (item.code.length === input.value.length) {
+     input.parentElement.classList.remove('invalid');
+     input.parentElement.classList.add('valid');
+     //  verifyTextMob.classList.remove('disabled');
+    } else {
+     input.parentElement.classList.add('invalid');
+     input.parentElement.classList.remove('valid');
+     //  verifyTextMob.classList.add('disabled');
+    }
+   });
+  }
+
+  if (inputValue === '') {
+   setDefaultCountryFlag(formPhoneWrapper, input);
+  } else {
+   const matchedCountry = data.find((country) =>
+    inputValue.startsWith(country.code)
+   );
+
+   if (matchedCountry) {
+    const existingFlag = formPhoneWrapper.querySelector(
+     '.main__form-phone-flag'
+    );
+
+    if (!existingFlag) {
+     const newFlag = document.createElement('img');
+     newFlag.src = matchedCountry.flag;
+     newFlag.className = 'main__form-phone-flag';
+     formPhoneWrapper.prepend(newFlag);
+    } else {
+     existingFlag.src = matchedCountry.flag;
+    }
    }
   }
- }
+ });
 });

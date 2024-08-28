@@ -1,19 +1,30 @@
 const modals = document.querySelectorAll('.main__vip-card-modal');
 
 const vipCards = document.querySelectorAll('.main__vip-card');
+const accountCards = document.querySelectorAll('.account__level');
 
-vipCards.forEach((card) => {
+const allCards = (card, modal) => {
  card.addEventListener('click', () => {
   const levelID = card.dataset.level;
-  modals.forEach((item) => {
-   const modalID = item.dataset.level;
-   if (levelID == modalID) {
-    item.classList.toggle('active');
-    const closeModal = item.querySelector('.main__vip-card-modal-close');
-    closeModal.addEventListener('click', () => {
-     item.classList.remove('active');
-    });
-   }
-  });
+  const modalID = modal.dataset.level;
+  if (levelID == modalID) {
+   modal.classList.toggle('active');
+   const closeModal = modal.querySelector('.main__vip-card-modal-close');
+   closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+   });
+  }
+ });
+};
+
+accountCards.forEach((card) => {
+ modals.forEach((modal) => {
+  allCards(card, modal);
+ });
+});
+
+vipCards.forEach((card) => {
+ modals.forEach((modal) => {
+  allCards(card, modal);
  });
 });

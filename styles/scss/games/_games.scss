@@ -21,6 +21,7 @@
    )
    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
  }
+
  &__filter-list.mobile {
   display: none;
  }
@@ -522,6 +523,14 @@
    box-shadow: 0px 3px 3.7px 0px rgba(11, 14, 15, 0.3);
 
    -webkit-transition: max-height 10.25s;
+  }
+  &__categories-list &__categories-item.mobile {
+   color: rgba(255, 255, 255, 1);
+   font-weight: 400;
+   text-transform: capitalize;
+  }
+  &__categories-item.mobile.active {
+   color: rgba(216, 216, 212, 0.6);
   }
   &__filter-list.mobile &__categories-list.opened {
    border-radius: rem(15px);

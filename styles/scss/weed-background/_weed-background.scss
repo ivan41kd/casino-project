@@ -8,7 +8,7 @@
  top: 0;
  height: 0;
  z-index: -1;
- transform: translateY(-140px);
+ transform: translateY(rem(-140px));
  &__weed-second {
   right: 0;
   top: 0;
@@ -20,18 +20,30 @@
   top: 0;
   left: 0;
  }
+ @media screen and (max-width: 1440px) {
+  &__background-img.account-img-1024 {
+   width: 100%;
+  }
+ }
+}
+.weed-background.account-weed {
+ position: absolute;
+ @media screen and (max-width: 1440px) {
+  width: 100%;
+  left: 0;
+ }
 }
 .weed-background.green {
  transform: translateY(-185px);
 }
 @media screen and (max-width: 1440px) {
  .weed-background.fixed {
-  transform: translateY(60px);
+  transform: translateY(rem(60px));
  }
 }
 @include onlymobile {
  .weed-background.fixed {
-  transform: translateY(30px);
+  transform: translateY(rem(30px));
  }
  .weed-background {
   &__weed-first,

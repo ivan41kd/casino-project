@@ -1,6 +1,6 @@
 import { data } from './countries.js';
 const selectListWrapper = document.querySelector(
- '.main__form-select-list-wrapper'
+ '.main__form-select-list-wrapper.country'
 );
 const selectList = selectListWrapper.querySelector('.main__form-select-list');
 

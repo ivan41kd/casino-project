@@ -29,6 +29,26 @@ html {
   font-size: ($base-font-size / $design-desktop-width) * 100vw;
  }
 }
+html,
+body {
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
+
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
+
+ @supports (-moz-appearance: none) {
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
+ }
+}
 
 /* Remove default margin in favour of better control in authored CSS */
 body,
@@ -64,7 +84,7 @@ body {
  font-weight: 500;
  min-height: 100vh;
  line-height: 1.5;
- background: rgb(35, 35, 35);
+ background: #232323;
  color: rgba(216, 216, 212, 1);
  animation: fadeInAnimation ease 3s;
  animation-iteration-count: 1;
@@ -73,25 +93,26 @@ body {
  &::before {
   position: fixed;
   content: '';
-  background: radial-gradient(
-    68.75% 127.38% at 50% 47.59%,
-    #000000 3.53%,
-    rgba(0, 0, 0, 0) 72.69%
+  background: url('../../img/bg/account-bg.png'),
+   radial-gradient(
+    39.36% 72.88% at 50% 0%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
    ),
-   url(../../img/bg/bg-pic.png);
+   #232323;
+
   width: 100%;
   height: 100%;
-  opacity: 10%;
   top: 0;
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
  }
  &::after {
   position: fixed;
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  height: 100vh;
+  z-index: 0;
   background: radial-gradient(
     39.36% 72.88% at 50% 0%,
     rgba(217, 217, 217, 0.2) 0%,
@@ -107,6 +128,71 @@ body {
 
 .body-page {
  background: rgba(20, 20, 20, 1);
+ &::before {
+  background: url(../../img/bg/account-bg.png),
+   radial-gradient(
+    39.36% 72.88% at 50% 0%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+   ),
+   #141414;
+ }
+}
+.modal-account {
+ overflow: auto;
+ transform: translateX(-107%);
+ position: fixed;
+ background: url('../../img/bg/account-bg.png'), #232323;
+ background-blend-mode: multiply;
+ background-repeat: no-repeat;
+ background-size: cover;
+ z-index: 500;
+ width: 100%;
+ height: 100vh;
+ transition: 0.3s ease-in-out;
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
+
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
+
+ @supports (-moz-appearance: none) {
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
+ }
+}
+.modal-change {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ height: 100vh;
+ position: fixed;
+ z-index: 999;
+ backdrop-filter: blur(12px);
+ visibility: hidden;
+ opacity: 0;
+ transition: 0.3s ease-in-out;
+ justify-content: center;
+}
+.modal-change.active {
+ transition: 0.3s ease-in-out;
+ opacity: 1;
+ visibility: visible;
+}
+
+.modal-account.active {
+ transition: 0.3s ease-in-out;
+ transform: translateX(0);
+}
+.modal-success-wrapper {
+ position: relative;
 }
 .scroll-disabled {
  overflow: hidden;
@@ -159,6 +245,17 @@ body {
 .content {
  position: relative;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+ -moz-appearance: textfield;
+}
+
 @media screen and (max-width: 1440px) {
  .girl-left,
  .girl-right {
@@ -169,6 +266,22 @@ body {
  display: flex;
  flex-direction: column;
  width: 100%;
+ height: 100%;
+}
+.content__wrapper.main-content {
+ &::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+   40.73% 75.46% at 50% 47.59%,
+   #000000 3.53%,
+   rgba(0, 0, 0, 0) 72.69%
+  );
+  background-size: 100%;
+  background-position: center;
+ }
 }
 
 @media (min-width: 1440px) {
@@ -179,6 +292,15 @@ body {
 @include onlymobile {
  body:after {
   height: 5%;
+ }
+ .content__wrapper.main-content {
+  &::before {
+   background: radial-gradient(
+    83.24% 59.63% at 50% 47.59%,
+    #000000 3.53%,
+    rgba(0, 0, 0, 0) 72.69%
+   );
+  }
  }
 }
 

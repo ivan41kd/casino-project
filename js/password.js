@@ -1,49 +1,81 @@
-const passwordInput = document.querySelector('.main__form-input.password');
-
-const lengthText = document.querySelector(
- '.main__password-requirement-text.length'
-);
-const lettersText = document.querySelector(
- '.main__password-requirement-text.letters'
-);
-const numbersText = document.querySelector(
- '.main__password-requirement-text.numbers'
+const passwordInputWrappers = document.querySelectorAll(
+ '.main__form-input-label-wrapper.password'
 );
 
-const passwordIcon = document.querySelector('.main__password-icon');
+passwordInputWrappers.forEach((wrapper) => {
+ const passwordInput = wrapper.querySelector('.main__form-input.password');
 
-const checkLength = (value) => {
- value.length >= 8
-  ? lengthText.classList.add('active')
-  : lengthText.classList.remove('active');
-};
+ const lengthText = wrapper.querySelector(
+  '.main__password-requirement-text.length'
+ );
+ const lettersText = wrapper.querySelector(
+  '.main__password-requirement-text.letters'
+ );
+ const numbersText = wrapper.querySelector(
+  '.main__password-requirement-text.numbers'
+ );
 
-const checkLetters = (value) => {
- const regExp = /[a-zA-Z]/g;
- regExp.test(value)
-  ? lettersText.classList.add('active')
-  : lettersText.classList.remove('active');
-};
+ const requireWrapper = wrapper.querySelector(
+  '.main__password-require-wrapper'
+ );
 
-const checkNumbers = (value) => {
- const regExp = /\d/g;
- regExp.test(value)
-  ? numbersText.classList.add('active')
-  : numbersText.classList.remove('active');
-};
+ const passwordIcons = wrapper.querySelectorAll('.main__password-icon');
 
-passwordInput.addEventListener('input', () => {
- checkLength(passwordInput.value);
- checkLetters(passwordInput.value);
- checkNumbers(passwordInput.value);
- passwordIcon.classList.contains('active')
-  ? (passwordInput.type = 'text')
-  : (passwordInput.type = 'password');
-});
+ const checkLength = (value, element) => {
+  value.length >= 8
+   ? element.classList.add('active')
+   : element.classList.remove('active');
+ };
 
-passwordIcon.addEventListener('click', () => {
- passwordIcon.classList.toggle('active');
- passwordIcon.classList.contains('active')
-  ? (passwordInput.type = 'text')
-  : (passwordInput.type = 'password');
+ const checkLetters = (value, element) => {
+  const regExp = /[a-zA-Z]/g;
+  regExp.test(value)
+   ? element.classList.add('active')
+   : element.classList.remove('active');
+ };
+
+ const checkNumbers = (value, element) => {
+  const regExp = /\d/g;
+  regExp.test(value)
+   ? element.classList.add('active')
+   : element.classList.remove('active');
+ };
+
+ const verifyPassword = (requirement1, requirement2, requirement3, input) => {
+  if (
+   requirement1.classList.contains('active') &&
+   requirement2.classList.contains('active') &&
+   requirement3.classList.contains('active') &&
+   input.value !== ''
+  ) {
+   input.classList.remove('invalid');
+   input.classList.add('valid');
+  } else {
+   input.classList.remove('valid');
+   input.classList.add('invalid');
+  }
+ };
+
+ const showRequirements = (input) => {
+  input.value != ''
+   ? requireWrapper.classList.add('visible')
+   : requireWrapper.classList.remove('visible');
+ };
+
+ passwordIcons.forEach((icon) => {
+  icon.addEventListener('click', () => {
+   icon.classList.toggle('active');
+   icon.classList.contains('active')
+    ? (passwordInput.type = 'text')
+    : (passwordInput.type = 'password');
+  });
+ });
+
+ passwordInput.addEventListener('input', () => {
+  showRequirements(passwordInput);
+  checkLength(passwordInput.value, lengthText);
+  checkLetters(passwordInput.value, lettersText);
+  checkNumbers(passwordInput.value, numbersText);
+  verifyPassword(lengthText, lettersText, numbersText, passwordInput);
+ });
 });
