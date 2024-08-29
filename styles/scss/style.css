@@ -152,6 +152,19 @@ body::after {
     scrollbar-width: thin;
   }
 }
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .modal-account::after {
+    position: absolute;
+    content: "";
+    background: url("../../../img/bg/leaves-account-1024.svg") no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-position: bottom;
+    z-index: -1;
+  }
+}
 
 .modal-change {
   display: flex;
@@ -2758,6 +2771,8 @@ button {
   font-weight: 400;
   width: 24.7857142857rem;
   border-radius: 5.0042857143rem;
+  -webkit-backdrop-filter: blur(0.7142857143rem);
+          backdrop-filter: blur(0.7142857143rem);
 }
 .main__form-input::-moz-placeholder {
   opacity: 0;
@@ -4369,6 +4384,7 @@ button {
          column-gap: 0.4285714286rem;
     width: -moz-fit-content;
     width: fit-content;
+    padding-left: 1.4285714286rem;
   }
   .main__back-wrapper:hover .main__back-page {
     color: rgb(216, 216, 212);
@@ -4400,6 +4416,7 @@ button {
     width: 73.1428571429rem;
   }
   .main__wrapper.main-wrapper-account {
+    position: relative;
     width: 100%;
   }
   .main__page-wrapper {
@@ -4570,6 +4587,8 @@ button {
     padding-right: 2.8571428571rem;
   }
   .main__content-wrapper.content-account {
+    padding-right: 0;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
   }
@@ -5142,8 +5161,8 @@ button {
 }
 @media (min-width: 0px) and (max-width: 767px) {
   .main.main-account {
-    padding-left: 1.4285714286rem;
-    padding-right: 1.4285714286rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -6954,6 +6973,7 @@ button {
   .weed-background.account-weed {
     width: 100%;
     left: 0;
+    display: none;
   }
 }
 
@@ -7850,11 +7870,11 @@ button {
 }
 @media (max-width: 1440px) {
   .account {
-    width: 67.4285714286rem;
-    padding: 0 0;
+    width: 100%;
   }
   .account__wrapper {
-    padding-left: 0;
+    padding-left: 1.4285714286rem;
+    padding-right: 1.4285714286rem;
   }
   .account__header-tab {
     display: flex;
@@ -7903,7 +7923,7 @@ button {
     display: none;
   }
   .account__form-input-wrapper {
-    grid-template-columns: repeat(2, 33.3571428571rem);
+    grid-template-columns: repeat(2, 1fr);
   }
   .account__deposit-withdraw {
     padding: 1.4285714286rem;
@@ -7912,7 +7932,7 @@ button {
     padding: 1.0714285714rem 1.8571428571rem;
   }
   .account__column-header tr {
-    grid-template-columns: 11.5714285714rem 13.2378571429rem 13.2378571429rem 13.2378571429rem 16.1428571429rem;
+    grid-template-columns: 11.5714285714rem 13.2378571429rem 13.2378571429rem 13.2378571429rem 18.9285714286rem;
   }
   .account__table-body tr {
     grid-template-columns: 11.5714285714rem 13.2378571429rem 13.2378571429rem 13.2378571429rem 16.1428571429rem;
@@ -7923,7 +7943,22 @@ button {
 }
 @media (max-width: 1024px) {
   .account {
-    width: 52rem;
+    width: 100%;
+  }
+  .account::after {
+    position: absolute;
+    content: "";
+    background: url("../../../img/bg/leaves-account-768.svg") no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-position: bottom;
+    z-index: -1;
+  }
+  .account__wrapper {
+    padding-left: 1.4285714286rem;
+    padding-right: 1.4285714286rem;
   }
   .account__form-input-wrapper {
     display: flex;
@@ -8019,12 +8054,17 @@ button {
     font-size: 1.4285714286rem;
   }
   .account__levels-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(4.7142857143rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(2.5714285714rem, 1fr));
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
   .account {
     width: 100%;
+  }
+  .account::after {
+    background: url("../../../img/bg/leaves-account-360.svg") no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
   }
   .account__tab {
     font-size: 0.7142857143rem;
@@ -8291,13 +8331,13 @@ button {
 }
 @media (max-width: 1440px) {
   .account.balance {
-    width: 67.4285714286rem;
+    width: 100%;
     padding-bottom: 1.7857142857rem;
   }
 }
 @media (max-width: 1024px) {
   .account.balance {
-    width: 52rem;
+    width: 100%;
     padding-bottom: 2.2857142857rem;
   }
 }

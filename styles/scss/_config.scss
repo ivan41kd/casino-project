@@ -167,6 +167,19 @@ body {
   scrollbar-color: #d4d3d399 transparent;
   scrollbar-width: thin;
  }
+ @media (max-width: 1440px) and (min-width: 1024px) {
+  &::after {
+   position: absolute;
+   content: '';
+   background: url('../../../img/bg/leaves-account-1024.svg') no-repeat;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-size: 100%;
+   background-position: bottom;
+   z-index: -1;
+  }
+ }
 }
 .modal-change {
  display: flex;

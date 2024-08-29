@@ -545,10 +545,10 @@
   display: none;
  }
  @media (max-width: 1440px) {
-  width: rem(944px);
-  padding: 0 0;
+  width: 100%;
   &__wrapper {
-   padding-left: 0;
+   padding-left: rem(20px);
+   padding-right: rem(20px);
   }
   &__header-tab {
    display: flex;
@@ -598,7 +598,7 @@
    display: none;
   }
   &__form-input-wrapper {
-   grid-template-columns: repeat(2, rem(467px));
+   grid-template-columns: repeat(2, 1fr);
   }
   &__deposit-withdraw {
    padding: rem(20px);
@@ -608,7 +608,7 @@
   }
   &__column-header tr {
    grid-template-columns: rem(162px) rem(185.33px) rem(185.33px) rem(185.33px) rem(
-     226px
+     265px
     );
   }
   &__table-body tr {
@@ -621,7 +621,22 @@
   }
  }
  @media (max-width: 1024px) {
-  width: rem(728px);
+  width: 100%;
+  &::after {
+   position: absolute;
+   content: '';
+   background: url('../../../img/bg/leaves-account-768.svg') no-repeat;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-size: 100%;
+   background-position: bottom;
+   z-index: -1;
+  }
+  &__wrapper {
+   padding-left: rem(20px);
+   padding-right: rem(20px);
+  }
   &__form-input-wrapper {
    display: flex;
    flex-direction: column;
@@ -717,11 +732,16 @@
    font-size: rem(20px);
   }
   &__levels-wrapper {
-   grid-template-columns: repeat(auto-fit, minmax(rem(66px), 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(rem(36px), 1fr));
   }
  }
  @include onlymobile {
   width: 100%;
+  &::after {
+   background: url('../../../img/bg/leaves-account-360.svg') no-repeat;
+   background-position: left bottom;
+   background-size: 100%;
+  }
   &__tab {
    font-size: rem(10px);
   }
@@ -976,11 +996,11 @@
 .account.balance {
  width: rem(1005px);
  @media (max-width: 1440px) {
-  width: rem(944px);
+  width: 100%;
   padding-bottom: rem(25px);
  }
  @media (max-width: 1024px) {
-  width: rem(728px);
+  width: 100%;
   padding-bottom: rem(32px);
  }
  @include onlymobile {
