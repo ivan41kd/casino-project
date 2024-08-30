@@ -7866,11 +7866,11 @@ button {
   color: rgba(255, 255, 255, 0.8);
 }
 .account__scores-wrapper {
-  padding-top: 2.2142857143rem;
+  padding-top: 1.8571428571rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3.7857142857rem;
+  margin-bottom: 3.4285714286rem;
 }
 .account__scores {
   font-size: 1.2857142857rem;
@@ -7921,7 +7921,7 @@ button {
   font-weight: 700;
 }
 .account__levels-wrapper {
-  padding-top: 7.1428571429rem;
+  padding-top: 7.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(6.4285714286rem, 1fr));
   align-items: center;
@@ -7976,22 +7976,27 @@ button {
   width: 4.6428571429rem;
   height: 4.6428571429rem;
   margin-bottom: 1rem;
-  transform: translateY(3%);
+}
+@media (min-width: 1441px) {
+  .account__level-icon {
+    align-self: start;
+    transform: translate(15%, -1%);
+  }
 }
 .account__level-score-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5.4857142857rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 @media (min-width: 768px) {
   .account__level-score-wrapper {
-    transform: translateY(-15px);
+    transform: translateY(-22px);
   }
 }
 @media (min-width: 1441px) {
   .account__level-score-wrapper {
+    width: 5.4857142857rem;
     transform: translateY(-15px);
   }
 }
