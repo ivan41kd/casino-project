@@ -22,6 +22,8 @@ const modalStep3 = document.querySelector('.main__reset-modal-wrapper.step-3');
 
 const forgotText = document.querySelector('.main__password-forgot');
 
+const emailInput = formFirstStep.querySelector('.main__form-input.email.reset');
+
 forgotText.addEventListener('click', () => {
  const getStep = localStorage.getItem('step');
  resetModal.classList.toggle('active');
@@ -37,27 +39,43 @@ forgotText.addEventListener('click', () => {
  }
 });
 
+emailInput.addEventListener('input', () => {
+ if (!emailInput.classList.contains('invalid-format')) {
+  emailInput.classList.remove('invalid');
+ } else {
+  return;
+ }
+});
+
 formFirstStep.addEventListener('submit', () => {
- const input = formFirstStep.querySelector('.main__form-input.email.reset');
- if (!input.classList.contains('invalid') && input.value != '') {
+ if (
+  !emailInput.classList.contains('invalid-format') &&
+  emailInput.value != ''
+ ) {
+  emailInput.classList.remove('invalid');
+  emailInput.classList.add('invalid');
   localStorage.setItem('step', 2);
   modalStep1.classList.remove('active');
   modalStep1.classList.toggle('inactive');
   modalStep2.classList.remove('inactive');
   modalStep2.classList.toggle('active');
+ } else {
+  emailInput.classList.add('invalid');
  }
 });
 
 loginForm.addEventListener('submit', () => {
  if (passInput.value != '' && nameInput.value != '') {
   users.forEach((user) => {
-   user.name == nameInput.value && user.password == passInput.value
-    ? localStorage.setItem('isAuthenticated', true)
-    : console.log('no!');
-
-   if (localStorage.getItem('isAuthenticated') == 'true') {
-    window.location.href = '/index.html';
+   if (user.name == nameInput.value && user.password == passInput.value) {
+    localStorage.setItem('isAuthenticated', true);
+    console.log('yes');
+   } else {
+    nameInput.classList.add('invalid');
+    passInput.classList.add('invalid');
    }
+   // ? localStorage.setItem('isAuthenticated', true) && console.log('yes')
+   // : console.log('no!');
   });
  }
 });

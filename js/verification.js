@@ -28,18 +28,27 @@ const closeSuccessEmail = successEmailModal.querySelector(
  '.main__success-modal-close'
 );
 
-const verifyTextMob = document.querySelector('.main__form-verify-text.phone');
-const verifyTextEmail = document.querySelector('.main__form-verify-text.email');
+const verifyButtonMob = document.querySelector('.main__form-verify-text.phone');
+const verifyButtonEmail = document.querySelector(
+ '.main__form-verify-text.email'
+);
 
-const mainInputMob = document.querySelector(
+const mainInputMobWrapper = document.querySelector(
  '.main__form-input-label-wrapper.verify.phone'
 );
-const mainInputEmail = document.querySelector(
+const mainInputEmailWrapper = document.querySelector(
  '.main__form-input-label-wrapper.verify.email'
 );
 
-const inputsMob = document.querySelectorAll('.main__verificion-input.mobile');
-const inputsEmail = document.querySelectorAll('.main__verificion-input.email');
+const inputsVerifMob = document.querySelectorAll(
+ '.main__verificion-input.mobile'
+);
+const inputsVerifEmail = document.querySelectorAll(
+ '.main__verificion-input.email'
+);
+
+const input = document.querySelector('.main__form-input.phone');
+const input2 = document.querySelector('.main__form-input.email');
 
 const mobClose = document.querySelector(
  '.main__verification-modal-close.phone'
@@ -80,12 +89,55 @@ const formatTime = (minutes, seconds) => {
   '0'
  )}`;
 };
+const disableVerifyButton = (verifyButton) => {
+ verifyButton.classList.add('disabled');
+ verifyButton.setAttribute('disabled', 'true');
+};
 
-verifyTextMob.addEventListener('click', () => {
+const enableVerifyButton = (verifyButton) => {
+ verifyButton.classList.remove('disabled');
+ verifyButton.removeAttribute('disabled');
+};
+
+const observer = new MutationObserver((mutations) => {
+ mutations.forEach((mutation) => {
+  if (mutation.attributeName === 'class') {
+   if (mainInputMobWrapper.classList.contains('valid')) {
+    enableVerifyButton(verifyButtonMob);
+   } else {
+    disableVerifyButton(verifyButtonMob);
+   }
+  }
+ });
+});
+
+observer.observe(mainInputMobWrapper, {
+ attributes: true,
+ attributeFilter: ['class'],
+});
+
+const observerEmail = new MutationObserver((mutations) => {
+ mutations.forEach((mutation) => {
+  if (mutation.attributeName === 'class') {
+   if (input2.classList.contains('valid')) {
+    enableVerifyButton(verifyButtonEmail);
+   } else {
+    disableVerifyButton(verifyButtonEmail);
+   }
+  }
+ });
+});
+
+observerEmail.observe(input2, {
+ attributes: true,
+ attributeFilter: ['class'],
+});
+
+verifyButtonMob.addEventListener('click', () => {
  if (
-  mainInputMob.classList.contains('valid') &&
-  !verifyTextMob.classList.contains('disabled') &&
-  !verifyTextMob.classList.contains('valid')
+  mainInputMobWrapper.classList.contains('valid') &&
+  !verifyButtonMob.classList.contains('disabled') &&
+  !verifyButtonMob.classList.contains('verified')
  ) {
   mobModal.classList.toggle('active');
  } else {
@@ -93,37 +145,15 @@ verifyTextMob.addEventListener('click', () => {
  }
 });
 
-verifyTextEmail.addEventListener('click', () => {
+verifyButtonEmail.addEventListener('click', () => {
  if (
-  !verifyTextEmail.classList.contains('disabled') &&
-  !verifyTextEmail.classList.contains('valid')
+  !verifyButtonEmail.classList.contains('disabled') &&
+  !verifyButtonEmail.classList.contains('verified')
  ) {
   emailModal.classList.toggle('active');
  } else {
   return;
  }
-});
-
-const mobObserver = new MutationObserver(() => {
- if (!mainInputMob.classList.contains('valid')) {
-  mobModal.classList.remove('active');
- }
-});
-
-mobObserver.observe(mainInputMob, {
- attributes: true,
- attributeFilter: ['class'],
-});
-
-const emailObserver = new MutationObserver(() => {
- if (!mainInputEmail.classList.contains('valid')) {
-  emailModal.classList.remove('active');
- }
-});
-
-emailObserver.observe(mainInputEmail, {
- attributes: true,
- attributeFilter: ['class'],
 });
 
 resendMob.addEventListener('click', () => {
@@ -142,7 +172,7 @@ emailClose.addEventListener('click', () => {
  emailModal.classList.remove('active');
 });
 
-inputsMob.forEach((input, index) => {
+inputsVerifMob.forEach((input, index) => {
  input.addEventListener('input', () => {
   const nextInput = input.nextElementSibling;
 
@@ -159,19 +189,26 @@ inputsMob.forEach((input, index) => {
    nextInput.focus();
   }
 
-  if ([...inputsMob].every((input) => input.value !== '')) {
-   const enteredCode = [...inputsMob].map((input) => input.value).join('');
+  if ([...inputsVerifMob].every((input) => input.value !== '')) {
+   const enteredCode = [...inputsVerifMob].map((input) => input.value).join('');
    if (enteredCode === code) {
     mobModalWrapper.classList.add('inactive');
     successMobModal.classList.remove('inactive');
     successMobModal.classList.add('active');
-    const icon = verifyTextMob.previousElementSibling;
-    const icon2 = verifyTextMob.nextElementSibling;
+    mainInputMobWrapper.classList.add('verified');
+    const icon = verifyButtonMob.previousElementSibling;
+    const icon2 = verifyButtonMob.nextElementSibling;
     icon.src = './img/icons/verify-active.svg';
     icon2.remove();
-    verifyTextMob.classList.toggle('valid');
+    verifyButtonMob.classList.toggle('verified');
+    verifyButtonMob.textContent = 'Verified';
+   } else if (enteredCode == '') {
+    inputsVerifMob.forEach((input) => {
+     input.parentElement.classList.remove('error');
+     input.classList.remove('error');
+    });
    } else {
-    inputsMob.forEach((input) => {
+    inputsVerifMob.forEach((input) => {
      input.parentElement.classList.add('error');
      input.classList.add('error');
     });
@@ -184,13 +221,13 @@ inputsMob.forEach((input, index) => {
    input.value = '';
    if (index > 0) {
     input.setAttribute('disabled', true);
-    inputsMob[index - 1].focus();
+    inputsVerifMob[index - 1].focus();
    }
   }
  });
 });
 
-inputsEmail.forEach((input, index) => {
+inputsVerifEmail.forEach((input, index) => {
  input.addEventListener('input', () => {
   const nextInput = input.nextElementSibling;
 
@@ -207,21 +244,26 @@ inputsEmail.forEach((input, index) => {
    nextInput.focus();
   }
 
-  if ([...inputsEmail].every((input) => input.value !== '')) {
-   const enteredCode = [...inputsEmail].map((input) => input.value).join('');
+  if ([...inputsVerifEmail].every((input) => input.value !== '')) {
+   const enteredCode = [...inputsVerifEmail]
+    .map((input) => input.value)
+    .join('');
    if (enteredCode === code) {
+    input.classList.remove('error');
     emailModalWrapper.classList.add('inactive');
     successEmailModal.classList.remove('inactive');
     successEmailModal.classList.add('active');
+    mainInputEmailWrapper.classList.add('verified');
 
-    const icon = verifyTextEmail.previousElementSibling;
-    const icon2 = verifyTextEmail.nextElementSibling;
+    const icon = verifyButtonEmail.previousElementSibling;
+    const icon2 = verifyButtonEmail.nextElementSibling;
     icon.src = './img/icons/verify-active.svg';
     icon2.remove();
-    verifyTextEmail.classList.toggle('valid');
+    verifyButtonEmail.classList.toggle('verified');
+    verifyButtonEmail.textContent = 'Verified';
    } else {
-    inputsEmail.forEach((input) => {
-     input.classList.toggle('error');
+    inputsVerifEmail.forEach((input) => {
+     input.classList.add('error');
     });
    }
   }
@@ -232,7 +274,7 @@ inputsEmail.forEach((input, index) => {
    input.value = '';
    if (index > 0) {
     input.setAttribute('disabled', true);
-    inputsEmail[index - 1].focus();
+    inputsVerifEmail[index - 1].focus();
    }
   }
  });
@@ -250,3 +292,5 @@ inputsEmail.forEach((input, index) => {
   successEmailModal.classList.add('inactive');
  });
 });
+disableVerifyButton(verifyButtonMob);
+disableVerifyButton(verifyButtonEmail);

@@ -152,19 +152,6 @@ body::after {
     scrollbar-width: thin;
   }
 }
-@media (max-width: 1440px) and (min-width: 1024px) {
-  .modal-account::after {
-    position: absolute;
-    content: "";
-    background: url("../../../img/bg/leaves-account-1024.svg") no-repeat;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-position: bottom;
-    z-index: -1;
-  }
-}
 
 .modal-change {
   display: flex;
@@ -453,10 +440,11 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 5.0042857143rem;
-  padding: 1.3135714286rem 0;
+  padding: 1.0992857143rem 0;
   font-size: 1rem;
   line-height: 1.18rem;
   text-transform: uppercase;
+  margin-right: 2.5rem;
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -484,7 +472,7 @@ button {
   position: absolute;
   inset: 0;
   border-radius: 5rem;
-  border: 0.2142857143rem solid transparent;
+  border: 0.1428571429rem solid transparent;
   background: radial-gradient(80.12% 95.28% at 16.15% 4.72%, #eedeba 0%, #c4a767 100%) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
           mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -500,8 +488,13 @@ button {
   justify-content: end;
 }
 .header__account-user-wrapper {
+  -moz-column-gap: 0.6814285714rem;
+       column-gap: 0.6814285714rem;
   display: flex;
   align-items: center;
+}
+.header__account-user-wrapper.mobile {
+  display: none;
 }
 .header__account-user-icon {
   width: 1.7142857143rem;
@@ -511,6 +504,7 @@ button {
   font-size: 1.1428571429rem;
   line-height: 1.8285714286rem;
   color: rgb(255, 255, 255);
+  font-weight: 400;
 }
 .header__account-balance-wrapper {
   display: flex;
@@ -730,7 +724,7 @@ button {
   width: 3.3571428571rem;
   height: 3.3571428571rem;
   border-radius: 5.0435714286rem;
-  margin-right: 0.5714285714rem;
+  margin-right: 0.7142857143rem;
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -758,7 +752,7 @@ button {
   position: absolute;
   inset: 0;
   border-radius: 5rem;
-  border: 0.2142857143rem solid transparent;
+  border: 0.1428571429rem solid transparent;
   background: radial-gradient(80.12% 95.28% at 16.15% 4.72%, #eedeba 0%, #c4a767 100%) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
           mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -781,6 +775,9 @@ button {
   line-height: 1.8285714286rem;
   font-weight: 500;
   color: rgb(196, 167, 103);
+  -moz-column-gap: 0.6428571429rem;
+       column-gap: 0.6428571429rem;
+  display: flex;
 }
 .header__currency {
   font-weight: 400;
@@ -2748,6 +2745,9 @@ button {
   margin-bottom: 3.5714285714rem;
   font-weight: 100;
 }
+.main__form-title.account-title {
+  margin-bottom: 2.7142857143rem;
+}
 .main__form-input-wrapper {
   display: grid;
   grid-template-columns: 24.7857142857rem 24.7857142857rem;
@@ -2768,7 +2768,7 @@ button {
   outline: none;
   font-size: 1.1428571429rem;
   line-height: 1.4514285714rem;
-  font-weight: 400;
+  font-weight: 300;
   width: 24.7857142857rem;
   border-radius: 5.0042857143rem;
   -webkit-backdrop-filter: blur(0.7142857143rem);
@@ -2785,11 +2785,18 @@ button {
 }
 .main__form-input:focus {
   background: black;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(216, 216, 212);
 }
 .main__form-input:disabled {
   color: rgba(216, 216, 212, 0.3);
   background: rgba(0, 0, 0, 0.3);
+}
+.main__form-input.phone {
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+.main__form-input.young {
+  border: 0.0714285714rem rgb(203, 61, 69) solid;
 }
 .main__form-input.amount {
   padding-right: 4.7857142857rem;
@@ -3026,6 +3033,9 @@ button {
 .main__form-select:focus {
   background: black;
 }
+.main__form-select.invalid {
+  border: 1px solid rgb(203, 61, 69);
+}
 .main__form-select-current {
   position: absolute;
   left: 5%;
@@ -3096,6 +3106,8 @@ button {
 .main__form-phone-wrapper {
   display: flex;
   align-items: center;
+  -moz-column-gap: 0.1785714286rem;
+       column-gap: 0.1785714286rem;
 }
 .main__form-select-input-wrapper, .main__form-phone-input-wrapper {
   align-items: center;
@@ -3153,7 +3165,7 @@ button {
   flex-direction: column;
   align-items: center;
 }
-.main__form-input.invalid, .main__form-input.highlight, .main__form-input.not-confirmed {
+.main__form-input.invalid, .main__form-input.highlight, .main__form-input.not-confirmed, .main__form-input.invalid-format {
   border: 1px solid rgb(203, 61, 69);
 }
 .main__form-input.invalid-format + .main__form-label.label-email {
@@ -3210,9 +3222,15 @@ button {
   border-radius: 5.0042857143rem;
   -moz-column-gap: 1.1785714286rem;
        column-gap: 1.1785714286rem;
+  -webkit-backdrop-filter: blur(0.7142857143rem);
+          backdrop-filter: blur(0.7142857143rem);
 }
 .main__form-input-label-wrapper.verify.phone:focus {
   background: black;
+}
+.main__form-input-label-wrapper.phone.disabled {
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(216, 216, 212, 0.3);
 }
 .main__form-input-label-wrapper.phone.invalid {
   border: 1px solid rgb(203, 61, 69);
@@ -3234,7 +3252,7 @@ button {
 .main__form-input-label-wrapper.verify.partners:focus {
   background: black;
 }
-.main__form-input-label-wrapper.verify.valid::after {
+.main__form-input-label-wrapper.verified::after {
   position: absolute;
   content: "";
   background: url("/img/icons/verified-icon.svg") no-repeat;
@@ -3278,6 +3296,7 @@ button {
   font-weight: 500;
   cursor: pointer;
   transition: 0.5s;
+  background: none;
 }
 .main__form-verify-text:hover {
   color: rgba(196, 167, 103, 0.5);
@@ -3325,6 +3344,9 @@ button {
 .main__form-chk:checked ~ span {
   border: 1px solid rgba(39, 95, 74, 0.7);
   transition: 0.5s;
+}
+.main__form-chk.invalid ~ span {
+  border: 1px solid rgb(203, 61, 69);
 }
 .main__form-chk-wrapper label span {
   cursor: pointer;
@@ -3827,7 +3849,7 @@ button {
 .main__form-input:focus::placeholder {
   opacity: 1;
 }
-.main__form-label.top {
+.main__form-label.top, .main__form-label.exchange-label.top {
   top: -40%;
   font-size: 0.7857142857rem;
   transition: 0.5s;
@@ -3943,6 +3965,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main__datepicker-last-date, .main__datepicker-prev-date, .main__datepicker-next-date, .main__datepicker-current-date {
+  cursor: pointer;
 }
 .main__datepicker-month-year-wrapper {
   display: flex;
@@ -4379,12 +4404,12 @@ button {
   }
   .main__back-wrapper {
     display: flex;
-    padding-bottom: 0.8571428571rem;
+    padding-bottom: 1.4285714286rem;
     -moz-column-gap: 0.4285714286rem;
          column-gap: 0.4285714286rem;
     width: -moz-fit-content;
     width: fit-content;
-    padding-left: 1.4285714286rem;
+    padding-left: 2.8571428571rem;
   }
   .main__back-wrapper:hover .main__back-page {
     color: rgb(216, 216, 212);
@@ -4580,6 +4605,7 @@ button {
   .main__content {
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
   }
   .main__content-wrapper {
     width: 100%;
@@ -4591,6 +4617,7 @@ button {
     padding-left: 0;
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
   .main__wrapper {
     display: block;
@@ -4682,6 +4709,10 @@ button {
   }
   .main__form-label.register-label {
     left: 4%;
+  }
+  .main__back-wrapper {
+    padding-left: 1.4285714286rem;
+    padding-right: 1.4285714286rem;
   }
   .main__bonus {
     padding-top: 1.5842857143rem;
@@ -5153,6 +5184,7 @@ button {
 
 .main.main-account {
   opacity: 0;
+  height: 100%;
 }
 @media (max-width: 1440px) {
   .main.main-account {
@@ -5184,6 +5216,7 @@ button {
   flex-direction: column;
 }
 .aside__account-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid;
@@ -5192,25 +5225,46 @@ button {
   padding-top: 2.0714285714rem;
   padding-bottom: 1.9285714286rem;
 }
+.aside__account-wrapper.diamond::after {
+  content: "";
+  background: url("../../../img/account/big-spark.svg") no-repeat;
+  width: 4.81rem;
+  height: 4.3121428571rem;
+  position: absolute;
+  z-index: -1;
+  right: -7%;
+  top: -1%;
+}
+.aside__account-wrapper.diamond::before {
+  content: "";
+  background: url("../../../img/account/small-spark.svg") no-repeat;
+  width: 4.81rem;
+  height: 4.3121428571rem;
+  position: absolute;
+  z-index: -1;
+  right: 10%;
+  top: 1%;
+}
 .aside__account-level-wrapper {
   margin-bottom: 2.6192857143rem;
-  transform: translateX(-10%);
+  transform: translateX(-4%);
+  position: relative;
 }
 .aside__account-level-wrapper.diamond {
   background: rgb(35, 35, 35);
 }
 .aside__account-level {
+  padding: 0.7142857143rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .aside__account-level-title {
-  padding: 0.7142857143rem 0;
   font-family: "Forum", sans-serif;
   font-weight: 400;
   font-size: 2rem;
   text-transform: uppercase;
-  line-height: 30.91px;
+  line-height: 2.2078571429rem;
   color: rgb(255, 255, 255);
 }
 .aside__account-user-wrapper {
@@ -5222,25 +5276,25 @@ button {
 .aside__account-user-icon {
   width: 7.5rem;
   height: 7.5rem;
-  margin-bottom: 1.4285714286rem;
+  margin-bottom: 1.2142857143rem;
 }
 .aside__account-user-name {
   font-size: 1.2857142857rem;
   line-height: 2.0571428571rem;
   color: rgb(255, 255, 255);
   font-weight: 500;
+  margin-bottom: 1.2142857143rem;
 }
 .aside__account-chars-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 0.2142857143rem;
+  row-gap: 0.1428571429rem;
   width: 100%;
-  padding: 0 1.0714285714rem;
+  padding: 0 0.7857142857rem;
 }
 .aside__account-chars {
   display: grid;
-  grid-template-columns: fit-content(100%) 3fr 1.1428571429rem;
-  justify-items: center;
+  grid-template-columns: 2fr 3fr 1.1428571429rem;
   -moz-column-gap: 0.3571428571rem;
        column-gap: 0.3571428571rem;
 }
@@ -5269,6 +5323,8 @@ button {
   line-height: 1.6rem;
   color: rgb(255, 255, 255);
   font-weight: 300;
+  width: -moz-max-content;
+  width: max-content;
 }
 .aside__account-value {
   align-items: center;
@@ -5323,7 +5379,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 5.0042857143rem;
-  padding: 1.3135714286rem 0;
+  padding: 1.1428571429rem 0;
   font-size: 1rem;
   line-height: 1.18rem;
   text-transform: uppercase;
@@ -5338,6 +5394,7 @@ button {
 .aside__replenish:hover {
   box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
   transition: 0.3s ease-in-out;
+  color: rgb(255, 221, 147);
 }
 .aside__replenish:active {
   transition: 0.3s ease-in-out;
@@ -5378,6 +5435,7 @@ button {
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   display: flex;
+  font-weight: 400;
   padding: 0.7857142857rem 0.7857142857rem;
 }
 .aside__account-list-item.active {
@@ -5739,6 +5797,78 @@ button {
   .aside.aside-account {
     display: none;
   }
+}
+
+.aside.newbie::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/vip/newbie-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
+}
+
+.aside.bronze::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/vip/bronze-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
+}
+
+.aside.silver::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/vip/silver-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
+}
+
+.aside.gold::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/vip/gold-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
+}
+
+.aside.platinum::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/vip/platinum-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
+}
+
+.aside.diamond::after {
+  position: fixed;
+  content: "";
+  background: url("../../../img/account/diamond-flag.svg") no-repeat;
+  width: 4.5664285714rem;
+  height: 3.5235714286rem;
+  top: 7%;
+  right: 87%;
+  z-index: -1;
+  background-size: 4.5664285714rem 3.5235714286rem;
 }
 
 .games {
@@ -6967,7 +7097,10 @@ button {
 }
 
 .weed-background.account-weed {
-  position: absolute;
+  position: sticky;
+}
+.weed-background.account-weed__img {
+  width: 100%;
 }
 @media screen and (max-width: 1440px) {
   .weed-background.account-weed {
@@ -6975,6 +7108,10 @@ button {
     left: 0;
     display: none;
   }
+}
+
+.weed-background__img.account-weed {
+  width: 100%;
 }
 
 .weed-background.green {
@@ -7329,10 +7466,11 @@ button {
 }
 
 .account {
-  left: 30%;
+  position: relative;
   width: 73.2142857143rem;
-  padding: 3.2857142857rem 0;
+  padding: 2.8571428571rem 0;
   transition: 0.5s ease-in-out;
+  height: 100%;
 }
 .account__accordion-wrapper {
   display: none;
@@ -7360,7 +7498,7 @@ button {
   gap: 1.9285714286rem 0.7142857143rem;
 }
 .account__form-wrapper {
-  padding-top: 3.7857142857rem;
+  padding-top: 2.7857142857rem;
   display: flex;
   flex-direction: column;
   row-gap: 36px;
@@ -7457,7 +7595,7 @@ button {
   position: absolute;
   inset: 0;
   border-radius: 5rem;
-  border: 0.2142857143rem solid transparent;
+  border: 0.1428571429rem solid transparent;
   background: radial-gradient(80.12% 95.28% at 16.15% 4.72%, #eedeba 0%, #c4a767 100%) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
           mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -7575,7 +7713,7 @@ button {
   justify-content: center;
   display: flex;
   align-items: center;
-  width: 32.7142857143rem;
+  width: 100%;
   padding: 1.0714285714rem 1.7857142857rem;
   font-size: 1.0714285714rem;
   line-height: 1.2642857143rem;
@@ -7583,25 +7721,31 @@ button {
   font-weight: 400;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-bottom: 1px rgba(216, 216, 212, 0.6) solid;
 }
 .account__deposit-tab:after {
   position: absolute;
-  width: 100%;
+  width: 0%;
   height: 1px;
-  bottom: 0;
+  bottom: -2%;
   content: "";
-  background: rgba(216, 216, 212, 0.6);
+  background: rgb(203, 61, 69);
+  transition: 0.3s ease-in-out;
 }
 .account__deposit-tab.active {
+  transition: 0.3s ease-in-out;
   color: rgb(255, 255, 255);
 }
 .account__deposit-tab.active:after {
   position: absolute;
   width: 100%;
   height: 1px;
-  bottom: 0;
+  bottom: -2%;
   content: "";
   background: rgb(203, 61, 69);
+  transition: 0.3s ease-in-out;
 }
 .account__deposit-wrapper {
   justify-content: space-between;
@@ -7621,8 +7765,9 @@ button {
 .account__payment-method-wrapper {
   border-radius: 0.7142857143rem;
   background: rgba(0, 0, 0, 0.4);
-  padding: 1.1428571429rem 1.8571428571rem;
+  padding: 0 1.8571428571rem;
   transition: 0.3s ease-in;
+  height: 5.4285714286rem;
   cursor: pointer;
 }
 .account__payment-method-wrapper:hover {
@@ -7630,6 +7775,7 @@ button {
   transition: 0.3s ease-in;
 }
 .account__payment-method {
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -7659,6 +7805,7 @@ button {
   color: rgba(255, 255, 255, 0.4);
   font-size: 1rem;
   line-height: 1.18rem;
+  font-weight: 300;
 }
 .account__amount-title {
   font-family: "Forum", sans-serif;
@@ -7685,6 +7832,7 @@ button {
   display: inline-block;
   width: 100%;
   border-collapse: collapse;
+  border-radius: 0.7142857143rem;
 }
 .account__column-head {
   font-family: "Forum", sans-serif;
@@ -7704,10 +7852,10 @@ button {
 .account__table-body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: none;
-  border-radius: 10px 0px 0px 0px;
   background: rgba(255, 255, 255, 0.01);
 }
 .account__table-body tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: grid;
   grid-template-columns: repeat(5, 14.3571428571rem);
 }
@@ -7727,7 +7875,7 @@ button {
 .account__scores {
   font-size: 1.2857142857rem;
   line-height: 2.0571428571rem;
-  font-weight: 400;
+  font-weight: 300;
   color: rgb(255, 255, 255);
 }
 .account__scores-attention {
@@ -7773,7 +7921,7 @@ button {
   font-weight: 700;
 }
 .account__levels-wrapper {
-  padding-top: 8.4285714286rem;
+  padding-top: 7.1428571429rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(6.4285714286rem, 1fr));
   align-items: center;
@@ -7817,7 +7965,7 @@ button {
   font-weight: 400;
   font-size: 1.7857142857rem;
   line-height: 2.5rem;
-  margin-bottom: 1.7142857143rem;
+  margin-bottom: 1.0714285714rem;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
@@ -7827,13 +7975,25 @@ button {
 .account__level-icon {
   width: 4.6428571429rem;
   height: 4.6428571429rem;
+  margin-bottom: 1rem;
+  transform: translateY(3%);
 }
 .account__level-score-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 5.4857142857rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media (min-width: 768px) {
+  .account__level-score-wrapper {
+    transform: translateY(-15px);
+  }
+}
+@media (min-width: 1441px) {
+  .account__level-score-wrapper {
+    transform: translateY(-15px);
+  }
 }
 .account__level-score {
   font-size: 1rem;
@@ -7849,7 +8009,7 @@ button {
 .account__level-exchange-text {
   font-size: 1rem;
   line-height: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
   color: rgb(255, 255, 255);
 }
 .account__level-exchange {
@@ -7864,19 +8024,44 @@ button {
   line-height: 1.2642857143rem;
   font-weight: 500;
   color: rgb(196, 167, 103);
+  transition: 0.3s ease-in-out;
+}
+.account__level-more:hover {
+  transition: 0.3s ease-in-out;
+  color: rgba(196, 167, 103, 0.5);
 }
 .account__header-tab {
   display: none;
+}
+.account__bonuses {
+  padding-top: 3.7857142857rem;
+}
+.account__bonuses-text {
+  font-size: 1.2857142857rem;
+  line-height: 2.0571428571rem;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
 }
 @media (max-width: 1440px) {
   .account {
     width: 100%;
   }
+  .account:after {
+    content: "";
+    background: url("../../../img/bg/leaves-account-1024.svg") no-repeat;
+    width: 100%;
+    height: 21.7142857143rem;
+    position: absolute;
+    background-size: 100%;
+    bottom: 0;
+  }
   .account__wrapper {
-    padding-left: 1.4285714286rem;
-    padding-right: 1.4285714286rem;
+    padding-left: 2.8571428571rem;
+    padding-right: 2.8571428571rem;
   }
   .account__header-tab {
+    padding-left: 2.8571428571rem;
+    padding-right: 2.8571428571rem;
     display: flex;
     justify-content: space-between;
   }
@@ -7890,9 +8075,11 @@ button {
     display: flex;
     align-items: center;
     padding-bottom: 1.0714285714rem;
+    color: rgba(216, 216, 212, 0.6);
     border-bottom: 0.0714285714rem rgba(216, 216, 212, 0.2) solid;
     position: relative;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
   }
   .account__tab:after {
     position: absolute;
@@ -7909,6 +8096,7 @@ button {
   }
   .account__tab.active {
     transition: 0.3s ease-in-out;
+    color: rgb(255, 255, 255);
   }
   .account__tab.active:after {
     position: absolute;
@@ -7955,6 +8143,10 @@ button {
     background-size: 100%;
     background-position: bottom;
     z-index: -1;
+  }
+  .account__header-tab {
+    padding-left: 1.4285714286rem;
+    padding-right: 1.4285714286rem;
   }
   .account__wrapper {
     padding-left: 1.4285714286rem;
@@ -8043,6 +8235,11 @@ button {
   }
   .account__level-score {
     font-size: 0.8571428571rem;
+    line-height: 1.3714285714rem;
+    padding-bottom: 0.3571428571rem;
+  }
+  .account__level-score-wrapper {
+    transform: translateY(-25px);
   }
   .account__level-icon {
     width: 3.4792857143rem;
@@ -8067,7 +8264,12 @@ button {
     background-size: 100%;
   }
   .account__tab {
+    padding-bottom: 1.0714285714rem;
     font-size: 0.7142857143rem;
+  }
+  .account__profile-save {
+    font-size: 1rem;
+    padding: 1.0714285714rem;
   }
   .account__profile-buttons-wrapper {
     flex-direction: column;
@@ -8205,6 +8407,7 @@ button {
     height: 2.7142857143rem;
     position: relative;
     justify-content: start;
+    transform: translateY(0);
   }
   .account__level-score-wrapper::before {
     content: "";
@@ -8247,6 +8450,7 @@ button {
   background: rgba(0, 0, 0, 0.6);
   opacity: 1;
   position: relative;
+  border-radius: 0.7142857143rem;
 }
 .login::after {
   content: "";
@@ -8340,6 +8544,10 @@ button {
     width: 100%;
     padding-bottom: 2.2857142857rem;
   }
+  .account.balance::after {
+    top: auto;
+    bottom: -20%;
+  }
 }
 @media (min-width: 0px) and (max-width: 767px) {
   .account.balance {
@@ -8355,6 +8563,17 @@ button {
 @media (max-width: 1024px) {
   .account.vip {
     padding-bottom: 6.9492857143rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .account.vip {
+    height: auto;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .account.profile {
+    height: auto;
   }
 }
 

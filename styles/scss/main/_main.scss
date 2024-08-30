@@ -736,6 +736,9 @@
   margin-bottom: rem(50px);
   font-weight: 100;
  }
+ &__form-title.account-title {
+  margin-bottom: rem(38px);
+ }
  &__form-input-wrapper {
   display: grid;
   grid-template-columns: rem(347px) rem(347px);
@@ -756,7 +759,7 @@
   outline: none;
   font-size: rem(16px);
   line-height: rem(20.32px);
-  font-weight: 400;
+  font-weight: 300;
   width: rem(347px);
   border-radius: rem(70.06px);
   backdrop-filter: blur(rem(10px));
@@ -766,12 +769,18 @@
   }
   &:focus {
    background: black;
-   color: rgba(255, 255, 255, 0.8);
+   color: rgba(216, 216, 212, 1);
   }
   &:disabled {
    color: rgba(216, 216, 212, 0.3);
    background: rgba(0, 0, 0, 0.3);
   }
+ }
+ &__form-input.phone {
+  backdrop-filter: none;
+ }
+ &__form-input.young {
+  border: rem(1px) rgb(203, 61, 69) solid;
  }
  &__form-input.amount {
   padding-right: rem(67px);
@@ -1003,6 +1012,9 @@
    background: black;
   }
  }
+ &__form-select.invalid {
+  border: 1px solid rgb(203, 61, 69);
+ }
  &__form-select-current {
   position: absolute;
   left: 5%;
@@ -1074,6 +1086,7 @@
  &__form-phone-wrapper {
   display: flex;
   align-items: center;
+  column-gap: rem(2.5px);
  }
  &__form-select-input-wrapper,
  &__form-phone-input-wrapper {
@@ -1138,7 +1151,8 @@
 
  &__form-input.invalid,
  &__form-input.highlight,
- &__form-input.not-confirmed {
+ &__form-input.not-confirmed,
+ &__form-input.invalid-format {
   border: 1px solid rgba(203, 61, 69, 1);
  }
  &__form-input.invalid-format + &__form-label.label-email {
@@ -1192,9 +1206,14 @@
   width: 100%;
   border-radius: rem(70.06px);
   column-gap: rem(16.5px);
+  backdrop-filter: blur(rem(10px));
   &:focus {
    background: black;
   }
+ }
+ &__form-input-label-wrapper.phone.disabled {
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(216, 216, 212, 0.3);
  }
  &__form-input-label-wrapper.phone.invalid {
   border: 1px solid rgb(203, 61, 69);
@@ -1215,7 +1234,7 @@
    background: black;
   }
  }
- &__form-input-label-wrapper.verify.valid {
+ &__form-input-label-wrapper.verified {
   &::after {
    position: absolute;
    content: '';
@@ -1261,6 +1280,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.5s;
+  background: none;
   &:hover {
    color: rgba(196, 167, 103, 0.5);
    transition: 0.5s;
@@ -1309,6 +1329,9 @@
  &__form-chk:checked ~ span {
   border: 1px solid rgba(39, 95, 74, 0.7);
   transition: 0.5s;
+ }
+ &__form-chk.invalid ~ span {
+  border: 1px solid rgb(203, 61, 69);
  }
  &__form-chk-wrapper label span {
   cursor: pointer;
@@ -1838,7 +1861,8 @@
  &__form-input:focus::placeholder {
   opacity: 1;
  }
- &__form-label.top {
+ &__form-label.top,
+ &__form-label.exchange-label.top {
   top: -40%;
   font-size: rem(11px);
   transition: 0.5s;
@@ -1956,6 +1980,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ }
+ &__datepicker-last-date,
+ &__datepicker-prev-date,
+ &__datepicker-next-date,
+ &__datepicker-current-date {
+  cursor: pointer;
  }
  &__datepicker-month-year-wrapper {
   display: flex;
@@ -2392,10 +2422,10 @@
   }
   &__back-wrapper {
    display: flex;
-   padding-bottom: rem(12px);
+   padding-bottom: rem(20px);
    column-gap: rem(6px);
    width: fit-content;
-   padding-left: rem(20px);
+   padding-left: rem(40px);
   }
   &__back-wrapper:hover &__back-page {
    color: rgba(216, 216, 212, 1);
@@ -2592,6 +2622,7 @@
   &__content {
    padding-left: 0;
    padding-right: 0;
+   height: 100%;
   }
   &__content-wrapper {
    width: 100%;
@@ -2603,6 +2634,7 @@
    padding-left: 0;
    display: flex;
    flex-direction: column;
+   height: 100%;
   }
   &__wrapper {
    display: block;
@@ -2694,6 +2726,10 @@
   }
   &__form-label.register-label {
    left: 4%;
+  }
+  &__back-wrapper {
+   padding-left: rem(20px);
+   padding-right: rem(20px);
   }
   &__bonus {
    padding-top: rem(22.18px);
@@ -3163,6 +3199,7 @@
 
 .main.main-account {
  opacity: 0;
+ height: 100%;
  @media (max-width: 1440px) {
   padding-bottom: 0;
  }

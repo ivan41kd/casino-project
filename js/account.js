@@ -26,6 +26,8 @@ const activePaymentIconMobile = activePaymentItemMobile.querySelector(
  '.account__payment-method-icon'
 );
 
+const depositTabs = document.querySelectorAll('.account__deposit-tab');
+
 const paymentItems = document.querySelectorAll(
  '.account__payment-method-wrapper'
 );
@@ -124,6 +126,14 @@ accountTab.forEach((tab) => {
      }
     });
    }
+  });
+ });
+});
+depositTabs.forEach((tab) => {
+ tab.addEventListener('click', () => {
+  tab.classList.add('active');
+  depositTabs.forEach((tab2) => {
+   if (tab2 != tab) tab2.classList.remove('active');
   });
  });
 });

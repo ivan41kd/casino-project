@@ -27,11 +27,19 @@
  }
 }
 .weed-background.account-weed {
- position: absolute;
+ position: sticky;
+ &__img {
+  width: 100%;
+ }
  @media screen and (max-width: 1440px) {
   width: 100%;
   left: 0;
   display: none;
+ }
+}
+.weed-background {
+ &__img.account-weed {
+  width: 100%;
  }
 }
 .weed-background.green {

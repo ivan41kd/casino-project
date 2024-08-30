@@ -126,6 +126,8 @@ const confirmPassword = (form) => {
  }
 };
 
+localStorage.removeItem('step');
+
 successModalClose.addEventListener('click', () => {
  successModal.classList.remove('active');
  successModal.classList.add('inactive');

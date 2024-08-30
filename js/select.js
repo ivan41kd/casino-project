@@ -21,6 +21,9 @@ const createItems = ({ country }) => {
   const label = formSelect.querySelector('.main__form-label');
   label.classList.add('top');
   const itemHtml = document.querySelector('.main__form-select-current');
+  selectListWrapper.classList.remove('active');
+  if (formSelect.classList.contains('invalid'))
+   formSelect.classList.remove('invalid');
 
   itemHtml.textContent = country;
  });

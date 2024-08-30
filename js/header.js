@@ -56,14 +56,14 @@ const closeBurger = () => {
 };
 
 const checkLogin = (value) => {
- value == 'true' && value != null
+ value == 'true' && value != null && logout && userWrapper
   ? loginSignupWrapper.remove()
   : userWrapper.remove();
- if (value == 'true' && value != null) {
+ if (value == 'true' && value != null && logout) {
   burgerContent.classList.add('logged');
   buttonBurgerWrapper.remove();
   burgerItemList.classList.toggle('logged');
- } else {
+ } else if (value != 'true' && logout) {
   modalAccount.remove();
   burgerAccount.remove();
   burgerAccountButtons.remove();
@@ -75,15 +75,16 @@ window.addEventListener('scroll', () => {
  const scroll = this.scrollY;
  scrollHeader(scroll);
 });
-
-logout.addEventListener('click', () => {
- localStorage.removeItem('isAuthenticated');
- location.reload();
-});
-burgerLogOut.addEventListener('click', () => {
- localStorage.removeItem('isAuthenticated');
- location.reload();
-});
+if (logout) {
+ logout.addEventListener('click', () => {
+  localStorage.removeItem('isAuthenticated');
+  location.reload();
+ });
+ burgerLogOut.addEventListener('click', () => {
+  localStorage.removeItem('isAuthenticated');
+  location.reload();
+ });
+}
 burgerIcon.forEach((icon) => {
  icon.addEventListener('click', () => {
   openBurger();
@@ -92,13 +93,14 @@ burgerIcon.forEach((icon) => {
 burgerClose.addEventListener('click', () => {
  closeBurger();
 });
-
-burgerProfileButton.addEventListener('click', () => {
- closeBurger();
- if (!modalAccount.classList.contains('active')) {
-  openModalAccount();
- }
-});
+if (logout) {
+ burgerProfileButton.addEventListener('click', () => {
+  closeBurger();
+  if (!modalAccount.classList.contains('active')) {
+   openModalAccount();
+  }
+ });
+}
 
 if (burgerMobileItemWrapper && window.innerWidth <= 768) {
  burgerMobileItemWrapper.forEach((item) => {

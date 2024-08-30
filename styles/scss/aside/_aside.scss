@@ -15,6 +15,7 @@
   flex-direction: column;
  }
  &__account-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid;
@@ -28,23 +29,46 @@
   padding-top: rem(29px);
   padding-bottom: rem(27px);
  }
+ &__account-wrapper.diamond {
+  &::after {
+   content: '';
+   background: url('../../../img/account/big-spark.svg') no-repeat;
+   width: rem(67.34px);
+   height: rem(60.37px);
+   position: absolute;
+   z-index: -1;
+   right: -7%;
+   top: -1%;
+  }
+  &::before {
+   content: '';
+   background: url('../../../img/account/small-spark.svg') no-repeat;
+   width: rem(67.34px);
+   height: rem(60.37px);
+   position: absolute;
+   z-index: -1;
+   right: 10%;
+   top: 1%;
+  }
+ }
  &__account-level-wrapper {
   margin-bottom: rem(36.67px);
-  transform: translateX(-10%);
+  transform: translateX(-4%);
+  position: relative;
  }
  &__account-level-wrapper.diamond {
   background: rgba(35, 35, 35, 1);
  }
  &__account-level {
+  padding: rem(10px) 0;
   display: flex;
   align-items: center;
   justify-content: center;
  }
  &__account-level-title {
-  padding: rem(10px) 0;
   @include banner-font(rem(28px));
   text-transform: uppercase;
-  line-height: 30.91px;
+  line-height: rem(30.91px);
   color: rgba(255, 255, 255, 1);
  }
  &__account-user-wrapper {
@@ -56,25 +80,25 @@
  &__account-user-icon {
   width: rem(105px);
   height: rem(105px);
-  margin-bottom: rem(20px);
+  margin-bottom: rem(17px);
  }
  &__account-user-name {
   font-size: rem(18px);
   line-height: rem(28.8px);
   color: rgba(255, 255, 255, 1);
   font-weight: 500;
+  margin-bottom: rem(17px);
  }
  &__account-chars-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: rem(3px);
+  row-gap: rem(2px);
   width: 100%;
-  padding: 0 rem(15px);
+  padding: 0 rem(11px);
  }
  &__account-chars {
   display: grid;
-  grid-template-columns: fit-content(100%) 3fr rem(16px);
-  justify-items: center;
+  grid-template-columns: 2fr 3fr rem(16px);
   column-gap: rem(5px);
   &:nth-last-child(2) {
    margin-bottom: rem(16px);
@@ -102,6 +126,7 @@
   line-height: rem(22.4px);
   color: rgba(255, 255, 255, 1);
   font-weight: 300;
+  width: max-content;
  }
  &__account-value {
   align-items: center;
@@ -157,7 +182,7 @@
   align-items: center;
   justify-content: center;
   border-radius: rem(70.06px);
-  padding: rem(18.39px) 0;
+  padding: rem(16px) 0;
   font-size: rem(14px);
   line-height: rem(16.52px);
   text-transform: uppercase;
@@ -171,6 +196,7 @@
   &:hover {
    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
    transition: 0.3s ease-in-out;
+   color: rgba(255, 221, 147, 1);
   }
   &:active {
    transition: 0.3s ease-in-out;
@@ -214,6 +240,7 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
   display: flex;
+  font-weight: 400;
   padding: rem(11px) rem(11px);
  }
  &__account-list-item.active {
@@ -554,7 +581,88 @@
 }
 .aside.aside-account {
  padding: rem(9px);
+
  @media (max-width: 1440px) {
   display: none;
+ }
+}
+
+.aside.newbie {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/vip/newbie-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
+ }
+}
+.aside.bronze {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/vip/bronze-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
+ }
+}
+.aside.silver {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/vip/silver-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
+ }
+}
+.aside.gold {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/vip/gold-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
+ }
+}
+.aside.platinum {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/vip/platinum-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 92%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
+ }
+}
+
+.aside.diamond {
+ &::after {
+  position: fixed;
+  content: '';
+  background: url('../../../img/account/diamond-flag.svg') no-repeat;
+  width: rem(63.93px);
+  height: rem(49.33px);
+  top: 7%;
+  right: 87%;
+  z-index: -1;
+  background-size: rem(63.93px) rem(49.33px);
  }
 }

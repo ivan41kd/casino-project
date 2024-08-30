@@ -55,7 +55,6 @@ document
 
    const firstDayOfMonth = new Date(year, month, 1);
    const lastDayOfMonth = new Date(year, month + 1, 0);
-
    const prevLastDay = new Date(year, month, 0);
    const firstDayIndex =
     firstDayOfMonth.getDay() === 0 ? 7 : firstDayOfMonth.getDay();
@@ -81,50 +80,38 @@ document
     createButton(i, 'inactive');
    }
 
+   addDateClickEvents();
+  };
+
+  const addDateClickEvents = () => {
    const dateItems = dates.querySelectorAll('.main__datepicker-number');
 
    dateItems.forEach((item) => {
     if (!item.classList.contains('inactive')) {
      item.addEventListener('click', () => {
       const selectedDay = parseInt(item.textContent, 10);
-      const selectedDate = new Date(year, month, selectedDay);
+      const selectedDate = new Date(
+       date.getFullYear(),
+       date.getMonth(),
+       selectedDay
+      );
       const inputDate = selectedDate.toLocaleDateString();
       inputCalendar.value = inputDate;
 
       const label = inputCalendar.nextElementSibling;
-      inputCalendar.value !== ''
-       ? label.classList.add('top')
-       : label.classList.toggle('top');
+      if (inputCalendar.value !== '') {
+       label.classList.add('top');
+      } else {
+       label.classList.toggle('top');
+      }
 
       date = selectedDate;
-      checkAge(inputDate); // Проверка возраста при выборе даты
+      checkAge(inputDate);
       datePicker.classList.remove('active');
      });
     }
    });
   };
-
-  inputCalendar.addEventListener('input', (e) => {
-   let input = e.target.value.replace(/\D/g, '');
-   if (input.length > 2) {
-    input = input.slice(0, 2) + '.' + input.slice(2);
-   }
-   if (input.length > 5) {
-    input = input.slice(0, 5) + '.' + input.slice(5);
-   }
-   e.target.value = input.slice(0, 10);
-
-   // Проверка возраста только если введена валидная дата
-   if (
-    e.target.value.length === 10 &&
-    /^[0-3]\d\.[01]\d\.\d{4}$/.test(e.target.value)
-   ) {
-    checkAge(e.target.value);
-   } else {
-    // Очистить возрастные классы, если дата некорректна
-    inputCalendar.classList.remove('young', 'adult');
-   }
-  });
 
   const checkAge = (dob) => {
    const birthDate = new Date(dob.split('.').reverse().join('-'));
@@ -138,6 +125,7 @@ document
    ) {
     age--;
    }
+
    inputCalendar.classList.remove('young', 'adult');
    if (age < 18) {
     inputCalendar.classList.add('young');
@@ -145,6 +133,45 @@ document
     inputCalendar.classList.add('adult');
    }
   };
+
+  const validateDate = (dateStr) => {
+   const [day, month, year] = dateStr.split('.').map(Number);
+   const inputDate = new Date(`${year}-${month}-${day}`);
+   const currentYear = new Date().getFullYear();
+
+   if (
+    inputDate.getFullYear() !== year ||
+    inputDate.getMonth() + 1 !== month ||
+    inputDate.getDate() !== day ||
+    year > currentYear
+   ) {
+    return false;
+   }
+   return true;
+  };
+
+  inputCalendar.addEventListener('input', (e) => {
+   let input = e.target.value.replace(/\D/g, '');
+   if (input.length > 2) {
+    input = input.slice(0, 2) + '.' + input.slice(2);
+   }
+   if (input.length > 5) {
+    input = input.slice(0, 5) + '.' + input.slice(5);
+   }
+   e.target.value = input.slice(0, 10);
+
+   if (e.target.value.length === 10) {
+    if (validateDate(e.target.value)) {
+     inputCalendar.classList.remove('invalid');
+     checkAge(e.target.value);
+    } else {
+     inputCalendar.classList.add('invalid');
+     inputCalendar.classList.remove('young', 'adult');
+    }
+   } else {
+    inputCalendar.classList.remove('invalid', 'young', 'adult');
+   }
+  });
 
   calendarIcon.addEventListener('click', () => {
    if (!inputCalendar.disabled) {

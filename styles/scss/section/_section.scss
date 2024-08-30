@@ -7,10 +7,11 @@
  }
 }
 .account {
- left: 30%;
+ position: relative;
  width: rem(1025px);
- padding: rem(46px) 0;
+ padding: rem(40px) 0;
  transition: 0.5s ease-in-out;
+ height: 100%;
  &__accordion-wrapper {
   display: none;
  }
@@ -34,7 +35,7 @@
   gap: rem(27px) rem(10px);
  }
  &__form-wrapper {
-  padding-top: rem(53px);
+  padding-top: rem(39px);
   display: flex;
   flex-direction: column;
   row-gap: 36px;
@@ -132,7 +133,7 @@
    position: absolute;
    inset: 0;
    border-radius: rem(70px);
-   border: rem(3px) solid transparent;
+   border: rem(2px) solid transparent;
    background: radial-gradient(
      80.12% 95.28% at 16.15% 4.72%,
      #eedeba 0%,
@@ -258,7 +259,7 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  width: rem(458px);
+  width: 100%;
   padding: rem(15px) rem(25px);
   font-size: rem(15px);
   line-height: rem(17.7px);
@@ -266,24 +267,30 @@
   font-weight: 400;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-bottom: 1px rgba(216, 216, 212, 0.6) solid;
   &:after {
    position: absolute;
-   width: 100%;
+   width: 0%;
    height: 1px;
-   bottom: 0;
+   bottom: -2%;
    content: '';
-   background: rgba(216, 216, 212, 0.6);
+   background: rgba(203, 61, 69, 1);
+   transition: 0.3s ease-in-out;
   }
  }
  &__deposit-tab.active {
+  transition: 0.3s ease-in-out;
   color: rgba(255, 255, 255, 1);
   &:after {
    position: absolute;
    width: 100%;
    height: 1px;
-   bottom: 0;
+   bottom: -2%;
    content: '';
    background: rgba(203, 61, 69, 1);
+   transition: 0.3s ease-in-out;
   }
  }
  &__deposit-wrapper {
@@ -304,8 +311,9 @@
  &__payment-method-wrapper {
   border-radius: rem(10px);
   background: rgba(0, 0, 0, 0.4);
-  padding: rem(16px) rem(26px);
+  padding: 0 rem(26px);
   transition: 0.3s ease-in;
+  height: rem(76px);
   cursor: pointer;
   &:hover {
    background: rgba(0, 0, 0, 1);
@@ -313,6 +321,7 @@
   }
  }
  &__payment-method {
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -343,6 +352,7 @@
   color: rgba(255, 255, 255, 0.4);
   font-size: rem(14px);
   line-height: rem(16.52px);
+  font-weight: 300;
  }
  &__amount-title {
   @include banner-font(rem(25px));
@@ -365,6 +375,7 @@
   display: inline-block;
   width: 100%;
   border-collapse: collapse;
+  border-radius: rem(10px);
  }
  &__column-head {
   font-family: 'Forum', sans-serif;
@@ -384,10 +395,10 @@
  &__table-body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: none;
-  border-radius: 10px 0px 0px 0px;
   background: rgba(255, 255, 255, 0.01);
  }
  &__table-body tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: grid;
   grid-template-columns: repeat(5, rem(201px));
  }
@@ -407,7 +418,7 @@
  &__scores {
   font-size: rem(18px);
   line-height: rem(28.8px);
-  font-weight: 400;
+  font-weight: 300;
   color: rgba(255, 255, 255, 1);
  }
  &__scores-attention {
@@ -450,7 +461,7 @@
   font-weight: 700;
  }
  &__levels-wrapper {
-  padding-top: rem(118px);
+  padding-top: rem(100px);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(rem(90px), 1fr));
   align-items: center;
@@ -492,7 +503,7 @@
  &__level-title {
   @include banner-font(rem(25px));
   line-height: rem(35px);
-  margin-bottom: rem(24px);
+  margin-bottom: rem(15px);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
  }
@@ -502,13 +513,21 @@
  &__level-icon {
   width: rem(65px);
   height: rem(65px);
+  margin-bottom: rem(14px);
+  transform: translateY(3%);
  }
  &__level-score-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: rem(76.8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  @include iftablet {
+   transform: translateY(-15px);
+  }
+  @include ifdesktop {
+   transform: translateY(-15px);
+  }
  }
  &__level-score {
   font-size: rem(14px);
@@ -524,7 +543,7 @@
  &__level-exchange-text {
   font-size: rem(14px);
   line-height: rem(22.4px);
-  font-weight: 400;
+  font-weight: 300;
   color: rgba(255, 255, 255, 1);
  }
  &__level-exchange {
@@ -539,18 +558,43 @@
   line-height: rem(17.7px);
   font-weight: 500;
   color: rgba(196, 167, 103, 1);
+  transition: 0.3s ease-in-out;
+  &:hover {
+   transition: 0.3s ease-in-out;
+   color: rgba(196, 167, 103, 0.5);
+  }
  }
 
  &__header-tab {
   display: none;
  }
+ &__bonuses {
+  padding-top: rem(53px);
+ }
+ &__bonuses-text {
+  font-size: rem(18px);
+  line-height: rem(28.8px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 1);
+ }
  @media (max-width: 1440px) {
+  &:after {
+   content: '';
+   background: url('../../../img/bg/leaves-account-1024.svg') no-repeat;
+   width: 100%;
+   height: rem(304px);
+   position: absolute;
+   background-size: 100%;
+   bottom: 0;
+  }
   width: 100%;
   &__wrapper {
-   padding-left: rem(20px);
-   padding-right: rem(20px);
+   padding-left: rem(40px);
+   padding-right: rem(40px);
   }
   &__header-tab {
+   padding-left: rem(40px);
+   padding-right: rem(40px);
    display: flex;
    justify-content: space-between;
   }
@@ -565,9 +609,11 @@
    display: flex;
    align-items: center;
    padding-bottom: rem(15px);
+   color: rgba(216, 216, 212, 0.6);
    border-bottom: rem(1px) rgba(216, 216, 212, 0.2) solid;
    position: relative;
    transition: 0.3s ease-in-out;
+   cursor: pointer;
    &:after {
     position: absolute;
     bottom: 0;
@@ -584,6 +630,7 @@
   }
   &__tab.active {
    transition: 0.3s ease-in-out;
+   color: rgba(255, 255, 255, 1);
    &:after {
     position: absolute;
     bottom: 0;
@@ -632,6 +679,10 @@
    background-size: 100%;
    background-position: bottom;
    z-index: -1;
+  }
+  &__header-tab {
+   padding-left: rem(20px);
+   padding-right: rem(20px);
   }
   &__wrapper {
    padding-left: rem(20px);
@@ -721,6 +772,11 @@
   }
   &__level-score {
    font-size: rem(12px);
+   line-height: rem(19.2px);
+   padding-bottom: rem(5px);
+  }
+  &__level-score-wrapper {
+   transform: translateY(-25px);
   }
   &__level-icon {
    width: rem(48.71px);
@@ -743,13 +799,20 @@
    background-size: 100%;
   }
   &__tab {
+   padding-bottom: rem(15px);
    font-size: rem(10px);
   }
+  &__profile-save {
+   font-size: rem(14px);
+   padding: rem(15px);
+  }
+
   &__profile-buttons-wrapper {
    flex-direction: column;
    align-items: normal;
    row-gap: rem(19px);
   }
+
   &__payment-methods {
    display: none;
   }
@@ -827,6 +890,7 @@
    color: rgba(255, 255, 255, 1);
    font-weight: 400;
   }
+
   &__scores-wrapper {
    flex-direction: column;
    align-items: normal;
@@ -844,6 +908,7 @@
    font-size: rem(25px);
    line-height: rem(35px);
   }
+
   &__levels.mobile {
    padding-top: rem(73.22px);
    display: flex;
@@ -879,6 +944,7 @@
    height: rem(38px);
    position: relative;
    justify-content: start;
+   transform: translateY(0);
    &::before {
     content: '';
     background: rgba(255, 255, 255, 0.2);
@@ -920,6 +986,7 @@
  background: rgba(0, 0, 0, 0.6);
  opacity: 1;
  position: relative;
+ border-radius: rem(10px);
  &::after {
   content: '';
   background: url('../../../img/bg/register-leaves.svg') no-repeat;
@@ -1002,6 +1069,10 @@
  @media (max-width: 1024px) {
   width: 100%;
   padding-bottom: rem(32px);
+  &::after {
+   top: auto;
+   bottom: -20%;
+  }
  }
  @include onlymobile {
   width: 100%;
@@ -1013,6 +1084,14 @@
  }
  @media (max-width: 1024px) {
   padding-bottom: rem(97.29px);
+ }
+ @include onlymobile {
+  height: auto;
+ }
+}
+.account.profile {
+ @include onlymobile {
+  height: auto;
  }
 }
 .register {

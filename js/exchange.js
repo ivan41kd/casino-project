@@ -4,6 +4,7 @@ const inputGet = document.querySelector('.main__form-input.get-scores');
 const setDefault = (scoresInput, getInput) => {
  scoresInput.value = 100;
  getInput.value = 1;
+ resetFormLabels();
 };
 
 const calculateValues = (scoresInput, getInput) => {

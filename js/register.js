@@ -22,15 +22,25 @@ const emailInput = registerForm.querySelector(
  '.main__form-input.email.register-input'
 );
 
+const dateDropdown = document.querySelector('.main__datepicker');
+
+const countryValue = document.querySelector('.main__form-select-current');
+const countryWrapper = document.querySelector('.main__form-select');
+const countryDropdown = document.querySelector(
+ '.main__form-select-list-wrapper.country'
+);
+
 const verifyEmail = document.querySelector('.main__form-verify-text.email');
 const verifyMob = document.querySelector('.main__form-verify-text.phone');
+
+const chks = document.querySelectorAll('.main__form-chk');
 
 const checkEmptyField = (input) => {
  if (input.value.trim() === '') {
   input.classList.remove('valid');
-  input.classList.add('invalid');
+  input.classList.add('highlight');
  } else {
-  input.classList.remove('invalid');
+  input.classList.remove('highlight');
   input.classList.add('valid');
  }
 };
@@ -104,9 +114,6 @@ const checkPassword = (createPass, confirmPass) => {
    createPass.classList.add('not-confirmed');
    confirmPass.classList.add('not-confirmed');
   }
-  //  } else {
-  //   createPass.classList.add('highlight');
-  //   confirmPass.classList.add('highlight');
  }
 };
 
@@ -123,6 +130,32 @@ const highlightInvalidFields = () => {
  });
 };
 
+const validateCheckboxes = () => {
+ let anyChecked = false;
+ chks.forEach((chk) => {
+  if (chk.checked) {
+   anyChecked = true;
+   chk.classList.remove('invalid');
+  } else {
+   chk.classList.add('invalid');
+  }
+ });
+
+ return anyChecked;
+};
+
+const validateCountry = () => {
+ let chosenCountry = false;
+ if (countryValue.textContent != '') chosenCountry = true;
+
+ if (!chosenCountry) {
+  countryWrapper.classList.add('invalid');
+ } else {
+  countryWrapper.classList.remove('invalid');
+ }
+ return chosenCountry;
+};
+
 const validateForm = () => {
  checkEmptyField(nameInput);
  checkEmptyField(lastNameInput);
@@ -136,6 +169,20 @@ const validateForm = () => {
   phoneWrapper.classList.add('invalid');
  } else {
   phoneWrapper.classList.remove('invalid');
+ }
+ const emailIsValid = emailInput.classList.contains('valid');
+ if (!emailIsValid) {
+  emailInput.classList.add('invalid');
+ } else emailInput.classList.remove('invalid');
+
+ if (
+  createPass.value == '' &&
+  confirmPass.value == '' &&
+  !createPass.classList.contains('confirmed') &&
+  !confirmPass.classList.contains('confirmed')
+ ) {
+  createPass.classList.add('invalid');
+  confirmPass.classList.add('invalid');
  }
 
  const allInputs = [
@@ -157,37 +204,40 @@ const validateForm = () => {
     !input.classList.contains('young')
   ) && phoneIsValid;
 
- return allValid;
+ const checkboxesValid = validateCheckboxes();
+ const countryValid = validateCountry();
+
+ return allValid && checkboxesValid && countryValid;
 };
 
 registerForm.addEventListener('submit', (event) => {
  event.preventDefault();
 
+ if (dateDropdown.classList.contains('active')) {
+  dateDropdown.classList.remove('active');
+ }
+ if (countryDropdown.classList.contains('active')) {
+  countryDropdown.classList.remove('active');
+ }
+
  if (validateForm()) {
-  console.log('Форма валидна и отправляется.');
+  localStorage.setItem('isAuthenticated', true);
+  window.location.href = '/index.html';
  } else {
-  console.log('Форма невалидна. Исправьте ошибки.');
   highlightInvalidFields();
  }
 });
 
-emailInput.addEventListener('input', () => {
- if (
-  !emailInput.classList.contains('invalid-format') &&
-  !emailInput.classList.contains('invalid')
- ) {
-  verifyEmail.classList.remove('disabled');
- } else {
-  verifyEmail.classList.add('disabled');
- }
+phoneInput.addEventListener('input', () => {
+ checkEmptyField(phoneInput);
 });
 
-phoneInput.addEventListener('input', () => {
- if (!phoneWrapper.classList.contains('invalid')) {
-  verifyMob.classList.remove('disabled');
- } else {
-  verifyMob.classList.add('disabled');
- }
+chks.forEach((chk) => {
+ chk.addEventListener('click', () => {
+  if (chk.checked) {
+   chk.classList.remove('invalid');
+  }
+ });
 });
 
 nameInput.addEventListener('input', () => checkEmptyField(nameInput));

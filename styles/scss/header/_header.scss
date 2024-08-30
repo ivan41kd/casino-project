@@ -40,10 +40,11 @@
   align-items: center;
   justify-content: center;
   border-radius: rem(70.06px);
-  padding: rem(18.39px) 0;
+  padding: rem(15.39px) 0;
   font-size: rem(14px);
   line-height: rem(16.52px);
   text-transform: uppercase;
+  margin-right: rem(35px);
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -70,7 +71,7 @@
    position: absolute;
    inset: 0;
    border-radius: rem(70px);
-   border: rem(3px) solid transparent;
+   border: rem(2px) solid transparent;
    background: radial-gradient(
      80.12% 95.28% at 16.15% 4.72%,
      #eedeba 0%,
@@ -89,8 +90,12 @@
   justify-content: end;
  }
  &__account-user-wrapper {
+  column-gap: rem(9.54px);
   display: flex;
   align-items: center;
+ }
+ &__account-user-wrapper.mobile {
+  display: none;
  }
  &__account-user-icon {
   width: rem(24px);
@@ -100,6 +105,7 @@
   font-size: rem(16px);
   line-height: rem(25.6px);
   color: rgba(255, 255, 255, 1);
+  font-weight: 400;
  }
  &__account-balance-wrapper {
   display: flex;
@@ -319,7 +325,7 @@
   width: rem(47px);
   height: rem(47px);
   border-radius: rem(70.61px);
-  margin-right: rem(8px);
+  margin-right: rem(10px);
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -347,7 +353,7 @@
    position: absolute;
    inset: 0;
    border-radius: rem(70px);
-   border: rem(3px) solid transparent;
+   border: rem(2px) solid transparent;
    background: radial-gradient(
      80.12% 95.28% at 16.15% 4.72%,
      #eedeba 0%,
@@ -374,6 +380,8 @@
   line-height: rem(25.6px);
   font-weight: 500;
   @include gold-color;
+  column-gap: rem(9px);
+  display: flex;
  }
  &__currency {
   font-weight: 400;
