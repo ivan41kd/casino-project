@@ -70,7 +70,7 @@ loginForm.addEventListener('submit', () => {
   users.forEach((user) => {
    if (user.name == nameInput.value && user.password == passInput.value) {
     localStorage.setItem('isAuthenticated', true);
-    console.log('yes');
+    location.href = '/';
    } else {
     nameInput.classList.add('invalid');
     passInput.classList.add('invalid');
