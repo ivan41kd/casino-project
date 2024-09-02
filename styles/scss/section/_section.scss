@@ -376,27 +376,6 @@
   width: 100%;
   border-collapse: collapse;
   border-radius: rem(10px);
-  overflow: hidden;
-  overflow-y: scroll;
-  max-height: rem(500px);
-  &::-webkit-scrollbar {
-   width: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-   background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-   background-color: #d4d3d399;
-   border-radius: 20px;
-  }
-
-  @supports (-moz-appearance: none) {
-   /* стили только для Firefox */
-   scrollbar-color: #d4d3d399 transparent;
-   scrollbar-width: thin;
-  }
  }
  &__column-head {
   font-family: 'Forum', sans-serif;
@@ -414,9 +393,33 @@
   grid-template-columns: repeat(5, rem(201px));
  }
  &__table-body {
+  display: block;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: none;
   background: rgba(255, 255, 255, 0.01);
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-y: overlay;
+  max-height: rem(500px);
+  &::-webkit-scrollbar {
+   width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+   background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+   background-clip: padding-box;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 20px;
+  }
+
+  @supports (-moz-appearance: none) {
+   /* стили только для Firefox */
+   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+   scrollbar-width: thin;
+  }
  }
  &__table-body tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);

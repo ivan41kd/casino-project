@@ -40,22 +40,11 @@ const scrollAccountHeader = (scroll) => {
   : headerAccount.classList.remove('fixed');
 };
 
-const smoothOpacity = () => {
- if (profileModal.classList.contains('active')) {
-  profileContent.style.opacity = 0;
-  profileContent.style.transition = 'opacity 1s';
- } else {
-  profileContent.style.opacity = 1;
-  profileContent.style.transition = 'opacity 7s';
- }
-};
 const openModalAccount = () => {
- smoothOpacity();
  profileModal.classList.add('active');
  document.body.classList.add('scroll-disabled');
 };
 const closeModalAccount = () => {
- smoothOpacity();
  profileModal.classList.remove('active');
  document.body.classList.remove('scroll-disabled');
 };
