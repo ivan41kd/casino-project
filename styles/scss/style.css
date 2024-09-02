@@ -8063,7 +8063,7 @@ button {
   grid-template-columns: repeat(5, 14.3571428571rem);
 }
 .account__column {
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.1428571429rem;
   line-height: 1.8285714286rem;
   color: rgba(255, 255, 255, 0.8);
