@@ -9,7 +9,7 @@ const loginForm = document.querySelector('.main__form.login-form');
 
 const formFirstStep = document.querySelector('.main__form.step-1');
 
-const nameInput = document.querySelector('.main__form-input.name.login-input');
+const nameInput = document.querySelector('.main__form-input.email.login-input');
 const passInput = loginForm.querySelector(
  '.main__form-input.password.login-input'
 );
@@ -66,6 +66,7 @@ formFirstStep.addEventListener('submit', () => {
 
 loginForm.addEventListener('submit', () => {
  if (passInput.value != '' && nameInput.value != '') {
+  nameInput.classList.remove('invalid');
   users.forEach((user) => {
    if (user.name == nameInput.value && user.password == passInput.value) {
     localStorage.setItem('isAuthenticated', true);

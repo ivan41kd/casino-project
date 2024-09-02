@@ -1,4 +1,4 @@
-import { data } from './countries.js';
+import { data } from '../countries.js';
 mask('.main__form-input.phone');
 
 const user = [
@@ -193,15 +193,16 @@ const openChangeModal = () => {
 };
 
 const closeChangeModal = () => {
- document.querySelector('.modal-account').classList.remove('scroll-disabled');
  modalChange.classList.remove('active');
  modalChangeWrapper.classList.add('inactive');
+ document.querySelector('.modal-account').classList.remove('scroll-disabled');
 };
 
 const closeSuccessModal = () => {
  modalChange.classList.remove('active');
  modalSuccess.classList.remove('active');
  modalSuccess.classList.add('inactive');
+ document.querySelector('.modal-account').classList.remove('scroll-disabled');
 };
 
 const renderProfile = () => {

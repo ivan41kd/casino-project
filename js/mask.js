@@ -1,34 +1,43 @@
 const mask = (selector) => {
- function setMask() {
-  let matrix = '+###############';
+ class SetMask {
+  constructor(input) {
+   this.input = input;
+   this.applyMask();
+  }
 
-  maskList.forEach((item) => {
-   let code = item.code.replace(/[\s#]/g, ''),
-    phone = this.value.replace(/[\s#-)(]/g, '');
+  applyMask() {
+   let matrix = '+###############';
 
-   if (phone.includes(code)) {
-    matrix = item.code;
-   }
-  });
+   maskList.forEach((item) => {
+    let code = item.code.replace(/[\s#]/g, ''),
+     phone = this.input.value.replace(/[\s#-)(]/g, '');
 
-  let i = 0,
-   val = this.value.replace(/\D/g, '');
+    if (phone.includes(code)) {
+     matrix = item.code;
+    }
+   });
 
-  this.value = matrix.replace(/(?!\+)./g, function (a) {
-   return /[#\d]/.test(a) && i < val.length
-    ? val.charAt(i++)
-    : i >= val.length
-    ? ''
-    : a;
-  });
+   let i = 0,
+    val = this.input.value.replace(/\D/g, '');
+
+   this.input.value = matrix.replace(/(?!\+)./g, function (a) {
+    return /[#\d]/.test(a) && i < val.length
+     ? val.charAt(i++)
+     : i >= val.length
+     ? ''
+     : a;
+   });
+  }
  }
 
  let inputs = document.querySelectorAll(selector);
 
  inputs.forEach((input) => {
   if (!input.value) input.value = '+';
-  input.addEventListener('input', setMask);
-  input.addEventListener('focus', setMask);
-  input.addEventListener('blur', setMask);
+  const setMaskInstance = new SetMask(input);
+
+  input.addEventListener('input', () => setMaskInstance.applyMask());
+  input.addEventListener('focus', () => setMaskInstance.applyMask());
+  input.addEventListener('blur', () => setMaskInstance.applyMask());
  });
 };

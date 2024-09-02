@@ -1,4 +1,4 @@
-import { data } from './countries.js';
+import { data } from '../countries.js';
 
 mask('.main__form-input.phone');
 
@@ -104,20 +104,17 @@ const trackDisabledInputs = () => {
    }
   };
 
-  // Изначальная проверка состояния инпута
   updateDisabledState();
 
-  // Добавляем наблюдатель за изменением атрибута 'disabled'
   const observer = new MutationObserver(() => {
    updateDisabledState();
   });
 
   observer.observe(input, {
-   attributes: true, // Наблюдаем только за изменениями атрибутов
-   attributeFilter: ['disabled'], // Наблюдаем только за изменением атрибута 'disabled'
+   attributes: true,
+   attributeFilter: ['disabled'],
   });
 
-  // Можно добавить еще проверку на события ввода, если это необходимо
   input.addEventListener('input', updateDisabledState);
  });
 };
@@ -170,9 +167,11 @@ formPhoneWrappers.forEach((formPhoneWrapper, index) => {
     if (item.code.length === input.value.length) {
      input.parentElement.classList.remove('invalid');
      input.parentElement.classList.add('valid');
+     input.classList.add('valid');
     } else {
      input.parentElement.classList.add('invalid');
      input.parentElement.classList.remove('valid');
+     input.classList.remove('valid');
     }
    });
   }

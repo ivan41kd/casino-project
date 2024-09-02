@@ -6,6 +6,8 @@ const faqNames = document.querySelectorAll('.faq__name');
 
 const currentItem = document.querySelector('.faq__name.current');
 
+const faqItems = document.querySelectorAll('.faq__item-wrapper');
+
 faqNames.forEach((name) => {
  if (
   !name.classList.contains('mobile') &&
@@ -33,4 +35,12 @@ faqWrapper.addEventListener('click', () => {
  faqWrapper.classList.toggle('opened');
  faqList.classList.toggle('active');
  setCurrent(faqList);
+});
+
+faqItems.forEach((item) => {
+ item.addEventListener('click', () => {
+  item.classList.toggle('active');
+  const accordionIcon = item.querySelector('.faq__item-icon');
+  accordionIcon.classList.toggle('active');
+ });
 });

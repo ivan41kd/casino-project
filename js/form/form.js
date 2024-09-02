@@ -20,10 +20,21 @@ forms.forEach((form) => {
    document.addEventListener('DOMContentLoaded', () => {
     labelInput.forEach((label) => {
      updateLabelPosition(i, label);
+     resetFormLabels();
     });
    });
 
    i.addEventListener('input', () => {
+    if (!i.classList.contains('phone')) {
+     if (i.value == '') {
+      i.classList.remove('valid');
+      i.classList.add('invalid');
+     } else {
+      i.classList.remove('invalid');
+      i.classList.add('valid');
+     }
+    }
+
     labelInput.forEach((label) => {
      updateLabelPosition(i, label);
     });
@@ -45,7 +56,6 @@ const resetFormLabels = () => {
   inputs.forEach((item) => {
    const labelInput = item.querySelectorAll('.main__form-label');
    const input = item.querySelectorAll('.main__form-input');
-   console.log(item);
 
    input.forEach((i) => {
     labelInput.forEach((label) => {

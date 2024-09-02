@@ -159,7 +159,6 @@ document
     input = input.slice(0, 5) + '.' + input.slice(5);
    }
    e.target.value = input.slice(0, 10);
-
    if (e.target.value.length === 10) {
     if (validateDate(e.target.value)) {
      inputCalendar.classList.remove('invalid');
@@ -169,7 +168,8 @@ document
      inputCalendar.classList.remove('young', 'adult');
     }
    } else {
-    inputCalendar.classList.remove('invalid', 'young', 'adult');
+    inputCalendar.classList.add('invalid');
+    inputCalendar.classList.remove('young', 'adult');
    }
   });
 
