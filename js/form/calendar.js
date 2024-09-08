@@ -37,6 +37,7 @@ document
   const createButton = (number, className) => {
    const button = document.createElement('button');
    button.className = 'main__datepicker-number';
+   button.type = 'button';
    if (className) {
     button.classList.add(className);
    }
@@ -106,7 +107,11 @@ document
       }
 
       date = selectedDate;
-      checkAge(inputDate);
+      if (!inputCalendar.classList.contains('request')) {
+       checkAge(inputDate);
+      } else {
+       inputCalendar.classList.add('valid');
+      }
       datePicker.classList.remove('active');
      });
     }
@@ -162,7 +167,11 @@ document
    if (e.target.value.length === 10) {
     if (validateDate(e.target.value)) {
      inputCalendar.classList.remove('invalid');
-     checkAge(e.target.value);
+     if (!inputCalendar.classList.contains('request')) {
+      checkAge(e.target.value);
+     } else {
+      inputCalendar.classList.add('valid');
+     }
     } else {
      inputCalendar.classList.add('invalid');
      inputCalendar.classList.remove('young', 'adult');

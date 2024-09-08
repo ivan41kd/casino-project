@@ -25,7 +25,11 @@ forms.forEach((form) => {
    });
 
    i.addEventListener('input', () => {
-    if (!i.classList.contains('phone')) {
+    if (
+     !i.classList.contains('phone') &&
+     !i.classList.contains('calendar') &&
+     !i.classList.contains('email')
+    ) {
      if (i.value == '') {
       i.classList.remove('valid');
       i.classList.add('invalid');

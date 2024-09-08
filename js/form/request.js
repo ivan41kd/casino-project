@@ -28,15 +28,14 @@ requestForms.forEach((form) => {
  const phoneWrapper = form.querySelector(
   '.main__form-input-label-wrapper.phone'
  );
- const phoneInput = form.querySelector('.main__form-input.phone'); // Assuming there's a phone input
+ const phoneInput = form.querySelector('.main__form-input.phone');
+ const selectValue = form.querySelector('.main__form-select-current');
 
- // Function to validate the form
  const validateForm = () => {
   let valid = true;
 
   inputs.forEach((input) => {
    if (input === phoneInput) {
-    // Special handling for the phone input
     if (
      !phoneWrapper.classList.contains('invalid') &&
      input.classList.contains('valid')
@@ -47,12 +46,21 @@ requestForms.forEach((form) => {
      phoneWrapper.classList.add('highlight');
     }
    } else {
-    // General validation for other inputs
-    if (!input.classList.contains('valid')) {
+    if (
+     !input.classList.contains('valid') &&
+     !input.classList.contains('optional')
+    ) {
      valid = false;
      input.classList.add('highlight');
     } else {
      input.classList.remove('highlight');
+    }
+   }
+   if (selectValue) {
+    if (selectValue.textContent == '') {
+     selectValue.parentElement.classList.add('highlight');
+    } else {
+     selectValue.parentElement.classList.remove('highlight');
     }
    }
   });
@@ -60,25 +68,25 @@ requestForms.forEach((form) => {
   return valid;
  };
 
- // Event listener for input to remove invalid and highlight classes
  inputs.forEach((input) => {
   input.addEventListener('input', () => {
    if (input === phoneInput) {
-    // Special handling for the phone input
     phoneWrapper.classList.remove('highlight');
-   } else if (input.value !== '') {
+   } else if (input.classList.contains('calendar')) {
+    const inputCalendar = form.querySelector('.main__form-input.calendar');
+    inputCalendar.classList.remove('highlight');
+   } else if (input.value !== '' && !input.classList.contains('optional')) {
     input.classList.remove('invalid');
     input.classList.remove('highlight');
    }
   });
  });
 
- // Form submit event listener
  form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent default form submission to handle validation
+  event.preventDefault();
   if (validateForm()) {
    console.log('Form is valid!');
-   openRequestModal(); // Open modal on successful validation
+   openRequestModal();
   } else {
    console.log('Form is invalid!');
   }

@@ -2,8 +2,11 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chargeback processing</title>
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0,minimum-scale=1"
+  />
+  <title>Responsible Gaming</title>
   <link rel="stylesheet" href="./styles/fonts/stylesheet.css" />
   <link rel="stylesheet" href="./styles/scss/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +22,6 @@
  <div class="loader">
   <img src="./img/loader/leaves casino.svg" alt="" class="loader-img" />
  </div>
-
  <div class="main__vip-card-modal newbie" data-level="1">
   <div class="main__vip-card-modal-wrapper">
    <svg
@@ -329,15 +331,15 @@
    </div>
   </div>
  </div>
- <div class="main__success-request-modal">
-  <div class="main__success-request-modal-wrapper inactive">
+ <div class="main__success-test-modal">
+  <div class="main__success-test-modal-wrapper inactive">
    <svg
     width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    class="main__success-request-modal-close"
+    class="main__test-modal-close"
    >
     <path
      d="M6 18L18 6M6 6L18 18"
@@ -348,10 +350,208 @@
      stroke-linejoin="round"
     />
    </svg>
-   <h1 class="main__success-title">Thank you!</h1>
-   <p class="main__success-subtitle">Your request has been sent.</p>
+   <svg
+    width="69"
+    height="53"
+    viewBox="0 0 69 53"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="main__success-test-icon"
+   >
+    <path
+     d="M1.60608 33.1597C5.37179 36.0054 6.80608 36.4054 9.95465 40.6969C15.1032 47.7197 14.3432 50.6226 15.8746 51.9597C17.4004 53.2969 24.4004 54.3769 29.1718 48.2683C33.9432 42.1597 41.3889 25.2969 50.9318 15.1826C60.4746 5.06828 64.9318 2.14257 67.7946 0.61114C70.6575 -0.914574 61.5832 -0.58886 43.7432 13.594C31.3375 23.4569 22.5546 37.074 22.5546 37.074C22.5546 37.074 20.0746 29.6283 14.5375 24.6683C9.00036 19.7026 -4.64535 28.4397 1.60608 33.1654V33.1597Z"
+     fill="#1F4336"
+    />
+   </svg>
+
+   <h1 class="main__test-title">
+    Please think responsible and gamble with cold set of mind
+   </h1>
   </div>
  </div>
+ <div class="main__failed-test-modal">
+  <div class="main__failed-test-modal-wrapper inactive">
+   <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="main__test-modal-close"
+   >
+    <path
+     d="M6 18L18 6M6 6L18 18"
+     stroke="#D8D8D4"
+     stroke-opacity="0.2"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+    />
+   </svg>
+   <svg
+    width="53"
+    height="54"
+    viewBox="0 0 53 54"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="main__failed-test-modal-icon"
+   >
+    <g clip-path="url(#clip0_949_9408)">
+     <path
+      d="M17.7526 4.54C10.63 0.129202 -5.54646 9.78587 2.43197 13.8996C19.0814 22.4858 36.3502 35.5557 44.627 49.9986C46.4907 53.2549 48.9625 58.5288 46.7441 46.479C43.8219 30.562 22.8088 7.67295 17.7526 4.54Z"
+      fill="#872635"
+     />
+     <path
+      d="M51.5472 17.8004C56.4401 11.0245 47.8311 -5.68829 43.1746 1.96754C33.462 17.9293 19.2112 34.2162 4.18899 41.4797C0.805048 43.1163 -4.65092 45.218 7.57292 43.8168C23.7269 41.9617 48.0676 22.6148 51.5472 17.8004Z"
+      fill="#872635"
+     />
+    </g>
+    <defs>
+     <clipPath id="clip0_949_9408">
+      <rect width="53" height="54" fill="white" />
+     </clipPath>
+    </defs>
+   </svg>
+
+   <h1 class="main__test-title">
+    Please think responsible and gamble with cold set of mind
+   </h1>
+  </div>
+ </div>
+ <div class="main__sensibly-modal" id="sensibly-modal">
+  <div class="main__sensibly-modal-wrapper">
+   <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="main__sensibly-modal-close-icon"
+   >
+    <path
+     d="M6 18L18 6M6 6L18 18"
+     stroke="#D8D8D4"
+     stroke-opacity="0.15"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+    />
+   </svg>
+
+   <h2 class="main__sensibly-modal-title">PLAY SENSIBLY!</h2>
+   <p class="main__sensibly-modal-note">
+    Ferris, J., & Wynne, H. (2001). The Canadian Problem Gambling Index: Final
+    Report.
+   </p>
+
+   <p class="main__sensibly-modal-note">
+    NB! Please note that this test gives only an overview of potential gambling
+    problems. Correct diagnosis can be made only by a specialist.
+   </p>
+
+   <p class="main__sensibly-modal-note">
+    This is a standardized PGSI test that can help you to identify whether your
+    gaming is in the risk zone or not. Please try to answer the test honestly
+    and keep in mind your actions during the last 12 months.
+   </p>
+
+   <ul class="main__sensibly-modal-question-list">
+    <li class="main__sensibly-modal-question-list-item">
+     1. During the last 12 months, have you bet more than you could really
+     afford to lose?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     2. During the same timeframe, have you had the urge to gamble with more
+     significant amounts of money to get the same feeling of excitement?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     3. Have you tried to win back the money you lost on another day before?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     4. Have you borrowed money or sold anything to be able to gamble?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     5. Have you felt that you might have a problem with gambling?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     6. Have people criticized your betting habits or told you that you had a
+     gambling problem, whether or not you thought it was true?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     7. Have you ever felt guilty about the way you gamble or what happens when
+     you do it?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     8. Has gambling caused you any health problems, including stress or
+     anxiety?
+    </li>
+    <li class="main__sensibly-modal-question-list-item">
+     9. Has your gambling caused any financial problems for you or your
+     household?
+    </li>
+   </ul>
+
+   <p class="main__sensibly-modal-note">
+    To proceed, please put a score to your answers:
+   </p>
+
+   <ul class="main__sensibly-modal-score-list">
+    <li class="main__sensibly-modal-score-list-item">Never – 0 points</li>
+    <li class="main__sensibly-modal-score-list-item">Sometimes – 1 point</li>
+    <li class="main__sensibly-modal-score-list-item">
+     Most of the time – 2 points
+    </li>
+    <li class="main__sensibly-modal-score-list-item">
+     Almost always – 3 points
+    </li>
+   </ul>
+
+   <p class="main__sensibly-modal-note">Then add up your scores.</p>
+
+   <div class="main__sensibly-modal-result">
+    <p class="main__sensibly-modal-result-title">Test Result:</p>
+
+    <p class="main__sensibly-modal-result-description">
+     Non-problem gambler - Score: 0<br />
+     You do not have problems with your gambling.
+    </p>
+
+    <p class="main__sensibly-modal-result-description">
+     Low-risk gambler - Score: 1 – 2<br />
+     You have few or no identified negative consequences. For example, you may
+     occasionally spend over the expected limit or feel guilty about gambling.
+    </p>
+
+    <p class="main__sensibly-modal-result-description">
+     Moderate-risk gambler - Score: 3 – 7<br />
+     You may experience a moderate level of problems leading to some negative
+     consequences. For example, sometimes you may spend more than you can
+     afford, lose track of time or feel guilty about gambling.
+    </p>
+
+    <p class="main__sensibly-modal-result-description">
+     Problem gambler - Score: 8 or above<br />
+     Your gambling leads to negative consequences and a possible loss of
+     control. For example, you may often spend over your limit, gamble to win
+     back already lost money, and feel stressed about gambling.
+    </p>
+   </div>
+
+   <p class="main__sensibly-modal-note">
+    If you would like more information about responsible gaming or need help,
+    please read the responsible gaming information below. If you are worried
+    about your test results, consider setting a gambling restriction.
+   </p>
+
+   <p class="main__sensibly-modal-note">
+    According to the Gambling and Lotteries Law, you have the right to request
+    in writing that you want to be banned from gambling, including interactive
+    gambling, and participating in interactive lotteries in the Republic of
+    Latvia by adding yourself to the self-exclusion list.
+   </p>
+  </div>
+ </div>
+
  <body class="body-page">
   <header class="header main-header">
    <div class="modal-account">
@@ -3218,7 +3418,7 @@
     </div>
    </div>
   </header>
-  <main class="main chargeback">
+  <main class="main responsible-gaming-main">
    <div class="content__wrapper">
     <div class="weed-background green">
      <picture>
@@ -3291,1257 +3491,497 @@
       />
      </picture>
     </div>
-   </div>
-   <div class="main__wrapper chargeback">
-    <div class="main__page-wrapper">
-     <h1 class="main__page-title chargeback">Chargeback Processing</h1>
-     <div class="main__content-wrapper сhargeback">
-      <div class="main__content chargeback-laptop">
-       <section class="chargebacks-registration laptop">
-        <h2 class="chargebacks-registration__title">
-         Chargebacks registration, control, and dispute process
-        </h2>
-        <div class="chargebacks-registration__wrapper">
-         <p class="chargebacks-registration__text">
-          The Payment card user can dispute the Transaction made on the
-          Internet. The Dispute complaint forms are received from the Payment
-          card issuer through international payments organizations and FD.
-         </p>
-         <p class="chargebacks-registration__text">
-          Processing of a Transaction dispute case is done in line with the
-          requirements of FD and International payments organizations.
-         </p>
-         <p class="chargebacks-registration__text">
-          To control number and volume of chargeback a CRM employee each month
-          prepares a complaint report on each Customer, by calculating
-          proportion of Dispute complaint forms of the total number or
-          operations each month for each e-shop of a Customer and each Customer.
-          The reports are prepared according to the regulations and requirements
-          of the international payment’s organizations.
-         </p>
-         <p class="chargebacks-registration__text">
-          Along with a quantitative analysis of the disputed Transactions, with
-          increase of the indicators, CRM carries out the qualitative analysis:
-          respective documentation is inspected which was the basis for the
-          dispute. CRM indicates a reason, explanation, essence of the problem
-          and inspects action of the respective Customer though placement of a
-          request or giving requirements for improvement of a webpage.
-         </p>
-        </div>
-       </section>
-       <article class="process-chargeback">
-        <h2 class="process-chargeback__title">Process of a chargeback:</h2>
-        <div class="process-chargeback__wrapper">
-         <div class="process-chargeback__stage">
-          <p class="process-chargeback__stage-text">
-           Cardholder files a complaint with their bank
+    <div class="main__wrapper responsible-gaming-wrapper">
+     <div class="main__page-wrapper">
+      <h1 class="main__page-title responsible-gaming-title">
+       Responsible gaming
+      </h1>
+
+      <div class="main__content-wrapper responsible-wrapper">
+       <div class="main__content">
+        <section class="responsible-gaming">
+         <h2 class="responsible-gaming__title">Responsible gaming</h2>
+         <div class="responsible-gaming__wrapper">
+          <p class="responsible-gaming__text">
+           Responsible gaming is an essential part of our Company's customer
+           service policy, and we take issues related to gambling addiction very
+           seriously. It is our direct responsibility to protect players from
+           excessive gambling habits and prevent minors from participating in
+           gambling. We want our service to be as convenient and functional as
+           possible, providing an excellent pastime. Unfortunately, for some
+           players, gambling can turn from an exciting hobby into a problem.
           </p>
-          <p class="process-chargeback__stage-note">
-           * Sometimes the bank will tell the cardholder to contact the merchant
-           directly, but this doesn’t always happen.
+          <p class="responsible-gaming__text">
+           We fully support and adhere to the globally recognized responsible
+           gambling policy and do everything in our power to ensure that our
+           customers can enjoy safe and exciting gaming without losing control.
+           In our casino, we only use games provided by leading global iGaming
+           developers. 
           </p>
-         </div>
-         <svg
-          width="13"
-          height="16"
-          viewBox="0 0 13 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="process-chargeback__stage-arrow"
-         >
-          <path
-           d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-           stroke="#CB3D45"
-           stroke-linecap="round"
-           stroke-linejoin="round"
-          />
-         </svg>
-         <div class="process-chargeback__stage">
-          <p class="process-chargeback__stage-text">
-           Cardholder files a complaint with their bank
+          <p class="responsible-gaming__text">
+           All software on our website is licensed and certified by independent
+           testing agencies (MGA, iTech, and others). 
+          </p>
+          <p class="responsible-gaming__text">
+           We exclusively collaborate with game producers who adhere to the
+           highest standards in the gambling industry, especially regarding game
+           fairness and player protection. Some slots (such as BetSolutions)
+           provide comparisons in the form of hashing of presumed data. 
+          </p>
+          <p class="responsible-gaming__text">
+           The random number is determined before the start of the round and
+           encrypted in SHA-256 hash. After the game, the key (passphrase) used
+           to encrypt the result is revealed. By inserting it into any SHA-256
+           generator, you can verify whether the result was predetermined or
+           subject to external interference. We assure you that the result will
+           be random, as stated in the game. Other slots include a game history
+           tool in their interface, which also contains a hash, date, and video
+           replay of your spin. With this data, you can directly contact the
+           game provider or other regulatory bodies. The club's team understands
+           how important it is for users to trust the fairness of our games.
           </p>
          </div>
-         <svg
-          width="13"
-          height="16"
-          viewBox="0 0 13 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="process-chargeback__stage-arrow"
-         >
-          <path
-           d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-           stroke="#CB3D45"
-           stroke-linecap="round"
-           stroke-linejoin="round"
-          />
-         </svg>
-         <div class="process-chargeback__stage">
-          <p class="process-chargeback__stage-text">
-           Acquirer checks whether the complaint is valid or not and typically
-           notifies the merchant and temporarity refunds the customer
+        </section>
+        <section class="keeping-control">
+         <h2 class="keeping-control__title">Keeping Control</h2>
+         <div class="keeping-control__wrapper">
+          <p class="keeping-control__text">
+           Gambling is simply entertainment, a great way to enjoy your time,
+           root for your favorite team, and find like-minded individuals among
+           other bettors. While having a good time watching games and gambling,
+           it's important to remember that moderation is key.
           </p>
-         </div>
-         <div class="process-chargeback__columns-wrapper">
-          <div class="process-chargeback__column">
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Merchant decides to accept the chargeback
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Merchant decides to accept the chargeback
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Merchant decides to accept the chargeback
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Cardholder receives the dispute resolution information and is fully
-             credited
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             If the issuer agrees with the merchant dispute, they’ll take the
-             money from cardholder and send it back to the merchant via the
-             Acquirer
-            </p>
-           </div>
-          </div>
-          <div class="process-chargeback__column">
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Merchant decides to dispute the chargeback and resubmites to
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Acquirer reviews and if they are agree with the dispute they’ll
-             represent the chargeback to the issuer
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Acquirer reviews and if they are agree with the dispute they’ll
-             represent the chargeback to the issuer
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             Issuer receives and review the representment
-            </p>
-           </div>
-           <svg
-            width="13"
-            height="16"
-            viewBox="0 0 13 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="process-chargeback__stage-arrow"
-           >
-            <path
-             d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-             stroke="#CB3D45"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-           <div class="process-chargeback__stage">
-            <p class="process-chargeback__stage-text">
-             If the issuer disagrees with the merchant, they’ll reject the
-             representment and keep the money with the cardholder and the
-             merchant loses the transaction money again
-            </p>
-           </div>
+          <div class="keeping-control__points-wrapper">
+           <p class="keeping-control__point-title">
+            Every bettor should always remember:
+           </p>
+           <ul class="keeping-control__points">
+            <li class="keeping-control__point">
+             Gambling is just a form of entertainment, not a way to make money.
+             Don't lose sight of moderation. 
+            </li>
+            <li class="keeping-control__point">
+             In case of losses, avoid attempting to immediately recover them, as
+             there's always a chance to win next time. 
+            </li>
+            <li class="keeping-control__point">
+             Start playing only with the amount of money you can afford to lose,
+             and nothing more. 
+            </li>
+            <li class="keeping-control__point">
+             Keep a close eye on the time and the amount of money you spend on
+             gambling.
+            </li>
+           </ul>
           </div>
          </div>
+        </section>
+        <section class="preventing-gambling">
+         <h2 class="preventing-gambling__title">
+          Preventing Gambling Addiction
+         </h2>
+         <div class="preventing-gambling__wrapper">
+          <p class="preventing-gambling__text">
+           Among most people who view gambling as a captivating way to spend
+           their time, there is a small percentage of players who suffer from
+           gambling addiction. Recent studies have shown that only a small
+           portion of the adult population faces the problem of gambling
+           addiction.
+          </p>
+          <div class="preventing-gambling__points-wrapper">
+           <p class="preventing-gambling__point-title">
+            However, our Company takes this issue very seriously and always
+            reminds participants to:
+           </p>
+           <ul class="preventing-gambling__points">
+            <li class="preventing-gambling__point">
+             Gambling games are based on probability, and there are no
+             "formulas" or "systems" that guarantee a win.
+            </li>
+            <li class="preventing-gambling__point">
+             The desire to gamble should come solely from within you. 
+            </li>
+            <li class="preventing-gambling__point">
+             Gambling is for entertainment, not a way to get rich quickly or pay
+             off debts.
+            </li>
+            <li class="preventing-gambling__point">
+             Regularly monitor how much money you spend on gambling. 
+            </li>
+            <li class="preventing-gambling__point">
+             To gamble, you must always know the rules of the game.
+            </li>
+           </ul>
+          </div>
+          <p class="preventing-gambling__text">
+           It's difficult to define the line between healthy excitement and
+           problematic addiction. However, there are some signs that may
+           indicate that a better is experiencing problems:
+          </p>
+         </div>
+         <div class="preventing-gambling__test">
+          <div class="preventing-gambling__test-wrapper">
+           <div class="preventing-gambling__answers-wrapper">
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">1.</span>
+               <p class="preventing-gambling__answer-name">
+                Are you seriously involved in gambling?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">2.</span>
+               <p class="preventing-gambling__answer-name">
+                Do the amounts of your bets constantly increase?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">3.</span>
+               <p class="preventing-gambling__answer-name">
+                Do you borrow money to gamble?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">4.</span>
+               <p class="preventing-gambling__answer-name">
+                Do you often play longer than planned?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">5.</span>
+               <p class="preventing-gambling__answer-name">
+                Do frequent visits to the bookmaker negatively affect your
+                reputation?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">6.</span>
+               <p class="preventing-gambling__answer-name">
+                Do you feel irritation or disappointment when you can't
+                participate in bets? Is gambling a way for you to escape from
+                problems?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">7.</span>
+               <p class="preventing-gambling__answer-name">
+                Do you often feel the need to chase losses? Have you tried to
+                control the size of your bets and the time spent at the gambling
+                establishment but failed?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="preventing-gambling__answer-wrapper">
+             <div class="preventing-gambling__answer">
+              <div class="preventing-gambling__answer-name-wrapper">
+               <span class="preventing-gambling__answer-number">8.</span>
+               <p class="preventing-gambling__answer-name">
+                Do you not talk to your close ones about your gambling interest?
+               </p>
+              </div>
+              <div class="preventing-gambling__chk-wrapper">
+               <label>
+                <input type="checkbox" class="preventing-gambling__chk" />
+                <span></span>
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <button class="preventing-gambling__test-button">
+            Check the results
+           </button>
+          </div>
+         </div>
+        </section>
+        <section class="gaming-management">
+         <h2 class="gaming-management__title">Gaming management tips</h2>
+         <ul class="gaming-management__points">
+          <li class="gaming-management__point">
+           Plan in advance how much time you'll spend on betting.
+          </li>
+          <li class="gaming-management__point">
+           Set a maximum amount you're willing to lose and do not exceed it.
+          </li>
+          <li class="gaming-management__point">
+           Never borrow money to gamble.
+          </li>
+          <li class="gaming-management__point">
+           Try to find a new hobby and combine it with your gaming.
+          </li>
+          <li class="gaming-management__point">
+           Never visit gambling establishments if you're in a bad mood, feeling
+           down, or in a depressed state.
+          </li>
+         </ul>
+        </section>
+        <section class="self-exclusion">
+         <h2 class="self-exclusion__title">Self-Exclusion from Gambling</h2>
+         <ul class="self-exclusion__points">
+          <li class="self-exclusion__point">
+           At any time, a participant in betting has the right to decide to stop
+           playing by terminating the agreement with the bookmaker company and
+           submit a request to terminate the agreement and block their Personal
+           Account by sending the corresponding request to the customer support
+           via online chat. 
+          </li>
+          <li class="self-exclusion__point">
+           After terminating the agreement with our Company, the individual who
+           terminated the agreement has the right to apply to us with a request
+           to enter into a new agreement. In this case, we reserve the right to
+           refuse the individual from entering into a new agreement without
+           providing reasons.
+          </li>
+         </ul>
+        </section>
+       </div>
+       <article class="play-sensibly">
+        <h2 class="play-sensibly__title">Play sensibly!</h2>
+        <p class="play-sensibly__subtitle">
+         For most, gambling is just entertainment. A way to spend free time,
+         similar to a hobby or going out with friends. Unfortunately, gambling
+         can also cause problems, so it's always important to keep an eye on
+         your gambling habits. Take a self-assessment test to gain insight about
+         your gambling habits.
+        </p>
+        <div class="play-sensibly__links">
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">SELF-ASSESSMENT TEST</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">PLAY RESPONSIBLY!</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">KNOW THE SIGNS</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">KNOW THE MYTHS</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">KNOW YOUR LIMITS</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">SELF EXCLUSION</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">NEED HELP?</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">PROTECT MINORS</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
+         <a href="#sensibly-modal">
+          <div class="play-sensibly__link-wrapper">
+           <p class="play-sensibly__link-title">HELP OTHERS</p>
+           <svg
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="play-sensibly__link-icon"
+           >
+            <path
+             d="M0.817102 14.5L12.8124 2.5285V13.5641H14V0.5H0.935867V1.68765H11.9727L0 13.6829L0.817102 14.5Z"
+             fill="white"
+            />
+           </svg>
+          </div>
+         </a>
         </div>
        </article>
       </div>
-      <div class="main__content">
-       <div class="chargebacks-registration__text-wrapper-laptop">
-        <p class="chargebacks-registration__text">
-         When a daily file with Dispute complaint forms (First Chargeback or
-         Chargeback) is received from FD, the CRM at the same day forwards the
-         respective reports to contact persons indicated in the Agreement. With
-         a receipt of the file, the international payments organizations
-         corresponding account and Cardaq Limited debits the Customer's Current
-         account within the same day with the respective amount and commission
-         charge indicated in the Agreement. The amounts disputed in registration
-         are shown in transit accounts until the situation is clarified.
-        </p>
-        <p class="chargebacks-registration__text">
-         In cases when the Customer considers that the Transaction is disputed
-         without solid grounds, the Customer must inform CRM on Dispute
-         complaint forms they do not accept and are willing to dispute against,
-         as well as they must submit the necessary information for disputing the
-         Dispute complaint form.
-        </p>
-        <div class="chargebacks-registration__points-wrapper">
-         <p class="chargebacks-registration__text">
-          Following receipt of information indicated in Item 6 the CRM verifies
-          within 5 (five) business days.
-         </p>
-         <div class="chargebacks-registration__points">
-          <p class="chargebacks-registration__point">
-           a. Whether in line with the regulations of the international payment
-           organizations a term has not passed when the Transaction disputation
-           report may be disputed against.
-          </p>
-          <p class="chargebacks-registration__point">
-           b. Verifies whether in line with the regulations of the International
-           payment organizations the information sent by the Customer is enough
-           for disputing the Dispute complaint form.
-          </p>
-         </div>
-        </div>
-        <p class="chargebacks-registration__text">
-         In case the CRM is unable to make independent decision, or it is
-         possible to dispute against the Dispute complaint form, he/she should
-         turn to the AML and Risk department head for a consultation.
-        </p>
-        <p class="chargebacks-registration__text">
-         In case after the actions mentioned in Item 7 and in case of necessity
-         also after consultation mentioned under Item 8 a decision is made that
-         the Dispute complaint form can be contradicted, the CRM employee fills
-         in an application for contradiction of the Dispute complaint form
-         (Second Presentment or Rep-resentment) and sends it to FD. After the
-         application for Dispute complaint form contradiction (Second
-         Presentment or Re-presentment) is processed, the international payments
-         organizations credit the customer corresponding account with the
-         Transaction amount.
-        </p>
-        <p class="chargebacks-registration__text">
-         In case after the actions mentioned in Item 7 and in case of necessity
-         also after consultation mentioned under Item 8 a decision is made that
-         the Dispute complaint form cannot be contradicted, the CRM employee
-         informs the respective Customer on a necessity to accept the Dispute
-         complaint form.
-        </p>
-        <p class="chargebacks-registration__text">
-         If after a period of 45 (forty-five) calendar days following actions
-         indicated under Item 2.9 no report is received with additional
-         information (Arbitration Chargeback or Pre-Arbitration) from the
-         International Payments organizations, then the Dispute manager
-         transfers the amount of the disputed Transaction in the Customers
-         Current account.
-        </p>
-        <p class="chargebacks-registration__text">
-         If within a period of 45 (forty five) calendar days following actions
-         indicated under Item 2.9 no report is received with additional
-         information (Arbitration Chargeback or Pre-Arbitration) from the
-         International Payments organizations, the CRM informs the Customer on
-         the received reply and together with the Customer assesses the
-         situation and makes a decision for contravening the Dispute complaint
-         form, continuation or termination of the review process (hereinafter in
-         the text - Review process). In case of a necessity the CRM must turn to
-         the AML and Risk Department head for a consultation.
-        </p>
-        <p class="chargebacks-registration__text">
-         If after activities indicated under Item 12 a decision is made to
-         terminate the Review process, the CRM in line with the requirements of
-         the international payments organizations prepares a financial report on
-         chargeback of the disputed Transaction amount to the issuing bank of
-         the Payment card and sends it to FD for further processing. The
-         International payments organizations debit the corresponding account
-         with the Transaction amount.
-        </p>
-        <p class="chargebacks-registration__text">
-         In case after actions indicated under Item 12 a decision is made to
-         continue the Review process, the CRM employee prepares a reply
-         according to the requirements of the international payments
-         organizations and sends it to FD for further processing.
-        </p>
-        <div class="chargebacks-registration__points-wrapper">
-         <p class="chargebacks-registration__text">
-          In case after actions indicated under Item 14 no information is
-          received within the term specified by the international payment’s
-          organizations on Arbitration Case or Arbitration, then the Dispute
-          manager transfers the disputed Transaction amount to the Customer's
-          Current account. In case after actions indicated under Item 14 further
-          information is received within the term specified by the International
-          payment’s organizations on Arbitration Case or Arbitration, the CRM
-          employee informs the Customer on the received reply and together with
-          the Customer assesses the situation and makes a decision on continuing
-          or termination of the Review process. In case of a necessity the CRM
-          must turn to the AML and Risk Department head for a consultation.
-         </p>
-         <div class="chargebacks-registration__points">
-          <p class="chargebacks-registration__point">
-           a. In case after actions indicated under Item 16 a decision is made
-           to continue the Review process, the CRM prepares a reply according to
-           the requirements of the international payments organizations and
-           sends it to FD for further processing. Further on this case is
-           reviewed by the international payment’s organizations (special
-           committees) and make a decision on the responsible party.
-          </p>
-         </div>
-        </div>
-        <p class="chargebacks-registration__text">
-         If after activities indicated under Item 16 a decision is made to
-         terminate the Review process, the CRM employee in line with the
-         requirements of the international payments organizations prepares a
-         financial report on chargeback of the disputed Transaction amount to
-         the issuing bank of the Payment card and sends it to processing center
-         for further processing. The International payments organizations debit
-         the corresponding account with the Transaction amount.
-        </p>
-        <div class="chargebacks-registration__points-wrapper">
-         <p class="chargebacks-registration__text">
-          After actions indicated under Item 17:
-         </p>
-         <div class="chargebacks-registration__points">
-          <p class="chargebacks-registration__point">
-           a. In case the international payments organizations make a decision
-           that the responsible party is customer, then the CRM employee informs
-           the Customer on termination of the Review process; prepares a
-           financial report on chargeback of the disputed Transaction amount to
-           the issuing bank of the Payment card and sends it to the Processing
-           center for further processing; the international payments
-           organizations debit the corresponding account with the Transaction
-           amount.
-          </p>
-          <p class="chargebacks-registration__point">
-           b. In case the international payments organizations make a decision
-           that the responsible party is the issuing bank of the Payment card,
-           then the CRM informs the Customer on termination of the Review
-           process and transfers the disputed Transaction amount to the
-           Customer's Current account.
-          </p>
-         </div>
-        </div>
-        <p class="chargebacks-registration__text">
-         The CRM carries out a regular control of balances of transit accounts
-         "Assets for clarification" and "Liabilities for clarification" in the
-         registration system and receives e-mails from the Dispute manager on
-         transferred amounts. In case of necessity the CRM prepares an Order for
-         mutual closure of amounts that are transferred to transit accounts
-         (Assets in clarification, Liabilities in clarification) and submits it
-         for execution to the Dispute manager.
-        </p>
-        <p class="chargebacks-registration__text">
-         In case of necessity the CRM submits a transcript of balances of
-         transit accounts "Assets in clarification" and "Liabilities in
-         clarification" to the Back Office.
-        </p>
-       </div>
-       <section class="chargebacks-registration">
-        <h2 class="chargebacks-registration__title">
-         Chargebacks registration, control, and dispute process
-        </h2>
-        <div class="chargebacks-registration__wrapper">
-         <p class="chargebacks-registration__text">
-          The Payment card user can dispute the Transaction made on the
-          Internet. The Dispute complaint forms are received from the Payment
-          card issuer through international payments organizations and FD.
-         </p>
-         <p class="chargebacks-registration__text">
-          Processing of a Transaction dispute case is done in line with the
-          requirements of FD and International payments organizations.
-         </p>
-         <p class="chargebacks-registration__text">
-          To control number and volume of chargeback a CRM employee each month
-          prepares a complaint report on each Customer, by calculating
-          proportion of Dispute complaint forms of the total number or
-          operations each month for each e-shop of a Customer and each Customer.
-          The reports are prepared according to the regulations and requirements
-          of the international payment’s organizations.
-         </p>
-         <p class="chargebacks-registration__text">
-          Along with a quantitative analysis of the disputed Transactions, with
-          increase of the indicators, CRM carries out the qualitative analysis:
-          respective documentation is inspected which was the basis for the
-          dispute. CRM indicates a reason, explanation, essence of the problem
-          and inspects action of the respective Customer though placement of a
-          request or giving requirements for improvement of a webpage.
-         </p>
-         <p class="chargebacks-registration__text">
-          When a daily file with Dispute complaint forms (First Chargeback or
-          Chargeback) is received from FD, the CRM at the same day forwards the
-          respective reports to contact persons indicated in the Agreement. With
-          a receipt of the file, the international payments organizations
-          corresponding account and Cardaq Limited debits the Customer's Current
-          account within the same day with the respective amount and commission
-          charge indicated in the Agreement. The amounts disputed in
-          registration are shown in transit accounts until the situation is
-          clarified.
-         </p>
-         <p class="chargebacks-registration__text">
-          In cases when the Customer considers that the Transaction is disputed
-          without solid grounds, the Customer must inform CRM on Dispute
-          complaint forms they do not accept and are willing to dispute against,
-          as well as they must submit the necessary information for disputing
-          the Dispute complaint form.
-         </p>
-         <div class="chargebacks-registration__points-wrapper">
-          <p class="chargebacks-registration__text">
-           Following receipt of information indicated in Item 6 the CRM verifies
-           within 5 (five) business days.
-          </p>
-          <div class="chargebacks-registration__points">
-           <p class="chargebacks-registration__point">
-            a. Whether in line with the regulations of the international payment
-            organizations a term has not passed when the Transaction disputation
-            report may be disputed against.
-           </p>
-           <p class="chargebacks-registration__point">
-            b. Verifies whether in line with the regulations of the
-            International payment organizations the information sent by the
-            Customer is enough for disputing the Dispute complaint form.
-           </p>
-          </div>
-         </div>
-         <p class="chargebacks-registration__text">
-          In case the CRM is unable to make independent decision, or it is
-          possible to dispute against the Dispute complaint form, he/she should
-          turn to the AML and Risk department head for a consultation.
-         </p>
-         <p class="chargebacks-registration__text">
-          In case after the actions mentioned in Item 7 and in case of necessity
-          also after consultation mentioned under Item 8 a decision is made that
-          the Dispute complaint form can be contradicted, the CRM employee fills
-          in an application for contradiction of the Dispute complaint form
-          (Second Presentment or Rep-resentment) and sends it to FD. After the
-          application for Dispute complaint form contradiction (Second
-          Presentment or Re-presentment) is processed, the international
-          payments organizations credit the customer corresponding account with
-          the Transaction amount.
-         </p>
-         <p class="chargebacks-registration__text">
-          In case after the actions mentioned in Item 7 and in case of necessity
-          also after consultation mentioned under Item 8 a decision is made that
-          the Dispute complaint form cannot be contradicted, the CRM employee
-          informs the respective Customer on a necessity to accept the Dispute
-          complaint form.
-         </p>
-         <p class="chargebacks-registration__text">
-          If after a period of 45 (forty-five) calendar days following actions
-          indicated under Item 2.9 no report is received with additional
-          information (Arbitration Chargeback or Pre-Arbitration) from the
-          International Payments organizations, then the Dispute manager
-          transfers the amount of the disputed Transaction in the Customers
-          Current account.
-         </p>
-         <p class="chargebacks-registration__text">
-          If within a period of 45 (forty five) calendar days following actions
-          indicated under Item 2.9 no report is received with additional
-          information (Arbitration Chargeback or Pre-Arbitration) from the
-          International Payments organizations, the CRM informs the Customer on
-          the received reply and together with the Customer assesses the
-          situation and makes a decision for contravening the Dispute complaint
-          form, continuation or termination of the review process (hereinafter
-          in the text - Review process). In case of a necessity the CRM must
-          turn to the AML and Risk Department head for a consultation.
-         </p>
-         <p class="chargebacks-registration__text">
-          If after activities indicated under Item 12 a decision is made to
-          terminate the Review process, the CRM in line with the requirements of
-          the international payments organizations prepares a financial report
-          on chargeback of the disputed Transaction amount to the issuing bank
-          of the Payment card and sends it to FD for further processing. The
-          International payments organizations debit the corresponding account
-          with the Transaction amount.
-         </p>
-         <p class="chargebacks-registration__text">
-          In case after actions indicated under Item 12 a decision is made to
-          continue the Review process, the CRM employee prepares a reply
-          according to the requirements of the international payments
-          organizations and sends it to FD for further processing.
-         </p>
-         <div class="chargebacks-registration__points-wrapper">
-          <p class="chargebacks-registration__text">
-           In case after actions indicated under Item 14 no information is
-           received within the term specified by the international payment’s
-           organizations on Arbitration Case or Arbitration, then the Dispute
-           manager transfers the disputed Transaction amount to the Customer's
-           Current account. In case after actions indicated under Item 14
-           further information is received within the term specified by the
-           International payment’s organizations on Arbitration Case or
-           Arbitration, the CRM employee informs the Customer on the received
-           reply and together with the Customer assesses the situation and makes
-           a decision on continuing or termination of the Review process. In
-           case of a necessity the CRM must turn to the AML and Risk Department
-           head for a consultation.
-          </p>
-          <div class="chargebacks-registration__points">
-           <p class="chargebacks-registration__point">
-            a. In case after actions indicated under Item 16 a decision is made
-            to continue the Review process, the CRM prepares a reply according
-            to the requirements of the international payments organizations and
-            sends it to FD for further processing. Further on this case is
-            reviewed by the international payment’s organizations (special
-            committees) and make a decision on the responsible party.
-           </p>
-          </div>
-         </div>
-         <p class="chargebacks-registration__text">
-          If after activities indicated under Item 16 a decision is made to
-          terminate the Review process, the CRM employee in line with the
-          requirements of the international payments organizations prepares a
-          financial report on chargeback of the disputed Transaction amount to
-          the issuing bank of the Payment card and sends it to processing center
-          for further processing. The International payments organizations debit
-          the corresponding account with the Transaction amount.
-         </p>
-         <div class="chargebacks-registration__points-wrapper">
-          <p class="chargebacks-registration__text">
-           After actions indicated under Item 17:
-          </p>
-          <div class="chargebacks-registration__points">
-           <p class="chargebacks-registration__point">
-            a. In case the international payments organizations make a decision
-            that the responsible party is customer, then the CRM employee
-            informs the Customer on termination of the Review process; prepares
-            a financial report on chargeback of the disputed Transaction amount
-            to the issuing bank of the Payment card and sends it to the
-            Processing center for further processing; the international payments
-            organizations debit the corresponding account with the Transaction
-            amount.
-           </p>
-           <p class="chargebacks-registration__point">
-            b. In case the international payments organizations make a decision
-            that the responsible party is the issuing bank of the Payment card,
-            then the CRM informs the Customer on termination of the Review
-            process and transfers the disputed Transaction amount to the
-            Customer's Current account.
-           </p>
-          </div>
-         </div>
-         <p class="chargebacks-registration__text">
-          The CRM carries out a regular control of balances of transit accounts
-          "Assets for clarification" and "Liabilities for clarification" in the
-          registration system and receives e-mails from the Dispute manager on
-          transferred amounts. In case of necessity the CRM prepares an Order
-          for mutual closure of amounts that are transferred to transit accounts
-          (Assets in clarification, Liabilities in clarification) and submits it
-          for execution to the Dispute manager.
-         </p>
-         <p class="chargebacks-registration__text">
-          In case of necessity the CRM submits a transcript of balances of
-          transit accounts "Assets in clarification" and "Liabilities in
-          clarification" to the Back Office.
-         </p>
-        </div>
-       </section>
-       <section class="representment">
-        <h2 class="representment__title">
-         Re-presentment requirements (non-tangible)
-        </h2>
-        <div class="representment__wrapper">
-         <div class="representment__chargeback">
-          <p class="representment__chargeback-text">Chargeback notification:</p>
-          <ul class="representment__chargeback-points">
-           <li class="representment__chargeback-point">
-            Once notified of a chargeback, the merchant must provide valid
-            documentation (evidence) to challenge it and re-present the charged
-            back amount.
-           </li>
-           <li class="representment__chargeback-point">
-            The documentation shall be in accordance with the requirements
-            below.
-           </li>
-          </ul>
-         </div>
-
-         <div class="representment__chargeback">
-          <p class="representment__chargeback-text">
-           Chargeback re-presentment:
-          </p>
-          <ul class="representment__chargeback-points">
-           <li class="representment__chargeback-point">
-            Send an email to the Chargeback Team at
-            chargeback@williams-coast.com with re-presentment documentation 48
-            hours upon reception of the chargeback notification
-           </li>
-           <li class="representment__chargeback-point">
-            The subject of the email must include your URL
-           </li>
-           <li class="representment__chargeback-point">
-            The subject of the email must include the ARN (Acquirer Reference
-            Number) of the transaction.
-           </li>
-           <li class="representment__chargeback-point">
-            All re-presentment documentation must be in either TIFF (preferred)
-            or PDF format.
-           </li>
-           <li class="representment__chargeback-point">
-            Size: 1500-1700 kb per file and no more than 10 MB per e-mail.
-           </li>
-           <li class="representment__chargeback-point">
-            Include all re-presentment documentation in a single file and use
-            the transaction’s ARN (Acquirer Reference Number) as the filename
-           </li>
-          </ul>
-         </div>
-        </div>
-        <div class="representment__example-wrapper">
-         <div class="representment__example">
-          <svg
-           width="16"
-           height="16"
-           viewBox="0 0 16 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="representment__example-close-icon"
-          >
-           <path
-            d="M4 12L12 4M4 4L12 12"
-            stroke="#232323"
-            stroke-opacity="0.25"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="representment__example-close-path"
-           />
-          </svg>
-
-          <h2 class="representment__example-title">New email</h2>
-          <div class="representment__example-header">
-           <p class="representment__example-from">jackson@gmail.com</p>
-           <p class="representment__example-to">
-            <a href="mailto:chargeback@williams-coast.com">
-             chargeback@williams-coast.com
-            </a>
-           </p>
-          </div>
-          <div class="representment__example-body">
-           <p class="representment__example-subject">
-            Re-presentment / merchantname.com / ARN: 72154565087001234624855
-           </p>
-           <p class="representment__example-text">
-            Williams & Coast Limited Chargeback Team, <br />Hereby, I would like
-            to re-present the chargeback with ARN 72154565087001234624855.<br />
-            Attached is the supporting documentation.
-           </p>
-          </div>
-          <div class="representment__example-attachments-wrapper">
-           <div class="representment__example-attachment">
-            <div class="representment__example-attachment-file-wrapper">
-             <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="representment__example-attachment-icon"
-             >
-              <path
-               d="M6 7.91V16C6 17.5913 6.63214 19.1174 7.75736 20.2426C8.88258 21.3679 10.4087 22 12 22C13.5913 22 15.1174 21.3679 16.2426 20.2426C17.3679 19.1174 18 17.5913 18 16V6C18 4.93913 17.5786 3.92172 16.8284 3.17157C16.0783 2.42143 15.0609 2 14 2C12.9391 2 11.9217 2.42143 11.1716 3.17157C10.4214 3.92172 10 4.93913 10 6V15.182C10 15.4446 10.0517 15.7047 10.1522 15.9474C10.2528 16.19 10.4001 16.4105 10.5858 16.5962C10.7715 16.7819 10.992 16.9292 11.2346 17.0298C11.4773 17.1303 11.7374 17.182 12 17.182C12.5304 17.182 13.0391 16.9713 13.4142 16.5962C13.7893 16.2211 14 15.7124 14 15.182V8"
-               stroke="#CB3D45"
-               stroke-width="1.5"
-               stroke-linecap="round"
-               stroke-linejoin="round"
-              />
-             </svg>
-             <p class="representment__example-attachment-file">
-              Re-presentment / 72154565087001234624855 .pdf
-             </p>
-            </div>
-           </div>
-           <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="representment__example-attachment-delete"
-           >
-            <path
-             d="M2 6H22M10 11V16M14 11V16M4 6H20L18.42 20.22C18.3658 20.7094 18.1331 21.1616 17.7663 21.49C17.3994 21.8184 16.9244 22 16.432 22H7.568C7.07564 22 6.60056 21.8184 6.23375 21.49C5.86693 21.1616 5.63416 20.7094 5.58 20.22L4 6ZM7.345 3.147C7.50675 2.80397 7.76271 2.514 8.083 2.31091C8.4033 2.10782 8.77474 2 9.154 2H14.846C15.2254 1.99981 15.5971 2.10755 15.9176 2.31064C16.2381 2.51374 16.4942 2.80381 16.656 3.147L18 6H6L7.345 3.147Z"
-             stroke="#232323"
-             stroke-opacity="0.3"
-             stroke-width="1.5"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />
-           </svg>
-          </div>
-         </div>
-        </div>
-       </section>
-       <section class="chargebacks-documents">
-        <h2 class="chargebacks-documents__title">
-         DOCUMENTS AND INFORMATION REQUIRED TO RE-PRESENT<br />
-         A CHARGEBACK
-        </h2>
-        <div class="chargebacks-documents__wrapper">
-         <p class="chargebacks-documents__text">
-          The card schemes have issued very specific criteria regarding the type
-          of documentation which they accept. This includes:
-         </p>
-         <ul class="chargebacks-documents__points">
-          <li class="chargebacks-documents__point">
-           All documentation must be in English.
-          </li>
-          <li class="chargebacks-documents__point">
-           The Acquirer Reference Number (ARN) must be included in all
-           communication (both in the email and the attached documentation).
-          </li>
-         </ul>
-         <p class="chargebacks-documents__text">Specific documentation</p>
-         <div class="chargebacks-documents__documentation">
-          <p class="chargebacks-documents__documentation-text">
-           <span>Invoice or Service Agreement </span> with description of the
-           service provided.
-          </p>
-          <div class="chargebacks-documents__documentation-contain">
-           <p class="chargebacks-documents__documentation-contain-text">
-            The document must contain:
-           </p>
-           <div class="chargebacks-documents__documentation-img-wrapper">
-            <img
-             src="./img/chargeback/chargeback.png"
-             alt=""
-             class="chargebacks-documents__documentation-img"
-            />
-           </div>
-           <ul class="chargebacks-documents__documentation-points">
-            <li class="chargebacks-documents__documentation-point">
-             Customer’s full name
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Customer home address
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Customer email address 
-            </li>
-            <li class="chargebacks-documents__documentation-point">Phone </li>
-            <li class="chargebacks-documents__documentation-point">
-             Name on the card 
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Last four digits of the number of credit card used
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Acknowledgement by the customer of the T & C.
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Signature of the cardholder
-            </li>
-           </ul>
-          </div>
-          <p class="chargebacks-documents__documentation-text">
-           Logs into the system (none confidential information
-          </p>
-          <p class="chargebacks-documents__documentation-text">
-           E-mails / instant messages exchanges
-          </p>
-          <p class="chargebacks-documents__documentation-text">
-           <span>Confirmation e-mail</span> from the customer acknowledging
-           delivery of the service described in the
-           <span>invoice or service agreement</span>.
-          </p>
-          <div class="chargebacks-documents__documentation-contain">
-           <p class="chargebacks-documents__documentation-contain-text">
-            Such <span>confirmation</span> must contain:
-           </p>
-           <ul class="chargebacks-documents__documentation-points">
-            <li class="chargebacks-documents__documentation-point">
-             Customer’s full name
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Amount(s) charged by the merchant
-            </li>
-            <li class="chargebacks-documents__documentation-point">
-             Full description of the service
-            </li>
-
-            <li class="chargebacks-documents__documentation-point">
-             Date of the delivery or provision of the service
-            </li>
-           </ul>
-          </div>
-         </div>
-        </div>
-       </section>
-      </div>
-      <article class="process-chargeback">
-       <h2 class="process-chargeback__title">Process of a chargeback:</h2>
-       <div class="process-chargeback__wrapper">
-        <div class="process-chargeback__stage">
-         <p class="process-chargeback__stage-text">
-          Cardholder files a complaint with their bank
-         </p>
-         <p class="process-chargeback__stage-note">
-          * Sometimes the bank will tell the cardholder to contact the merchant
-          directly, but this doesn’t always happen.
-         </p>
-        </div>
-        <svg
-         width="13"
-         height="16"
-         viewBox="0 0 13 16"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         class="process-chargeback__stage-arrow"
-        >
-         <path
-          d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-          stroke="#CB3D45"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-         />
-        </svg>
-        <div class="process-chargeback__stage">
-         <p class="process-chargeback__stage-text">
-          Cardholder files a complaint with their bank
-         </p>
-        </div>
-        <svg
-         width="13"
-         height="16"
-         viewBox="0 0 13 16"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         class="process-chargeback__stage-arrow"
-        >
-         <path
-          d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-          stroke="#CB3D45"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-         />
-        </svg>
-        <div class="process-chargeback__stage">
-         <p class="process-chargeback__stage-text">
-          Acquirer checks whether the complaint is valid or not and typically
-          notifies the merchant and temporarity refunds the customer
-         </p>
-        </div>
-        <div class="process-chargeback__columns-wrapper">
-         <div class="process-chargeback__column">
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Merchant decides to accept the chargeback
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Merchant decides to accept the chargeback
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Merchant decides to accept the chargeback
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Cardholder receives the dispute resolution information and is fully
-            credited
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            If the issuer agrees with the merchant dispute, they’ll take the
-            money from cardholder and send it back to the merchant via the
-            Acquirer
-           </p>
-          </div>
-         </div>
-         <div class="process-chargeback__column">
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Merchant decides to dispute the chargeback and resubmites to
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Acquirer reviews and if they are agree with the dispute they’ll
-            represent the chargeback to the issuer
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Acquirer reviews and if they are agree with the dispute they’ll
-            represent the chargeback to the issuer
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            Issuer receives and review the representment
-           </p>
-          </div>
-          <svg
-           width="13"
-           height="16"
-           viewBox="0 0 13 16"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="process-chargeback__stage-arrow"
-          >
-           <path
-            d="M12.3337 9.66667L6.50032 15.5M6.50032 15.5L0.666992 9.66667M6.50032 15.5L6.50032 0.5"
-            stroke="#CB3D45"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-           />
-          </svg>
-          <div class="process-chargeback__stage">
-           <p class="process-chargeback__stage-text">
-            If the issuer disagrees with the merchant, they’ll reject the
-            representment and keep the money with the cardholder and the
-            merchant loses the transaction money again
-           </p>
-          </div>
-         </div>
-        </div>
-       </div>
-      </article>
      </div>
-     <article class="chargeback-form">
-      <div class="chargeback-form__wrapper">
-       <div class="chargeback-form__img-wrapper">
-        <img
-         src="./img/chargeback/chargeback.png"
-         alt=""
-         class="chargeback-form__img"
-        />
-       </div>
-       <div class="main__form-wrapper">
-        <h1 class="main__form-title">Chargeback Submission Form</h1>
-        <form class="main__form request-form">
-         <div class="main__form-input-wrapper">
-          <div class="main__form-input-label-wrapper">
-           <input
-            type="text"
-            class="main__form-input name"
-            placeholder="Enter"
-           />
-           <label class="main__form-label label-name"> Name</label>
-          </div>
-          <div class="main__form-input-label-wrapper">
-           <input
-            type="text"
-            class="main__form-input surname"
-            placeholder="Enter"
-           />
-           <label class="main__form-label label-surname"> Surname</label>
-          </div>
-          <div class="main__form-input-label-wrapper">
-           <input
-            type="text"
-            class="main__form-input email"
-            placeholder="Enter"
-           />
-           <label class="main__form-label label-email"> Email </label>
-          </div>
-          <div class="main__form-phone">
-           <div class="main__form-input-label-wrapper verify phone">
-            <div class="main__form-phone-wrapper">
-             <img
-              src="./img/icons/dropdown-icon.svg"
-              alt=""
-              class="main__form-dropdown-icon"
-             />
-            </div>
-            <input type="text" class="main__form-input phone" />
-           </div>
-           <div class="main__form-phone-list-wrapper">
-            <div class="main__form-phone-input-wrapper">
-             <img
-              src="./img/icons/search-icon.svg"
-              alt=""
-              class="main__form-select-input-icon"
-             />
-             <input type="text" class="main__form-select-input" />
-            </div>
-            <ul class="main__form-select-list phone"></ul>
-           </div>
-          </div>
-          <div class="main__form-input-label-wrapper">
-           <input
-            type="text"
-            class="main__form-input description"
-            placeholder="Enter"
-           />
-           <label class="main__form-label label-name"
-            >Chargeback Description</label
-           >
-          </div>
-         </div>
-         <button class="main__form-button">Submit</button>
-        </form>
-       </div>
-      </div>
-     </article>
     </div>
    </div>
+
    <article class="introduction page">
     <div class="introduction__inner">
      <div class="introduction__wrapper">
@@ -4775,5 +4215,6 @@
  <script src="./js/vip.js"></script>
  <script src="./js/account/exchange.js"></script>
  <script src="./js/form/validation.js"></script>
- <script src="./js/form/request.js"></script>
+ <script src="./js/test/test.js"></script>
+ <script src="./js/test/sensibly.js"></script>
 </html>

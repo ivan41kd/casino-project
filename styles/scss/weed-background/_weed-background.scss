@@ -44,12 +44,16 @@
 }
 .weed-background.green {
  transform: translateY(-185px);
+ @include onlymobile {
+  transform: translateY(rem(-110px));
+ }
 }
 @media screen and (max-width: 1440px) {
  .weed-background.fixed {
   transform: translateY(rem(60px));
  }
 }
+
 @include onlymobile {
  .weed-background.fixed {
   transform: translateY(rem(30px));

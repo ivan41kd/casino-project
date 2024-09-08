@@ -10,7 +10,7 @@ const formPhoneWrappers = document.querySelectorAll(
 const inputs = document.querySelectorAll('.main__form-input.phone');
 const phoneLists = document.querySelectorAll('.main__form-phone-list-wrapper');
 const searchInputs = document.querySelectorAll(
- '.main__form-select-input.phone-input '
+ '.main__form-select-input.search-input-phone '
 );
 
 const createItems = (
@@ -39,6 +39,7 @@ const createItems = (
 
  listItem.addEventListener('click', () => {
   input.parentElement.classList.remove('verified');
+  input.parentElement.classList.add('invalid');
   const value = listItem.textContent.replace(/[^\d]/g, '');
   input.value = '+' + value;
 
@@ -56,13 +57,13 @@ const createItems = (
 
 const searchItem = (letter, selectList, formPhoneWrapper, input) => {
  selectList.innerHTML = '';
+ console.log(selectList);
 
  data.forEach((item) => {
   const country = item.country.toLowerCase();
   const arg = letter.toLowerCase();
 
   if (country.includes(arg)) {
-   console.log(arg);
    createItems(item, selectList, formPhoneWrapper, input);
   }
  });
@@ -126,9 +127,7 @@ formPhoneWrappers.forEach((formPhoneWrapper, index) => {
  const searchInput = searchInputs[index];
 
  formPhoneWrapper.addEventListener('click', () => {
-  document
-   .querySelector('.main__form-dropdown-icon')
-   .classList.toggle('active');
+  phoneList.parentElement.classList.toggle('active');
   phoneList.classList.toggle('active');
  });
 

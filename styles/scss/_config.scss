@@ -136,6 +136,8 @@ body {
     rgba(217, 217, 217, 0) 100%
    ),
    #141414;
+  background-repeat: no-repeat;
+  background-size: cover;
  }
 }
 .modal-account {
@@ -291,7 +293,7 @@ input[type='number'] {
 }
 @include onlymobile {
  body:after {
-  height: 5%;
+  height: rem(215px);
  }
  .content__wrapper.main-content {
   &::before {
