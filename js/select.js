@@ -80,14 +80,15 @@ const initializeForms = () => {
     selectListWrapper.parentElement.classList.toggle('active');
     selectListWrapper.classList.toggle('active');
    });
-
-   selectInput.addEventListener('input', () => {
-    if (selectInput.value !== '') {
-     searchItem(selectInput.value, selectList, itemsData, isMethodList);
-    } else {
-     createItems(itemsData, selectList, isMethodList);
-    }
-   });
+   if (selectInput) {
+    selectInput.addEventListener('input', () => {
+     if (selectInput.value !== '') {
+      searchItem(selectInput.value, selectList, itemsData, isMethodList);
+     } else {
+      createItems(itemsData, selectList, isMethodList);
+     }
+    });
+   }
 
    document.addEventListener('click', (event) => {
     if (!formWrapper.contains(event.target)) {

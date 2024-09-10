@@ -1262,8 +1262,10 @@
   line-height: rem(25.6px);
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
-  padding-left: rem(36px);
+  padding-left: rem(35px);
   cursor: auto;
+  display: flex;
+  column-gap: rem(7px);
  }
  @media (max-width: 1440px) {
   width: rem(396px);
@@ -1346,7 +1348,7 @@
   font-weight: 300;
  }
  &__chargeback-point {
-  margin-left: rem(30px);
+  margin-left: rem(27px);
   list-style-type: disc;
   cursor: auto;
   &::marker {
@@ -2350,11 +2352,12 @@
  position: relative;
  & .main__form-title {
   white-space: normal;
+  margin-bottom: rem(40px);
  }
  &__wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: rem(70px);
+  row-gap: rem(90px);
   @include onlymobile {
    & .main__form-input-wrapper {
     row-gap: rem(27px) !important;
@@ -2362,16 +2365,22 @@
   }
  }
  &__img-wrapper {
-  right: -26%;
-  top: -51%;
+  right: -25.5%;
+  top: -53%;
   position: absolute;
  }
  &__img {
-  width: rem(1080px);
-  height: rem(1207px);
+  width: rem(1052px);
+  height: rem(1151px);
  }
  & .main__form-wrapper {
+  padding-top: rem(20px);
   width: rem(764px);
+  height: rem(375px);
+  position: relative;
+ }
+ &__form-wrapper {
+  width: fit-content;
   position: relative;
   &::after {
    content: '';
@@ -2381,15 +2390,16 @@
     rgba(196, 167, 103, 0.3) 0%,
     rgba(196, 167, 103, 0) 100%
    );
-   width: 100%;
-   height: 100%;
-   top: 0;
-   left: 0;
+   width: rem(918px);
+   height: rem(742px);
+   top: -40%;
+   left: -10%;
    z-index: -1;
   }
  }
  & .main__form-input-wrapper {
   gap: rem(27px) rem(10px);
+  margin-bottom: rem(36px);
  }
  &__contacts {
   display: flex;
@@ -2408,6 +2418,9 @@
    align-items: normal;
   }
  }
+ &__contact:nth-child(2) &__contact-name {
+  column-gap: rem(4px);
+ }
  &__contact-icon {
   width: rem(22px);
   height: rem(22px);
@@ -2418,12 +2431,13 @@
   }
  }
  &__contact-name {
-  color: rgba(255, 255, 255, 1);
-  margin-right: rem(5px);
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  column-gap: rem(10px);
  }
  &__contact-value {
   transition: 0.3s ease-in;
-  color: rgba(196, 167, 103, 1);
+  color: rgba(196, 167, 103, 0.6);
   &:hover {
    transition: 0.3s ease-in;
    text-decoration: underline;
@@ -2502,20 +2516,21 @@
   border-radius: rem(10px);
   background: rgba(0, 0, 0, 0.25);
   box-shadow: 4px 4px 21.8px 0px rgba(0, 0, 0, 0.2);
-  padding: rem(22px) rem(31px);
+  padding: rem(15px) rem(31px);
   display: flex;
   flex-direction: column;
-  row-gap: rem(20px);
  }
  &__card-title {
   @include banner-font(rem(25px));
   line-height: rem(35px);
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
+  margin-bottom: rem(20px);
  }
  &__card-info-wrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: rem(30px);
  }
  &__card-info {
   font-size: rem(18px);
@@ -4050,6 +4065,13 @@
 .cookie-data {
  width: rem(888px);
  padding-bottom: rem(50px);
+ &__title {
+  @include banner-font(rem(25px));
+  line-height: rem(35px);
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: rem(30px);
+  text-transform: uppercase;
+ }
  &__text-wrapper {
   display: flex;
   flex-direction: column;
@@ -4296,20 +4318,25 @@
  }
 }
 .complaints-handling {
+ @include ifdesktop {
+  transform: translate(rem(63px), rem(32px));
+ }
  a {
   text-decoration: underline;
+  text-decoration-thickness: 0.5px;
  }
  width: rem(957px);
  &__wrapper {
   display: flex;
   flex-direction: column;
  }
- & .main__form-wrapper {
+ &__form-wrapper {
+  position: relative;
   &::after {
    content: '';
    z-index: -1;
    position: absolute;
-   top: 0;
+   top: -5%;
    width: 100%;
    height: 100%;
    background: radial-gradient(
@@ -4332,6 +4359,12 @@
  &__text:nth-child(1) {
   margin-bottom: rem(47px);
  }
+ &__text:nth-child(1),
+ &__text:nth-child(2),
+ &__text:nth-child(3),
+ &__text:nth-child(4) {
+  width: rem(638px);
+ }
  & .main__form-wrapper {
   margin-bottom: rem(85px);
  }
@@ -4344,20 +4377,27 @@
  &__info-list li {
   cursor: auto;
  }
+ &__info-list li:first-child {
+  font-weight: 700;
+ }
  &__info-list li > a {
   color: rgba(196, 167, 103, 1);
   text-decoration: none;
  }
  &__img-wrapper {
   position: sticky;
-  top: 0;
+  top: rem(200px);
   height: 100%;
+  width: 100%;
+  @include ifdesktop {
+   transform: translate(rem(140px), rem(73px));
+  }
   &::after {
    content: '';
    width: rem(878px);
    height: rem(392px);
-   right: -75%;
-   top: 40%;
+   right: -45%;
+   top: 45%;
    position: absolute;
    background: radial-gradient(
     39.8% 39.8% at 50% 50%,
@@ -4367,8 +4407,8 @@
   }
  }
  &__img {
-  width: rem(422px);
-  height: rem(622px);
+  width: rem(450px);
+  height: rem(630px);
  }
  @media (max-width: 1440px) {
   width: 100%;
@@ -4376,11 +4416,11 @@
    position: absolute;
    height: fit-content;
    top: 44%;
-   right: 0;
+   right: -69%;
    &::after {
     width: rem(622.77px);
     height: rem(278.05px);
-    right: -50%;
+    right: 55%;
     top: 40%;
    }
   }
@@ -4437,6 +4477,9 @@
   text-decoration: underline;
  }
  @media (max-width: 1024px) {
+  &__wrapper {
+   display: flex;
+  }
   &__games-title {
    font-size: rem(20px);
   }
@@ -4444,9 +4487,9 @@
    font-size: rem(16px);
   }
   &__games-wrapper {
-   display: grid;
-   grid-template-columns: repeat(3, rem(245px));
-   row-gap: rem(30px);
+   display: flex;
+   flex-wrap: wrap;
+   flex: 1 0 300%;
   }
  }
  @include onlymobile {
@@ -4591,7 +4634,7 @@
  }
  &__link {
   background: rgba(196, 167, 103, 0.07);
-  padding: rem(15px);
+  padding: rem(11px);
   width: rem(878px);
   border-radius: rem(10px);
   transition: 0.3s ease-in;
@@ -4605,7 +4648,6 @@
   display: flex;
   align-items: center;
   column-gap: rem(11px);
-  margin-bottom: rem(7px);
  }
  &__dice-icon {
   width: rem(20px);
@@ -4615,15 +4657,22 @@
   @include banner-font(rem(25px));
   line-height: rem(35px);
   color: rgba(255, 255, 255, 1);
+  margin-right: rem(3px);
+ }
+ &__link:nth-child(2) &__link-title {
+  margin-right: rem(10px);
  }
  &__link-icon {
   width: rem(14px);
   height: rem(14px);
  }
  &__subtitle {
+  @include ifdesktop {
+   width: rem(848px);
+  }
   font-size: rem(16px);
   line-height: rem(25.6px);
-  font-weight: 300;
+  font-weight: 200;
   color: rgba(255, 255, 255, 0.8);
  }
  &__documents {

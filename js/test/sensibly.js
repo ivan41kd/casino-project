@@ -1,24 +1,34 @@
 const sensiblyLinks = document.querySelectorAll('.play-sensibly__link-wrapper');
 
-const sensiblyModal = document.querySelector('.main__sensibly-modal');
-const closeSensiblyModal = document.querySelector(
- '.main__sensibly-modal-close-icon'
-);
+const sensiblyModal = document.querySelectorAll('.main__sensibly-modal');
 
-const openSensibly = () => {
- sensiblyModal.classList.add('active');
- document.body.classList.add('scroll-disabled');
+const openSensibly = (id) => {
+ sensiblyModal.forEach((modal) => {
+  if (modal.dataset.modal == id) {
+   modal.classList.add('active');
+   document.body.classList.add('scroll-disabled');
+  }
+ });
 };
-const closeSensibly = () => {
- sensiblyModal.classList.remove('active');
- document.body.classList.remove('scroll-disabled');
+
+const closeSensibly = (modal) => {
+ if (modal.classList.contains('active')) {
+  modal.classList.remove('active');
+  document.body.classList.remove('scroll-disabled');
+ }
 };
+
 sensiblyLinks.forEach((link) => {
  link.addEventListener('click', () => {
-  openSensibly();
+  const id = link.dataset.modal;
+  console.log(id);
+  openSensibly(id);
  });
 });
 
-closeSensiblyModal.addEventListener('click', () => {
- closeSensibly();
+sensiblyModal.forEach((modal) => {
+ const closeModalIcon = modal.querySelector('.main__sensibly-modal-close-icon');
+ closeModalIcon.addEventListener('click', () => {
+  closeSensibly(modal);
+ });
 });

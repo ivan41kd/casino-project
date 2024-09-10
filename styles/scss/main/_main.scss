@@ -246,7 +246,12 @@
   margin-bottom: rem(44px);
  }
  &__page-title.customer {
-  margin-bottom: rem(81px);
+  margin-bottom: rem(95px);
+ }
+ &__page-title.complaints {
+  @include ifdesktop {
+   transform: translate(rem(63px), rem(32px));
+  }
  }
  &__back-wrapper {
   display: none;
@@ -342,15 +347,23 @@
   height: fit-content;
   position: relative;
   z-index: 3;
-  border: 1.5px solid;
-
-  border-image-source: radial-gradient(
-   80.12% 95.28% at 16.15% 4.72%,
-   rgba(238, 222, 186, 0.3) 0%,
-   rgba(196, 167, 103, 0.3) 100%
-  );
-  border-image-slice: 1;
-  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+  backdrop-filter: blur(rem(2px));
+  &::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   z-index: -1;
+   border-radius: rem(10px);
+   border: rem(1.5px) solid transparent;
+   background: radial-gradient(
+     80.12% 95.28% at 16.15% 4.72%,
+     rgba(238, 222, 186, 0.3) 0%,
+     rgba(196, 167, 103, 0.3) 100%
+    )
+    border-box;
+   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   mask-composite: exclude;
+  }
  }
  &__form-wrapper.register-form,
  &__form-wrapper.login-form {
@@ -1779,6 +1792,9 @@
  &__sensibly-modal {
   justify-content: center;
  }
+ &__sensibly-modal a {
+  text-decoration: underline;
+ }
  &__sensibly-modal-close-icon {
   position: absolute;
   right: 5%;
@@ -1791,14 +1807,14 @@
   visibility: visible;
   transition: 0.5s;
  }
- &__sensibly-modal-question-list li {
+ &__sensibly-modal-list li {
   font-size: rem(17px);
   line-height: rem(27.2px);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
   cursor: auto;
  }
- &__sensibly-modal-question-list {
+ &__sensibly-modal-list {
   margin-bottom: rem(15px);
  }
  &__sensibly-modal-score-list li {
@@ -2243,7 +2259,7 @@
   font-weight: 400;
   color: rgba(216, 216, 212, 0.6);
   position: absolute;
-  left: 7%;
+  left: 6%;
   top: 32%;
   transition: 0.5s;
  }
@@ -3790,7 +3806,14 @@
 
 .main.chargeback {
  padding-top: rem(70.81px);
+ & .introduction.page {
+  padding-top: rem(0px);
+  @include onlymobile {
+   padding-top: rem(70px);
+  }
+ }
 }
+
 .main.customer {
  padding-top: rem(70px);
 }

@@ -111,7 +111,7 @@ body {
  &::after {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   z-index: 0;
   background: radial-gradient(
     39.36% 72.88% at 50% 0%,
@@ -227,6 +227,7 @@ body {
  max-width: 100vw;
  font-family: $font-main;
 }
+
 .girl-left,
 .girl-right {
  display: block;
