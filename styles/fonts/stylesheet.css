@@ -1,6 +1,6 @@
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Bold.otf');
+ src: url('TTNorms-Bold.eot');
  src: local('TT Norms Bold'), local('TTNorms-Bold'),
   url('TTNorms-Bold.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Bold.woff2') format('woff2'),
@@ -12,7 +12,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-ThinItalic.otf');
+ src: url('TTNorms-ThinItalic.eot');
  src: local('TT Norms Thin Italic'), local('TTNorms-ThinItalic'),
   url('TTNorms-ThinItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-ThinItalic.woff2') format('woff2'),
@@ -24,7 +24,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Thin.otf');
+ src: url('TTNorms-Thin.eot');
  src: local('TT Norms Thin'), local('TTNorms-Thin'),
   url('TTNorms-Thin.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Thin.woff2') format('woff2'),
@@ -36,7 +36,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-LightItalic.otf');
+ src: url('TTNorms-LightItalic.eot');
  src: local('TT Norms Light Italic'), local('TTNorms-LightItalic'),
   url('TTNorms-LightItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-LightItalic.woff2') format('woff2'),
@@ -48,7 +48,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-ExtraBoldItalic.otf');
+ src: url('TTNorms-ExtraBoldItalic.eot');
  src: local('TT Norms ExtraBold Italic'), local('TTNorms-ExtraBoldItalic'),
   url('TTNorms-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-ExtraBoldItalic.woff2') format('woff2'),
@@ -60,7 +60,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Italic.otf');
+ src: url('TTNorms-Italic.eot');
  src: local('TT Norms Italic'), local('TTNorms-Italic'),
   url('TTNorms-Italic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Italic.woff2') format('woff2'),
@@ -72,7 +72,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-ExtraLight.otf');
+ src: url('TTNorms-ExtraLight.eot');
  src: local('TT Norms ExtraLight'), local('TTNorms-ExtraLight'),
   url('TTNorms-ExtraLight.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-ExtraLight.woff2') format('woff2'),
@@ -84,7 +84,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-HeavyItalic.otf');
+ src: url('TTNorms-HeavyItalic.eot');
  src: local('TT Norms Heavy Italic'), local('TTNorms-HeavyItalic'),
   url('TTNorms-HeavyItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-HeavyItalic.woff2') format('woff2'),
@@ -96,7 +96,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-MediumItalic.otf');
+ src: url('TTNorms-MediumItalic.eot');
  src: local('TT Norms Medium Italic'), local('TTNorms-MediumItalic'),
   url('TTNorms-MediumItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-MediumItalic.woff2') format('woff2'),
@@ -108,7 +108,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-BoldItalic.otf');
+ src: url('TTNorms-BoldItalic.eot');
  src: local('TT Norms Bold Italic'), local('TTNorms-BoldItalic'),
   url('TTNorms-BoldItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-BoldItalic.woff2') format('woff2'),
@@ -120,7 +120,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Heavy.otf');
+ src: url('TTNorms-Heavy.eot');
  src: local('TT Norms Heavy'), local('TTNorms-Heavy'),
   url('TTNorms-Heavy.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Heavy.woff2') format('woff2'),
@@ -132,7 +132,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Light.otf');
+ src: url('TTNorms-Light.eot');
  src: local('TT Norms Light'), local('TTNorms-Light'),
   url('TTNorms-Light.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Light.woff2') format('woff2'),
@@ -144,7 +144,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Medium.otf');
+ src: url('TTNorms-Medium.eot');
  src: local('TT Norms Medium'), local('TTNorms-Medium'),
   url('TTNorms-Medium.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Medium.woff2') format('woff2'),
@@ -156,7 +156,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-ExtraBold.otf');
+ src: url('TTNorms-ExtraBold.eot');
  src: local('TT Norms ExtraBold'), local('TTNorms-ExtraBold'),
   url('TTNorms-ExtraBold.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-ExtraBold.woff2') format('woff2'),
@@ -168,7 +168,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-ExtraLightItalic.otf');
+ src: url('TTNorms-ExtraLightItalic.eot');
  src: local('TT Norms ExtraLight Italic'), local('TTNorms-ExtraLightItalic'),
   url('TTNorms-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-ExtraLightItalic.woff2') format('woff2'),
@@ -180,7 +180,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Regular.otf');
+ src: url('TTNorms-Regular.eot');
  src: local('TT Norms Regular'), local('TTNorms-Regular'),
   url('TTNorms-Regular.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Regular.woff2') format('woff2'),
@@ -192,7 +192,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-BlackItalic.otf');
+ src: url('TTNorms-BlackItalic.eot');
  src: local('TT Norms Black Italic'), local('TTNorms-BlackItalic'),
   url('TTNorms-BlackItalic.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-BlackItalic.woff2') format('woff2'),
@@ -204,7 +204,7 @@
 
 @font-face {
  font-family: 'TT Norms';
- src: url('TTNorms-Black.otf');
+ src: url('TTNorms-Black.eot');
  src: local('TT Norms Black'), local('TTNorms-Black'),
   url('TTNorms-Black.eot?#iefix') format('embedded-opentype'),
   url('TTNorms-Black.woff2') format('woff2'),
