@@ -1008,7 +1008,7 @@
   width: 100%;
  }
  &__form-input.description + &__form-label {
-  left: 4%;
+  left: 3.5%;
  }
  &__form-input.phone {
   backdrop-filter: none;
@@ -2261,8 +2261,8 @@
   font-weight: 400;
   color: rgba(216, 216, 212, 0.4);
   position: absolute;
-  left: 6%;
-  top: 32%;
+  left: 7%;
+  top: 30%;
   transition: 0.5s;
  }
  &__form-label.label-refunds-description {

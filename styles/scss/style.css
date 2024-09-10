@@ -3000,7 +3000,7 @@ button {
   width: 100%;
 }
 .main__form-input.description + .main__form-label {
-  left: 4%;
+  left: 3.5%;
 }
 .main__form-input.phone {
   -webkit-backdrop-filter: none;
@@ -4213,8 +4213,8 @@ button {
   font-weight: 400;
   color: rgba(216, 216, 212, 0.4);
   position: absolute;
-  left: 6%;
-  top: 32%;
+  left: 7%;
+  top: 30%;
   transition: 0.5s;
 }
 .main__form-label.label-refunds-description {
