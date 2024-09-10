@@ -81,6 +81,7 @@ body {
   font-weight: 500;
   min-height: 100vh;
   line-height: 1.5;
+  font-variant-ligatures: none;
   background: #232323;
   color: rgb(216, 216, 212);
   animation: fadeInAnimation ease 3s;
