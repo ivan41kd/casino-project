@@ -148,6 +148,12 @@ formPhoneWrappers.forEach((formPhoneWrapper, index) => {
    }
   });
  }
+ input.addEventListener('focus', () => {
+  input.parentElement.classList.add('focus');
+ });
+ input.addEventListener('focusout', () => {
+  input.parentElement.classList.remove('focus');
+ });
 
  input.addEventListener('input', () => {
   const inputValue = input.value.replace(/[^\d+]/g, '');

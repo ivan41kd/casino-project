@@ -2345,7 +2345,7 @@ button {
   display: flex;
   justify-content: center;
 }
-.main__form-wrapper {
+.main__form-wrapper:not(.login-form) {
   display: flex;
   flex-direction: column;
   border-radius: 0.7142857143rem;
@@ -2358,7 +2358,7 @@ button {
   -webkit-backdrop-filter: blur(0.1428571429rem);
           backdrop-filter: blur(0.1428571429rem);
 }
-.main__form-wrapper::after {
+.main__form-wrapper:not(.login-form)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -2963,7 +2963,7 @@ button {
 }
 .main__form-input {
   padding: 1.0714285714rem 3.9285714286rem 1.0714285714rem 1.7857142857rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -3432,7 +3432,7 @@ button {
 }
 .main__form-input-label-wrapper.verify.phone {
   padding: 1.0714285714rem 1.7857142857rem 1.0714285714rem 1.7857142857rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -3446,8 +3446,9 @@ button {
   -webkit-backdrop-filter: blur(0.7142857143rem);
           backdrop-filter: blur(0.7142857143rem);
 }
-.main__form-input-label-wrapper.verify.phone:focus {
+.main__form-input-label-wrapper.verify.phone.focus {
   background: black;
+  color: rgb(216, 216, 212);
 }
 .main__form-input-label-wrapper.phone.disabled {
   background: rgba(0, 0, 0, 0.3);
@@ -4209,7 +4210,7 @@ button {
   font-size: 1.1428571429rem;
   line-height: 1.4514285714rem;
   font-weight: 400;
-  color: rgba(216, 216, 212, 0.6);
+  color: rgba(216, 216, 212, 0.4);
   position: absolute;
   left: 6%;
   top: 32%;
@@ -10530,8 +10531,18 @@ button {
   row-gap: 0.3571428571rem;
 }
 .keeping-control__points li {
-  margin-left: 1.7857142857rem;
-  list-style-type: disc;
+  display: flex;
+  -moz-column-gap: 0.7142857143rem;
+       column-gap: 0.7142857143rem;
+  cursor: auto;
+  margin-left: 0.7142857143rem;
+  max-width: 50rem;
+}
+.keeping-control__points li:before {
+  content: "•";
+  font-size: 1.1428571429rem;
+  vertical-align: middle;
+  line-height: 1.5714285714rem;
   cursor: auto;
 }
 @media (max-width: 1440px) {
@@ -10579,11 +10590,23 @@ button {
   font-size: 1.1428571429rem;
   line-height: 1.8285714286rem;
   font-weight: 300;
+  display: flex;
+  flex-direction: column;
   row-gap: 0.3571428571rem;
 }
 .preventing-gambling__points li {
-  margin-left: 1.7857142857rem;
-  list-style-type: disc;
+  display: flex;
+  -moz-column-gap: 0.7142857143rem;
+       column-gap: 0.7142857143rem;
+  cursor: auto;
+  margin-left: 0.7142857143rem;
+  max-width: 50rem;
+}
+.preventing-gambling__points li:before {
+  content: "•";
+  font-size: 1.1428571429rem;
+  vertical-align: middle;
+  line-height: 1.5714285714rem;
   cursor: auto;
 }
 .preventing-gambling__test-wrapper {
@@ -10742,9 +10765,24 @@ button {
   margin-bottom: 2.1428571429rem;
   text-transform: uppercase;
 }
+.gaming-management__points {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3571428571rem;
+}
 .gaming-management__points li {
-  margin-left: 1.7857142857rem;
-  list-style-type: disc;
+  display: flex;
+  -moz-column-gap: 0.7142857143rem;
+       column-gap: 0.7142857143rem;
+  cursor: auto;
+  margin-left: 0.7142857143rem;
+  max-width: 50rem;
+}
+.gaming-management__points li:before {
+  content: "•";
+  font-size: 1.1428571429rem;
+  vertical-align: middle;
+  line-height: 1.5714285714rem;
   cursor: auto;
 }
 .gaming-management__point {
@@ -10773,9 +10811,24 @@ button {
   margin-bottom: 2.1428571429rem;
   text-transform: uppercase;
 }
+.self-exclusion__points {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3571428571rem;
+}
 .self-exclusion__points li {
-  margin-left: 1.7857142857rem;
-  list-style-type: disc;
+  display: flex;
+  -moz-column-gap: 0.7142857143rem;
+       column-gap: 0.7142857143rem;
+  cursor: auto;
+  margin-left: 0.7142857143rem;
+  max-width: 50rem;
+}
+.self-exclusion__points li:before {
+  content: "•";
+  font-size: 1.1428571429rem;
+  vertical-align: middle;
+  line-height: 1.5714285714rem;
   cursor: auto;
 }
 .self-exclusion__point {

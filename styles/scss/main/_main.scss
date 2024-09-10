@@ -338,7 +338,7 @@
   display: flex;
   justify-content: center;
  }
- &__form-wrapper {
+ &__form-wrapper:not(.login-form) {
   display: flex;
   flex-direction: column;
   border-radius: rem(10px);
@@ -978,7 +978,7 @@
  }
  &__form-input {
   padding: rem(15px) rem(55px) rem(15px) rem(25px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -1441,7 +1441,7 @@
  }
  &__form-input-label-wrapper.verify.phone {
   padding: rem(15px) rem(25px) rem(15px) rem(25px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -1452,10 +1452,12 @@
   border-radius: rem(70.06px);
   column-gap: rem(16.5px);
   backdrop-filter: blur(rem(10px));
-  &:focus {
-   background: black;
-  }
  }
+ &__form-input-label-wrapper.verify.phone.focus {
+  background: black;
+  color: rgba(216, 216, 212, 1);
+ }
+
  &__form-input-label-wrapper.phone.disabled {
   background: rgba(0, 0, 0, 0.3);
   color: rgba(216, 216, 212, 0.3);
@@ -2257,7 +2259,7 @@
   font-size: rem(16px);
   line-height: rem(20.32px);
   font-weight: 400;
-  color: rgba(216, 216, 212, 0.6);
+  color: rgba(216, 216, 212, 0.4);
   position: absolute;
   left: 6%;
   top: 32%;

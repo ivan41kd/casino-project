@@ -9,7 +9,7 @@ const user = [
   birth: '05.06.1987',
   email: 'alexmal83@gmail.com',
   phone: '+355 555 555 555',
-  password: 'blablabla123',
+  password: '123456789A',
   phoneVerified: true,
   emailVerified: true,
  },

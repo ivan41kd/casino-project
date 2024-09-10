@@ -2098,8 +2098,17 @@
   row-gap: rem(5px);
  }
  &__points li {
-  margin-left: rem(25px);
-  list-style-type: disc;
+  display: flex;
+  column-gap: rem(10px);
+  cursor: auto;
+  margin-left: rem(10px);
+  max-width: rem(700px);
+ }
+ &__points li:before {
+  content: '•';
+  font-size: rem(16px);
+  vertical-align: middle;
+  line-height: rem(22px);
   cursor: auto;
  }
  @media (max-width: 1440px) {
@@ -2142,11 +2151,22 @@
   font-size: rem(16px);
   line-height: rem(25.6px);
   font-weight: 300;
+  display: flex;
+  flex-direction: column;
   row-gap: rem(5px);
  }
  &__points li {
-  margin-left: rem(25px);
-  list-style-type: disc;
+  display: flex;
+  column-gap: rem(10px);
+  cursor: auto;
+  margin-left: rem(10px);
+  max-width: rem(700px);
+ }
+ &__points li:before {
+  content: '•';
+  font-size: rem(16px);
+  vertical-align: middle;
+  line-height: rem(22px);
   cursor: auto;
  }
  &__test-wrapper {
@@ -2305,9 +2325,23 @@
   margin-bottom: rem(30px);
   text-transform: uppercase;
  }
+ &__points {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(5px);
+ }
  &__points li {
-  margin-left: rem(25px);
-  list-style-type: disc;
+  display: flex;
+  column-gap: rem(10px);
+  cursor: auto;
+  margin-left: rem(10px);
+  max-width: rem(700px);
+ }
+ &__points li:before {
+  content: '•';
+  font-size: rem(16px);
+  vertical-align: middle;
+  line-height: rem(22px);
   cursor: auto;
  }
  &__point {
@@ -2331,9 +2365,23 @@
   margin-bottom: rem(30px);
   text-transform: uppercase;
  }
+ &__points {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(5px);
+ }
  &__points li {
-  margin-left: rem(25px);
-  list-style-type: disc;
+  display: flex;
+  column-gap: rem(10px);
+  cursor: auto;
+  margin-left: rem(10px);
+  max-width: rem(700px);
+ }
+ &__points li:before {
+  content: '•';
+  font-size: rem(16px);
+  vertical-align: middle;
+  line-height: rem(22px);
   cursor: auto;
  }
  &__point {
