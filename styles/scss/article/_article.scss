@@ -303,6 +303,15 @@
    }
   }
  }
+ @include onlymobile {
+  &__wrapper {
+   &::after {
+    width: rem(449px);
+    height: rem(726px);
+    left: auto;
+   }
+  }
+ }
 }
 
 .play-sensibly {

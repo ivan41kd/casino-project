@@ -2510,6 +2510,14 @@
    left: -10%;
    z-index: -1;
   }
+  @include onlymobile {
+   &::after {
+    width: rem(449px);
+    height: rem(570px);
+    left: -20%;
+    top: -25%;
+   }
+  }
  }
  & .main__form-label {
   left: 7%;
@@ -2566,6 +2574,7 @@
   width: 100%;
   & .main__form-wrapper {
    width: rem(764px);
+   height: 100%;
    align-self: center;
   }
   & .main__form-input-wrapper {
