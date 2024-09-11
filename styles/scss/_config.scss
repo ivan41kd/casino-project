@@ -87,10 +87,10 @@ body {
  font-variant-ligatures: no-common-ligatures;
  background: #232323;
  color: rgba(216, 216, 212, 1);
- animation: fadeInAnimation ease 3s;
  animation-iteration-count: 1;
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
+ overflow-x: hidden;
  &::before {
   position: fixed;
   content: '';
@@ -192,7 +192,7 @@ body {
 
 .modal-account.active {
  transition: 0.3s ease-in-out;
- transform: translateX(0);
+ transform: none;
 }
 .modal-success-wrapper {
  position: relative;

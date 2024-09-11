@@ -338,7 +338,7 @@
   display: flex;
   justify-content: center;
  }
- &__form-wrapper:not(.login-form) {
+ &__form-wrapper:not(.login-form, .register-form) {
   display: flex;
   flex-direction: column;
   border-radius: rem(10px);
@@ -372,6 +372,8 @@
   padding: 0;
  }
  &__form-wrapper.login-form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
  }
 
@@ -631,21 +633,25 @@
  &__vip-card-modal-title.platinum-title {
   color: rgba(216, 216, 212, 1);
   position: relative;
+  z-index: 2;
   &:after {
    position: absolute;
    bottom: -90%;
    left: 70px;
    transform: scale(0.8);
+   z-index: -1;
    content: url('../../../img/vip/shine-text.png');
   }
  }
  &__vip-card-modal-title.diamond-title {
   color: rgba(255, 255, 255, 1);
   position: relative;
+  z-index: 2;
   &::before {
    position: absolute;
    bottom: -35%;
    left: -27px;
+   z-index: -1;
    content: url('../../../img/vip/shine-diamond-small.png');
   }
   &::after {
@@ -653,6 +659,7 @@
    bottom: -140%;
    left: 66px;
    transform: scale(0.8);
+   z-index: -1;
    content: url('../../../img/vip/shine-diamond-big.png');
   }
  }
@@ -978,7 +985,7 @@
  }
  &__form-input {
   padding: rem(15px) rem(55px) rem(15px) rem(25px);
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -1316,7 +1323,6 @@
  }
  &__form-input.password {
   width: 100%;
-  background: none;
  }
  &__form-phone-flag {
   width: rem(21px);
@@ -1441,7 +1447,7 @@
  }
  &__form-input-label-wrapper.verify.phone {
   padding: rem(15px) rem(25px) rem(15px) rem(25px);
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -1655,7 +1661,7 @@
   height: rem(53px);
   background: url('../../../img/bg/button-bg.png') no-repeat;
   background-clip: padding-box;
-  background-size: 100% 1000%;
+  background-size: cover;
   transition: 0.5s;
   margin-bottom: rem(19px);
 
@@ -1781,15 +1787,6 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.5s;
-  @include onlymobile {
-   position: absolute !important;
-   height: 100% !important;
-  }
- }
- &__sensibly-modal {
-  @include onlymobile {
-   height: 100vh !important;
-  }
  }
  &__sensibly-modal {
   justify-content: center;
@@ -1854,6 +1851,7 @@
   position: relative;
   box-shadow: 4px 4px 21.8px 0px rgba(0, 0, 0, 0.2);
   transition: 0.7s ease-in-out;
+  border-radius: rem(10px);
   top: 10%;
   &::after {
    z-index: 1;
@@ -1870,13 +1868,17 @@
   @include onlymobile {
    position: absolute;
    width: 100%;
+   top: 35%;
   }
  }
  &__sensibly-modal-wrapper {
   position: relative;
   background: rgba(16, 16, 16, 1);
   padding: rem(44px) rem(36px);
-  height: 100%;
+  border-radius: rem(10px);
+  height: auto;
+  max-height: 100vh;
+  overflow-y: auto;
   width: rem(1178px);
   overflow: auto;
   scrollbar-color: rgba(255, 255, 255, 0.05) transparent;
@@ -2034,6 +2036,7 @@
   height: fit-content;
   flex-direction: column;
   padding: rem(46px) rem(36px) rem(30px) rem(36px);
+  border-radius: rem(10px);
  }
  &__verification-modal-wrapper.inactive {
   display: none;
@@ -2243,6 +2246,8 @@
 
  &__form-input-label-wrapper:hover > &__form-input::placeholder {
   opacity: 1;
+  -webkit-transition: 0.5s;
+  -moz-transtion: 0.5s;
   transition: 0.5s;
  }
  &__form-input:focus::placeholder {
@@ -2261,7 +2266,7 @@
   font-weight: 400;
   color: rgba(216, 216, 212, 0.4);
   position: absolute;
-  left: 7%;
+  left: 5%;
   top: 30%;
   transition: 0.5s;
  }
@@ -2483,7 +2488,7 @@
   color: rgba(255, 255, 255, 1);
   font-weight: 300;
  }
- &__column-wrapper {
+ &__column-wrapper:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
  }
  &__column-header tr {
@@ -2496,9 +2501,9 @@
   padding: rem(15px);
  }
  &__table-body {
-  border: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: none;
-  border-radius: 10px 0px 0px 0px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.01);
  }
  &__table-body tr {
@@ -2584,10 +2589,10 @@
   border-radius: rem(70px);
   width: rem(161px);
   justify-content: center;
-  transition: 0.3s;
+  transition: 0.6s;
   position: relative;
   &:hover {
-   transition: 0.3s;
+   transition: 0.6s;
    color: rgba(255, 221, 147, 1);
    box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
   }
@@ -3505,7 +3510,7 @@
   }
   &__vip-card-modal-wrapper {
    position: absolute;
-   top: 0;
+   top: 10%;
    padding: rem(20px);
    overflow: auto;
   }

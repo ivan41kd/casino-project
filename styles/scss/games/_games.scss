@@ -110,7 +110,7 @@
   max-height: rem(46px);
   padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
   margin-bottom: rem(18px);
-  transition: 0.3s;
+  transition: 0.6s;
   text-transform: uppercase;
   position: relative;
   &::before {
@@ -129,8 +129,9 @@
    mask-composite: exclude;
   }
   &:hover {
-   transition: 0.3s;
+   transition: 0.6s;
    color: rgba(238, 222, 186, 1);
+   box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
   }
  }
  &__game-img {

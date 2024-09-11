@@ -113,6 +113,7 @@
   bottom: 110%;
   opacity: 0;
   visibility: hidden;
+  border-radius: rem(10px);
   transition: 0.3s ease-in-out;
  }
  &__account-info-text {
@@ -372,10 +373,10 @@
   border-radius: rem(70px);
   width: rem(161px);
   justify-content: center;
-  transition: 0.3s;
+  transition: 0.6s;
   position: relative;
   &:hover {
-   transition: 0.3s;
+   transition: 0.6s;
    color: rgba(255, 221, 147, 1);
    box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
   }
@@ -580,6 +581,7 @@
  }
 }
 .aside.aside-account {
+ backdrop-filter: blur(rem(3px));
  padding: rem(9px);
 
  @media (max-width: 1440px) {

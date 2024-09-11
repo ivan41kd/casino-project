@@ -392,10 +392,12 @@
   width: 100%;
   grid-template-columns: repeat(5, rem(201px));
  }
+
  &__table-body {
   display: block;
-  border: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.01);
   overflow: hidden;
   overflow-y: scroll;
@@ -1008,6 +1010,7 @@
 }
 .login {
  width: 100%;
+ height: 100%;
  padding: rem(26px) rem(36px) rem(183px) rem(36px);
  background: rgba(0, 0, 0, 0.6);
  opacity: 1;
@@ -1024,6 +1027,7 @@
   bottom: 0;
   background-position: bottom;
   background-size: 100%;
+  z-index: 0;
  }
  &__pages-wrapper {
   column-gap: rem(14px);
@@ -1043,6 +1047,7 @@
    rgba(196, 167, 103, 0.2) 0%,
    rgba(196, 167, 103, 0) 100%
   );
+  z-index: 1;
  }
  @media (max-width: 1440px) {
   background: none;
@@ -1116,11 +1121,7 @@
   height: auto;
  }
 }
-.account.profile {
- @include onlymobile {
-  height: auto;
- }
-}
+
 .register {
  padding: rem(26px) rem(36px) rem(57px) rem(36px);
  background: rgba(0, 0, 0, 0.6);
@@ -1157,6 +1158,7 @@
    rgba(196, 167, 103, 0.2) 0%,
    rgba(196, 167, 103, 0) 100%
   );
+  z-index: 2;
  }
  @media (max-width: 1440px) {
   &::after {
@@ -2445,6 +2447,9 @@
    z-index: -1;
   }
  }
+ & .main__form-label {
+  left: 7%;
+ }
  & .main__form-input-wrapper {
   gap: rem(27px) rem(10px);
   margin-bottom: rem(36px);
@@ -2534,6 +2539,10 @@
 }
 .contacts {
  width: rem(1282px);
+ a:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+ }
  &__wrapper {
   display: flex;
   flex-direction: column;
@@ -5763,6 +5772,7 @@
  &__img {
   width: rem(490px);
   height: rem(293px);
+  mix-blend-mode: plus-lighter;
  }
  @media (max-width: 1440px) {
   align-items: normal;
