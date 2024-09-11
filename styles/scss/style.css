@@ -228,16 +228,17 @@ body {
   position: sticky;
   top: calc(30% - 100px);
   z-index: -1;
+  width: 100%;
   bottom: 0;
 }
 
 .girl-left {
-  width: 22.7142857143rem;
+  max-width: 22.7142857143rem;
   top: calc(50% - 100px);
 }
 
 .girl-right {
-  width: 26.8571428571rem;
+  max-width: 26.8571428571rem;
   right: 0;
 }
 

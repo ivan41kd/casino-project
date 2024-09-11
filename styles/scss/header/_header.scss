@@ -1,6 +1,7 @@
 @import '../mixins/mixin';
 .header {
  transition: 0.3s;
+ position: -webkit-sticky;
  position: sticky;
  top: 0;
  z-index: 10;
@@ -18,6 +19,15 @@
  }
  &__nav {
   display: flex;
+ }
+ @-webkit-keyframes fadeInAnimation {
+  0% {
+   opacity: 0;
+  }
+
+  100% {
+   opacity: 1;
+  }
  }
  @keyframes fadeInAnimation {
   0% {
@@ -78,18 +88,23 @@
      #c4a767 100%
     )
     border-box;
+   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
    mask-composite: exclude;
   }
  }
  &__account-wrapper {
   display: flex;
   align-items: center;
+  -moz-column-gap: rem(24px);
   column-gap: rem(24px);
   width: rem(676px);
   justify-content: end;
  }
  &__account-user-wrapper {
+  -moz-column-gap: rem(9.54px);
   column-gap: rem(9.54px);
   display: flex;
   align-items: center;
@@ -109,6 +124,7 @@
  }
  &__account-balance-wrapper {
   display: flex;
+  -moz-column-gap: rem(9px);
   column-gap: rem(9px);
   font-size: rem(16px);
   line-height: rem(25.6px);
@@ -159,6 +175,8 @@
   grid-template-columns: 1fr 1fr;
   width: rem(1083px);
   top: 80%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
   min-width: fit-content;
   padding: rem(24px);
   left: 50%;
@@ -231,11 +249,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  -moz-column-gap: rem(64px);
   column-gap: rem(64px);
  }
  &__language-wrapper {
   display: flex;
   width: rem(48px);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
  }
  &__item {
@@ -308,13 +330,19 @@
  }
 
  &__item:hover &__item-name {
+  -webkit-animation: fadeInAnimation ease 5s;
   animation: fadeInAnimation ease 5s;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
  }
  &__item:hover &__item-list-wrapper {
+  -webkit-animation: fadeInAnimation ease 5s;
   animation: fadeInAnimation ease 5s;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
  }
  &__user-wrapper {
@@ -369,7 +397,10 @@
      #c4a767 100%
     )
     border-box;
+   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
    mask-composite: exclude;
   }
  }
@@ -389,6 +420,7 @@
   line-height: rem(25.6px);
   font-weight: 500;
   @include gold-color;
+  -moz-column-gap: rem(9px);
   column-gap: rem(9px);
   display: flex;
  }
@@ -425,7 +457,10 @@
      rgba(196, 167, 103, 1)
     )
     border-box;
+   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
    mask-composite: exclude;
   }
   &:active {
@@ -460,7 +495,10 @@
      rgba(196, 167, 103, 1)
     )
     border-box;
+   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
    mask-composite: exclude;
   }
   &:active {
@@ -472,6 +510,8 @@
  &__login,
  &__signup,
  &__logout {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   align-items: center;
   font-size: rem(14px);
@@ -572,6 +612,8 @@
    margin-right: rem(9px);
   }
   &__account-wrapper {
+   width: -webkit-fit-content;
+   width: -moz-fit-content;
    width: fit-content;
   }
   &__account-wrapper &__language-wrapper.alt {
@@ -602,6 +644,7 @@
   }
   &__menu.mobile {
    display: flex;
+   -moz-column-gap: 0;
    column-gap: 0;
   }
   &__signup-login-wrapper {
@@ -681,6 +724,7 @@
    padding: 0;
    display: grid;
    grid-gap: rem(10px);
+   -moz-column-gap: rem(131px);
    column-gap: rem(131px);
    opacity: 1;
    z-index: 3;
@@ -716,6 +760,8 @@
   &__item {
    cursor: pointer;
    font-size: rem(14px);
+   width: -webkit-max-content;
+   width: -moz-max-content;
    width: max-content;
   }
   &__burger-mobile-list {
@@ -739,6 +785,8 @@
    color: rgba(216, 216, 212, 1);
    text-transform: uppercase;
    font-weight: 500;
+   width: -webkit-max-content;
+   width: -moz-max-content;
    width: max-content;
   }
   &__item {
@@ -983,6 +1031,7 @@
    grid-template-columns: fit-content(100%) 3fr rem(16px);
    justify-items: center;
    width: 100%;
+   -moz-column-gap: rem(5px);
    column-gap: rem(5px);
   }
   &__burger-account-value {
@@ -1062,7 +1111,10 @@
       #c4a767 100%
      )
      border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+     linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
    }
   }
@@ -1115,7 +1167,10 @@
       #c4a767 100%
      )
      border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+     linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
    }
   }
@@ -1123,6 +1178,7 @@
   &__burger-account-logout {
    display: flex;
    align-items: center;
+   -moz-column-gap: rem(12px);
    column-gap: rem(12px);
    padding: rem(11px) rem(40px) rem(11px) rem(40px);
   }
@@ -1187,6 +1243,7 @@
   }
   &__burger-wrapper {
    grid-template-columns: 1fr;
+   -moz-column-gap: 0;
    column-gap: 0;
    &::after {
     content: none;
@@ -1384,6 +1441,8 @@
   &__language-wrapper.mobile {
    position: relative;
    display: flex;
+   width: -webkit-fit-content;
+   width: -moz-fit-content;
    width: fit-content;
    grid-column: 2;
    grid-row: 3;
@@ -1451,7 +1510,10 @@
    display: grid;
    grid-template-columns: rem(82px) rem(138px);
    width: 100%;
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
    height: fit-content;
+   -moz-column-gap: rem(48px);
    column-gap: rem(48px);
    row-gap: rem(24px);
    grid-auto-rows: auto;
@@ -1478,6 +1540,8 @@
   }
   &__burger-account-wrapper {
    padding-top: rem(35px);
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
    height: fit-content;
   }
   &__burger-mobile-list-wrapper.active {
@@ -1501,6 +1565,8 @@
   }
 
   &__burger-wrapper.logged &__burger-right {
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
    height: fit-content;
   }
   &__burger-right {
@@ -1671,9 +1737,11 @@
 }
 .header.fixed {
  top: -1px;
+ position: -webkit-sticky;
  position: sticky;
  transition: 0.1s;
  background: rgba(22, 22, 22, 0.8);
+ -webkit-backdrop-filter: blur(10px);
  backdrop-filter: blur(10px);
  width: 100%;
  &:after {

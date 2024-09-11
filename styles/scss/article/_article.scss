@@ -41,6 +41,7 @@
 }
 
 .process-chargeback {
+ position: -webkit-sticky;
  position: sticky;
  top: rem(70px);
  max-width: rem(499px);
@@ -83,6 +84,7 @@
   height: rem(20px);
  }
  &__columns-wrapper {
+  -moz-column-gap: rem(13px);
   column-gap: rem(13px);
   display: flex;
  }
@@ -306,6 +308,7 @@
 .play-sensibly {
  max-width: rem(505px);
  width: 100%;
+ position: -webkit-sticky;
  position: sticky;
  top: rem(30px);
  height: 100%;
@@ -360,12 +363,15 @@
 }
 
 .on-this-page {
+ height: -webkit-fit-content;
+ height: -moz-fit-content;
  height: fit-content;
  max-width: rem(293px);
  width: 100%;
  background: rgba(0, 0, 0, 0.4);
  border-radius: rem(10px);
  padding: rem(60px) rem(30px);
+ position: -webkit-sticky;
  position: sticky;
  top: rem(50px);
  transform: translateY(rem(-60px));

@@ -1,13 +1,22 @@
 .weed-background {
  position: sticky;
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -ms-flex-direction: column;
  flex-direction: column;
+ -webkit-box-align: end;
+ -ms-flex-align: end;
  align-items: flex-end;
  width: 100%;
  right: 0;
  top: 110px;
  height: 0;
  z-index: -1;
+ -webkit-transform: translateY(rem(-140px));
+ -ms-transform: translateY(rem(-140px));
  transform: translateY(rem(-140px));
  &__weed-second {
   right: 0;
@@ -43,12 +52,16 @@
 }
 .weed-background {
  &__img.account-weed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: absolute;
  }
 }
 .weed-background.green {
+ -webkit-transform: translateY(-185px);
+ -ms-transform: translateY(-185px);
  transform: translateY(-185px);
  @include onlymobile {
   top: rem(100px);
@@ -57,6 +70,8 @@
 
 @include onlymobile {
  .weed-background.fixed {
+  -webkit-transform: translateY(rem(30px));
+  -ms-transform: translateY(rem(30px));
   transform: translateY(rem(30px));
  }
  .weed-background {
