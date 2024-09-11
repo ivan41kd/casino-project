@@ -25,6 +25,9 @@
    width: 100%;
   }
  }
+ @media screen and (max-width: 1440px) {
+  top: rem(130px);
+ }
 }
 .weed-background.account-weed {
  position: sticky;
@@ -47,12 +50,7 @@
 .weed-background.green {
  transform: translateY(-185px);
  @include onlymobile {
-  transform: translateY(rem(-110px));
- }
-}
-@media screen and (max-width: 1440px) {
- .weed-background.fixed {
-  transform: translateY(rem(60px));
+  top: rem(100px);
  }
 }
 

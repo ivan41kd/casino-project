@@ -7665,6 +7665,11 @@ button {
     width: 100%;
   }
 }
+@media screen and (max-width: 1440px) {
+  .weed-background {
+    top: 9.2857142857rem;
+  }
+}
 
 .weed-background.account-weed {
   position: sticky;
@@ -7691,15 +7696,10 @@ button {
 }
 @media (min-width: 0px) and (max-width: 767px) {
   .weed-background.green {
-    transform: translateY(-7.8571428571rem);
+    top: 7.1428571429rem;
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .weed-background.fixed {
-    transform: translateY(4.2857142857rem);
-  }
-}
 @media (min-width: 0px) and (max-width: 767px) {
   .weed-background.fixed {
     transform: translateY(2.1428571429rem);
@@ -8034,7 +8034,7 @@ button {
 
 .process-chargeback {
   position: sticky;
-  top: 5.7142857143rem;
+  top: 5rem;
   max-width: 35.6428571429rem;
   width: 100%;
   height: 100%;
