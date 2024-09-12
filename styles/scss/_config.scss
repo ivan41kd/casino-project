@@ -81,15 +81,6 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
- @-webkit-keyframes fadeInAnimation {
-  0% {
-   opacity: 0;
-  }
-
-  100% {
-   opacity: 1;
-  }
- }
  @keyframes fadeInAnimation {
   0% {
    opacity: 0;
@@ -102,55 +93,34 @@ body {
  font-weight: 500;
  min-height: 100vh;
  line-height: 1.5;
- -webkit-font-variant-ligatures: no-common-ligatures;
- font-variant-ligatures: no-common-ligatures;
- background: #232323;
+ background: rgb(35, 35, 35);
  color: rgba(216, 216, 212, 1);
- -webkit-animation-iteration-count: 1;
+ animation: fadeInAnimation ease 3s;
  animation-iteration-count: 1;
- -webkit-animation-fill-mode: forwards;
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
- overflow-x: hidden;
  &::before {
   position: fixed;
   content: '';
-  background: url('../../img/bg/account-bg.png'),
-   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
-       217,
-       217,
-       217,
-       0
-      )
-      100%),
-   #232323;
-  background: url('../../img/bg/account-bg.png'),
-   radial-gradient(
-    39.36% 72.88% at 50% 0%,
-    rgba(217, 217, 217, 0.2) 0%,
-    rgba(217, 217, 217, 0) 100%
+  background: radial-gradient(
+    68.75% 127.38% at 50% 47.59%,
+    #000000 3.53%,
+    rgba(0, 0, 0, 0) 72.69%
    ),
-   #232323;
-
+   url(../../img/bg/bg-pic.png);
   width: 100%;
   height: 100%;
+  opacity: 10%;
   top: 0;
-  background-blend-mode: multiply;
+  background-blend-mode: overlay;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
  }
  &::after {
   position: fixed;
   width: 100%;
-  height: 150vh;
-  z-index: 0;
-  background: -o-radial-gradient(
-    50% 0%,
-    39.36% 72.88%,
-    rgba(217, 217, 217, 0.2) 0%,
-    rgba(217, 217, 217, 0) 100%
-   )
-   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  height: 100%;
+  z-index: -1;
   background: radial-gradient(
     39.36% 72.88% at 50% 0%,
     rgba(217, 217, 217, 0.2) 0%,
@@ -187,40 +157,40 @@ body {
   background-size: cover;
  }
 }
-// .modal-account {
-//  overflow: auto;
-//  -webkit-transform: translateX(-107%);
-//  -ms-transform: translateX(-107%);
-//  transform: translateX(-107%);
-//  position: fixed;
-//  background: url('../../img/bg/account-bg.png'), #232323;
-//  background-blend-mode: multiply;
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//  z-index: 500;
-//  width: 100%;
-//  height: 100vh;
-//  -webkit-transition: 0.3s ease-in-out;
-//  -o-transition: 0.3s ease-in-out;
-//  transition: 0.3s ease-in-out;
-//  &::-webkit-scrollbar {
-//   width: 4px;
-//  }
+.modal-account {
+ overflow: auto;
+ -webkit-transform: translateX(-107%);
+ -ms-transform: translateX(-107%);
+ transform: translateX(-107%);
+ position: fixed;
+ background: url('../../img/bg/account-bg.png'), #232323;
+ background-blend-mode: multiply;
+ background-repeat: no-repeat;
+ background-size: cover;
+ z-index: 500;
+ width: 100%;
+ height: 100vh;
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
 
-//  &::-webkit-scrollbar-track {
-//   background: transparent;
-//  }
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
 
-//  &::-webkit-scrollbar-thumb {
-//   background-color: #d4d3d399;
-//   border-radius: 20px;
-//  }
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
 
-//  @supports (-moz-appearance: none) {
-//   scrollbar-color: #d4d3d399 transparent;
-//   scrollbar-width: thin;
-//  }
-// }
+ @supports (-moz-appearance: none) {
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
+ }
+}
 .modal-change {
  display: -webkit-box;
  display: -ms-flexbox;
