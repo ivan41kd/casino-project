@@ -288,7 +288,7 @@ button {
   background-size: cover;
   z-index: 500;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   transition: 0.3s ease-in-out;
 }
 .modal-account::-webkit-scrollbar {
@@ -1027,7 +1027,7 @@ button {
     background: rgb(35, 35, 35);
     position: absolute;
     z-index: 501;
-    height: 100vh;
+    height: 100dvh;
     justify-items: center;
     transform: translateX(-100%);
     transition: 0.3s;
