@@ -182,7 +182,7 @@ body {
     height: 5%;
   }
 }
-.content__wrapper {
+content__wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
