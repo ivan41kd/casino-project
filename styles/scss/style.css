@@ -180,6 +180,36 @@ body {
     height: 5%;
   }
 }
+content__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.content__wrapper.main-content::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(40.73% 75.46% at 50% 47.59%, #000000 3.53%, rgba(0, 0, 0, 0) 72.69%);
+  background-size: 100%;
+  background-position: center;
+}
+
+@media (min-width: 1440px) {
+  .content {
+    position: relative;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  body:after {
+    height: 15.3571428571rem;
+  }
+  .content__wrapper.main-content::before {
+    background: radial-gradient(83.24% 59.63% at 50% 47.59%, #000000 3.53%, rgba(0, 0, 0, 0) 72.69%);
+  }
+}
 /* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
