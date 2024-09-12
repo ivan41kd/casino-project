@@ -1866,8 +1866,8 @@ button {
     background: rgba(255, 255, 255, 0.05);
   }
   .header__burger-wrapper.logged .header__burger-right {
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 100%;
+    row-gap: 1.0714285714rem;
   }
   .header__burger-right {
     padding-left: 0;

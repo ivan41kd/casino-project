@@ -1565,9 +1565,8 @@
   }
 
   &__burger-wrapper.logged &__burger-right {
-   height: -webkit-fit-content;
-   height: -moz-fit-content;
-   height: fit-content;
+   height: 100%;
+   row-gap: rem(15px);
   }
   &__burger-right {
    padding-left: 0;
