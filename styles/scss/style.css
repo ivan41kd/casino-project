@@ -65,7 +65,6 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   scroll-behavior: smooth;
-  font-variant-ligatures: none;
 }
 @keyframes fadeInAnimation {
   0% {
