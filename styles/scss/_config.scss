@@ -298,6 +298,13 @@ button {
  -ms-flex-pack: center;
  justify-content: center;
 }
+.modal-change.active {
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ opacity: 1;
+ visibility: visible;
+}
 .modal-account.active {
  -webkit-transition: 0.3s ease-in-out;
  -o-transition: 0.3s ease-in-out;

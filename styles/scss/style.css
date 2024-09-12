@@ -291,6 +291,12 @@ button {
   justify-content: center;
 }
 
+.modal-change.active {
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
 .modal-account.active {
   transition: 0.3s ease-in-out;
   transform: none;
