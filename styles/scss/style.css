@@ -13480,12 +13480,18 @@ button {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   .rules-certification__document:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
     grid-area: 2/1;
   }
   .rules-certification__document:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
     grid-area: 2/2;
   }
   .rules-certification__document:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
     grid-area: 2/3;
   }
 }
@@ -13504,8 +13510,12 @@ button {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
     grid-area: 2/1;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
   }
   .rules-certification__link-icon {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
     grid-area: 2/2;
   }
   .rules-certification__subtitle {
