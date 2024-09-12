@@ -3984,8 +3984,8 @@
  }
  @media (max-width: 1024px) {
   .main__form-input-wrapper {
-   display: flex;
-   flex-direction: column;
+   display: grid;
+   grid-template-columns: none;
   }
  }
 }
