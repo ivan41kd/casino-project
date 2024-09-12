@@ -23,17 +23,17 @@
  }
 }
 @mixin iflaptop {
- @media (min-width: $laptop-w) {
+ @media screen and (min-width: $laptop-w) {
   @content;
  }
 }
 @mixin iftablet {
- @media (min-width: $tablet-w) {
+ @media screen and (min-width: $tablet-w) {
   @content;
  }
 }
 @mixin onlymobile {
- @media (min-width: 0px) and (max-width: calc($tablet-w - 1px)) {
+ @media screen and (min-width: 0px) and (max-width: calc($tablet-w - 1px)) {
   @content;
  }
 }

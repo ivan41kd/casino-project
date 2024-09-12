@@ -25,12 +25,12 @@ html {
     font-size: 3.8888888889vw;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   html {
     font-size: 1.8229166667vw;
   }
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   html {
     font-size: 1.3671875vw;
   }
@@ -291,7 +291,7 @@ input[type=number] {
     position: relative;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   body:after {
     height: 15.3571428571rem;
   }
@@ -404,7 +404,7 @@ button {
     padding-right: 17px;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .container.aside-container {
     padding-right: 0;
     padding-left: 0;
@@ -1721,7 +1721,7 @@ button {
     justify-content: flex-end;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .header__logo {
     width: 14.2857142857rem;
     height: 2.7857142857rem;
@@ -1874,7 +1874,7 @@ button {
     height: 100%;
   }
   .header__burger-account {
-    margin-bottom: 5.4092857143rem;
+    margin-bottom: 3.9807142857rem;
   }
   .header__menu-item-list {
     border-radius: 1.0714285714rem;
@@ -2040,7 +2040,7 @@ button {
   background: -webkit-linear-gradient(left, rgba(238, 222, 186, 0.5) 0%, rgba(196, 167, 103, 0.5) 100%);
 }
 
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .header.fixed > .weed-background {
     transform: translateY(-36px);
   }
@@ -2087,7 +2087,7 @@ button {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main__renewed {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -3854,7 +3854,7 @@ button {
   right: 0;
   top: 0;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main__success-modal-wrapper, .main__success-request-modal-wrapper, .main__success-test-modal-wrapper, .main__failed-test-modal-wrapper {
     position: absolute;
     width: 100%;
@@ -3890,7 +3890,7 @@ button {
   -moz-column-gap: 0.9064285714rem;
   column-gap: 0.9064285714rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main__success-test-modal-wrapper.active, .main__failed-test-modal-wrapper.active {
     flex-direction: column;
     row-gap: 1.8571428571rem;
@@ -5335,7 +5335,7 @@ button {
     right: 3%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main {
     padding-right: 0;
     padding-left: 0;
@@ -5722,7 +5722,7 @@ button {
   flex-direction: column;
   margin-bottom: 0.8571428571rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main.login-main .main__form-input-wrapper {
     width: 100%;
   }
@@ -5748,7 +5748,7 @@ button {
     padding-bottom: 0;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main.main-account {
     padding-left: 0;
     padding-right: 0;
@@ -5761,7 +5761,7 @@ button {
 .main.chargeback .introduction.page {
   padding-top: 0rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .main.chargeback .introduction.page {
     padding-top: 5rem;
   }
@@ -6254,7 +6254,7 @@ button {
     margin-bottom: 1rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .aside {
     animation: animationLeft 1s;
   }
@@ -6322,7 +6322,7 @@ button {
     padding-top: 1.5714285714rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .aside.mobile {
     width: 24.2857142857rem;
     height: 100%;
@@ -6344,7 +6344,7 @@ button {
 .aside.mobile.all-games {
   display: none;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .aside.mobile.all-games {
     display: flex;
     width: 24.2857142857rem;
@@ -6815,7 +6815,7 @@ button {
     grid-template-columns: repeat(3, minmax(10.7142857143rem, 1fr));
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .games {
     padding-left: 1.4285714286rem;
     padding-right: 1.4285714286rem;
@@ -7060,7 +7060,7 @@ button {
   top: -10%;
   height: 120%;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .games.all-games {
     padding-left: 1.4285714286rem;
     padding-right: 1.4285714286rem;
@@ -7177,7 +7177,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .introduction__attention {
     flex-direction: column;
     row-gap: 1rem;
@@ -7596,7 +7596,7 @@ button {
     display: flex;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .footer::after {
     top: 40%;
     content: url("../../../img/footer/weed2-510.svg");
@@ -7702,13 +7702,13 @@ button {
 .weed-background.green {
   transform: translateY(-185px);
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .weed-background.green {
     top: 7.1428571429rem;
   }
 }
 
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .weed-background.fixed {
     transform: translateY(2.1428571429rem);
   }
@@ -7888,7 +7888,7 @@ button {
     font-size: 1.1428571429rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .faq__wrapper-names {
     display: none;
   }
@@ -8034,7 +8034,7 @@ button {
     transform: translate(-14%, -15%);
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .partners-form {
     padding-top: 5.4285714286rem;
   }
@@ -8138,7 +8138,7 @@ button {
     width: 35.6428571429rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .process-chargeback__title {
     font-size: 1.4285714286rem;
     line-height: 2rem;
@@ -8195,7 +8195,7 @@ button {
   left: 0;
   z-index: -1;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .chargeback-form__form-wrapper::after {
     content: "";
     position: absolute;
@@ -8286,7 +8286,7 @@ button {
     top: -35%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .refunds-form__wrapper::after {
     width: 32.0714285714rem;
     height: 51.8571428571rem;
@@ -8957,7 +8957,7 @@ button {
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .account__level-score-wrapper {
     transform: translateY(-22px);
   }
@@ -9227,7 +9227,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(2.5714285714rem, 1fr));
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .account {
     width: 100%;
   }
@@ -9489,7 +9489,7 @@ button {
     padding-top: 13.5rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .login {
     height: 100%;
     padding: 6.8571428571rem 1.4285714286rem 0rem 1.4285714286rem;
@@ -9525,7 +9525,7 @@ button {
     bottom: -20%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .account.balance {
     width: 100%;
   }
@@ -9541,7 +9541,7 @@ button {
     padding-bottom: 6.9492857143rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .account.vip {
     height: auto;
   }
@@ -9626,7 +9626,7 @@ button {
     padding-right: 0px;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .register {
     padding-bottom: 2.73rem;
   }
@@ -9729,7 +9729,7 @@ button {
     display: none;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .chargebacks-registration__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -9927,7 +9927,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .representment__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -10236,7 +10236,7 @@ button {
     padding: 0.7142857143rem 1.4285714286rem 1.2142857143rem 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .demo-game__wrapper {
     row-gap: 2.4285714286rem;
     padding: 0 1.4285714286rem;
@@ -10393,7 +10393,7 @@ button {
     display: none;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .chargebacks-documents__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -10440,7 +10440,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .refunds-request__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -10483,7 +10483,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .refunds-options__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -10781,7 +10781,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .preventing-gambling__answer-name-wrapper {
     align-items: normal;
   }
@@ -10892,7 +10892,7 @@ button {
   flex-direction: column;
   row-gap: 6.4285714286rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .customer-support__wrapper .main__form-input-wrapper {
     row-gap: 1.9285714286rem !important;
   }
@@ -10927,7 +10927,7 @@ button {
   left: -10%;
   z-index: -1;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .customer-support__form-wrapper::after {
     width: 32.0714285714rem;
     height: 40.7142857143rem;
@@ -10954,7 +10954,7 @@ button {
   line-height: 2.0571428571rem;
   font-weight: 300;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .customer-support__contact {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -10970,7 +10970,7 @@ button {
   height: 1.5714285714rem;
   margin-right: 1rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .customer-support__contact-icon {
     min-width: 1.5714285714rem;
     min-height: 1.5714285714rem;
@@ -11026,7 +11026,7 @@ button {
     grid-template-columns: 23.5rem 23.5rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .customer-support {
     padding-bottom: 6.4285714286rem;
   }
@@ -11196,7 +11196,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .contacts__text-wrapper {
     row-gap: 1.0714285714rem;
   }
@@ -11262,7 +11262,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .end-user__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11317,7 +11317,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-user-account__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11390,7 +11390,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-grounds__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11478,7 +11478,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-prevention__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11553,7 +11553,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-deposits__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11626,7 +11626,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-rights__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11695,7 +11695,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-guarantees__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11757,7 +11757,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-security__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11830,7 +11830,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-confidentiality__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11899,7 +11899,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-customer__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -11958,7 +11958,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-responsible__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12031,7 +12031,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-customer-end__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12100,7 +12100,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-limitations__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12162,7 +12162,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-bonus-rules__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12226,7 +12226,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .terms-complaints {
     padding-bottom: 1.0714285714rem;
   }
@@ -12292,7 +12292,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-general__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12355,7 +12355,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-personal__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12415,7 +12415,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-data__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12497,7 +12497,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-categories__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12651,7 +12651,7 @@ button {
     grid-template-columns: repeat(3, 17.3335714286rem);
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-legal__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12756,7 +12756,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .privacy-information__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -12831,7 +12831,7 @@ button {
     line-height: 2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .cookie-data {
     padding-bottom: 0;
   }
@@ -12948,7 +12948,7 @@ button {
     grid-template-columns: 9rem 9.2857142857rem 15.7142857143rem 9rem 9rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .cookie-neccessary {
     display: none;
   }
@@ -13057,7 +13057,7 @@ button {
     grid-template-columns: 9rem 9.2857142857rem 15.7142857143rem 9rem 9rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .cookie-preferences {
     display: none;
   }
@@ -13234,7 +13234,7 @@ button {
     flex: 1 0 300%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .games-rules__games-wrapper {
     display: flex;
     flex-direction: column;
@@ -13320,7 +13320,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .general-provisions__title,
   .rules-offering__title {
     font-size: 1.1428571429rem;
@@ -13351,7 +13351,7 @@ button {
   -moz-column-gap: 0.5rem;
   column-gap: 0.5rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .rules-offering__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13494,7 +13494,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .rules-certification__title-wrapper {
     display: grid;
     grid-template-columns: fit-content(16.8571428571rem);
@@ -13538,7 +13538,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .house-rules__text {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -13580,7 +13580,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .minors-prohibited__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13627,7 +13627,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .responsible__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13669,7 +13669,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .anti-money__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13716,7 +13716,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .restricted-countries__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13763,7 +13763,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .nickname-policy__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13805,7 +13805,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .multi-hand-policy__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13852,7 +13852,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .cash-table__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13911,7 +13911,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .missed-blind__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -13957,7 +13957,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .tie-hands__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14004,7 +14004,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .play-limit__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14051,7 +14051,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .time-bank__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14109,7 +14109,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .leave-table__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14160,7 +14160,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .poker-rake__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14218,7 +14218,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .table-etiquette__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14269,7 +14269,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .tournament-policy__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14316,7 +14316,7 @@ button {
     font-size: 1.4285714286rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .tournament-elimination__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14392,7 +14392,7 @@ button {
     row-gap: 1.0714285714rem;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .minimum-requirements__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14433,7 +14433,7 @@ button {
     width: 100%;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .security-ecology__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14479,7 +14479,7 @@ button {
   list-style-type: disc;
   margin-left: 4rem;
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .general-terms__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14513,7 +14513,7 @@ button {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .prohibited-activities__title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
@@ -14599,7 +14599,7 @@ button {
     align-self: center;
   }
 }
-@media (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
   .casino-jack__block-title {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
