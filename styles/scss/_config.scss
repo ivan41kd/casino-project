@@ -120,8 +120,7 @@ body {
 }
 .scroll-disabled {
  position: relative;
- overflow: auto;
- overflow-y: hidden;
+ overflow: hidden;
  touch-action: none;
 }
 .loader {
