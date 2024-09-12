@@ -100,6 +100,11 @@ body::after {
   background: rgb(20, 20, 20);
 }
 
+.scroll-disabled {
+  position: relative;
+  overflow-x: hidden;
+}
+
 .loader {
   background: rgb(16, 16, 16);
   z-index: 50;

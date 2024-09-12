@@ -118,6 +118,10 @@ body {
 .body-page {
  background: rgba(20, 20, 20, 1);
 }
+.scroll-disabled {
+ position: relative;
+ overflow-x: hidden;
+}
 .loader {
  background: rgba(16, 16, 16, 1);
  z-index: 50;
