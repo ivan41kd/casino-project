@@ -276,6 +276,11 @@ button {
   }
 }
 
+.modal-account.active {
+  transition: 0.3s ease-in-out;
+  transform: none;
+}
+
 .container {
   padding-left: 5rem;
   padding-right: 5rem;
