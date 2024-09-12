@@ -673,6 +673,8 @@
    position: relative;
   }
   &__burger-close {
+   width: rem(26px);
+   height: rem(26px);
    cursor: pointer;
    display: none;
    top: 5%;
@@ -1134,6 +1136,7 @@
    line-height: rem(18.88px);
    text-transform: uppercase;
    margin-bottom: rem(12px);
+   color: black;
    position: relative;
    cursor: pointer;
    transition: 0.3s ease-in-out;
@@ -1519,6 +1522,7 @@
    grid-auto-rows: auto;
    padding-bottom: rem(30px);
    border-bottom: rem(1px) solid rgba(196, 167, 103, 0.4);
+   border-radius: 0;
   }
   &__burger-content {
    flex: 1 1 min-content;
@@ -1571,9 +1575,6 @@
   &__burger-right {
    padding-left: 0;
    height: 100%;
-  }
-  &__burger-account {
-   margin-bottom: rem(55.73px);
   }
   &__menu-item-list {
    border-radius: rem(15px);

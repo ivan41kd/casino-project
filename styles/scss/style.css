@@ -77,14 +77,14 @@ body {
 body::before {
   position: fixed;
   content: "";
-  background: radial-gradient(68.75% 127.38% at 50% 47.59%, #000000 3.53%, rgba(0, 0, 0, 0) 72.69%), url(../../img/bg/bg-pic.png);
+  background: url("../../img/bg/account-bg.png"), radial-gradient(39.36% 72.88% at 50% 0%, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%), #232323;
   width: 100%;
   height: 100%;
-  opacity: 10%;
   top: 0;
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  z-index: -2;
 }
 body::after {
   position: fixed;
@@ -98,10 +98,6 @@ body::after {
 
 .body-page {
   background: rgb(20, 20, 20);
-}
-
-.scroll-disabled {
-  overflow: hidden;
 }
 
 .loader {
@@ -993,6 +989,8 @@ button {
     position: relative;
   }
   .header__burger-close {
+    width: 1.8571428571rem;
+    height: 1.8571428571rem;
     cursor: pointer;
     display: none;
     top: 5%;
@@ -1433,6 +1431,7 @@ button {
     line-height: 1.3485714286rem;
     text-transform: uppercase;
     margin-bottom: 0.8571428571rem;
+    color: black;
     position: relative;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -1793,6 +1792,7 @@ button {
     grid-auto-rows: auto;
     padding-bottom: 2.1428571429rem;
     border-bottom: 0.0714285714rem solid rgba(196, 167, 103, 0.4);
+    border-radius: 0;
   }
   .header__burger-content {
     flex: 1 1 min-content;
@@ -1843,9 +1843,6 @@ button {
   .header__burger-right {
     padding-left: 0;
     height: 100%;
-  }
-  .header__burger-account {
-    margin-bottom: 3.9807142857rem;
   }
   .header__menu-item-list {
     border-radius: 1.0714285714rem;
@@ -5414,7 +5411,7 @@ button {
   }
   .main__vip-card-modal-wrapper {
     position: absolute;
-    top: 10%;
+    top: auto;
     padding: 1.4285714286rem;
     overflow: auto;
   }
