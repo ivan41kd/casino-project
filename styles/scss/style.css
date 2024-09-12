@@ -5439,7 +5439,7 @@ body::-webkit-scrollbar-thumb {
   }
   .main__vip-card-modal-wrapper {
     position: absolute;
-    top: 5%;
+    top: 0%;
     padding: 1.4285714286rem;
     overflow: auto;
   }
