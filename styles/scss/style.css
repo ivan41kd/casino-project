@@ -65,6 +65,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   scroll-behavior: smooth;
+  font-variant-ligatures: none;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -182,7 +183,7 @@ body {
     height: 5%;
   }
 }
-content__wrapper {
+.content__wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
