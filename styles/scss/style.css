@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 /* Box sizing rules */
 *,
 *::before,
@@ -38,27 +32,6 @@ html {
 @media (min-width: 1441px) {
   html {
     font-size: 0.7291666667vw;
-  }
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 4px;
-}
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(212, 211, 211, 0.6);
-  border-radius: 20px;
-}
-@supports (-moz-appearance: none) {
-  html,
-  body {
-    scrollbar-color: rgba(212, 211, 211, 0.6) transparent;
-    scrollbar-width: thin;
   }
 }
 
@@ -127,71 +100,6 @@ body::after {
 .body-page {
   background: rgb(20, 20, 20);
 }
-.body-page::before {
-  background: url(../../img/bg/account-bg.png), radial-gradient(39.36% 72.88% at 50% 0%, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%), #141414;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.modal-account {
-  overflow: auto;
-  transform: translateX(-107%);
-  position: fixed;
-  background: url("../../img/bg/account-bg.png"), #232323;
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 500;
-  width: 100%;
-  height: 100vh;
-  transition: 0.3s ease-in-out;
-}
-.modal-account::-webkit-scrollbar {
-  width: 4px;
-}
-.modal-account::-webkit-scrollbar-track {
-  background: transparent;
-}
-.modal-account::-webkit-scrollbar-thumb {
-  background-color: rgba(212, 211, 211, 0.6);
-  border-radius: 20px;
-}
-@supports (-moz-appearance: none) {
-  .modal-account {
-    scrollbar-color: rgba(212, 211, 211, 0.6) transparent;
-    scrollbar-width: thin;
-  }
-}
-
-.modal-change {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: 999;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  justify-content: center;
-}
-
-.modal-change.active {
-  transition: 0.3s ease-in-out;
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-account.active {
-  transition: 0.3s ease-in-out;
-  transform: none;
-}
-
-.modal-success-wrapper {
-  position: relative;
-}
 
 .scroll-disabled {
   overflow: hidden;
@@ -213,7 +121,7 @@ body::after {
 
 .loader-img {
   width: 27.6428571429rem;
-  height: 100%;
+  height: 29.0714285714rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -234,33 +142,21 @@ body {
   position: sticky;
   top: calc(30% - 100px);
   z-index: -1;
-  width: 100%;
   bottom: 0;
 }
 
 .girl-left {
-  max-width: 22.7142857143rem;
+  width: 22.7142857143rem;
   top: calc(50% - 100px);
 }
 
 .girl-right {
-  max-width: 26.8571428571rem;
+  width: 26.8571428571rem;
   right: 0;
 }
 
 .content {
   position: relative;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 @media screen and (max-width: 1440px) {
@@ -273,17 +169,6 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-}
-
-.content__wrapper.main-content::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(40.73% 75.46% at 50% 47.59%, #000000 3.53%, rgba(0, 0, 0, 0) 72.69%);
-  background-size: 100%;
-  background-position: center;
 }
 
 @media (min-width: 1440px) {
@@ -293,10 +178,7 @@ input[type=number] {
 }
 @media screen and (min-width: 0px) and (max-width: 767px) {
   body:after {
-    height: 15.3571428571rem;
-  }
-  .content__wrapper.main-content::before {
-    background: radial-gradient(83.24% 59.63% at 50% 47.59%, #000000 3.53%, rgba(0, 0, 0, 0) 72.69%);
+    height: 5%;
   }
 }
 /* Set shorter line heights on headings and interactive elements */
@@ -363,6 +245,36 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.modal-account {
+  overflow: auto;
+  transform: translateX(-107%);
+  position: fixed;
+  background: url("../../img/bg/account-bg.png"), #232323;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 500;
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s ease-in-out;
+}
+.modal-account::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-account::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-account::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 211, 211, 0.6);
+  border-radius: 20px;
+}
+@supports (-moz-appearance: none) {
+  .modal-account {
+    scrollbar-color: rgba(212, 211, 211, 0.6) transparent;
+    scrollbar-width: thin;
+  }
 }
 
 .container {
