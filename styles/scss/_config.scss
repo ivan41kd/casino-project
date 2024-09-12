@@ -318,7 +318,7 @@ button {
  -webkit-transform: translateX(-107%);
  -ms-transform: translateX(-107%);
  transform: translateX(-107%);
- position: fixed;
+ position: absolute;
  background: url('../../img/bg/account-bg.png'), #232323;
  background-blend-mode: multiply;
  background-repeat: no-repeat;
