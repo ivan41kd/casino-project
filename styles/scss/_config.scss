@@ -347,6 +347,27 @@ button {
   scrollbar-width: thin;
  }
 }
+html,
+body {
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
+
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
+
+ @supports (-moz-appearance: none) {
+  /* стили только для Firefox */
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
+ }
+}
 .modal-change {
  display: -webkit-box;
  display: -ms-flexbox;

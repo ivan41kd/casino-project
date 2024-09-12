@@ -308,6 +308,28 @@ button {
   }
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 4px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 211, 211, 0.6);
+  border-radius: 20px;
+}
+@supports (-moz-appearance: none) {
+  html,
+  body {
+    /* стили только для Firefox */
+    scrollbar-color: rgba(212, 211, 211, 0.6) transparent;
+    scrollbar-width: thin;
+  }
+}
+
 .modal-change {
   display: flex;
   align-items: center;
