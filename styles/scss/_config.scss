@@ -122,6 +122,7 @@ body {
  position: relative;
  overflow: auto;
  overflow-y: hidden;
+ touch-action: none;
 }
 .loader {
  background: rgba(16, 16, 16, 1);
@@ -349,7 +350,6 @@ button {
 }
 html,
 body {
- touch-action: none;
  &::-webkit-scrollbar {
   width: 4px;
  }
