@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Box sizing rules */
 @import './functions';
 @import './varibles';
@@ -6,6 +13,7 @@
 *,
 *::before,
 *::after {
+ -webkit-box-sizing: border-box;
  box-sizing: border-box;
  margin: 0;
  padding: 0;
@@ -15,6 +23,7 @@
 html {
  -moz-text-size-adjust: none;
  -webkit-text-size-adjust: none;
+ -ms-text-size-adjust: none;
  text-size-adjust: none;
  @media only screen and (min-width: 0px) {
   font-size: ($base-font-size / $design-mobile-width) * 100vw;
@@ -27,6 +36,26 @@ html {
  }
  @include ifdesktop {
   font-size: ($base-font-size / $design-desktop-width) * 100vw;
+ }
+}
+html,
+body {
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
+
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
+
+ @supports (-moz-appearance: none) {
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
  }
 }
 
@@ -52,6 +81,15 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
+ @-webkit-keyframes fadeInAnimation {
+  0% {
+   opacity: 0;
+  }
+
+  100% {
+   opacity: 1;
+  }
+ }
  @keyframes fadeInAnimation {
   0% {
    opacity: 0;
@@ -62,13 +100,18 @@ body {
   }
  }
  font-weight: 500;
- min-height: 100dvh;
+ min-height: 100vh;
  line-height: 1.5;
- background: rgb(35, 35, 35);
+ -webkit-font-variant-ligatures: no-common-ligatures;
+ font-variant-ligatures: no-common-ligatures;
+ background: #232323;
  color: rgba(216, 216, 212, 1);
+ -webkit-animation-iteration-count: 1;
  animation-iteration-count: 1;
+ -webkit-animation-fill-mode: forwards;
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
+ overflow-x: hidden;
  &::before {
   position: fixed;
   content: '';
@@ -95,13 +138,19 @@ body {
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -2;
  }
  &::after {
   position: fixed;
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  height: 150vh;
+  z-index: 0;
+  background: -o-radial-gradient(
+    50% 0%,
+    39.36% 72.88%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+   )
+   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
   background: radial-gradient(
     39.36% 72.88% at 50% 0%,
     rgba(217, 217, 217, 0.2) 0%,
@@ -117,27 +166,124 @@ body {
 
 .body-page {
  background: rgba(20, 20, 20, 1);
+ &::before {
+  background: url(../../img/bg/account-bg.png),
+   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
+       217,
+       217,
+       217,
+       0
+      )
+      100%),
+   #141414;
+  background: url(../../img/bg/account-bg.png),
+   radial-gradient(
+    39.36% 72.88% at 50% 0%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+   ),
+   #141414;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+}
+.modal-account {
+ overflow: auto;
+ -webkit-transform: translateX(-107%);
+ -ms-transform: translateX(-107%);
+ transform: translateX(-107%);
+ position: fixed;
+ background: url('../../img/bg/account-bg.png'), #232323;
+ background-blend-mode: multiply;
+ background-repeat: no-repeat;
+ background-size: cover;
+ z-index: 500;
+ width: 100%;
+ height: 100vh;
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ &::-webkit-scrollbar {
+  width: 4px;
+ }
+
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+  background-color: #d4d3d399;
+  border-radius: 20px;
+ }
+
+ @supports (-moz-appearance: none) {
+  scrollbar-color: #d4d3d399 transparent;
+  scrollbar-width: thin;
+ }
+}
+.modal-change {
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-align: center;
+ -ms-flex-align: center;
+ align-items: center;
+ width: 100%;
+ height: 100vh;
+ position: fixed;
+ z-index: 999;
+ -webkit-backdrop-filter: blur(12px);
+ backdrop-filter: blur(12px);
+ visibility: hidden;
+ opacity: 0;
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ -webkit-box-pack: center;
+ -ms-flex-pack: center;
+ justify-content: center;
+}
+.modal-change.active {
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ opacity: 1;
+ visibility: visible;
+}
+
+.modal-account.active {
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
+ transition: 0.3s ease-in-out;
+ -webkit-transform: none;
+ -ms-transform: none;
+ transform: none;
+}
+.modal-success-wrapper {
+ position: relative;
 }
 .scroll-disabled {
- position: relative;
  overflow: hidden;
- touch-action: none;
 }
 .loader {
  background: rgba(16, 16, 16, 1);
  z-index: 50;
  position: fixed;
+ -webkit-transition: 0.6s;
+ -o-transition: 0.6s;
  transition: 0.6s;
  width: 100%;
  height: 100%;
 }
 .loader.hide {
  opacity: 0;
+ -webkit-transition: 0.6s;
+ -o-transition: 0.6s;
  transition: 0.6s;
 }
 .loader-img {
  width: rem(387px);
- height: rem(407px);
+ height: 100%;
  position: absolute;
  left: 0;
  right: 0;
@@ -151,26 +297,38 @@ body {
  max-width: 100vw;
  font-family: $font-main;
 }
+
 .girl-left,
 .girl-right {
  display: block;
  position: sticky;
  top: calc(30% - 100px);
  z-index: -1;
-
+ width: 100%;
  bottom: 0;
 }
 .girl-left {
- width: rem(318px);
+ max-width: rem(318px);
  top: calc(50% - 100px);
 }
 .girl-right {
- width: rem(376px);
+ max-width: rem(376px);
  right: 0;
 }
 .content {
  position: relative;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+ -moz-appearance: textfield;
+}
+
 @media screen and (max-width: 1440px) {
  .girl-left,
  .girl-right {
@@ -178,22 +336,6 @@ body {
  }
 }
 .content__wrapper {
- display: flex;
- flex-direction: column;
- width: 100%;
-}
-
-@media (min-width: 1440px) {
- .content {
-  position: relative;
- }
-}
-@include onlymobile {
- body:after {
-  height: 5%;
- }
-}
-content__wrapper {
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
@@ -235,21 +377,21 @@ content__wrapper {
  body:after {
   height: rem(215px);
  }
- .content__wrapper.main-content {
-  &::before {
-   background: -o-radial-gradient(
-    50% 47.59%,
-    83.24% 59.63%,
-    #000000 3.53%,
-    rgba(0, 0, 0, 0) 72.69%
-   );
-   background: radial-gradient(
-    83.24% 59.63% at 50% 47.59%,
-    #000000 3.53%,
-    rgba(0, 0, 0, 0) 72.69%
-   );
-  }
- }
+ //  .content__wrapper.main-content {
+ //   &::before {
+ //    background: -o-radial-gradient(
+ //     50% 47.59%,
+ //     83.24% 59.63%,
+ //     #000000 3.53%,
+ //     rgba(0, 0, 0, 0) 72.69%
+ //    );
+ //    background: radial-gradient(
+ //     83.24% 59.63% at 50% 47.59%,
+ //     #000000 3.53%,
+ //     rgba(0, 0, 0, 0) 72.69%
+ //    );
+ //   }
+ //  }
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -306,105 +448,12 @@ li {
  cursor: pointer;
 }
 ul {
+ height: -webkit-fit-content;
+ height: -moz-fit-content;
  height: fit-content;
 }
 button {
  outline: none;
  border: none;
  cursor: pointer;
-}
-.modal-account {
- overflow: auto;
- -webkit-transform: translateX(-107%);
- -ms-transform: translateX(-107%);
- transform: translateX(-107%);
- position: absolute;
- background: url('../../img/bg/account-bg.png'), #232323;
- background-blend-mode: multiply;
- background-repeat: no-repeat;
- background-size: cover;
- z-index: 500;
- width: 100%;
- height: 100dvh;
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
- &::-webkit-scrollbar {
-  width: 4px;
- }
-
- &::-webkit-scrollbar-track {
-  background: transparent;
- }
-
- &::-webkit-scrollbar-thumb {
-  background-color: #d4d3d399;
-  border-radius: 20px;
- }
-
- @supports (-moz-appearance: none) {
-  scrollbar-color: #d4d3d399 transparent;
-  scrollbar-width: thin;
- }
-}
-html,
-body {
- &::-webkit-scrollbar {
-  width: 4px;
- }
-
- &::-webkit-scrollbar-track {
-  background: transparent;
- }
-
- &::-webkit-scrollbar-thumb {
-  background-color: #d4d3d399;
-  border-radius: 20px;
- }
-
- @supports (-moz-appearance: none) {
-  /* стили только для Firefox */
-  scrollbar-color: #d4d3d399 transparent;
-  scrollbar-width: thin;
- }
-}
-.modal-change {
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- -webkit-box-align: center;
- -ms-flex-align: center;
- align-items: center;
- width: 100%;
- height: 100dvh;
- position: fixed;
- z-index: 999;
- -webkit-backdrop-filter: blur(12px);
- backdrop-filter: blur(12px);
- visibility: hidden;
- opacity: 0;
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
- -webkit-box-pack: center;
- -ms-flex-pack: center;
- justify-content: center;
-}
-.modal-change.active {
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
- opacity: 1;
- visibility: visible;
-}
-.modal-account.active {
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
- -webkit-transform: none;
- -ms-transform: none;
- transform: none;
-}
-.modal-success-wrapper {
- position: relative;
 }
