@@ -451,7 +451,7 @@
   visibility: hidden;
   transition: 0.5s;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: auto;
  }
  &__vip-card-modal.newbie > &__vip-card-modal-wrapper {
@@ -1921,7 +1921,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   z-index: 999;
   -webkit-backdrop-filter: blur(12px);
@@ -2019,7 +2019,7 @@
   padding: rem(44px) rem(36px);
   border-radius: rem(10px);
   height: auto;
-  max-height: 100vh;
+  max-height: 100dvh;
   overflow-y: auto;
   width: rem(1178px);
   overflow: auto;
@@ -2166,7 +2166,7 @@
   visibility: visible;
   opacity: 1;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   z-index: 999;
   transition: 0.5s;
