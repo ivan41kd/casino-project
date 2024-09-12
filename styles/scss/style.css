@@ -308,6 +308,10 @@ button {
   }
 }
 
+html,
+body {
+  touch-action: none;
+}
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 4px;

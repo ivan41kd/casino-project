@@ -349,6 +349,7 @@ button {
 }
 html,
 body {
+ touch-action: none;
  &::-webkit-scrollbar {
   width: 4px;
  }
