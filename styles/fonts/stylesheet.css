@@ -222,6 +222,13 @@
  font-style: normal;
 }
 @font-face {
+ font-family: 'Forum';
+ src: url('Forum.otf');
+ src: local('Forum'), local('Forum'), url('Forum.ttf') format('truetype');
+ font-weight: 300;
+ font-style: normal;
+}
+@font-face {
  font-family: 'proxima_nova_rgregular';
  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix')

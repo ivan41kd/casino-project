@@ -714,12 +714,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .header__item:hover .header__item-name {
-  animation: fadeInAnimation ease 5s;
+  animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 .header__item:hover .header__item-list-wrapper {
-  animation: fadeInAnimation ease 5s;
+  animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -839,11 +839,13 @@ body::-webkit-scrollbar-thumb {
   margin-right: 0px;
   color: rgb(196, 167, 103);
   padding: 1.3135714286rem 2.0021428571rem 1.3135714286rem 2.0021428571rem;
+  text-shadow: 0px 0px 8px rgba(196, 167, 103, 0.7);
 }
 .header__logout:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
   box-shadow: 0px 0px 22px 0px rgb(196, 167, 103);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .header__logout::before {
   content: "";
@@ -861,6 +863,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.3s;
   color: rgb(196, 167, 103);
   box-shadow: 0px 0px 17.8px 0px rgb(196, 167, 103);
+  text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
 }
 .header__login, .header__signup, .header__logout {
   width: -moz-max-content;
@@ -1415,6 +1418,7 @@ body::-webkit-scrollbar-thumb {
   .header__burger-account-profile:hover {
     box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
     transition: 0.3s ease-in-out;
+    text-shadow: 0px 0px 12px rgb(255, 221, 147);
   }
   .header__burger-account-profile:active {
     transition: 0.3s ease-in-out;
@@ -3658,11 +3662,11 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   width: 36.3571428571rem;
   border-radius: 5.7142857143rem;
+  padding: 1.0714285714rem 2.2857142857rem;
   border: 2px solid transparent;
-  height: 3.7857142857rem;
-  background: url("../../../img/bg/button-bg.png") no-repeat;
+  background: url("../../../img/bg/button-bg.png") no-repeat center;
+  background-size: 100% 500%;
   background-clip: padding-box;
-  background-size: cover;
   transition: 0.5s;
   margin-bottom: 1.3571428571rem;
 }
@@ -3690,10 +3694,10 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   content: "";
   background: rgba(0, 0, 0, 0.2);
-  top: -0.1428571429rem;
-  bottom: -0.1428571429rem;
-  left: -0.1428571429rem;
-  right: -0.1428571429rem;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
   transition: 0.5s;
   z-index: 1;
   border-radius: 5.7142857143rem;
@@ -3718,6 +3722,7 @@ body::-webkit-scrollbar-thumb {
 .main__replenish-button:hover {
   box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
   transition: 0.3s ease-in-out;
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__replenish-button:active {
   transition: 0.3s ease-in-out;
@@ -4036,7 +4041,7 @@ body::-webkit-scrollbar-thumb {
   height: 1.7142857143rem;
   position: absolute;
   right: 5%;
-  top: 10%;
+  top: 5%;
   transition: 0.5s;
   cursor: pointer;
   z-index: 5;
@@ -4632,20 +4637,17 @@ body::-webkit-scrollbar-thumb {
   background-size: 100%;
   justify-content: center;
 }
-.main__banner-button::after {
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  background: linear-gradient(rgb(238, 222, 186), rgb(196, 167, 103));
+.main__banner-button::before {
   content: "";
-  z-index: -1;
-  border-radius: 70.06px;
-}
-.main__banner-button:hover {
-  transition: 0.3s;
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 80px;
+  z-index: 0;
+  transition: background 0.3s ease;
 }
 .main__banner-button::after {
   position: absolute;
@@ -4660,18 +4662,11 @@ body::-webkit-scrollbar-thumb {
 }
 .main__banner-button:hover {
   color: black;
-}
-.main__banner-button:active {
   transition: 0.3s;
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103);
 }
 .main__banner-button:active::before {
-  position: absolute;
-  content: "";
   background: rgba(0, 0, 0, 0.2);
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
 }
 .main__banner-img {
   z-index: 3;
@@ -5966,9 +5961,11 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
   transition: 0.3s ease-in-out;
   color: rgb(255, 221, 147);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__replenish:active {
   transition: 0.3s ease-in-out;
+  text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
 }
 .aside__replenish:active::before {
   transition: 0.3s ease-in-out;
@@ -6008,6 +6005,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   font-weight: 400;
   padding: 0.7857142857rem 0.7857142857rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.aside__account-list-item:hover {
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.6);
 }
 .aside__account-list-item.active {
   background: rgba(0, 0, 0, 0.6);
@@ -6149,6 +6152,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.6s;
   color: rgb(255, 221, 147);
   box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__button::before {
   content: "";
@@ -6165,6 +6169,7 @@ body::-webkit-scrollbar-thumb {
 .aside__button:active {
   color: rgb(196, 167, 103);
   box-shadow: 0px 0px 17.8px 0px rgb(196, 167, 103);
+  text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
 }
 .aside__item {
   -moz-column-gap: 12px;
@@ -6567,9 +6572,10 @@ body::-webkit-scrollbar-thumb {
   mask-composite: exclude;
 }
 .games__game-button:hover {
-  transition: 0.6s;
   color: rgb(238, 222, 186);
   box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+  transition: 0.3s ease-in-out;
+  text-shadow: 0px 0px 50px rgb(255, 221, 147);
 }
 .games__game-img {
   width: 17.3571428571rem;
@@ -7649,7 +7655,7 @@ body::-webkit-scrollbar-thumb {
   align-items: flex-end;
   width: 100%;
   right: 0;
-  top: 110px;
+  top: 10rem;
   height: 0;
   z-index: -1;
   transform: translateY(-10rem);

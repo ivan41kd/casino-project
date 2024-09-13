@@ -205,9 +205,11 @@
    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
    transition: 0.3s ease-in-out;
    color: rgba(255, 221, 147, 1);
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &:active {
    transition: 0.3s ease-in-out;
+   text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
    &::before {
     transition: 0.3s ease-in-out;
     position: absolute;
@@ -254,6 +256,12 @@
   display: flex;
   font-weight: 400;
   padding: rem(11px) rem(11px);
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+   transition: 0.3s;
+   color: rgba(255, 255, 255, 0.6);
+  }
  }
  &__account-list-item.active {
   background: rgba(0, 0, 0, 0.6);
@@ -392,6 +400,7 @@
    transition: 0.6s;
    color: rgba(255, 221, 147, 1);
    box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &::before {
    content: '';
@@ -414,6 +423,7 @@
   &:active {
    color: rgba(196, 167, 103, 1);
    box-shadow: 0px 0px 17.8px 0px rgba(196, 167, 103, 1);
+   text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
   }
  }
 

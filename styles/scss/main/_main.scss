@@ -1794,12 +1794,12 @@
   text-transform: uppercase;
   width: rem(509px);
   border-radius: rem(80px);
+  padding: rem(15px) rem(32px);
   border: 2px solid transparent;
 
-  height: rem(53px);
-  background: url('../../../img/bg/button-bg.png') no-repeat;
+  background: url('../../../img/bg/button-bg.png') no-repeat center;
+  background-size: 100% 500%;
   background-clip: padding-box;
-  background-size: cover;
   transition: 0.5s;
   margin-bottom: rem(19px);
 
@@ -1819,21 +1819,24 @@
    border-radius: 70.06px;
    transition: 0.5s;
   }
+
   &:hover {
    color: black;
    transition: 0.5s;
    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
   }
+
   &:active {
    transition: 0.3s;
+
    &::before {
     position: absolute;
     content: '';
     background: rgba(0, 0, 0, 0.2);
-    top: rem(-2px);
-    bottom: rem(-2px);
-    left: rem(-2px);
-    right: rem(-2px);
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
     transition: 0.5s;
     z-index: 1;
     border-radius: rem(80px);
@@ -1859,6 +1862,7 @@
   &:hover {
    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
    transition: 0.3s ease-in-out;
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &:active {
    transition: 0.3s ease-in-out;
@@ -2212,7 +2216,7 @@
   height: rem(24px);
   position: absolute;
   right: 5%;
-  top: 10%;
+  top: 5%;
   transition: 0.5s;
   cursor: pointer;
   z-index: 5;
@@ -2875,21 +2879,21 @@
   align-items: center;
   background-size: 100%;
   justify-content: center;
-  &::after {
-   position: absolute;
-   top: -2px;
-   bottom: -2px;
-   left: -2px;
-   right: -2px;
-   background: linear-gradient(rgba(238, 222, 186, 1), rgba(196, 167, 103, 1));
+
+  &::before {
    content: '';
-   z-index: -1;
-   border-radius: 70.06px;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: rgba(0, 0, 0, 0);
+   border-radius: 80px;
+   z-index: 0;
+   transition: background 0.3s ease;
   }
-  &:hover {
-   transition: 0.3s;
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-  }
+
+  // Задний фон (градиент) через ::after
   &::after {
    position: absolute;
    top: -2px;
@@ -2905,22 +2909,21 @@
    z-index: -1;
    border-radius: 70.06px;
   }
+
   &:hover {
    color: black;
-  }
-  &:active {
    transition: 0.3s;
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1);
+  }
+
+  // Состояние при нажатии
+  &:active {
    &::before {
-    position: absolute;
-    content: '';
     background: rgba(0, 0, 0, 0.2);
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
    }
   }
  }
+
  &__banner-img {
   z-index: 3;
   top: rem(30px);

@@ -57,9 +57,11 @@ passwordInputWrappers.forEach((wrapper) => {
  };
 
  const showRequirements = (input) => {
-  input.value != ''
-   ? requireWrapper.classList.add('visible')
-   : requireWrapper.classList.remove('visible');
+  if (input.value !== '' && document.activeElement === input) {
+   requireWrapper.classList.add('visible');
+  } else {
+   requireWrapper.classList.remove('visible');
+  }
  };
 
  passwordIcons.forEach((icon) => {
@@ -78,4 +80,6 @@ passwordInputWrappers.forEach((wrapper) => {
   checkNumbers(passwordInput.value, numbersText);
   verifyPassword(lengthText, lettersText, numbersText, passwordInput);
  });
+ passwordInput.addEventListener('focus', () => showRequirements(passwordInput));
+ passwordInput.addEventListener('blur', () => showRequirements(passwordInput));
 });
