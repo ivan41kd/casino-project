@@ -4531,7 +4531,9 @@
  &__text:nth-child(2),
  &__text:nth-child(3),
  &__text:nth-child(4) {
-  width: rem(638px);
+  @include ifdesktop {
+   width: rem(638px);
+  }
  }
  & .main__form-wrapper {
   margin-bottom: rem(85px);

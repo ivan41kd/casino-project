@@ -13102,8 +13102,10 @@ body::-webkit-scrollbar-thumb {
 .complaints-handling__text:nth-child(1) {
   margin-bottom: 3.3571428571rem;
 }
-.complaints-handling__text:nth-child(1), .complaints-handling__text:nth-child(2), .complaints-handling__text:nth-child(3), .complaints-handling__text:nth-child(4) {
-  width: 45.5714285714rem;
+@media (min-width: 1441px) {
+  .complaints-handling__text:nth-child(1), .complaints-handling__text:nth-child(2), .complaints-handling__text:nth-child(3), .complaints-handling__text:nth-child(4) {
+    width: 45.5714285714rem;
+  }
 }
 .complaints-handling .main__form-wrapper {
   margin-bottom: 6.0714285714rem;
