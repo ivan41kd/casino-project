@@ -13505,6 +13505,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.1428571429rem;
     line-height: 1.6rem;
     grid-area: 2/1;
+    text-wrap: nowrap;
   }
   .rules-certification__link-icon {
     grid-area: 2/2;
@@ -14447,8 +14448,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .general-terms {
-  width: 63.4285714286rem;
   padding-bottom: 3.5714285714rem;
+}
+@media (min-width: 1441px) {
+  .general-terms {
+    width: 63.4285714286rem;
+  }
 }
 .general-terms__title {
   font-family: "Forum", sans-serif;
@@ -14496,8 +14501,10 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.prohibited-activities {
-  width: 63.4285714286rem;
+@media (min-width: 1441px) {
+  .prohibited-activities {
+    width: 63.4285714286rem;
+  }
 }
 .prohibited-activities__title {
   font-family: "Forum", sans-serif;

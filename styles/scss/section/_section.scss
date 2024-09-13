@@ -4919,6 +4919,7 @@
    font-size: rem(16px);
    line-height: rem(22.4px);
    grid-area: 2/1;
+   text-wrap: nowrap;
   }
   &__link-icon {
    grid-area: 2/2;
@@ -5771,7 +5772,9 @@
  }
 }
 .general-terms {
- width: rem(888px);
+ @include ifdesktop {
+  width: rem(888px);
+ }
  padding-bottom: rem(50px);
  &__title {
   @include banner-font(rem(25px));
@@ -5818,7 +5821,9 @@
  }
 }
 .prohibited-activities {
- width: rem(888px);
+ @include ifdesktop {
+  width: rem(888px);
+ }
  &__title {
   @include banner-font(rem(25px));
   line-height: rem(35px);
