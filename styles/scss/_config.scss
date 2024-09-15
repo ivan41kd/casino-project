@@ -6,6 +6,7 @@
 *,
 *::before,
 *::after {
+ -webkit-box-sizing: border-box;
  box-sizing: border-box;
  margin: 0;
  padding: 0;
@@ -81,11 +82,21 @@ body {
  -webkit-animation-fill-mode: forwards;
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
+ -webkit-font-variant-ligatures: none;
  font-variant-ligatures: none;
  overflow-x: hidden;
  &::before {
   position: fixed;
   content: '';
+  background: url('../../img/bg/account-bg.png'),
+   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
+       217,
+       217,
+       217,
+       0
+      )
+      100%),
+   #232323;
   background: url('../../img/bg/account-bg.png'),
    radial-gradient(
     39.36% 72.88% at 50% 0%,
@@ -107,6 +118,13 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+  background: -o-radial-gradient(
+    50% 0%,
+    39.36% 72.88%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+   )
+   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
   background: radial-gradient(
     39.36% 72.88% at 50% 0%,
     rgba(217, 217, 217, 0.2) 0%,
@@ -125,6 +143,15 @@ body {
  &::before {
   position: fixed;
   content: '';
+  background: url('../../img/bg/account-bg.png'),
+   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
+       217,
+       217,
+       217,
+       0
+      )
+      100%),
+   #141414;
   background: url('../../img/bg/account-bg.png'),
    radial-gradient(
     39.36% 72.88% at 50% 0%,
@@ -145,18 +172,23 @@ body {
 .scroll-disabled {
  position: relative;
  overflow: hidden;
+ -ms-touch-action: none;
  touch-action: none;
 }
 .loader {
  background: rgba(16, 16, 16, 1);
  z-index: 50;
  position: fixed;
+ -webkit-transition: 0.6s;
+ -o-transition: 0.6s;
  transition: 0.6s;
  width: 100%;
  height: 100%;
 }
 .loader.hide {
  opacity: 0;
+ -webkit-transition: 0.6s;
+ -o-transition: 0.6s;
  transition: 0.6s;
 }
 .loader-img {
@@ -178,7 +210,6 @@ body {
 .girl-left,
 .girl-right {
  display: block;
- position: -webkit-sticky;
  position: sticky;
  top: calc(30% - 100px);
  z-index: -1;
@@ -203,7 +234,12 @@ body {
  }
 }
 .content__wrapper {
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -ms-flex-direction: column;
  flex-direction: column;
  width: 100%;
 }
@@ -225,6 +261,12 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  background: -o-radial-gradient(
+   50% 47.59%,
+   40.73% 75.46%,
+   #000000 3.53%,
+   rgba(0, 0, 0, 0) 72.69%
+  );
   background: radial-gradient(
    40.73% 75.46% at 50% 47.59%,
    #000000 3.53%,
@@ -246,6 +288,12 @@ body {
  }
  .content__wrapper.main-content {
   &::before {
+   background: -o-radial-gradient(
+    50% 47.59%,
+    83.24% 59.63%,
+    #000000 3.53%,
+    rgba(0, 0, 0, 0) 72.69%
+   );
    background: radial-gradient(
     83.24% 59.63% at 50% 47.59%,
     #000000 3.53%,
@@ -320,6 +368,8 @@ button {
 }
 .modal-account {
  display: none;
+ -webkit-transform: translateX(100vw);
+ -ms-transform: translateX(100vw);
  transform: translateX(100vw);
  overflow-y: auto;
  position: fixed;
@@ -332,7 +382,11 @@ button {
  z-index: 500;
  width: 100%;
  height: 101dvh;
+ -webkit-transition: display opacity ease-in-out;
+ -o-transition: display opacity ease-in-out;
  transition: display opacity ease-in-out;
+ -webkit-transition-duration: 0.5s;
+ -o-transition-duration: 0.5s;
  transition-duration: 0.5s;
  transition-behavior: allow-discrete;
  &::-webkit-scrollbar {
@@ -375,7 +429,11 @@ body {
  }
 }
 .modal-change {
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
+ -webkit-box-align: center;
+ -ms-flex-align: center;
  align-items: center;
  width: 100%;
  height: 100dvh;
@@ -385,10 +443,16 @@ body {
  backdrop-filter: blur(12px);
  visibility: hidden;
  opacity: 0;
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
  transition: 0.3s ease-in-out;
+ -webkit-box-pack: center;
+ -ms-flex-pack: center;
  justify-content: center;
 }
 .modal-change.active {
+ -webkit-transition: 0.3s ease-in-out;
+ -o-transition: 0.3s ease-in-out;
  transition: 0.3s ease-in-out;
  opacity: 1;
  visibility: visible;
@@ -396,10 +460,14 @@ body {
 .modal-account.active {
  visibility: visible;
  width: 100%;
+ -webkit-transform: none;
+ -ms-transform: none;
  transform: none;
  display: block;
 
  @starting-style {
+  -webkit-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
   transform: translateX(100vw);
   visibility: hidden;
  }
