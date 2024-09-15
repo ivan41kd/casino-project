@@ -202,10 +202,14 @@
   width: rem(137px);
   align-self: center;
   &:hover {
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-   transition: 0.3s ease-in-out;
    color: rgba(255, 221, 147, 1);
-   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
+   transition: 0.3s;
+
+   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1),
+    0px 0px 18px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+
+   text-shadow: 0px 0px 18px rgba(255, 221, 147, 1);
   }
   &:active {
    transition: 0.3s ease-in-out;
@@ -399,7 +403,9 @@
   &:hover {
    transition: 0.6s;
    color: rgba(255, 221, 147, 1);
-   box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
+    0px 0px 22px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &::before {

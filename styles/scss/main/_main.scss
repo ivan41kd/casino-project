@@ -52,7 +52,8 @@
  &__wrapper.rules,
  &__wrapper.house-rules,
  &__wrapper.security,
- &__wrapper.casino-wrapper {
+ &__wrapper.casino-wrapper,
+ &__wrapper.chargeback {
   justify-content: center;
  }
  &__wrapper.responsible-gaming-wrapper {
@@ -1138,8 +1139,14 @@
   color: rgba(196, 167, 103, 1);
   align-self: start;
   &:hover {
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-   transition: 0.3s ease-in-out;
+   color: rgba(255, 221, 147, 1);
+   transition: 0.3s;
+
+   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1),
+    0px 0px 18px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &:active {
    transition: 0.3s ease-in-out;
@@ -1860,8 +1867,13 @@
   color: rgba(196, 167, 103, 1);
   align-self: start;
   &:hover {
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-   transition: 0.3s ease-in-out;
+   color: rgba(255, 221, 147, 1);
+   transition: 0.3s;
+
+   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1),
+    0px 0px 18px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &:active {
@@ -1942,6 +1954,7 @@
  }
  &__sensibly-modal-close-icon {
   position: absolute;
+  top: rem(25px);
   right: 5%;
   cursor: pointer;
   width: rem(24px);
@@ -2623,7 +2636,9 @@
   &:hover {
    color: rgba(255, 221, 147, 1);
    transition: 0.3s;
-   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1);
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
+    0px 0px 22px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   }
   &::before {
    content: '';
@@ -4042,6 +4057,14 @@
 
 .main.chargeback {
  padding-top: rem(70.81px);
+ & .introduction.page {
+  padding-top: rem(0px);
+  @include onlymobile {
+   padding-top: rem(70px);
+  }
+ }
+}
+.main.casino-jack-main {
  & .introduction.page {
   padding-top: rem(0px);
   @include onlymobile {

@@ -70,6 +70,7 @@ body {
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
  font-variant-ligatures: none;
+ overflow-x: hidden;
  &::before {
   position: fixed;
   content: '';
@@ -118,6 +119,34 @@ body {
 
 .body-page {
  background: rgba(20, 20, 20, 1);
+ &::before {
+  position: fixed;
+  content: '';
+  background: url('../../img/bg/account-bg.png'),
+   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
+       217,
+       217,
+       217,
+       0
+      )
+      100%),
+   #141414;
+  background: url('../../img/bg/account-bg.png'),
+   radial-gradient(
+    39.36% 72.88% at 50% 0%,
+    rgba(217, 217, 217, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+   ),
+   #141414;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+ }
 }
 .scroll-disabled {
  position: relative;
@@ -194,7 +223,7 @@ body {
   height: 5%;
  }
 }
-content__wrapper {
+.content__wrapper {
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
@@ -315,21 +344,22 @@ button {
  cursor: pointer;
 }
 .modal-account {
- overflow: auto;
- -webkit-transform: translateX(-107%);
- -ms-transform: translateX(-107%);
- transform: translateX(-107%);
- position: absolute;
+ display: none;
+ transform: translateX(100vw);
+ overflow-y: auto;
+ position: fixed;
+ top: 0;
+ visibility: hidden;
  background: url('../../img/bg/account-bg.png'), #232323;
  background-blend-mode: multiply;
  background-repeat: no-repeat;
  background-size: cover;
  z-index: 500;
  width: 100%;
- height: 100dvh;
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
+ height: 101dvh;
+ transition: display opacity ease-in-out;
+ transition-duration: 0.5s;
+ transition-behavior: allow-discrete;
  &::-webkit-scrollbar {
   width: 4px;
  }
@@ -399,12 +429,17 @@ body {
  visibility: visible;
 }
 .modal-account.active {
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
- transition: 0.3s ease-in-out;
+ visibility: visible;
+ width: 100%;
  -webkit-transform: none;
  -ms-transform: none;
  transform: none;
+ display: block;
+
+ @starting-style {
+  transform: translateX(100vw);
+  visibility: hidden;
+ }
 }
 .modal-success-wrapper {
  position: relative;

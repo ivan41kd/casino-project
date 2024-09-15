@@ -66,6 +66,7 @@ body {
   animation-fill-mode: forwards;
   scroll-behavior: smooth;
   font-variant-ligatures: none;
+  overflow-x: hidden;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -99,6 +100,18 @@ body::after {
 
 .body-page {
   background: rgb(20, 20, 20);
+}
+.body-page::before {
+  position: fixed;
+  content: "";
+  background: url("../../img/bg/account-bg.png"), radial-gradient(39.36% 72.88% at 50% 0%, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%), #141414;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
 }
 
 .scroll-disabled {
@@ -183,7 +196,7 @@ body {
     height: 5%;
   }
 }
-content__wrapper {
+.content__wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -280,17 +293,22 @@ button {
 }
 
 .modal-account {
-  overflow: auto;
-  transform: translateX(-107%);
-  position: absolute;
+  display: none;
+  transform: translateX(100vw);
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
   background: url("../../img/bg/account-bg.png"), #232323;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 500;
   width: 100%;
-  height: 100dvh;
-  transition: 0.3s ease-in-out;
+  height: 101dvh;
+  transition: display opacity ease-in-out;
+  transition-duration: 0.5s;
+  transition-behavior: allow-discrete;
 }
 .modal-account::-webkit-scrollbar {
   width: 4px;
@@ -353,8 +371,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .modal-account.active {
-  transition: 0.3s ease-in-out;
+  visibility: visible;
+  width: 100%;
   transform: none;
+  display: block;
+}
+@starting-style {
+  .modal-account.active {
+    transform: translateX(100vw);
+    visibility: hidden;
+  }
 }
 
 .modal-success-wrapper {
@@ -839,13 +865,6 @@ body::-webkit-scrollbar-thumb {
   margin-right: 0px;
   color: rgb(196, 167, 103);
   padding: 1.3135714286rem 2.0021428571rem 1.3135714286rem 2.0021428571rem;
-  text-shadow: 0px 0px 8px rgba(196, 167, 103, 0.7);
-}
-.header__logout:hover {
-  color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103);
-  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .header__logout::before {
   content: "";
@@ -858,12 +877,6 @@ body::-webkit-scrollbar-thumb {
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-}
-.header__logout:active {
-  transition: 0.3s;
-  color: rgb(196, 167, 103);
-  box-shadow: 0px 0px 17.8px 0px rgb(196, 167, 103);
-  text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
 }
 .header__login, .header__signup, .header__logout {
   width: -moz-max-content;
@@ -881,8 +894,16 @@ body::-webkit-scrollbar-thumb {
   height: 3.2857142857rem;
 }
 .header__login:hover, .header__signup:hover, .header__logout:hover {
-  transition: 0.5s;
-  box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+  color: rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 22px rgb(255, 221, 147);
+}
+.header__login:active, .header__signup:active, .header__logout:active {
+  transition: 0.3s;
+  color: rgb(196, 167, 103);
+  box-shadow: 0px 0px 17.8px 0px rgb(196, 167, 103), inset 0px 0px 15px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 10px rgba(196, 167, 103, 0.7);
 }
 .header__signup {
   position: relative;
@@ -1053,7 +1074,7 @@ body::-webkit-scrollbar-thumb {
     background: rgb(35, 35, 35);
     position: absolute;
     z-index: 501;
-    height: 100dvh;
+    height: 101dvh;
     justify-items: center;
     transform: translateX(-100%);
     transition: 0.3s;
@@ -2076,7 +2097,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
   align-items: flex-start;
 }
-.main__wrapper.refunds, .main__wrapper.customer, .main__wrapper.contacts-wrapper, .main__wrapper.terms-wrapper, .main__wrapper.privacy, .main__wrapper.cookie, .main__wrapper.complaints, .main__wrapper.games-rules, .main__wrapper.sportsbook-wrapper, .main__wrapper.rules, .main__wrapper.house-rules, .main__wrapper.security, .main__wrapper.casino-wrapper {
+.main__wrapper.refunds, .main__wrapper.customer, .main__wrapper.contacts-wrapper, .main__wrapper.terms-wrapper, .main__wrapper.privacy, .main__wrapper.cookie, .main__wrapper.complaints, .main__wrapper.games-rules, .main__wrapper.sportsbook-wrapper, .main__wrapper.rules, .main__wrapper.house-rules, .main__wrapper.security, .main__wrapper.casino-wrapper, .main__wrapper.chargeback {
   justify-content: center;
 }
 .main__wrapper.responsible-gaming-wrapper {
@@ -3072,8 +3093,10 @@ body::-webkit-scrollbar-thumb {
   align-self: start;
 }
 .main__form-exchange-button:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
-  transition: 0.3s ease-in-out;
+  color: rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__form-exchange-button:active {
   transition: 0.3s ease-in-out;
@@ -3720,8 +3743,9 @@ body::-webkit-scrollbar-thumb {
   align-self: start;
 }
 .main__replenish-button:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
-  transition: 0.3s ease-in-out;
+  color: rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__replenish-button:active {
@@ -3790,6 +3814,7 @@ body::-webkit-scrollbar-thumb {
 }
 .main__sensibly-modal-close-icon {
   position: absolute;
+  top: 1.7857142857rem;
   right: 5%;
   cursor: pointer;
   width: 1.7142857143rem;
@@ -4385,7 +4410,7 @@ body::-webkit-scrollbar-thumb {
 .main__form-button:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103);
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
 }
 .main__form-button::before {
   content: "";
@@ -5759,6 +5784,15 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+.main.casino-jack-main .introduction.page {
+  padding-top: 0rem;
+}
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .main.casino-jack-main .introduction.page {
+    padding-top: 5rem;
+  }
+}
+
 .main.customer {
   padding-top: 5rem;
 }
@@ -5958,10 +5992,10 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .aside__replenish:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
-  transition: 0.3s ease-in-out;
   color: rgb(255, 221, 147);
-  text-shadow: 0px 0px 12px rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 18px rgb(255, 221, 147);
 }
 .aside__replenish:active {
   transition: 0.3s ease-in-out;
@@ -6151,7 +6185,7 @@ body::-webkit-scrollbar-thumb {
 .aside__button:hover {
   transition: 0.6s;
   color: rgb(255, 221, 147);
-  box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__button::before {
@@ -7703,6 +7737,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .weed-background.green {
+  top: 12.1428571429rem;
   transform: translateY(-185px);
 }
 @media screen and (min-width: 0px) and (max-width: 767px) {
@@ -8475,8 +8510,10 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .account__profile-cancel:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
-  transition: 0.3s ease-in-out;
+  color: rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 22px rgb(255, 221, 147);
 }
 .account__profile-cancel:active {
   transition: 0.3s ease-in-out;
@@ -10750,9 +10787,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5.7142857143rem;
 }
 .preventing-gambling__test-button:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
   transition: 0.3s ease-in-out;
   color: rgb(255, 221, 147);
+  text-shadow: 0px 0px 50px rgb(255, 221, 147);
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
 }
 .preventing-gambling__test-button:active {
   transition: 0.3s ease-in-out;
@@ -11124,9 +11162,9 @@ body::-webkit-scrollbar-thumb {
   width: 11.9285714286rem;
 }
 .contacts__card-button:hover {
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
   transition: 0.3s ease-in-out;
   color: rgb(255, 221, 147);
+  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
 }
 .contacts__card-button:active {
   transition: 0.3s ease-in-out;
