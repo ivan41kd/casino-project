@@ -15,6 +15,7 @@
 html {
  -moz-text-size-adjust: none;
  -webkit-text-size-adjust: none;
+ -ms-text-size-adjust: none;
  text-size-adjust: none;
  @media only screen and (min-width: 0px) {
   font-size: ($base-font-size / $design-mobile-width) * 100vw;
@@ -52,6 +53,15 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
+ @-webkit-keyframes fadeInAnimation {
+  0% {
+   opacity: 0;
+  }
+
+  100% {
+   opacity: 1;
+  }
+ }
  @keyframes fadeInAnimation {
   0% {
    opacity: 0;
@@ -66,7 +76,9 @@ body {
  line-height: 1.5;
  background: rgb(35, 35, 35);
  color: rgba(216, 216, 212, 1);
+ -webkit-animation-iteration-count: 1;
  animation-iteration-count: 1;
+ -webkit-animation-fill-mode: forwards;
  animation-fill-mode: forwards;
  scroll-behavior: smooth;
  font-variant-ligatures: none;
@@ -74,15 +86,6 @@ body {
  &::before {
   position: fixed;
   content: '';
-  background: url('../../img/bg/account-bg.png'),
-   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
-       217,
-       217,
-       217,
-       0
-      )
-      100%),
-   #232323;
   background: url('../../img/bg/account-bg.png'),
    radial-gradient(
     39.36% 72.88% at 50% 0%,
@@ -122,15 +125,6 @@ body {
  &::before {
   position: fixed;
   content: '';
-  background: url('../../img/bg/account-bg.png'),
-   -o-radial-gradient(50% 0%, 39.36% 72.88%, rgba(217, 217, 217, 0.2) 0%, rgba(
-       217,
-       217,
-       217,
-       0
-      )
-      100%),
-   #141414;
   background: url('../../img/bg/account-bg.png'),
    radial-gradient(
     39.36% 72.88% at 50% 0%,
@@ -184,6 +178,7 @@ body {
 .girl-left,
 .girl-right {
  display: block;
+ position: -webkit-sticky;
  position: sticky;
  top: calc(30% - 100px);
  z-index: -1;
@@ -230,12 +225,6 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: -o-radial-gradient(
-   50% 47.59%,
-   40.73% 75.46%,
-   #000000 3.53%,
-   rgba(0, 0, 0, 0) 72.69%
-  );
   background: radial-gradient(
    40.73% 75.46% at 50% 47.59%,
    #000000 3.53%,
@@ -257,12 +246,6 @@ body {
  }
  .content__wrapper.main-content {
   &::before {
-   background: -o-radial-gradient(
-    50% 47.59%,
-    83.24% 59.63%,
-    #000000 3.53%,
-    rgba(0, 0, 0, 0) 72.69%
-   );
    background: radial-gradient(
     83.24% 59.63% at 50% 47.59%,
     #000000 3.53%,
@@ -326,6 +309,8 @@ li {
  cursor: pointer;
 }
 ul {
+ height: -webkit-fit-content;
+ height: -moz-fit-content;
  height: fit-content;
 }
 button {
@@ -390,11 +375,7 @@ body {
  }
 }
 .modal-change {
- display: -webkit-box;
- display: -ms-flexbox;
  display: flex;
- -webkit-box-align: center;
- -ms-flex-align: center;
  align-items: center;
  width: 100%;
  height: 100dvh;
@@ -404,16 +385,10 @@ body {
  backdrop-filter: blur(12px);
  visibility: hidden;
  opacity: 0;
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
  transition: 0.3s ease-in-out;
- -webkit-box-pack: center;
- -ms-flex-pack: center;
  justify-content: center;
 }
 .modal-change.active {
- -webkit-transition: 0.3s ease-in-out;
- -o-transition: 0.3s ease-in-out;
  transition: 0.3s ease-in-out;
  opacity: 1;
  visibility: visible;
@@ -421,8 +396,6 @@ body {
 .modal-account.active {
  visibility: visible;
  width: 100%;
- -webkit-transform: none;
- -ms-transform: none;
  transform: none;
  display: block;
 
