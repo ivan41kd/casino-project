@@ -682,8 +682,9 @@ body::-webkit-scrollbar-thumb {
 }
 .header__item:hover::after {
   transition: 0.3s;
-  content: "";
   transform: rotate(180deg);
+  height: 1.7857142857rem;
+  transform-origin: center;
 }
 .header__item::after {
   transition: 0.3s;
@@ -693,6 +694,7 @@ body::-webkit-scrollbar-thumb {
   background-size: 100% !important;
   background-position: center;
   background: url('data:image/svg+xml,<svg width="27" height="27" viewBox="0 0 27 27" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.3447L13.5 16.8447L9 12.3447" stroke="%23D8D8D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat;
+  transform-origin: center;
 }
 .header__item.language {
   color: rgba(216, 216, 212, 0.6);
