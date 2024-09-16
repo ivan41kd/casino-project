@@ -6145,7 +6145,7 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 0.0714285714rem rgba(255, 255, 255, 0.2) solid;
 }
 .aside__img {
-  transform: scale(1.1);
+  transform: scale(1.1) translate(-10%);
   margin-bottom: 3.6428571429rem;
   width: 19.3364285714rem;
 }
