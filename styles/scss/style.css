@@ -890,9 +890,9 @@ body::-webkit-scrollbar-thumb {
   height: 3.2857142857rem;
 }
 .header__login:hover, .header__signup:hover, .header__logout:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .header__login:active, .header__signup:active, .header__logout:active {
@@ -1433,8 +1433,9 @@ body::-webkit-scrollbar-thumb {
     font-weight: 500;
   }
   .header__burger-account-profile:hover {
-    box-shadow: 0px 0px 18px 0px rgb(196, 167, 103);
-    transition: 0.7s ease-in-out;
+    transition: 0.6s;
+    color: rgb(255, 221, 147);
+    box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
     text-shadow: 0px 0px 12px rgb(255, 221, 147);
   }
   .header__burger-account-profile:active {
@@ -3091,9 +3092,9 @@ body::-webkit-scrollbar-thumb {
   align-self: start;
 }
 .main__form-exchange-button:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__form-exchange-button:active {
@@ -3740,9 +3741,9 @@ body::-webkit-scrollbar-thumb {
   align-self: start;
 }
 .main__replenish-button:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__replenish-button:active {
@@ -4405,9 +4406,9 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 .main__form-button:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__form-button::before {
@@ -5990,9 +5991,9 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .aside__replenish:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__replenish:active {
@@ -6183,7 +6184,7 @@ body::-webkit-scrollbar-thumb {
 .aside__button:hover {
   transition: 0.6s;
   color: rgb(255, 221, 147);
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__button::before {
@@ -8508,9 +8509,9 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .account__profile-cancel:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .account__profile-cancel:active {

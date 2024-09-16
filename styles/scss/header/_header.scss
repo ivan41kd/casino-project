@@ -517,13 +517,11 @@
   transition: 0.7s;
   height: rem(46px);
   &:hover {
+   transition: 0.6s;
    color: rgba(255, 221, 147, 1);
-   transition: 0.3s;
-
-   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
-    0px 0px 8px 0px rgba(196, 167, 103, 1),
-    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
-
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+    0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
 
@@ -1089,8 +1087,11 @@
    font-weight: 500;
 
    &:hover {
-    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-    transition: 0.7s ease-in-out;
+    transition: 0.6s;
+    color: rgba(255, 221, 147, 1);
+    box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+     0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+     inset 0px 0px 22px rgba(196, 167, 103, 0.6);
     text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
    }
    &:active {
