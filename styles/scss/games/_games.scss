@@ -134,10 +134,14 @@
    mask-composite: exclude;
   }
   &:hover {
-   color: rgba(238, 222, 186, 1);
-   box-shadow: 0px 0px 33px 0px rgba(196, 167, 103, 1);
-   transition: 0.3s ease-in-out;
-   text-shadow: 0px 0px 50px rgba(255, 221, 147, 1);
+   color: rgba(255, 221, 147, 1);
+   transition: 0.7s;
+
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
+    0px 0px 22px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+
+   text-shadow: 0px 0px 22px rgba(255, 221, 147, 1);
   }
  }
  &__game-img {

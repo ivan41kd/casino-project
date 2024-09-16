@@ -514,11 +514,11 @@
   @include gold-color;
   padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
   border-radius: rem(70px);
-  transition: 0.5s;
+  transition: 0.7s;
   height: rem(46px);
   &:hover {
    color: rgba(255, 221, 147, 1);
-   transition: 0.3s;
+   transition: 0.7s;
 
    box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
     0px 0px 22px 0px rgba(196, 167, 103, 1),
@@ -528,7 +528,7 @@
   }
 
   &:active {
-   transition: 0.3s;
+   transition: 0.7s;
    color: rgba(196, 167, 103, 1);
 
    box-shadow: 0px 0px 17.8px 0px rgba(196, 167, 103, 1),
@@ -567,7 +567,7 @@
    color: black;
   }
   &:active {
-   transition: 0.3s;
+   transition: 0.7s;
    &::before {
     position: absolute;
     content: '';
@@ -1083,20 +1083,20 @@
    line-height: rem(16.52px);
    text-transform: uppercase;
    width: rem(118px);
-   transition: 0.3s ease-in-out;
+   transition: 0.7s ease-in-out;
    align-self: center;
    height: rem(46.78px);
    font-weight: 500;
 
    &:hover {
     box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-    transition: 0.3s ease-in-out;
+    transition: 0.7s ease-in-out;
     text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
    }
    &:active {
-    transition: 0.3s ease-in-out;
+    transition: 0.7s ease-in-out;
     &::before {
-     transition: 0.3s ease-in-out;
+     transition: 0.7s ease-in-out;
      position: absolute;
      content: '';
      background: rgba(0, 0, 0, 0.2);
@@ -1144,16 +1144,22 @@
    margin-bottom: rem(12px);
    position: relative;
    cursor: pointer;
-   transition: 0.3s ease-in-out;
+   transition: 0.7s ease-in-out;
    color: black;
    &:hover {
-    box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1);
-    transition: 0.3s ease-in-out;
+    color: rgba(255, 221, 147, 1);
+    transition: 0.7s;
+
+    box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
+     0px 0px 22px 0px rgba(196, 167, 103, 1),
+     inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+
+    text-shadow: 0px 0px 22px rgba(255, 221, 147, 1);
    }
    &:active {
-    transition: 0.3s ease-in-out;
+    transition: 0.7s ease-in-out;
     &::before {
-     transition: 0.3s ease-in-out;
+     transition: 0.7s ease-in-out;
      position: absolute;
      content: '';
      background: rgba(0, 0, 0, 0.2);

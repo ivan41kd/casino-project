@@ -384,6 +384,7 @@ button {
  height: 101dvh;
  -webkit-transition: display opacity ease-in-out;
  -o-transition: display opacity ease-in-out;
+ visibility: hidden;
  transition: display opacity ease-in-out;
  -webkit-transition-duration: 0.5s;
  -o-transition-duration: 0.5s;
