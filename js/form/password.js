@@ -57,6 +57,12 @@ passwordInputWrappers.forEach((wrapper) => {
  };
 
  const showRequirements = (input) => {
+  // Если поле ввода содержит класс 'login-input', подсказка не отображается
+  if (input.classList.contains('login-input')) {
+   requireWrapper.classList.remove('visible');
+   return;
+  }
+
   if (input.value !== '' && document.activeElement === input) {
    requireWrapper.classList.add('visible');
   } else {

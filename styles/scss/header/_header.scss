@@ -518,13 +518,13 @@
   height: rem(46px);
   &:hover {
    color: rgba(255, 221, 147, 1);
-   transition: 0.7s;
+   transition: 0.3s;
 
-   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
-    0px 0px 22px 0px rgba(196, 167, 103, 1),
-    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
+    0px 0px 8px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
 
-   text-shadow: 0px 0px 22px rgba(255, 221, 147, 1);
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
 
   &:active {
@@ -547,7 +547,7 @@
   padding: rem(18.39px) rem(28.02px) rem(18.39px) rem(28.02px);
   display: flex;
   align-items: center;
-  background-size: 100%;
+  background-size: 100% 100%;
   &::after {
    position: absolute;
    top: -2px;

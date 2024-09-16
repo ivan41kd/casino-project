@@ -1142,8 +1142,8 @@
    color: rgba(255, 221, 147, 1);
    transition: 0.3s;
 
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1),
-    0px 0px 18px 0px rgba(196, 167, 103, 1),
+   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
+    0px 0px 8px 0px rgba(196, 167, 103, 1),
     inset 0px 0px 18px rgba(196, 167, 103, 0.6);
 
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
@@ -1184,7 +1184,6 @@
  &__form-input-label-wrapper.password {
   position: relative;
   padding: 0;
-  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -1792,7 +1791,7 @@
  &__form-password-button {
   position: relative;
   font-size: rem(16px);
-  line-height: rem(18.88px);
+  line-height: rem(22.88px);
   font-weight: 500;
   color: black;
   display: flex;
@@ -1805,7 +1804,7 @@
   border: 2px solid transparent;
 
   background: url('../../../img/bg/button-bg.png') no-repeat center;
-  background-size: 100% 500%;
+  background-size: 100% 100%;
   background-clip: padding-box;
   transition: 0.5s;
   margin-bottom: rem(19px);
@@ -1870,8 +1869,8 @@
    color: rgba(255, 221, 147, 1);
    transition: 0.3s;
 
-   box-shadow: 0px 0px 18px 0px rgba(196, 167, 103, 1),
-    0px 0px 18px 0px rgba(196, 167, 103, 1),
+   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
+    0px 0px 8px 0px rgba(196, 167, 103, 1),
     inset 0px 0px 18px rgba(196, 167, 103, 0.6);
 
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
@@ -1955,7 +1954,7 @@
  &__sensibly-modal-close-icon {
   position: absolute;
   top: rem(25px);
-  right: 5%;
+  right: 2%;
   cursor: pointer;
   width: rem(24px);
   height: rem(24px);
@@ -2480,7 +2479,7 @@
   font-weight: 400;
   color: rgba(216, 216, 212, 0.4);
   position: absolute;
-  left: 8%;
+  left: 5%;
   top: 30%;
   transition: 0.5s;
  }
@@ -2636,9 +2635,12 @@
   &:hover {
    color: rgba(255, 221, 147, 1);
    transition: 0.3s;
-   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
-    0px 0px 22px 0px rgba(196, 167, 103, 1),
-    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+
+   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
+    0px 0px 8px 0px rgba(196, 167, 103, 1),
+    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+
+   text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &::before {
    content: '';
@@ -2887,12 +2889,12 @@
   position: relative;
   padding: rem(21px) rem(32px) rem(21px) rem(32px);
   background: url('../../../img/bg/button-bg.png');
+  background-size: 100% 100%;
   max-height: rem(53px);
   font-size: rem(16px);
   line-height: rem(18.88px);
   display: flex;
   align-items: center;
-  background-size: 100%;
   justify-content: center;
 
   &::before {

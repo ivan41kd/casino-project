@@ -891,9 +891,9 @@ body::-webkit-scrollbar-thumb {
 }
 .header__login:hover, .header__signup:hover, .header__logout:hover {
   color: rgb(255, 221, 147);
-  transition: 0.7s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
-  text-shadow: 0px 0px 22px rgb(255, 221, 147);
+  transition: 0.3s;
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .header__login:active, .header__signup:active, .header__logout:active {
   transition: 0.7s;
@@ -911,7 +911,7 @@ body::-webkit-scrollbar-thumb {
   padding: 1.3135714286rem 2.0014285714rem 1.3135714286rem 2.0014285714rem;
   display: flex;
   align-items: center;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .header__signup::after {
   position: absolute;
@@ -3093,7 +3093,7 @@ body::-webkit-scrollbar-thumb {
 .main__form-exchange-button:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__form-exchange-button:active {
@@ -3125,7 +3125,6 @@ body::-webkit-scrollbar-thumb {
 .main__form-input-label-wrapper.password {
   position: relative;
   padding: 0;
-  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: rgba(216, 216, 212, 0.6);
   outline: none;
@@ -3674,7 +3673,7 @@ body::-webkit-scrollbar-thumb {
 .main__form-register-button, .main__form-password-button {
   position: relative;
   font-size: 1.1428571429rem;
-  line-height: 1.3485714286rem;
+  line-height: 1.6342857143rem;
   font-weight: 500;
   color: black;
   display: flex;
@@ -3686,7 +3685,7 @@ body::-webkit-scrollbar-thumb {
   padding: 1.0714285714rem 2.2857142857rem;
   border: 2px solid transparent;
   background: url("../../../img/bg/button-bg.png") no-repeat center;
-  background-size: 100% 500%;
+  background-size: 100% 100%;
   background-clip: padding-box;
   transition: 0.5s;
   margin-bottom: 1.3571428571rem;
@@ -3743,7 +3742,7 @@ body::-webkit-scrollbar-thumb {
 .main__replenish-button:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
   text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__replenish-button:active {
@@ -3813,7 +3812,7 @@ body::-webkit-scrollbar-thumb {
 .main__sensibly-modal-close-icon {
   position: absolute;
   top: 1.7857142857rem;
-  right: 5%;
+  right: 2%;
   cursor: pointer;
   width: 1.7142857143rem;
   height: 1.7142857143rem;
@@ -4259,7 +4258,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: rgba(216, 216, 212, 0.4);
   position: absolute;
-  left: 8%;
+  left: 5%;
   top: 30%;
   transition: 0.5s;
 }
@@ -4408,7 +4407,8 @@ body::-webkit-scrollbar-thumb {
 .main__form-button:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__form-button::before {
   content: "";
@@ -4652,12 +4652,12 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   padding: 1.5rem 2.2857142857rem 1.5rem 2.2857142857rem;
   background: url("../../../img/bg/button-bg.png");
+  background-size: 100% 100%;
   max-height: 3.7857142857rem;
   font-size: 1.1428571429rem;
   line-height: 1.3485714286rem;
   display: flex;
   align-items: center;
-  background-size: 100%;
   justify-content: center;
 }
 .main__banner-button::before {
@@ -5992,8 +5992,8 @@ body::-webkit-scrollbar-thumb {
 .aside__replenish:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 18px 0px rgb(196, 167, 103), 0px 0px 18px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
-  text-shadow: 0px 0px 18px rgb(255, 221, 147);
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .aside__replenish:active {
   transition: 0.3s ease-in-out;
@@ -8510,8 +8510,8 @@ body::-webkit-scrollbar-thumb {
 .account__profile-cancel:hover {
   color: rgb(255, 221, 147);
   transition: 0.3s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
-  text-shadow: 0px 0px 22px rgb(255, 221, 147);
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .account__profile-cancel:active {
   transition: 0.3s ease-in-out;
@@ -11160,9 +11160,10 @@ body::-webkit-scrollbar-thumb {
   width: 11.9285714286rem;
 }
 .contacts__card-button:hover {
-  transition: 0.3s ease-in-out;
   color: rgb(255, 221, 147);
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103), 0px 0px 22px 0px rgb(196, 167, 103), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  transition: 0.3s;
+  box-shadow: 0px 0px 8px 0px rgb(196, 167, 103), 0px 0px 8px 0px rgb(196, 167, 103), inset 0px 0px 18px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .contacts__card-button:active {
   transition: 0.3s ease-in-out;
