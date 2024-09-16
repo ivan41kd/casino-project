@@ -2336,13 +2336,13 @@
   transition: 0.3s ease-in-out;
   border-radius: rem(80px);
   &:hover {
-   transition: 0.3s ease-in-out;
-   color: rgba(255, 221, 147, 1);
-   text-shadow: 0px 0px 50px rgba(255, 221, 147, 1);
-   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 1),
-    0px 0px 22px 0px rgba(196, 167, 103, 1),
-    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
-  }
+    transition: 0.6s;
+    color: rgba(255, 221, 147, 1);
+    box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+     0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+     inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
+   }
   &:active {
    transition: 0.3s ease-in-out;
    &::before {
@@ -2702,13 +2702,11 @@
   color: rgba(196, 167, 103, 1);
   width: rem(167px);
   &:hover {
+   transition: 0.6s;
    color: rgba(255, 221, 147, 1);
-   transition: 0.3s;
-
-   box-shadow: 0px 0px 8px 0px rgba(196, 167, 103, 1),
-    0px 0px 8px 0px rgba(196, 167, 103, 1),
-    inset 0px 0px 18px rgba(196, 167, 103, 0.6);
-
+   box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+    0px 0px 22px 0px rgba(196, 167, 103, 0.2),
+    inset 0px 0px 22px rgba(196, 167, 103, 0.6);
    text-shadow: 0px 0px 12px rgba(255, 221, 147, 1);
   }
   &:active {
