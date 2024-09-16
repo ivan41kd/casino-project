@@ -4592,7 +4592,8 @@ body::-webkit-scrollbar-thumb {
 .main__bonus-button:hover {
   transition: 0.6s;
   color: rgb(255, 221, 147);
-  box-shadow: 0px 0px 33px 0px rgb(196, 167, 103);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .main__bonus-button::before {
   content: "";
@@ -6771,9 +6772,10 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .games__show-more:hover {
+  transition: 0.6s;
   color: rgb(255, 221, 147);
-  transition: 0.3s;
-  box-shadow: 0px 0px 22px 0px rgb(196, 167, 103);
+  box-shadow: 0px 0px 22px 0px rgba(196, 167, 103, 0.2), 0px 0px 22px 0px rgba(196, 167, 103, 0.2), inset 0px 0px 22px rgba(196, 167, 103, 0.6);
+  text-shadow: 0px 0px 12px rgb(255, 221, 147);
 }
 .games__show-more::before {
   content: "";
